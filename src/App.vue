@@ -89,7 +89,7 @@ export default {
   }
 }
 </script>
-
+<!-- 
 <style>
 strong, i {
   word-break: break-word;
@@ -132,4 +132,4 @@ h3 {
    font-size: 14px;
    margin-left: 10px;
 }
-</style>
+</style> -->

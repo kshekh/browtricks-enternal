@@ -1,6 +1,5 @@
 <template>
-  <div class="navbar-wrapper">
-    <Disclosure as="header" class="bg-white shadow" v-slot="{ open }">
+    <Disclosure as="header" class="bg-white drop-shadow-md" v-slot="{ open }">
       <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-gray-200 lg:px-8">
         <div class="relative flex h-16 justify-between">
           <div class="relative z-10 flex px-2 lg:px-0">
@@ -80,7 +79,7 @@
         </div>
       </DisclosurePanel>
     </Disclosure>
-  </div>
+  
 </template>
 
 <script setup>

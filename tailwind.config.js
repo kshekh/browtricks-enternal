@@ -13,8 +13,14 @@ module.exports = {
             },
 
         colors: {
-              gray: {
-                DEFAULT: '#241717'
+              grey: { 
+                100:'#FAF9F9',
+                200:'#F7F6F6',
+                300:'#E8DEDE',
+                500:'#DDD3D3',
+                700:'#AFA2A2',
+                800:'#241717', // Black in Figma 
+                900:'#4D4646',
               },
               peach: {
                 DEFAULT: '#E9CFC4',
@@ -22,10 +28,10 @@ module.exports = {
               },
               red: {
                 DEFAULT: '#D82C0D'
-              },
+              }, 
               blue: {
-                DEFAULT: '#1062BF'
-              }
+                DEFAULT: '#1062BF', 
+              }, 
         },
             spacing: {
                 '15': '3.75rem',
@@ -66,6 +72,11 @@ module.exports = {
                 '4xl': '96rem',
             },
 
+            width:{
+                '3': '3px',
+                '68': '274px'
+            },
+
             minWidth: (theme) => ({
                 ...theme('spacing'),
             }), 
@@ -83,6 +94,7 @@ module.exports = {
             boxShadow: {
                 '1': '0px 9px 44px rgba(0, 0, 0, 0.06)',
                 '2': '0px 20px 41px rgba(0, 0, 0, 0.25)',
+                '3': '0px 1px 6px rgba(0, 0, 0, 0.1)',
             },
             
 
@@ -99,7 +111,16 @@ module.exports = {
             },
 
 
-            
+            borderWidth:{
+              3:'3px',
+              5:'5px',
+              6:'6px',
+            },
+            ringWidth: {
+              3:'3px',
+              5:'5px',
+              6:'6px',
+            },
 
 
         },

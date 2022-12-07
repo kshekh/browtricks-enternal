@@ -18,6 +18,7 @@
     "postcss-cli": "^10.1.0",
     "postcss-nested": "^6.0.0",
     "postcss-nesting": "^10.2.0",
+    "remixicon": "^2.5.0",
     "sass": "^1.56.1",
     "typeface-inter": "^3.18.1",
     "vue": "^3.2.45",
