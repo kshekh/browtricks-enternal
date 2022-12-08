@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col  min-h-screen ">
-    <div class="bg-white drop-shadow-sm px-3 py-4">
+    <router-link to="/home" class="top-navbar bg-white px-3 py-4 block">
       <img src="../assets/logo.png" alt="image" class="mx-auto" />
-    </div>
+    </router-link>
     <div class="flex-1 flex flex-col justify-center py-8 relative">
      <div class="flex flex-col justify-center items-center max-w-sm mx-auto w-full px-3 sm:px-4 gap-6">
         <h2 class="text-center text-13 font-semibold tracking-tight leading-none text-black uppercase">LOGIN WITH</h2>
@@ -58,13 +58,13 @@
 
               <div class="text-sm text-grey-900 font-normal">
                 <span>Don’t have an account?</span>
-                <a href="#" class="text-base inline-flex font-medium text-blue hover:text-peach-4 transition-all ease-in-out duration-300 ml-2">Sign Up</a>
+                <router-link to="/signup" class="text-base inline-flex font-medium text-blue hover:text-peach-4 transition-all ease-in-out duration-300 ml-2">Sign Up</router-link>
               </div>
             </div>
           </form>
         </div>
         <div class="text-center w-full">
-          <a href="#" class="text-base inline-flex font-medium text-blue hover:text-peach-4 transition-all ease-in-out duration-300">Forgot password?</a>
+          <router-link to="/forgot-password" class="text-base inline-flex font-medium text-blue hover:text-peach-4 transition-all ease-in-out duration-300">Forgot password?</router-link>
         </div>
        
      </div>

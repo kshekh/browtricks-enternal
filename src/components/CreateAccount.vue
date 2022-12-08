@@ -1,11 +1,13 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <div class="bg-white drop-shadow-sm px-3 py-4">
+    <div class="">
+      <router-link to="/home" class="bg-white drop-shadow-sm px-3 py-4">
       <img src="../assets/logo.png" alt="image" class="mx-auto" />
+    </router-link>
     </div>
     <div class="flex-1 flex flex-col justify-center py-8 relative">
       <div class="flex flex-col justify-center items-center max-w-sm mx-auto w-full px-3 sm:px-4 gap-6">
-        <h2 class="text-center text-13 font-semibold tracking-tight leading-none text-black uppercase">LOGIN WITH</h2>
+        <h2 class="text-center text-13 font-semibold tracking-tight leading-none text-black uppercase">Signup WITH</h2>
         <div class=" grid  grid-cols-3 gap-2 w-full max-w-64 xs:max-w-none ">
           <button type="button" class="inline-flex  w-full  uppercase justify-center items-center rounded-md border border-peach bg-peach py-3 px-3 h-full  text-13 font-semibold text-grey-800 shadow-sm hover:bg-peach-2 hover:border-peach-2 ease-in-out duration-300">
               <svg class="w-5" fill="currentColor" viewBox="0 0 20 20">
@@ -94,7 +96,8 @@
 
               <div class="text-sm text-grey-900 font-normal">
                 <span>Already have an account?</span>
-                <a href="#" class="text-base inline-flex font-medium text-blue hover:text-peach-4 transition-all ease-in-out duration-300 ml-2">Login</a>
+                <router-link to="/login" class="text-base inline-flex font-medium text-blue hover:text-peach-4 transition-all ease-in-out duration-300 ml-2">Login</router-link>
+              
               </div>
             </div>
           </form>
@@ -113,7 +116,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<!-- <style lang="scss" scoped>
 $bg-gray : #DFDFDF;
 .bg-gray {
   background-color: $bg-gray;
@@ -121,4 +124,4 @@ $bg-gray : #DFDFDF;
 .create-account-wrapper {
   background: $bg-gray;
 }
-</style>
+</style> -->

@@ -7,43 +7,36 @@
           <!-- Logo section -->
           <div class="flex items-center relative gap-3">
             <div class="flex items-center md:hidden">
-              <!-- Mobile menu button-->
-              <button type="button"
+              <!-- Open menu button-->
+              <button type="button" 
                 class="inline-flex items-center justify-center rounded-md p-2 border border-grey-300 text-grey-800 hover:border-grey-800 hover:bg-grey-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 aria-controls="mobile-menu" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
-
-                <Bars3CenterLeftIcon class="h-6 w-6" aria-hidden="true" />
-
-                <XMarkIcon class="h-6 w-6 hidden" aria-hidden="true" />
+                <span class="sr-only">Open side menu</span>
+                  <Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
+                 <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" /> -->
               </button>
             </div>
-            <div class="flex-shrink-0 -mt-1">
-              <img class="h-6 sm:h-8 w-auto" src="../assets/logo-browtricks.png" alt="BrowTricks" />
-            </div>
+            <router-link to="/home" class="flex-shrink-0">
+              <img class="h-8 w-auto" :src="logo" alt="BrowTricks" />
+            </router-link>
           </div>
 
 
           <!-- Links section -->
           <div class=" block ">
             <div class="flex items-center justify-end">
-              <div class="hidden">
-                <a v-for="item in navigation" :key="item.name" :href="item.href"
-                  class="rounded-md px-3 py-2 text-sm font-medium text-black hover:text-black"
-                  :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
-              </div>
+               
               <!-- Profile dropdown -->
               <Menu as="div" class="relative ml-4 flex-shrink-0">
                 <div>
                   <MenuButton as="button" class="flex items-center gap-3 group">
-                    <span class="sm:inline-flex gap-1 hidden "><span class="text-sm text-grey-800 font-semibold">Chris
-                        Luke</span>
+                    <span class="sm:inline-flex gap-1 hidden "><span class="text-sm text-grey-800 font-semibold">{{user.username}}</span>
                       <ChevronDownIcon class="w-5" />
                     </span>
                     <span
                       class="h-8 w-8 rounded-full flex justify-center items-center overflow-hidden ring-2 ring-transparent group-hover:ring-peach ring-offset-2 ring-offset-white">
                       <img class="aspect-square"
-                        src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&h=256&q=80"
+                      :src="user.profile" :alt="user.username"
                         alt="" />
                     </span>
                   </MenuButton>
@@ -55,19 +48,13 @@
                   <MenuItems
                     class="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div class="px-4 py-3" role="none">
-                      <p class="text-sm" role="none"><span class="block md:hidden text-sm text-grey-800 font-semibold">Chris Luke</span><span class="hidden md:block">Email</span></p>
-                      <p class="truncate text-sm font-medium text-grey-800" role="none">tom@example.com</p>
+                      <p class="text-sm" role="none"><span class="block md:hidden text-sm text-grey-800 font-semibold"> {{user.username}}</span><span class="hidden md:block">Email</span></p>
+                      <p class="truncate text-sm font-medium text-grey-800" role="none">{{user.email}}</p>
                     </div>
 
                     <div class="py-1" role="none">
-                      <MenuItem v-for="item in navigation" :key="item.name" v-slot="{ active }">
-                      <a :href="item.href" :class="
-                        active ? 'bg-peach' : 'bg-transparent',
-                        ''
-                      "
-                        class="block px-4 py-2 hover:bg-peach text-sm text-grey-800 transition-all ease-in-out duration-300 font-medium">{{
-                            item.name
-                        }}</a>
+                      <MenuItem v-for="item in user.links" :key="item.name" v-slot="{ active }">
+                      <a :href="item.href" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 text-left']">{{ item.name }}</a>
                       </MenuItem>
                     </div>
 
@@ -138,9 +125,9 @@
               <div class="flex items-center gap-5">
                 <span class="whitespace-nowrap text-base font-normal text-grey-700">1 of 6 tasks complete</span>
 
-                <div class="w-full bg-grey-300 rounded-full h-1.5 dark:bg-gray-700">
-                  <div class="bg-grey-700 h-1.5 rounded-full dark:bg-blue-500" style="width: 25%"></div>
-                  <!-- {{ step.count * index / 100 + '%' }} -->
+                <div class="w-full bg-grey-300 rounded-full h-1.5 dark:bg-gray-700">  
+                  <div class="bg-grey-700 h-1.5 rounded-full dark:bg-blue-500" style="width:20% /*width: index / ${setupCount} * 100 + '%'*/">  </div>
+                   <!-- Step count % formulla `index / ${setupCount} * 100 + '%'` -->
                 </div>
               </div>
             </div>
@@ -200,6 +187,7 @@ import {
   DisclosurePanel,
   Menu,
   MenuButton,
+ 
   MenuItem,
   MenuItems,
 } from "@headlessui/vue";
@@ -207,6 +195,7 @@ import {
   CheckIcon,
   HomeIcon,
   Cog6ToothIcon,
+  Bars3Icon,
   DocumentTextIcon,
   ChevronDownIcon,
   HeartIcon,
@@ -222,10 +211,22 @@ import {
   XMarkIcon,
 } from "@heroicons/vue/24/outline";
 
-const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Domains", href: "#", current: false },
-];
+const logo = '../assets/logo.png'
+
+const user = {
+  "username": "Chris Luke",
+  "email": "Sincere@april.biz",
+  "profile": "https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&h=256&q=80",
+  "links": [
+    { name: 'Login', href: '/login', current: true },
+    { name: 'Create Account', href: '/signup', current: false },
+    { name: 'Forgot Password', href: '/forgot-password', current: false },
+  ]
+}
+// const navigation = [
+//   { name: "Dashboard", href: "#", current: true },
+//   { name: "Domains", href: "#", current: false },
+// ];
 const sidebarNavigation = [
   { name: "Home", href: "#", icon: HomeIcon, current: true },
   { name: "Customers", href: "#", icon: HeartIcon, current: false },
@@ -234,6 +235,9 @@ const sidebarNavigation = [
   { name: "Settings", href: "#", icon: Cog6ToothIcon, current: false },
   // { name: 'Reports', href: '#', icon: DocumentChartBarIcon, current: false },
 ];
+
+const setupCount = reactive(6);
+
 
 // Setup Guide data
 const customerSteps = reactive([

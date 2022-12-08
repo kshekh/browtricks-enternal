@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <div class="bg-white drop-shadow-sm px-3 py-4">
+    <router-link to="/home" class="bg-white drop-shadow-sm px-3 py-4">
       <img src="../assets/logo.png" alt="image" class="mx-auto" />
-    </div>
+    </router-link>
     <div class="flex-1 flex flex-col justify-center py-8 relative">
       <div class="flex flex-col justify-center items-center max-w-sm mx-auto w-full px-3 sm:px-4 gap-6">
         <div class="bg-white p-5 rounded-lg sm:p-8 border border-grey-500 shadow-3 w-full">
@@ -27,7 +27,7 @@
           </form>
         </div>
         <div class="text-center w-full">
-          <a href="#" class="text-base inline-flex font-medium text-blue hover:text-peach-4 transition-all ease-in-out duration-300">Back to login</a>
+          <router-link to="/login" class="text-base inline-flex font-medium text-blue hover:text-peach-4 transition-all ease-in-out duration-300">Back to login</router-link>
         </div>
       </div> 
     </div>

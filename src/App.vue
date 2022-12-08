@@ -1,6 +1,7 @@
 <template>
+   <router-view></router-view>
   <!-- <HomeCustomer /> -->
-   <ForgotPassword /> 
+   <!-- <ForgotPassword />  -->
   <!-- <Login /> -->
   <!-- <CreateAccount /> -->
   <!-- <ul class="post-grid">
@@ -34,7 +35,7 @@ export default {
     // HomeCustomer,
     // CreateAccount,
     // Login,
-    ForgotPassword,
+    // ForgotPassword,
   },
   data () {
     return {
