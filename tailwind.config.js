@@ -24,7 +24,9 @@ module.exports = {
               },
               peach: {
                 DEFAULT: '#E9CFC4',
-                '2': '#EDE9E7'
+                '2': '#EDE9E7',
+                '3': '#baa69d',
+                '4': '#8c7c76'
               },
               red: {
                 DEFAULT: '#D82C0D'
@@ -74,7 +76,9 @@ module.exports = {
 
             width:{
                 '3': '3px',
-                '68': '274px'
+                '68': '274px',
+                '119': '477px',
+                '22': '89px',
             },
 
             minWidth: (theme) => ({
@@ -108,6 +112,9 @@ module.exports = {
                 '5.5xl': '3.5rem',
                 '6.5xl': ['4rem', '1.10'],
                 '7.5xl': '5rem',
+                  '13'  : '13px',
+                  '15'  : '15px',
+                  '32'  : '32px',
             },
 
 

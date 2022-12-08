@@ -1,6 +1,6 @@
 <template>
-  <HomeCustomer />
-  <!-- <ForgotPassword /> -->
+  <!-- <HomeCustomer /> -->
+   <ForgotPassword /> 
   <!-- <Login /> -->
   <!-- <CreateAccount /> -->
   <!-- <ul class="post-grid">
@@ -24,17 +24,17 @@
 </template>
 
 <script>
-import HomeCustomer from './components/HomeCustomer.vue';
+// import HomeCustomer from './components/HomeCustomer.vue';
 // import CreateAccount from './components/CreateAccount.vue';
 // import Login from './components/Login.vue';
-// import ForgotPassword from './components/ForgotPassword.vue';
+import ForgotPassword from './components/ForgotPassword.vue';
 export default {
   name: 'App',
   components: {
-    HomeCustomer,
+    // HomeCustomer,
     // CreateAccount,
     // Login,
-    // ForgotPassword,
+    ForgotPassword,
   },
   data () {
     return {
