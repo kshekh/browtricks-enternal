@@ -1,7 +1,7 @@
 <template>
-  <HomeCustomer />
+  <!-- <HomeCustomer /> -->
   <!-- <ForgotPassword /> -->
-  <!-- <Login /> -->
+    <Login />  
   <!-- <CreateAccount /> -->
   <!-- <ul class="post-grid">
     <li v-for="(post, index) in filteredPosts" :key="index">
@@ -26,14 +26,14 @@
 <script>
 import HomeCustomer from './components/HomeCustomer.vue';
 // import CreateAccount from './components/CreateAccount.vue';
-// import Login from './components/Login.vue';
+import Login from './components/Login.vue';
 // import ForgotPassword from './components/ForgotPassword.vue';
 export default {
   name: 'App',
   components: {
-    HomeCustomer,
+    // HomeCustomer,
     // CreateAccount,
-    // Login,
+    Login,
     // ForgotPassword,
   },
   data () {

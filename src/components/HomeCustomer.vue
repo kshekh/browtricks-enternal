@@ -62,9 +62,7 @@
                     <div class="py-1" role="none">
                       <MenuItem v-for="item in navigation" :key="item.name" v-slot="{ active }">
                       <a :href="item.href" :class="
-                        active ? 'bg-peach' : 'bg-transparent',
-                        ''
-                      "
+                        active ? 'bg-peach' : 'bg-transparent'"
                         class="block px-4 py-2 hover:bg-peach text-sm text-grey-800 transition-all ease-in-out duration-300 font-medium">{{
                             item.name
                         }}</a>
