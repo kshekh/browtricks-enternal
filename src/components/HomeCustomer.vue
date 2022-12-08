@@ -25,7 +25,6 @@
           <!-- Links section -->
           <div class=" block ">
             <div class="flex items-center justify-end">
-               
               <!-- Profile dropdown -->
               <Menu as="div" class="relative ml-4 flex-shrink-0">
                 <div>
@@ -35,9 +34,7 @@
                     </span>
                     <span
                       class="h-8 w-8 rounded-full flex justify-center items-center overflow-hidden ring-2 ring-transparent group-hover:ring-peach ring-offset-2 ring-offset-white">
-                      <img class="aspect-square"
-                      :src="user.profile" :alt="user.username"
-                        alt="" />
+                      <img class="aspect-square" :src="user.profile" :alt="user.username" />
                     </span>
                   </MenuButton>
                 </div>
