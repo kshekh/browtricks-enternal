@@ -29,10 +29,7 @@
               <Menu as="div" class="relative ml-4 flex-shrink-0">
                 <div>
                   <MenuButton as="button" class="flex items-center gap-3 group">
-                    <span class="sm:inline-flex gap-1 hidden ">
-                      <span class="text-sm text-grey-800 font-semibold">
-                        <router-link :to="user.profile_url">{{user.username}}</router-link>
-                      </span>
+                    <span class="sm:inline-flex gap-1 hidden "><span class="text-sm text-grey-800 font-semibold">{{user.username}}</span>
                       <ChevronDownIcon class="w-5" />
                     </span>
                     <span
@@ -116,60 +113,83 @@
 
       <!-- Projects List -->
       <div class="flex-1 p-3 md:p-5 xl:px-14 xl:py-12">
-        <div class="coverflow-hidden rounded-xl bg-white shadow-3 border border-grey-300 divide-y divide-grey-300">
-          <div class="border-b border-grey-200 p-7">
-            <div class="flex flex-col text-left">
-              <h1 class="flex-1 text-2.5xl font-semibold leading-none text-black pb-3">
-                Setup guide
-              </h1>
-              <div class="flex items-center gap-5">
-                <span class="whitespace-nowrap text-base font-normal text-grey-700">1 of 6 tasks complete</span>
-                <div class="w-full bg-grey-300 rounded-full h-1.5 dark:bg-gray-700">  
-                  <div class="bg-grey-700 h-1.5 rounded-full dark:bg-blue-500" style="width:20% /*width: index / ${setupCount} * 100 + '%'*/">  </div>
-                   <!-- Step count % formulla `index / ${setupCount} * 100 + '%'` -->
+        <div class="mb-7 pb-7 border-b border-solid border-gray-300">
+          <h2 class="flex-1 text-2.5xl font-semibold leading-none text-black pb-3">
+            Chris Luke
+          </h2>
+          <div class="coverflow-hidden rounded-xl bg-white shadow-3 border border-grey-300 divide-y divide-grey-300">
+            <div class="p-7">
+              <div class="flex flex-col text-left">
+                <h6>Add Media</h6>
+                <div class="flex items-center justify-center gap-5 border border-dashed border-orange-200 mt-3 p-5 py-10 rounded-xl">
+                  <input type="file" id="myfile" name="myfile" class="inline-block w-auto" />
                 </div>
               </div>
             </div>
           </div>
-          <div class="xl:flex p-7">
-            <div class="flex-1">
-              <ul role="list" class="pr-5 max-w-md overflow-hidden step-list">
-                <!-- customers steps -->
-                <li v-for="(step, index) in customerSteps" :key="index" :class="step.isExpanded ? 'open' : 'close'"
-                  class="text-left relative pb-10">
-                  <div class="absolute top-4 left-4 -ml-px mt-0.5 h-full w-0.5 bg-peach-2 v-line" aria-hidden="true"></div>
-
-                  <a href="#" class="group relative flex items-start">
-                    <span class="flex h-9 items-center">
-                      <span
-                        class="relative left-1 z-10 flex h-6 w-6 items-center justify-center rounded-full ring-4 ring-white"
-                        :class="
-                          step.isExpanded
-                            ? 'bg-peach'
-                            : 'bg-white border-2 border-dashed  border-peach '
-                        ">
-                        <CheckIcon v-if="step.isExpanded" class="h-4 w-4 text-grey-800" aria-hidden="true" />
-                      </span>
-                    </span>
-                    <div class="ml-7 flex min-w-0 flex-col space-y-3 pt-2">
-                      <h3 @click="step.isExpanded = !step.isExpanded" class="text-sm font-semibold">
-                        {{ step.title }}
-                      </h3>
-                      <div :class="step.isExpanded ? 'block' : 'hidden'" class="space-y-5">
-                        <p class="text-md text-grey-800">{{ step.answer }}</p>
-                        <button type="submit"
-                          class="mt-4 flex w-auto justify-center rounded-md border border-transparent bg-peach py-2 px-4 text-sm font-semibold text-grey-800 shadow-sm hover:bg-peach-2 focus:outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 transition-all ease-in-out duration-300">
-                          Add customers
-                        </button>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-              </ul>
+        </div>
+        <div class="mb-7">
+          <h2 class="flex-1 text-2.5xl font-semibold leading-none text-black pb-3">
+            Your media
+          </h2>
+          <div class="coverflow-hidden rounded-xl bg-white shadow-3 border border-grey-300 divide-y divide-grey-300">
+            <div class="sm:flex sm:items-center p-4">
+              <div class="sm:flex-auto">
+                <h1 class="text-xl font-semibold text-gray-900">Users</h1>
+                <p class="mt-2 text-sm text-gray-700">A list of all the users in your account including their name, title, email and role.</p>
+              </div>
+              <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+                <button type="button" class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">Add user</button>
+              </div>
             </div>
-
-            <div class="">
-              <img src="../assets/setup-guide-thumb.svg" alt="setup-thumb" class="hidden xl:block" />
+            <div class="flex flex-col">
+              <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                  <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5">
+                    <table class="min-w-full divide-y divide-gray-300">
+                      <thead class="bg-gray-50">
+                        <tr>
+                          <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Name</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Title</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Status</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Role</th>
+                          <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
+                            <span class="sr-only">Edit</span>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-gray-200 bg-white">
+                        <tr v-for="person in users" :key="person.email">
+                          <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
+                            <div class="flex items-center">
+                              <div class="h-10 w-10 flex-shrink-0">
+                                <img class="h-10 w-10 rounded" :src="person.image" alt="" />
+                              </div>
+                              <div class="ml-4">
+                                <div class="font-medium text-gray-900">{{ person.name }}</div>
+                                <div class="text-gray-500">{{ person.type }}</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                            <div class="text-gray-900">{{ person.title }}</div>
+                            <div class="text-gray-500">{{ person.department }}</div>
+                          </td>
+                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                            <span class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">Active</span>
+                          </td>
+                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ person.role }}</td>
+                          <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-900"
+                              >Edit<span class="sr-only">, {{ person.name }}</span></a
+                            >
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -217,7 +237,6 @@ const user = {
   "username": "Chris Luke",
   "email": "Sincere@april.biz",
   "profile": "https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&h=256&q=80",
-  "profile_url": '/user-profile',
   "links": [
     { name: 'Login', href: '/login', current: true },
     { name: 'Create Account', href: '/signup', current: false },
@@ -273,5 +292,44 @@ const customerSteps = reactive([
     isExpanded: false,
   },
 ]);
+
+
+const users = [
+  {
+    name: 'Lindsay Walton',
+    title: 'Front-end Developer',
+    department: 'Optimization',
+    type: 'JPG',
+    role: 'Member',
+    image:
+      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+  {
+    name: 'Lindsay Walton',
+    title: 'Front-end Developer',
+    department: 'Optimization',
+    type: 'JPG',
+    role: 'Member',
+    image:
+      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+  {
+    name: 'Lindsay Walton',
+    title: 'Front-end Developer',
+    department: 'Optimization',
+    type: 'JPG',
+    role: 'Member',
+    image:
+      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+  {
+    name: 'Lindsay Walton',
+    title: 'Front-end Developer',
+    department: 'Optimization',
+    type: 'JPG',
+    role: 'Member',
+    image:
+      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+]
 </script>
- 
