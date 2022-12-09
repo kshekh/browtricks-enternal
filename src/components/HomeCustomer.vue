@@ -124,7 +124,6 @@
               </h1>
               <div class="flex items-center gap-5">
                 <span class="whitespace-nowrap text-base font-normal text-grey-700">1 of 6 tasks complete</span>
-
                 <div class="w-full bg-grey-300 rounded-full h-1.5 dark:bg-gray-700">  
                   <div class="bg-grey-700 h-1.5 rounded-full dark:bg-blue-500" style="width:20% /*width: index / ${setupCount} * 100 + '%'*/">  </div>
                    <!-- Step count % formulla `index / ${setupCount} * 100 + '%'` -->

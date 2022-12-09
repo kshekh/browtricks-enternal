@@ -1,9 +1,14 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <div class="">
-      <router-link to="/home" class="bg-white drop-shadow-sm px-3 py-4">
-      <img src="../assets/logo.png" alt="image" class="mx-auto" />
-    </router-link>
+    <div class="flex-shrink-0 bg-white py-1.5 shadow relative z-30">
+      <div class="mx-auto w-full max-w-8xl px-2 sm:px-4 lg:px-5 lg:pr-14">
+        <router-link
+          to="/home"
+          class="relative px-2 sm:px-0 flex h-16 items-center justify-between"
+        >
+          <img src="../assets/logo.png" alt="image" class="mx-auto" />
+        </router-link>
+      </div>
     </div>
     <div class="flex-1 flex flex-col justify-center py-8 relative">
       <div class="flex flex-col justify-center items-center max-w-sm mx-auto w-full px-3 sm:px-4 gap-6">
@@ -43,7 +48,8 @@
             <div>
               <label for="firstName" class="block text-sm font-normal text-grey-900 text-start">First Name</label>
               <div class="mt-1">
-                <input id="firstName" name="firstName" type="text" autocomplete="firstName" required="" class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach sm:text-sm" />
+                <input id="firstName" name="firstName" type="text" autocomplete="firstName" required="" class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach sm:text-sm invalid:bg-red/5 invalid:border-red peer" />
+                <p class="text-red text-xs peer-invalid:block hidden pt-0.5"><b>Error:</b> Choose atleast First Name</p>
               </div>
             </div>
 
@@ -64,14 +70,16 @@
             <div>
               <label for="email" class="block text-sm font-normal text-grey-900 text-start">Email address</label>
               <div class="mt-1">
-                <input id="email" name="email" type="email" autocomplete="email" required="" class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach sm:text-sm" />
+                <input id="email" name="email" type="email" autocomplete="email" required="" class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach sm:text-sm invalid:bg-red/5  invalid:border-red peer" />
+                <p class="text-red text-xs peer-invalid:block hidden pt-0.5"><b>Error:</b> Invalid email</p>
               </div>
             </div>
 
             <div>
               <label for="username" class="block text-sm font-normal text-grey-900 text-start">Username</label>
               <div class="mt-1">
-                <input id="username" name="username" type="text" autocomplete="username" required="" class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach sm:text-sm" />
+                <input id="username" name="username" type="text" autocomplete="username" required="" class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach sm:text-sm invalid:bg-red/5  invalid:border-red peer" />
+                <p class="text-red text-xs peer-invalid:block hidden pt-0.5"><b>Error:</b> Username already exist</p>
               </div>
             </div>
 
@@ -85,7 +93,8 @@
             <div>
               <label for="repeatPassword" class="block text-sm font-normal text-grey-900 text-start">Repeat Password</label>
               <div class="mt-1">
-                <input id="repeatPassword" name="repeatPassword" type="password" autocomplete="current-password" required="" class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach sm:text-sm" />
+                <input id="repeatPassword" name="repeatPassword" type="password" autocomplete="current-password" required class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach sm:text-sm invalid:bg-red/5  invalid:border-red peer" />
+                <p class="text-red text-xs peer-invalid:block hidden pt-0.5"><b>Error:</b> Repeat password is not matched</p>
               </div>
             </div>
 
