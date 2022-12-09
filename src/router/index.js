@@ -4,6 +4,7 @@ import Customers from '@/views/CustomersView.vue';
 import CreateAccount from '@/components/CreateAccount.vue';
 import Login from '@/components/Login.vue';
 import ForgotPassword from '@/components/ForgotPassword.vue';
+import UserProfile from '@/components/UserProfile.vue';
 
 const routes = [{
         path: '',
@@ -40,6 +41,12 @@ const routes = [{
         name: 'Customers',
         component: Customers,
         meta: { title: 'BrowTricks | Customers' }
+    },
+    {
+        path: '/user-profile',
+        name: 'UserProfile',
+        component: UserProfile,
+        meta: { title: 'BrowTricks | User' }
     }
 ];
 
