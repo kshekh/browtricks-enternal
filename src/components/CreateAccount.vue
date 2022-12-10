@@ -1,118 +1,116 @@
 <template>
-  <div class="create-account-wrapper">
-    <div class="top-navbar bg-white px-3 py-4">
-      <img src="../assets/logo.png" alt="image" class="mx-auto" />
+  <div class="flex flex-col min-h-screen">
+    <div class="flex-shrink-0 bg-white py-1.5 shadow relative z-30">
+      <div class="mx-auto w-full max-w-8xl px-2 sm:px-4 lg:px-5 lg:pr-14">
+        <router-link
+          to="/home"
+          class="relative px-2 sm:px-0 flex h-16 items-center justify-between"
+        >
+          <img src="../assets/logo.png" alt="image" class="mx-auto" />
+        </router-link>
+      </div>
     </div>
-    <div class="form-wrapper flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div class="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 class="text-center text-2xl font-bold tracking-tight text-gray-900">LOGIN WITH</h2>
-      </div>
-
-      <div class="sm:mx-auto sm:w-full sm:max-w-md">
-
-        <div class="my-6 grid grid-cols-3 gap-3">
-          <div>
-            <a href="#" class="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50">
-              <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M20 10c0-5.523-4.477-10-10-10S0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.128 20 14.991 20 10z" clip-rule="evenodd" />
+    <div class="flex-1 flex flex-col justify-center py-8 relative">
+      <div class="flex flex-col justify-center items-center max-w-sm mx-auto w-full px-3 sm:px-4 gap-6">
+        <h2 class="text-center text-13 font-semibold tracking-tight leading-none text-black uppercase">Signup WITH</h2>
+        <div class=" grid  grid-cols-3 gap-2 w-full max-w-64 xs:max-w-none ">
+          <button type="button" class="inline-flex  w-full  uppercase justify-center items-center rounded-md border border-peach bg-peach py-3 px-3 h-full  text-13 font-semibold text-grey-800 shadow-sm hover:bg-peach-2 hover:border-peach-2 ease-in-out duration-300">
+              <svg class="w-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M11.4987 0C10.6457 0.0589997 9.64869 0.604996 9.06769 1.31599C8.5377 1.96099 8.1017 2.91898 8.2717 3.84998C9.20369 3.87898 10.1667 3.31998 10.7247 2.59698C11.2467 1.92399 11.6417 0.971994 11.4987 0Z" />
+                <path d="M14.8715 5.36908C14.0525 4.34209 12.9015 3.74609 11.8145 3.74609C10.3795 3.74609 9.77255 4.43309 8.77555 4.43309C7.74756 4.43309 6.96656 3.74809 5.72557 3.74809C4.50658 3.74809 3.20858 4.49309 2.38559 5.76708C1.2286 7.56107 1.4266 10.9341 3.30158 13.807C3.97258 14.835 4.86857 15.991 6.04057 16.001C7.08356 16.011 7.37756 15.332 8.79055 15.325C10.2035 15.317 10.4715 16.01 11.5125 15.999C12.6855 15.99 13.6305 14.709 14.3015 13.681C14.7825 12.944 14.9615 12.573 15.3345 11.741C12.6215 10.7081 12.1865 6.85008 14.8715 5.36908Z" />
+              
               </svg>
-              <span class="ml-2">Facebook</span>
-            </a>
-          </div>
-
-          <div>
-            <a href="#" class="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50">
-              <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
-              </svg>
-              <span class="ml-2">Twitter</span>
-            </a>
-          </div>
-
-          <div>
-            <a href="#" class="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50">
-              <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="ml-2">GitHub</span>
-            </a>
-          </div>
-        </div>
-        <div class="relative">
-          <div class="absolute inset-0 flex items-center">
-            <div class="w-full border-t border-gray-300" />
-          </div>
-          <div class="relative flex justify-center text-sm">
-            <span class="bg-gray px-2 text-gray-900 font-bold">OR</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <h2 class="mt-6 text-start text-3xl font-bold tracking-tight text-gray-900 mb-3 mt-0">Create an Account</h2>
+          <span class="ml-2 hidden xs:block">Apple</span>
+          </button>  
+          <button type="button" class="inline-flex w-full uppercase justify-center items-center rounded-md border border-peach bg-peach py-3 px-3 h-full  text-13 font-semibold text-grey-800 shadow-sm hover:bg-peach-2 hover:border-peach-2 ease-in-out duration-300">
+          <svg class="w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M0 8C0 3.5888 3.5888 0 8 0C9.78156 0 11.4678 0.573181 12.8765 1.6576L11.0174 4.07253C10.1464 3.40206 9.10301 3.04762 8 3.04762C5.26926 3.04762 3.04762 5.26926 3.04762 8C3.04762 10.7307 5.26926 12.9524 8 12.9524C10.1994 12.9524 12.0684 11.5114 12.7125 9.52381H8V6.47619H16V8C16 12.4112 12.4112 16 8 16C3.5888 16 0 12.4112 0 8Z" />
+          </svg>
+            <span class="ml-2 hidden xs:block">Google</span>
+          </button>  
+          <button type="button" class="inline-flex w-full uppercase justify-center items-center rounded-md border border-peach bg-peach py-3 px-3 h-full  text-13 font-semibold text-grey-800 shadow-sm hover:bg-peach-2 hover:border-peach-2 ease-in-out duration-300">
+          <svg class="w-5" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9.23896 16V8.70218H11.6875L12.0549 5.85725H9.23896V4.04118C9.23896 3.21776 9.46667 2.65661 10.6488 2.65661L12.154 2.65599V0.111384C11.8937 0.0775563 11.0002 0 9.96017 0C7.78849 0 6.30172 1.32557 6.30172 3.75942V5.85725H3.8457V8.70218H6.30172V16H9.23896Z" />
+          </svg><span class="ml-2 hidden xs:block">Facebook</span>
+          </button>      
+        </div> 
+        <div class="relative w-full">
+              <div class="absolute inset-0 flex items-center">
+                <div class="w-full h-px bg-gray-300"></div>
+              </div>
+              <div class="relative flex justify-center text-sm">
+                <span class="bg-grey-200 px-4 text-gray-900 font-bold">OR</span>
+              </div>
+        </div> 
+        <div class="bg-white p-5 rounded-lg sm:p-8 border border-grey-500 shadow-3 w-full">
+          <h2 class=" text-start text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 pb-5 ">Create an Account</h2>
           <form class="space-y-6" action="#" method="POST">
             <div>
-              <label for="firstName" class="block text-sm font-medium text-gray-700 text-start">First Name</label>
+              <label for="firstName" class="block text-sm font-normal text-grey-900 text-start">First Name</label>
               <div class="mt-1">
-                <input id="firstName" name="firstName" type="text" autocomplete="firstName" required="" class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" />
+                <input id="firstName" name="firstName" type="text" autocomplete="firstName" required="" class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach sm:text-sm invalid:bg-red/5 invalid:border-red peer" />
+                <p class="text-red text-xs peer-invalid:block hidden pt-0.5"><b>Error:</b> Choose atleast First Name</p>
               </div>
             </div>
 
             <div>
-              <label for="lastName" class="block text-sm font-medium text-gray-700 text-start">Last Name</label>
+              <label for="lastName" class="block text-sm font-normal text-grey-900 text-startvvv">Last Name</label>
               <div class="mt-1">
-                <input id="lastName" name="lastName" type="text" autocomplete="lastName" required="" class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" />
+                <input id="lastName" name="lastName" type="text" autocomplete="lastName" required="" class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach sm:text-sm" />
               </div>
             </div>
 
             <div>
-              <label for="phoneNumber" class="block text-sm font-medium text-gray-700 text-start">Phone Number</label>
+              <label for="phoneNumber" class="block text-sm font-normal text-grey-900 text-start">Phone Number</label>
               <div class="mt-1">
-                <input id="phoneNumber" name="phoneNumber" type="text" autocomplete="phoneNumber" required="" class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" />
+                <input id="phoneNumber" name="phoneNumber" type="text" autocomplete="phoneNumber" required="" class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach sm:text-sm" />
               </div>
             </div>
 
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 text-start">Email address</label>
+              <label for="email" class="block text-sm font-normal text-grey-900 text-start">Email address</label>
               <div class="mt-1">
-                <input id="email" name="email" type="email" autocomplete="email" required="" class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" />
+                <input id="email" name="email" type="email" autocomplete="email" required="" class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach sm:text-sm invalid:bg-red/5  invalid:border-red peer" />
+                <p class="text-red text-xs peer-invalid:block hidden pt-0.5"><b>Error:</b> Invalid email</p>
               </div>
             </div>
 
             <div>
-              <label for="username" class="block text-sm font-medium text-gray-700 text-start">Username</label>
+              <label for="username" class="block text-sm font-normal text-grey-900 text-start">Username</label>
               <div class="mt-1">
-                <input id="username" name="username" type="text" autocomplete="username" required="" class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" />
+                <input id="username" name="username" type="text" autocomplete="username" required="" class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach sm:text-sm invalid:bg-red/5  invalid:border-red peer" />
+                <p class="text-red text-xs peer-invalid:block hidden pt-0.5"><b>Error:</b> Username already exist</p>
               </div>
             </div>
 
             <div>
-              <label for="password" class="block text-sm font-medium text-gray-700 text-start">Password</label>
+              <label for="password" class="block text-sm font-normal text-grey-900 text-start">Password</label>
               <div class="mt-1">
-                <input id="password" name="password" type="password" autocomplete="current-password" required="" class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" />
+                <input id="password" name="password" type="password" autocomplete="current-password" required="" class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach sm:text-sm" />
               </div>
             </div>
 
             <div>
-              <label for="repeatPassword" class="block text-sm font-medium text-gray-700 text-start">Repeat Password</label>
+              <label for="repeatPassword" class="block text-sm font-normal text-grey-900 text-start">Repeat Password</label>
               <div class="mt-1">
-                <input id="repeatPassword" name="repeatPassword" type="password" autocomplete="current-password" required="" class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" />
+                <input id="repeatPassword" name="repeatPassword" type="password" autocomplete="current-password" required class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach sm:text-sm invalid:bg-red/5  invalid:border-red peer" />
+                <p class="text-red text-xs peer-invalid:block hidden pt-0.5"><b>Error:</b> Repeat password is not matched</p>
               </div>
             </div>
 
-            <div class="flex items-center justify-between">
-              <div class="flex items-center">
-                <button type="submit" class="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Let's get started</button>
+            <div class="flex flex-wrap gap-2 items-center justify-center xs:justify-between">
+              <div class="flex items-center w-full xs:w-auto">
+                <button type="submit" class="flex w-full justify-center rounded-md border border-transparent bg-peach  py-2 px-4 text-15 font-semibold text-black shadow-sm hover:bg-peach-2 focus:outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300">Let's get started</button>
               </div>
 
-              <div class="text-sm">
+              <div class="text-sm text-grey-900 font-normal">
                 <span>Already have an account?</span>
-                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500 ml-2">Login</a>
+                <router-link to="/login" class="text-base inline-flex font-medium text-blue hover:text-peach-4 transition-all ease-in-out duration-300 ml-2">Login</router-link>
+              
               </div>
             </div>
           </form>
-        </div>
+        </div>  
       </div>
     </div>
   </div>
@@ -127,7 +125,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<!-- <style lang="scss" scoped>
 $bg-gray : #DFDFDF;
 .bg-gray {
   background-color: $bg-gray;
@@ -135,4 +133,4 @@ $bg-gray : #DFDFDF;
 .create-account-wrapper {
   background: $bg-gray;
 }
-</style>
+</style> -->

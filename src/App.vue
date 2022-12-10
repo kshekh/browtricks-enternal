@@ -1,6 +1,7 @@
 <template>
-  <HomeCustomer />
-  <!-- <ForgotPassword /> -->
+   <router-view></router-view>
+  <!-- <HomeCustomer /> -->
+   <!-- <ForgotPassword />  -->
   <!-- <Login /> -->
   <!-- <CreateAccount /> -->
   <!-- <ul class="post-grid">
@@ -24,14 +25,14 @@
 </template>
 
 <script>
-import HomeCustomer from './components/HomeCustomer.vue';
+// import HomeCustomer from './components/HomeCustomer.vue';
 // import CreateAccount from './components/CreateAccount.vue';
 // import Login from './components/Login.vue';
-// import ForgotPassword from './components/ForgotPassword.vue';
+import ForgotPassword from './components/ForgotPassword.vue';
 export default {
   name: 'App',
   components: {
-    HomeCustomer,
+    // HomeCustomer,
     // CreateAccount,
     // Login,
     // ForgotPassword,
@@ -89,7 +90,7 @@ export default {
   }
 }
 </script>
-
+<!-- 
 <style>
 strong, i {
   word-break: break-word;
@@ -132,4 +133,4 @@ h3 {
    font-size: 14px;
    margin-left: 10px;
 }
-</style>
+</style> -->
