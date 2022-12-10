@@ -8,12 +8,12 @@
           <div class="flex items-center relative gap-3">
             <div class="flex items-center md:hidden">
               <!-- Open menu button-->
-              <button type="button" 
+              <button type="button"  @click="showNavbar = !showNavbar"
                 class="inline-flex items-center justify-center rounded-md p-2 border border-grey-300 text-grey-800 hover:border-grey-800 hover:bg-grey-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 aria-controls="mobile-menu" aria-expanded="false">
                 <span class="sr-only">Open side menu</span>
-                  <Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
-                 <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" /> -->
+                  <Bars3Icon v-if="!showNavbar" class="block h-6 w-6" aria-hidden="true" />
+                 <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" /> 
               </button>
             </div>
             <router-link to="/home" class="flex-shrink-0">
@@ -93,7 +93,29 @@
     <div class="flex flex-1 relative ">
       <!-- Left sidebar Account profile -->
 
-      <aside class="bg-white md:bg-grey-200 w-68 md:block absolute z-20 left-0 inset-y-0 shadow-md border-r bordr-grey-500
+      <aside v-if="showNavbar" class="bg-white md:bg-grey-200 w-68 md:hidden absolute z-20 left-0 inset-y-0 shadow-md border-r bordr-grey-500
+      md:static md:shadow-none
+      ">
+        <nav class="flex-1 space-y-1 pr-2 py-4" aria-label="Sidebar">
+          <div class="space-y-2 relative">
+            <a v-for="item in sidebarNavigation" :key="item.name" :href="item.href" :class="
+              item.current
+                ? 'before:opacity-100 after:opacity-100'
+                : 'before:opacity-0 after:opacity-0'
+            "
+              class="group text-grey-800 flex items-center pr-2 pl-6 py-2.5 text-sm font-medium rounded-md transition-all ease-in-out duration-300 relative after:rounded-full after:w-1.5 after:bg-peach after:absolute after:inset-y-0 after:left-0 before:absolute before:bg-peach before:inset-0 before:rounded before:left-3 hover:before:opacity-100 hover:after:opacity-100 after:transition-all after:ease-in-out after:duration-300 before:transition-all before:ease-in-out before:duration-300"
+              :aria-current="item.current ? 'page' : undefined">
+              <span class="relative z-10 flex items-center">
+                <component :is="item.icon" class="mr-3 h-5 w-5 text-grey-900" aria-hidden="true" />
+                {{ item.name }}
+              </span>
+            </a>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Desktop Only -->
+      <aside class="bg-white hidden md:bg-grey-200 w-68 md:block absolute z-20 left-0 inset-y-0 shadow-md border-r bordr-grey-500
       md:static md:shadow-none
       ">
         <nav class="flex-1 space-y-1 pr-2 py-4" aria-label="Sidebar">
@@ -179,7 +201,7 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 
 import {
   Disclosure,
@@ -238,7 +260,7 @@ const sidebarNavigation = [
 ];
 
 const setupCount = reactive(6);
-
+const showNavbar = ref(false);
 
 // Setup Guide data
 const customerSteps = reactive([
