@@ -35,7 +35,7 @@
     </Transition>
 
     <!-- Desktop Only -->
-    <aside class="bg-white hidden md:bg-grey-200 w-68 md:block absolute z-20 left-0 inset-y-0 shadow-md border-r bordr-grey-500
+    <aside class="h-full bg-white hidden md:bg-grey-200 w-68 md:block absolute z-20 left-0 inset-y-0 shadow-md border-r bordr-grey-500
     md:static md:shadow-none
     ">
       <nav class="flex-1 space-y-1 pr-2 py-4" aria-label="Sidebar">

@@ -3,6 +3,7 @@ import Home from '@/views/HomeView.vue';
 import Customers from '@/views/CustomersView.vue';
 import Login from '@/views/LoginView.vue';
 import UserProfile from '@/views/UserProfileView.vue';
+import Settings from '@/views/SettingsView.vue';
 import CreateAccount from '@/components/CreateAccount.vue';
 import ForgotPassword from '@/components/ForgotPassword.vue';
 
@@ -47,6 +48,12 @@ const routes = [{
         name: 'UserProfile',
         component: UserProfile,
         meta: { title: 'BrowTricks | User' }
+    },
+    {
+        path: '/settings',
+        name: 'Settings',
+        component: Settings,
+        meta: { title: 'BrowTricks | Settings' }
     }
 ];
 

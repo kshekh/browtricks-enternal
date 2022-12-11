@@ -28,73 +28,70 @@
             Your media
           </h2>
           <div class="coverflow-hidden rounded-xl bg-white shadow-3 border border-grey-300 divide-y divide-grey-300">
-<!-- Table we are still working on -->
-<div class="py-10 px-3 flex justify-center">
-<p>Table we are still working on</p>
-</div>
-
-
-
-
-            <div class="hidden sm:items-center p-4">
+            <!-- Table we are still working on -->
+            <div class="hidden py-10 px-3 flex justify-center">
+              <p>Table we are still working on</p>
+            </div>
+            <div class="sm:items-center p-4 md:flex">
               <div class="sm:flex-auto">
-                <h1 class="text-xl font-semibold text-gray-900">Users</h1>
-                <p class="mt-2 text-sm text-gray-700">A list of all the users in your account including their name,
-                  title, email and role.</p>
+                <div class="w-full">
+                  <label for="search" class="sr-only">Search</label>
+                  <div class="relative">
+                    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                      <MagnifyingGlassIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+                    </div>
+                    <input id="search" name="search" class="block w-full rounded-md border border-gray-300 bg-white py-2 pl-10 pr-3 text-sm placeholder-gray-500 focus:border-indigo-500 focus:text-gray-900 focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm" placeholder="Search" type="search" />
+                  </div>
+                </div>
               </div>
               <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
                 <button type="button"
-                  class="flex w-full justify-center rounded-md border border-transparent bg-peach py-2 px-4 text-base font-semibold text-black shadow-sm hover:bg-peach-2 focus:outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300">Add
-                  user</button>
+                  class="flex justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-base text-black shadow-sm hover:bg-peach-2 focus:outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300">
+                  <svg
+                    class="icon"
+                    style="width:24px;height:24px"
+                    viewBox="0 0 24 24"
+                  >
+                    <path :d="icons.sort" />
+                  </svg>
+                  Sort</button>
               </div>
             </div>
 
-
-
-            <div class="hidden flex-col">
+            <div class="flex-col">
               <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                   <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5">
                     <table class="min-w-full divide-y divide-gray-300">
                       <thead class="bg-gray-50">
                         <tr>
-                          <th scope="col"
-                            class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Name</th>
-                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Title</th>
-                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Status</th>
-                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Role</th>
-                          <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
-                            <span class="sr-only">Edit</span>
-                          </th>
+                          <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Media</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Customer</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Link</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Date added</th>
                         </tr>
                       </thead>
                       <tbody class="divide-y divide-gray-200 bg-white">
-                        <tr v-for="person in users" :key="person.email">
+                        <tr v-for="cust in customers" :key="cust.email">
                           <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
                             <div class="flex items-center">
                               <div class="h-10 w-10 flex-shrink-0">
-                                <img class="h-10 w-10 rounded" :src="person.image" alt="" />
+                                <img class="h-10 w-10 rounded" :src="cust.image" alt="" />
                               </div>
                               <div class="ml-4">
-                                <div class="font-medium text-gray-900">{{ person.name }}</div>
-                                <div class="text-gray-500">{{ person.type }}</div>
+                                <div class="font-medium text-gray-900">{{ cust.name }}</div>
+                                <div class="text-gray-500">{{ cust.type }}</div>
                               </div>
                             </div>
                           </td>
                           <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            <div class="text-gray-900">{{ person.title }}</div>
-                            <div class="text-gray-500">{{ person.department }}</div>
+                            <div class="text-gray-900">{{ cust.name }}</div>
                           </td>
                           <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                             <span
                               class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">Active</span>
                           </td>
-                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ person.role }}</td>
-                          <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit<span class="sr-only">, {{
-                                person.name
-                            }}</span></a>
-                          </td>
+                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ cust.date_added }}</td>
                         </tr>
                       </tbody>
                     </table>
@@ -124,138 +121,56 @@ export default {
 }
 </script>
 
-
 <script setup>
+import { MagnifyingGlassIcon } from '@heroicons/vue/20/solid';
 
-import { reactive, ref  } from "vue";
-
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  Menu,
-  MenuButton,
-
-  MenuItem,
-  MenuItems,
-} from "@headlessui/vue";
-import {
-  CheckIcon,
-  HomeIcon,
-  Cog6ToothIcon,
-  Bars3Icon,
-  DocumentTextIcon,
-  ChevronDownIcon,
-  HeartIcon,
-  PhotoIcon,
-} from "@heroicons/vue/20/solid";
-import {
-  Bars3CenterLeftIcon,
-  ClockIcon,
-  CreditCardIcon,
-  DocumentChartBarIcon,
-  ScaleIcon,
-  UserGroupIcon,
-  XMarkIcon,
-} from "@heroicons/vue/24/outline";
-
-import logo from '@/assets/logo.png';
-
-const user = {
-  "username": "Chris Luke",
-  "email": "Sincere@april.biz",
-  "profile": "https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&h=256&q=80",
-  "links": [
-    { name: 'Login', href: '/login', current: true },
-    { name: 'Create Account', href: '/signup', current: false },
-    { name: 'Forgot Password', href: '/forgot-password', current: false },
-  ]
+const icons = {
+  "sort": "M5.29289 2.29289C5.47386 2.11193 5.72386 2 6 2C6.27614 2 6.52614 2.11193 6.70711 2.29289L9.70711 5.29289C10.0976 5.68342 10.0976 6.31658 9.70711 6.70711C9.31658 7.09763 8.68342 7.09763 8.29289 6.70711L7 5.41421V13C7 13.5523 6.55228 14 6 14C5.44772 14 5 13.5523 5 13V5.41421L3.70711 6.70711C3.31658 7.09763 2.68342 7.09763 2.29289 6.70711C1.90237 6.31658 1.90237 5.68342 2.29289 5.29289L5.29289 2.29289ZM13 7C13 6.448 13.448 6 14 6C14.553 6 15 6.448 15 7V14.585L16.293 13.293C16.683 12.902 17.317 12.902 17.707 13.293C17.903 13.488 18 13.744 18 14.001C18 14.256 17.903 14.512 17.707 14.707L14.707 17.707C14.527 17.888 14.277 18 14 18C13.724 18 13.474 17.888 13.293 17.707L10.293 14.707C10.098 14.512 10 14.256 10 14.001C10 13.744 10.098 13.488 10.293 13.293C10.684 12.902 11.316 12.902 11.707 13.293L13 14.585V7Z"
 }
-// const navigation = [
-//   { name: "Dashboard", href: "#", current: true },
-//   { name: "Domains", href: "#", current: false },
-// ];
-const sidebarNavigation = [
-  { name: "Home", href: "#", icon: HomeIcon, current: true },
-  { name: "Customers", href: "#", icon: HeartIcon, current: false },
-  { name: "PMU Forms", href: "#", icon: DocumentTextIcon, current: false },
-  { name: "Media", href: "#", icon: PhotoIcon, current: false },
-  { name: "Settings", href: "#", icon: Cog6ToothIcon, current: false },
-  // { name: 'Reports', href: '#', icon: DocumentChartBarIcon, current: false },
-];
 
-const setupCount = reactive(6);
-
-const showNavbar = ref(false);
-// Setup Guide data
-const customerSteps = reactive([
-  {
-    title: "Add customers",
-    answer:
-      "Streamline your contact book by saving before/after media and signed forms all within our single app.",
-    isExpanded: true,
-  },
-  {
-    title: "Create forms",
-    answer:
-      "Use our pre-built templates for quick onboarding, or create your own templates for use again and again! View signing status, and manage sms integrations.",
-    isExpanded: false,
-  },
-  {
-    title: "Connect social accounts",
-    answer:
-      "Import user generated content across social channels. Gain access to advanced analytics and performance reports by connecting your brand social accounts.",
-    isExpanded: false,
-  },
-  {
-    title: "Add before/after media",
-    answer:
-      "Save customer content to your account. Build relationships by storing notes, images, and more directly to their profile.",
-    isExpanded: false,
-  },
-  {
-    title: "Enable SMS sending",
-    answer:
-      "Save customer content to your account. Build relationships by storing notes, images, and more directly to their profile.",
-    isExpanded: false,
-  },
-]);
-
-
-const users = [
+const customers = [
   {
     name: 'Lindsay Walton',
+    url: '#',
     title: 'Front-end Developer',
-    department: 'Optimization',
     type: 'JPG',
-    role: 'Member',
+    date_added: 'Nov 28, 2022',
     image:
       'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
   {
     name: 'Lindsay Walton',
+    url: '#',
     title: 'Front-end Developer',
-    department: 'Optimization',
     type: 'JPG',
-    role: 'Member',
+    date_added: 'Nov 28, 2022',
     image:
       'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
   {
     name: 'Lindsay Walton',
+    url: '#',
     title: 'Front-end Developer',
-    department: 'Optimization',
     type: 'JPG',
-    role: 'Member',
+    date_added: 'Nov 28, 2022',
     image:
       'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
   {
     name: 'Lindsay Walton',
+    url: '#',
     title: 'Front-end Developer',
-    department: 'Optimization',
     type: 'JPG',
-    role: 'Member',
+    date_added: 'Nov 28, 2022',
+    image:
+      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+  {
+    name: 'Lindsay Walton',
+    url: '#',
+    title: 'Front-end Developer',
+    type: 'JPG',
+    date_added: 'Nov 28, 2022',
     image:
       'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
