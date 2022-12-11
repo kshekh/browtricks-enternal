@@ -1,10 +1,10 @@
 import { createWebHistory, createRouter } from 'vue-router';
 import Home from '@/views/HomeView.vue';
 import Customers from '@/views/CustomersView.vue';
+import Login from '@/views/LoginView.vue';
+import UserProfile from '@/views/UserProfileView.vue';
 import CreateAccount from '@/components/CreateAccount.vue';
-import Login from '@/components/Login.vue';
 import ForgotPassword from '@/components/ForgotPassword.vue';
-import UserProfile from '@/components/UserProfile.vue';
 
 const routes = [{
         path: '',
