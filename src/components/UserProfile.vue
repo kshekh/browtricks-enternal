@@ -8,12 +8,12 @@
           <div class="flex items-center relative gap-3">
             <div class="flex items-center md:hidden">
               <!-- Open menu button-->
-              <button type="button" 
+              <button type="button"  @click="showNavbar = !showNavbar"
                 class="inline-flex items-center justify-center rounded-md p-2 border border-grey-300 text-grey-800 hover:border-grey-800 hover:bg-grey-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 aria-controls="mobile-menu" aria-expanded="false">
                 <span class="sr-only">Open side menu</span>
-                  <Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
-                 <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" /> -->
+                  <Bars3Icon v-if="!showNavbar" class="block h-6 w-6" aria-hidden="true" />
+                 <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" /> 
               </button>
             </div>
             <router-link to="/home" class="flex-shrink-0">
@@ -29,7 +29,8 @@
               <Menu as="div" class="relative ml-4 flex-shrink-0">
                 <div>
                   <MenuButton as="button" class="flex items-center gap-3 group">
-                    <span class="sm:inline-flex gap-1 hidden "><span class="text-sm text-grey-800 font-semibold">{{user.username}}</span>
+                    <span class="sm:inline-flex gap-1 hidden "><span
+                        class="text-sm text-grey-800 font-semibold">{{ user.username }}</span>
                       <ChevronDownIcon class="w-5" />
                     </span>
                     <span
@@ -45,19 +46,24 @@
                   <MenuItems
                     class="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div class="px-4 py-3" role="none">
-                      <p class="text-sm" role="none"><span class="block md:hidden text-sm text-grey-800 font-semibold"> {{user.username}}</span><span class="hidden md:block">Email</span></p>
-                      <p class="truncate text-sm font-medium text-grey-800" role="none">{{user.email}}</p>
+                      <p class="text-sm" role="none"><span class="block md:hidden text-sm text-grey-800 font-semibold">
+                          {{ user.username }}</span><span class="hidden md:block">Email</span></p>
+                      <p class="truncate text-sm font-medium text-grey-800" role="none">{{ user.email }}</p>
                     </div>
 
                     <div class="py-1" role="none">
                       <MenuItem v-for="item in user.links" :key="item.name" v-slot="{ active }">
-                      <a :href="item.href" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 text-left']">{{ item.name }}</a>
+                      <a :href="item.href"
+                        :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 text-left']">{{
+                            item.name
+                        }}</a>
                       </MenuItem>
                     </div>
 
                     <div class="py-1" role="none">
 
-                      <button type="button" class="block px-4 py-2 hover:bg-peach text-sm text-grey-800 transition-all ease-in-out duration-300 w-full text-left font-bold"
+                      <button type="button"
+                        class="block px-4 py-2 hover:bg-peach text-sm text-grey-800 transition-all ease-in-out duration-300 w-full text-left font-bold"
                         role="menuitem" tabindex="-1" id="menu-item-3">Sign out</button>
 
                     </div>
@@ -90,7 +96,29 @@
     <div class="flex flex-1 relative ">
       <!-- Left sidebar Account profile -->
 
-      <aside class="bg-white md:bg-grey-200 w-68 md:block absolute z-20 left-0 inset-y-0 shadow-md border-r bordr-grey-500
+      <aside v-if="showNavbar" class="bg-white md:bg-grey-200 w-68 md:hidden absolute z-20 left-0 inset-y-0 shadow-md border-r bordr-grey-500
+      md:static md:shadow-none
+      ">
+        <nav class="flex-1 space-y-1 pr-2 py-4" aria-label="Sidebar">
+          <div class="space-y-2 relative">
+            <a v-for="item in sidebarNavigation" :key="item.name" :href="item.href" :class="
+              item.current
+                ? 'before:opacity-100 after:opacity-100'
+                : 'before:opacity-0 after:opacity-0'
+            "
+              class="group text-grey-800 flex items-center pr-2 pl-6 py-2.5 text-sm font-medium rounded-md transition-all ease-in-out duration-300 relative after:rounded-full after:w-1.5 after:bg-peach after:absolute after:inset-y-0 after:left-0 before:absolute before:bg-peach before:inset-0 before:rounded before:left-3 hover:before:opacity-100 hover:after:opacity-100 after:transition-all after:ease-in-out after:duration-300 before:transition-all before:ease-in-out before:duration-300"
+              :aria-current="item.current ? 'page' : undefined">
+              <span class="relative z-10 flex items-center">
+                <component :is="item.icon" class="mr-3 h-5 w-5 text-grey-900" aria-hidden="true" />
+                {{ item.name }}
+              </span>
+            </a>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Desktop Only -->
+      <aside class="bg-white hidden md:bg-grey-200 w-68 md:block absolute z-20 left-0 inset-y-0 shadow-md border-r bordr-grey-500
       md:static md:shadow-none
       ">
         <nav class="flex-1 space-y-1 pr-2 py-4" aria-label="Sidebar">
@@ -121,8 +149,14 @@
             <div class="p-7">
               <div class="flex flex-col text-left">
                 <h6>Add Media</h6>
-                <div class="flex items-center justify-center gap-5 border border-dashed border-orange-200 mt-3 p-5 py-10 rounded-xl">
-                  <input type="file" id="myfile" name="myfile" class="inline-block w-auto" />
+                <div
+                  class="flex items-center justify-center gap-5 border border-dashed border-orange-200 mt-3 p-5 py-10 rounded-xl">
+                  <div class="flex flex-col gap-2">
+                    <div class="flex justify-center items-center"><file-select v-model="file"></file-select></div>
+                    <p v-if="file">{{ file.name }}</p>
+                    <p class="text-xs text-grey-800/80">Accepts .jpg., png., mp4., mov.</p>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -133,23 +167,38 @@
             Your media
           </h2>
           <div class="coverflow-hidden rounded-xl bg-white shadow-3 border border-grey-300 divide-y divide-grey-300">
-            <div class="sm:flex sm:items-center p-4">
+<!-- Table we are still working on -->
+<div class="py-10 px-3 flex justify-center">
+<p>Table we are still working on</p>
+</div>
+
+
+
+
+            <div class="hidden sm:items-center p-4">
               <div class="sm:flex-auto">
                 <h1 class="text-xl font-semibold text-gray-900">Users</h1>
-                <p class="mt-2 text-sm text-gray-700">A list of all the users in your account including their name, title, email and role.</p>
+                <p class="mt-2 text-sm text-gray-700">A list of all the users in your account including their name,
+                  title, email and role.</p>
               </div>
               <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-                <button type="button" class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">Add user</button>
+                <button type="button"
+                  class="flex w-full justify-center rounded-md border border-transparent bg-peach py-2 px-4 text-base font-semibold text-black shadow-sm hover:bg-peach-2 focus:outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300">Add
+                  user</button>
               </div>
             </div>
-            <div class="flex flex-col">
+
+
+
+            <div class="hidden flex-col">
               <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                   <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5">
                     <table class="min-w-full divide-y divide-gray-300">
                       <thead class="bg-gray-50">
                         <tr>
-                          <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Name</th>
+                          <th scope="col"
+                            class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Name</th>
                           <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Title</th>
                           <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Status</th>
                           <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Role</th>
@@ -176,13 +225,14 @@
                             <div class="text-gray-500">{{ person.department }}</div>
                           </td>
                           <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            <span class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">Active</span>
+                            <span
+                              class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">Active</span>
                           </td>
                           <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ person.role }}</td>
                           <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900"
-                              >Edit<span class="sr-only">, {{ person.name }}</span></a
-                            >
+                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit<span class="sr-only">, {{
+                                person.name
+                            }}</span></a>
                           </td>
                         </tr>
                       </tbody>
@@ -198,8 +248,28 @@
   </div>
 </template>
 
+
+
+<script>
+import FileSelect from './FileSelect.vue'
+
+export default {
+  components: {
+    FileSelect
+  },
+
+  data() {
+    return {
+      file: null
+    }
+  }
+}
+</script>
+
+
 <script setup>
-import { reactive } from "vue";
+
+import { reactive, ref  } from "vue";
 
 import {
   Disclosure,
@@ -207,7 +277,7 @@ import {
   DisclosurePanel,
   Menu,
   MenuButton,
- 
+
   MenuItem,
   MenuItems,
 } from "@headlessui/vue";
@@ -231,7 +301,7 @@ import {
   XMarkIcon,
 } from "@heroicons/vue/24/outline";
 
-import logo  from '@/assets/logo.png';
+import logo from '@/assets/logo.png';
 
 const user = {
   "username": "Chris Luke",
@@ -258,7 +328,7 @@ const sidebarNavigation = [
 
 const setupCount = reactive(6);
 
-
+const showNavbar = ref(false);
 // Setup Guide data
 const customerSteps = reactive([
   {

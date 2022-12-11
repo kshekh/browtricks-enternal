@@ -63,7 +63,7 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 
 import {
   Disclosure,
@@ -101,7 +101,7 @@ const user = {
 // ];
 
 const setupCount = reactive(6);
-
+const showNavbar = ref(false);
 
 // Setup Guide data
 const customerSteps = reactive([
