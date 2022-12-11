@@ -1,11 +1,11 @@
 <template>
-  <div class="home-page-wrapper">
+  <div class="user-details-wrapper">
     <div class="relative flex flex-col min-h-screen">
       <TopNavbar :is-login="isLogin" />
       <!-- column wrapper -->
       <div class="flex flex-1 relative ">
         <SidebarNavigation />
-        <h1>Customer page</h1>
+        <UserProfile />
       </div>
     </div>
   </div>
@@ -14,7 +14,7 @@
 <script setup>
 import { reactive, ref } from "vue";
 
-import HomeCustomer from '@/components/HomeCustomer.vue';
+import UserProfile from '@/components/UserProfile.vue';
 import TopNavbar from "@/components/helpers/TopNavbar.vue";
 import SidebarNavigation from "@/components/helpers/SidebarNavigation.vue";
 
