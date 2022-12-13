@@ -34,7 +34,7 @@
                           ? 'bg-peach'
                           : 'bg-white border-2 border-dashed  border-peach '
                       ">
-                      <CheckIcon v-if="step.isExpanded" class="h-4 w-4 text-grey-800" aria-hidden="true" />
+                       <CheckIcon v-if="step.isExpanded" class="h-4 w-4 text-grey-800" aria-hidden="true" />  
                     </span>
                   </span>
                   <div class="ml-7 flex min-w-0 flex-col space-y-3 pt-2">
@@ -65,7 +65,7 @@
 
 <script setup>
 import { reactive, ref } from "vue";
-
+import CheckIcon from '@/assets/icons/CheckIcon.vue';
 import {
   Disclosure,
   DisclosureButton,
@@ -74,24 +74,7 @@ import {
   MenuButton,
   MenuItem,
   MenuItems,
-} from "@headlessui/vue";
-import {
-  CheckIcon,
-  HomeIcon,
-  Cog6ToothIcon,
-  DocumentTextIcon,
-  HeartIcon,
-  PhotoIcon,
-} from "@heroicons/vue/20/solid";
-import {
-  Bars3CenterLeftIcon,
-  ClockIcon,
-  CreditCardIcon,
-  DocumentChartBarIcon,
-  ScaleIcon,
-  UserGroupIcon,
-  XMarkIcon,
-} from "@heroicons/vue/24/outline";
+} from "@headlessui/vue"; 
 
 const user = {
   "username": "Chris Luke",
