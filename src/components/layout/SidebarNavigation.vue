@@ -22,7 +22,7 @@
       <aside v-if="showNavbar" class="bg-white w-70 absolute z-20 left-0 inset-y-0 shadow-md       ">
         <nav class="flex-1 space-y-1 pr-2 py-4" aria-label="Sidebar">
           <div class="space-y-2 relative">
-            <a v-for="item in sidebarNavigation" :key="item.name" :href="item.href" :class="
+            <a v-for="item in layout/SidebarNavigation" :key="item.name" :href="item.href" :class="
               item.current
                 ? 'before:opacity-100 after:opacity-100'
                 : 'before:opacity-0 after:opacity-0'
@@ -41,9 +41,9 @@
 
     <!-- Desktop Only -->
     <div class="flex-col w-70 border-r bordr-grey-500 hidden md:flex  ">
-      <nav class="flex-1 space-y-1 pr-2 py-4" aria-label="Sidebar">
+      <nav class="flex-1 space-y-1 pr-2 py-4 bg-" aria-label="Sidebar">
         <div class="space-y-2 relative">
-          <router-link :to="item.href" tag="a" active-class="current" exact v-for="item in sidebarNavigation" :key="item.name" :class="
+          <router-link :to="item.href" tag="a" active-class="current" exact v-for="item in SidebarNavigation" :key="item.name" :class="
             item.current
               ? 'before:opacity-100 after:opacity-100'
               : 'before:opacity-0 after:opacity-0'
@@ -74,7 +74,7 @@ import MediaIcon from '@/assets/icons/MediaIcon.vue';
 import Bars3Icon from '@/assets/icons/Bars3Icon.vue';
 import XMarkIcon from '@/assets/icons/XMarkIcon.vue';
 
-const sidebarNavigation = [
+const SidebarNavigation = [
 
   { name: "Home", href: "/home", icon: HomeIcon },
   { name: "Customers", href: "/customers", icon: HeartIcon},
