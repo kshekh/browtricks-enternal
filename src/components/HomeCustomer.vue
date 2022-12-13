@@ -1,6 +1,7 @@
 <template>
+  <div class="relative flex flex-col min-h-screen w-full">
     <!-- Setup Guide -->
-    <div class="setup-guide-wrapper flex-1 p-3 md:p-5 xl:px-14 xl:py-12">
+    <div class="flex-1 p-3 md:p-5 xl:px-14 xl:py-12">
       <div class="coverflow-hidden rounded-xl bg-white shadow-3 border border-grey-300 divide-y divide-grey-300">
         <div class="border-b border-grey-200 p-7">
           <div class="flex flex-col text-left">
@@ -9,7 +10,6 @@
             </h1>
             <div class="flex items-center gap-5">
               <span class="whitespace-nowrap text-base font-normal text-grey-700">1 of 6 tasks complete</span>
-
               <div class="w-full bg-grey-300 rounded-full h-1.5 dark:bg-gray-700">  
                 <div class="bg-grey-700 h-1.5 rounded-full dark:bg-blue-500" style="width:20% /*width: index / ${setupCount} * 100 + '%'*/">  </div>
                   <!-- Step count % formulla `index / ${setupCount} * 100 + '%'` -->
@@ -60,10 +60,11 @@
         </div>
       </div>
     </div>
+    </div>
 </template>
 
 <script setup>
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 
 import {
   Disclosure,
@@ -74,6 +75,14 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/vue";
+import {
+  CheckIcon,
+  HomeIcon,
+  Cog6ToothIcon,
+  DocumentTextIcon,
+  HeartIcon,
+  PhotoIcon,
+} from "@heroicons/vue/20/solid";
 import {
   Bars3CenterLeftIcon,
   ClockIcon,
@@ -95,13 +104,8 @@ const user = {
     { name: 'Forgot Password', href: '/forgot-password', current: false },
   ]
 }
-// const navigation = [
-//   { name: "Dashboard", href: "#", current: true },
-//   { name: "Domains", href: "#", current: false },
-// ];
 
 const setupCount = reactive(6);
-
 
 // Setup Guide data
 const customerSteps = reactive([

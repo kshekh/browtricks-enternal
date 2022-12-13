@@ -6,24 +6,24 @@
         <div class="relative px-2 sm:px-0 flex h-16 items-center justify-between">
           <!-- Logo section -->
           <div class="flex items-center relative gap-3">
-            <div class="flex items-center md:hidden">
-              <!-- Open menu button-->
-              <button type="button" 
+            <!-- <div class="flex items-center md:hidden">
+               Open menu button
+              <button type="button"  @click="showNavbar = !showNavbar"
                 class="inline-flex items-center justify-center rounded-md p-2 border border-grey-300 text-grey-800 hover:border-grey-800 hover:bg-grey-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 aria-controls="mobile-menu" aria-expanded="false">
                 <span class="sr-only">Open side menu</span>
-                  <Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
-                 <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" /> -->
+                  <Bars3Icon v-if="!showNavbar" class="block h-6 w-6" aria-hidden="true" />
+                 <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" /> 
               </button>
-            </div>
-            <router-link to="/home" class="flex-shrink-0">
-              <img class="h-8 w-auto" :src="logo" alt="BrowTricks" />
+            </div> -->
+            <router-link to="/home" class="flex-shrink-0 home-logo pl-8 md:pl-0">
+              <img class="h-8 w-auto pl-10 md:pl-0" :src="logo" alt="BrowTricks" />
             </router-link>
           </div>
 
 
           <!-- Links section -->
-          <div class=" block ">
+          <div v-if="isLogin" class=" block ">
             <div class="flex items-center justify-end">
               <!-- Profile dropdown -->
               <Menu as="div" class="relative ml-4 flex-shrink-0">
@@ -62,17 +62,10 @@
 
                       <button type="button" class="block px-4 py-2 hover:bg-peach text-sm text-grey-800 transition-all ease-in-out duration-300 w-full text-left font-bold"
                         role="menuitem" tabindex="-1" id="menu-item-3">Sign out</button>
-
                     </div>
-
-
                   </MenuItems>
                 </transition>
               </Menu>
-
-
-
-
             </div>
           </div>
         </div>
@@ -93,11 +86,16 @@
 
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-import { MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
+import { ChevronDownIcon } from '@heroicons/vue/20/solid'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
-
 import logo  from '@/assets/logo.png';
+import { reactive } from '@vue/reactivity';
 
+const props = defineProps({
+  isLogin: Boolean,
+})
+
+// User data
 const user = {
   "username": "Chris Luke",
   "email": "Sincere@april.biz",
