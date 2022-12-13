@@ -74,12 +74,6 @@ module.exports = {
                 '4xl': '96rem',
             },
 
-            width:{
-                '3': '3px',
-                '68': '274px',
-                '119': '477px',
-                '22': '89px',
-            },
 
             minWidth: (theme) => ({
                 ...theme('spacing'),
@@ -111,10 +105,7 @@ module.exports = {
                 '4.5xl': '2.5rem',
                 '5.5xl': '3.5rem',
                 '6.5xl': ['4rem', '1.10'],
-                '7.5xl': '5rem',
-                  '13'  : '13px',
-                  '15'  : '15px',
-                  '32'  : '32px',
+                '7.5xl': '5rem'
             },
 
 
@@ -126,14 +117,9 @@ module.exports = {
             ringWidth: {
               3:'3px',
               5:'5px',
-              6:'6px',
+              6:'6px'
             },
-
-
         },
-
-
-
 
 
         screens: {
