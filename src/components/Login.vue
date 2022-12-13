@@ -117,12 +117,14 @@
 
             <div class="flex flex-wrap gap-2 items-center justify-between">
               <div class="flex items-center w-full xs:w-auto">
-                <button
+                <!-- <button
                   type="submit"
                   class="flex w-full justify-center rounded-md border border-transparent bg-peach py-2 px-4 text-base font-semibold text-black shadow-sm hover:bg-peach-2 focus:outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300"
                 >
                   Login
-                </button>
+                </button> -->
+                <!-- Reusable button component -->
+                <Button :on-click="consoleClick" class="flex w-full justify-center rounded-md border border-transparent bg-peach py-2 px-4 text-base font-semibold text-black shadow-sm hover:bg-peach-2 focus:outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300">Login</Button>
               </div>
 
               <div class="text-sm text-grey-900 font-normal">
@@ -150,7 +152,11 @@
 
 <script setup>
 import logo from '../assets/logo-browtricks.png';
+import Button from '../components/layout/Button.vue';
 
+function consoleClick() {
+  console.log('Button clicked')
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
