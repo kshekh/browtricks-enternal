@@ -1,5 +1,5 @@
 <template>
-  <div class="home-page-wrapper">
+ 
     <div class="relative flex flex-col min-h-screen">
       <TopNavbar :is-login="isLogin" />
       <!-- column wrapper -->
@@ -8,7 +8,7 @@
         <HomeCustomer />
       </div>
     </div>
-  </div>
+  
 </template>
 
 <script setup>

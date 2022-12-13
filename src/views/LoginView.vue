@@ -1,7 +1,7 @@
 <template>
-  <div class="login-wrapper">
+  
     <Login />
-  </div>
+  
 </template>
 
 <script setup>

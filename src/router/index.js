@@ -6,6 +6,8 @@ import UserProfile from '@/views/UserProfileView.vue';
 import Settings from '@/views/SettingsView.vue';
 import CreateAccount from '@/components/CreateAccount.vue';
 import ForgotPassword from '@/components/ForgotPassword.vue';
+import TopNavbar from '@/components/helpers/TopNavbar.vue';
+import SideBarNavigation from '@/components/helpers/SideBarNavigation.vue';
 
 const routes = [{
         path: '',
@@ -18,6 +20,18 @@ const routes = [{
         name: 'Create Account',
         component: CreateAccount,
         meta: { title: 'BrowTricks | Create Account' },
+    },
+    {
+        path: '/helpers/top-navbar',
+        name: 'Top Navbar',
+        component: TopNavbar,
+        meta: { title: 'BrowTricks | Top Navbar' },
+    },
+    {
+        path: '/helpers/sidebar-navigation',
+        name: 'Side Bar Navigation',
+        component: SideBarNavigation,
+        meta: { title: 'BrowTricks | Side Bar Navigation' },
     },
     {
         path: '/login',

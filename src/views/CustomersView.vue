@@ -1,14 +1,14 @@
 <template>
-  <div class="home-page-wrapper">
+ 
     <div class="relative flex flex-col min-h-screen">
       <TopNavbar :is-login="isLogin" />
       <!-- column wrapper -->
-      <div class="flex flex-1 relative ">
+      <div class="flex flex-1 relative items-stretch">
         <SidebarNavigation />
         <h1>Customer page</h1>
       </div>
     </div>
-  </div>
+  
 </template>
 
 <script setup>

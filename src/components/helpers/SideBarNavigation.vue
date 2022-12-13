@@ -1,20 +1,25 @@
 <template>
-  <div class="sidebar-wrapper">
+ 
     <!-- Left sidebar Account profile {{joo}} -->
-    <div class="open-menu-btn absolute flex items-center md:hidden">
+    
+   <div class="z-40 left-5 -top-14 absolute flex items-center md:hidden">
       <!-- Open menu button-->
       <button type="button"  @click="showNavbar = !showNavbar"
         class="inline-flex items-center justify-center rounded-md p-2 border border-grey-300 text-grey-800 hover:border-grey-800 hover:bg-grey-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
         aria-controls="mobile-menu" aria-expanded="false">
         <span class="sr-only">Open side menu</span>
+
           <component v-if="!showNavbar" :is="Bars3Icon" class="block h-6 w-6 text-grey-900" aria-hidden="true" />
           <component v-else :is="XMarkIcon" class="block h-6 w-6 text-grey-900" aria-hidden="true" />
+
       </button>
-    </div>
-    <Transition name="slide-fade">
-      <aside v-if="showNavbar" class="bg-white md:bg-grey-200 w-68 md:hidden absolute z-20 left-0 inset-y-0 shadow-md border-r bordr-grey-500
-      md:static md:shadow-none
-      ">
+    </div> 
+   
+    <!-- Mobile Sidebar -->
+      <Transition  name="custom-classes" 
+  enter-active-class="transition ease-in-out duration-300 transform" enter-from-class="-translate-x-full" enter-to-class="translate-x-0"
+  leave-active-class="transition ease-in-out duration-300 transform"  leave-from-class="translate-x-0" leave-to-class="-translate-x-full"> 
+      <aside v-if="showNavbar" class="bg-white w-68 absolute z-20 left-0 inset-y-0 shadow-md       ">
         <nav class="flex-1 space-y-1 pr-2 py-4" aria-label="Sidebar">
           <div class="space-y-2 relative">
             <a v-for="item in sidebarNavigation" :key="item.name" :href="item.href" :class="
@@ -32,12 +37,10 @@
           </div>
         </nav>
       </aside>
-    </Transition>
+    </Transition> 
 
     <!-- Desktop Only -->
-    <aside class="h-full bg-white hidden md:bg-grey-200 w-68 md:block absolute z-20 left-0 inset-y-0 shadow-md border-r bordr-grey-500
-    md:static md:shadow-none
-    ">
+    <div class="flex-col w-68 border-r bordr-grey-500 hidden md:flex  ">
       <nav class="flex-1 space-y-1 pr-2 py-4" aria-label="Sidebar">
         <div class="space-y-2 relative">
           <router-link :to="item.href" tag="a" active-class="current" exact v-for="item in sidebarNavigation" :key="item.name" :class="
@@ -54,8 +57,10 @@
           </router-link>
         </div>
       </nav>
-    </aside>
-  </div>
+    </div>
+
+    <!-- <div class="w-68 bg-red"></div> -->
+  
 </template>
 
 <script setup>
@@ -70,16 +75,19 @@ import Bars3Icon from '@/assets/icons/Bars3Icon.vue';
 import XMarkIcon from '@/assets/icons/XMarkIcon.vue';
 
 const sidebarNavigation = [
+
   { name: "Home", href: "/home", icon: HomeIcon },
   { name: "Customers", href: "/customers", icon: HeartIcon},
   { name: "PMU Forms", href: "#", icon: FormIcon},
   { name: "Media", href: "#", icon: MediaIcon},
   { name: "Settings", href: "/settings", icon: SettingsIcon},
+
+  
 ];
 const showNavbar = ref(false);
 </script>
 
-<style lang="scss" scoped>
+<!-- <style lang="scss" scoped>
 .open-menu-btn {
   top: 18px;
   position: fixed;
@@ -99,5 +107,5 @@ const showNavbar = ref(false);
 .slide-fade-leave-to {
   transform: translateX(-20px);
   opacity: 0;
-}
-</style>
+} 
+</style>-->
