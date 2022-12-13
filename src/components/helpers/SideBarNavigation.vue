@@ -19,7 +19,7 @@
       <Transition  name="custom-classes" 
   enter-active-class="transition ease-in-out duration-300 transform" enter-from-class="-translate-x-full" enter-to-class="translate-x-0"
   leave-active-class="transition ease-in-out duration-300 transform"  leave-from-class="translate-x-0" leave-to-class="-translate-x-full"> 
-      <aside v-if="showNavbar" class="bg-white w-68 absolute z-20 left-0 inset-y-0 shadow-md       ">
+      <aside v-if="showNavbar" class="bg-white w-70 absolute z-20 left-0 inset-y-0 shadow-md       ">
         <nav class="flex-1 space-y-1 pr-2 py-4" aria-label="Sidebar">
           <div class="space-y-2 relative">
             <a v-for="item in sidebarNavigation" :key="item.name" :href="item.href" :class="
@@ -40,7 +40,7 @@
     </Transition> 
 
     <!-- Desktop Only -->
-    <div class="flex-col w-68 border-r bordr-grey-500 hidden md:flex  ">
+    <div class="flex-col w-70 border-r bordr-grey-500 hidden md:flex  ">
       <nav class="flex-1 space-y-1 pr-2 py-4" aria-label="Sidebar">
         <div class="space-y-2 relative">
           <router-link :to="item.href" tag="a" active-class="current" exact v-for="item in sidebarNavigation" :key="item.name" :class="
@@ -59,7 +59,7 @@
       </nav>
     </div>
 
-    <!-- <div class="w-68 bg-red"></div> -->
+   
   
 </template>
 
