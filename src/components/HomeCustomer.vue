@@ -60,7 +60,7 @@
         </div>
       </div>
     </div>
-  </div>
+    </div>
 </template>
 
 <script setup>
@@ -92,8 +92,6 @@ import {
   UserGroupIcon,
   XMarkIcon,
 } from "@heroicons/vue/24/outline";
-
-import logo  from '@/assets/logo.png';
 
 const user = {
   "username": "Chris Luke",

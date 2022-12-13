@@ -1,8 +1,8 @@
 <template>
-  <div class="user-profile-wrapper relative flex flex-col min-h-screen w-full">
+  <div class="user-profile-wrapper relative flex flex-col w-full">
       <!-- Projects List -->
       <div class="flex-1 p-3 md:p-5 xl:px-14 xl:py-12">
-        <div class="mb-7 pb-7 border-b border-solid border-gray-300">
+        <div class="mb-7 pb-10 space-y-5 border-b border-solid border-gray-300">
           <h2 class="flex-1 text-2.5xl font-semibold leading-none text-black pb-3">
             Chris Luke
           </h2>
@@ -23,32 +23,30 @@
             </div>
           </div>
         </div>
-        <div class="mb-7">
-          <h2 class="flex-1 text-2.5xl font-semibold leading-none text-black pb-3">
+        <div class="mb-7 space-y-7">
+          <h2 class="flex-1 text-2.5xl font-semibold leading-none text-black">
             Your media
           </h2>
-          <div class="coverflow-hidden rounded-xl bg-white shadow-3 border border-grey-300 divide-y divide-grey-300">
-            <!-- Table we are still working on -->
-            <div class="hidden py-10 px-3 flex justify-center">
-              <p>Table we are still working on</p>
-            </div>
-            <div class="sm:items-center p-4 md:flex">
-              <div class="sm:flex-auto">
-                <div class="w-full">
+          <div class="coverflow-hidden rounded-xl bg-white pb-3  border border-grey-300 divide-y divide-grey-300">
+   
+            
+            <div class="p-4 gap-2 md:gap-5 flex">
+              
+                <div class="w-full flex-1">
                   <label for="search" class="sr-only">Search</label>
                   <div class="relative">
                     <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                       <MagnifyingGlassIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
                     </div>
-                    <input id="search" name="search" class="block w-full rounded-md border border-gray-300 bg-white py-2 pl-10 pr-3 text-sm placeholder-gray-500 focus:border-indigo-500 focus:text-gray-900 focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm" placeholder="Search" type="search" />
+                    <input id="search" name="search" class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-800 shadow-sm font-medium focus:border-peach focus:outline-none focus:ring-peach sm:text-sm peer pl-10" placeholder="Search" type="search" />
                   </div>
                 </div>
-              </div>
-              <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+              
+              <div class=" sm:flex-none flex">
                 <button type="button"
-                  class="flex justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-base text-black shadow-sm hover:bg-peach-2 focus:outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300">
+                  class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-grey-800 shadow-sm hover:bg-peach focus:outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300 hover:border-peach">
                   <svg
-                    class="icon"
+                    class="icon relative top-0.5"
                     style="width:24px;height:24px"
                     viewBox="0 0 24 24"
                   >
@@ -59,16 +57,16 @@
             </div>
 
             <div class="flex-col">
-              <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div class="overflow-x-auto">
                 <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                  <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5">
-                    <table class="min-w-full divide-y divide-gray-300">
-                      <thead class="bg-gray-50">
+                  <div class="overflow-hidden  ">
+                    <table class="min-w-full border-0 border-collapse divide-y divide-gray-200">
+                      <thead class="">
                         <tr>
-                          <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Media</th>
-                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Customer</th>
-                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Link</th>
-                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Date added</th>
+                          <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-grey-800 sm:pl-6">Media</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-grey-800">Customer</th>
+                          <th scope="col" class="px-3 py-3.5 text-center text-sm font-semibold text-grey-800">Link</th>
+                          <th scope="col" class="px-3 py-3.5 pr-8 text-right text-sm font-semibold text-grey-800">Date added</th>
                         </tr>
                       </thead>
                       <tbody class="divide-y divide-gray-200 bg-white">
@@ -79,19 +77,24 @@
                                 <img class="h-10 w-10 rounded" :src="cust.image" alt="" />
                               </div>
                               <div class="ml-4">
-                                <div class="font-medium text-gray-900">{{ cust.name }}</div>
+                                <div class="font-medium text-grey-800">{{ cust.name }}</div>
                                 <div class="text-gray-500">{{ cust.type }}</div>
                               </div>
                             </div>
                           </td>
-                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            <div class="text-gray-900">{{ cust.name }}</div>
+                          <td class="whitespace-nowrap px-3 py-4 text-sm text-blue">
+                            {{ cust.name }} 
                           </td>
-                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            <span
-                              class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">Active</span>
+                          <td class=" text-center">
+                           <a href="javascript:void(0)" class="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white text-sm font-medium text-blue shadow-sm hover:bg-blue hover:border-blue hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2  ease-in-out duration-300 w-12 h-12">
+                            <svg class="w-5 h-5" viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                                          <path d="M5.79297 7.60407C6.0521 7.95085 6.38271 8.23779 6.76237 8.44543C7.14202 8.65306 7.56185 8.77653 7.99337 8.80747C8.42489 8.83841 8.85801 8.77608 9.26335 8.62472C9.66869 8.47337 10.0368 8.23651 10.3426 7.93024L12.1528 6.11818C12.7024 5.54859 13.0065 4.7857 12.9996 3.99385C12.9928 3.20199 12.6755 2.44451 12.1161 1.88456C11.5567 1.32461 10.8 1.007 10.009 1.00011C9.2179 0.993233 8.45579 1.29764 7.88678 1.84777L6.84892 2.88065"  stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                          <path d="M8.20678 6.39594C7.94765 6.04915 7.61704 5.76221 7.23738 5.55457C6.85773 5.34694 6.4379 5.22347 6.00638 5.19253C5.57486 5.16159 5.14174 5.22392 4.7364 5.37528C4.33106 5.52664 3.96298 5.76349 3.65712 6.06977L1.84691 7.88182C1.29734 8.45142 0.99324 9.2143 1.00011 10.0062C1.00699 10.798 1.32428 11.5555 1.88366 12.1154C2.44304 12.6754 3.19975 12.993 3.9908 12.9999C4.78185 13.0068 5.54396 12.7024 6.11297 12.1522L7.14479 11.1194"  stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+
+                           </a>
                           </td>
-                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ cust.date_added }}</td>
+                          <td class="whitespace-nowrap px-3 py-4 pr-8 text-right text-sm text-gray-500">{{ cust.date_added }}</td>
                         </tr>
                       </tbody>
                     </table>
