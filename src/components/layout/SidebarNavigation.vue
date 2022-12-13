@@ -87,25 +87,4 @@ const SidebarNavigation = [
 const showNavbar = ref(false);
 </script>
 
-<!-- <style lang="scss" scoped>
-.open-menu-btn {
-  top: 18px;
-  position: fixed;
-  left: 18px;
-  z-index: 111;
-}
-// Transition animation css
-.slide-fade-enter-active {
-  transition: all 0.3s ease-out;
-}
-
-.slide-fade-leave-active {
-  transition: all 0.3s ease-in;
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateX(-20px);
-  opacity: 0;
-} 
-</style>-->
+ 
