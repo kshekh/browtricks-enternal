@@ -36,7 +36,10 @@
                         </div>
                         <div class="flex items-center mt-3">
                           <button type="submit" class="ml-auto flex justify-center rounded-md border border-transparent bg-peach py-2 px-4 text-base font-semibold text-black shadow-sm hover:bg-peach-2 focus:outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300">Save</button>
+
+
                         </div>                                        
+
                   </div>
                 </div>
               </form>
@@ -49,13 +52,16 @@
           <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="md:col-span-1">
               <div class="px-4 sm:px-0">
+
                 <h3 class="text-lg font-semibold leading-6 text-grey-800">Team Address</h3>
                 <p class="mt-1 text-md text-grey-900">Add team address</p>
+
               </div>
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
                 <div class="shadow sm:overflow-hidden sm:rounded-md">
+
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">                   
                        
                         <div class="relative">
@@ -70,6 +76,7 @@
                           <label for="team-name" class="block text-sm font-medium text-grey-800">City</label>
                           <div class="mt-1">
                             <input type="text" name="team-name" id="team-name" class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-800 shadow-sm font-medium focus:border-peach focus:outline-none focus:ring-peach sm:text-sm peer" placeholder="City" required  />
+
                           </div>
                           <p class="hidden mt-2 text-xs text-red peer-required:block" id="team-description">City</p>
                         </div>
@@ -83,6 +90,7 @@
                             </select>
                           </div>
                           <p class="hidden mt-2 text-xs text-red peer-required:block" id="team-description">City</p>
+
                         </div>
                         <div class="relative">
                           <label for="team-name" class="block text-sm font-medium text-grey-800">ZIP/Postcode</label>
@@ -108,13 +116,16 @@
           <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="md:col-span-1">
               <div class="px-4 sm:px-0">
-                <h3 class="text-lg font-semibold leading-6 text-grey-800">Add Team Member</h3>
+  <h3 class="text-lg font-semibold leading-6 text-grey-800">Add Team Member</h3>
                 <p class="mt-1 text-md text-grey-900">Add a new team member to your team, allowing them to collaborate with you.</p>
+
               </div>
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
                 <div class="shadow sm:overflow-hidden sm:rounded-md">
+
+
               
                     <div class="space-y-6 bg-white px-4 py-5 sm:p-10">                   
                        
@@ -390,6 +401,7 @@
                           Update                           
                         </label>                         
                        </div>                   
+
                       </div>
                        <div class="flex items-center mt-3">
                          <button type="submit" class="ml-auto flex justify-center rounded-md border border-transparent bg-peach py-2 px-4 text-base font-semibold text-black shadow-sm hover:bg-peach-2 focus:outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300">Create</button>
@@ -443,3 +455,37 @@
     </div>
   </div>
 </template>
+
+<script setup>
+const roles = [
+  { id: '1', name: 'Administrator', active: 'false', description: 'Administrator users can perform any action.' },
+  { id: '2', name: 'Editor', active: 'true', description: 'Editor users have the ability to read, create, and update.' },
+]
+
+const socials = [
+  {
+    name: 'Leonard Krasner',
+    handle: 'leonardkrasner',
+    imageUrl:
+      'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+  {
+    name: 'Floyd Miles',
+    handle: 'floydmiles',
+    imageUrl:
+      'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+  {
+    name: 'Emily Selman',
+    handle: 'emilyselman',
+    imageUrl:
+      'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+  {
+    name: 'Kristin Watson',
+    handle: 'kristinwatson',
+    imageUrl:
+      'https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+]
+</script>
