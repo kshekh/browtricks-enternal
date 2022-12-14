@@ -103,7 +103,8 @@
                   Login
                 </button> -->
                 <!-- Reusable button component -->
-                <Button :on-click="consoleClick" class="flex w-full justify-center rounded-md border border-transparent bg-peach py-2 px-4 text-base font-semibold text-black shadow-sm hover:bg-peach-2 focus:outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300">Login</Button>
+                <Button :on-click="consoleClick">Login</Button>
+                <CustomInput id="email" type="color" labelText="Email" v-model="email" :on-change="handleInput"/>
               </div>
 
               <div class="text-sm text-grey-900 font-normal">
@@ -130,17 +131,23 @@
 </template>
 
 <script setup>
-
+import {ref} from 'vue';
 import logo from "../assets/logo-browtricks.png";
 import AppleIcon from "@/assets/icons/Apple.vue";
 import GoogleIcon from "@/assets/icons/Google.vue";
 import FacebookIcon from "@/assets/icons/Facebook.vue";
+import Button from './layout/Button.vue';
+import CustomInput from './layout/CustomInput.vue';
 
-import logo from '../assets/logo-browtricks.png';
-import Button from '../components/layout/Button.vue';
-
+// Test btn click
 function consoleClick() {
   console.log('Button clicked')
 }
 
+// Test input change
+const email = ref("");
+function handleInput(e) {
+  e.preventDefault()
+  console.log("input value:", e.target.value);
+}
 </script>
