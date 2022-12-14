@@ -67,14 +67,7 @@
               :on-change="handleInput"
               autocomplete="Last Name"
             />
-            <Input
-              id="phone-number"
-              type="tel"
-              label-text="Phone Number"
-              v-model="phone"
-              :on-change="handleInput"
-              autocomplete="Phone"
-            />
+           
 
             <div class="space-y-1">
               <label class="lblock text-sm font-normal text-grey-900 text-start"
@@ -131,7 +124,6 @@
                 :on-change="handleInput"
                 autocomplete="Password"
               />
-
               <button
                 type="button"
                 class="absolute top-5 right-0 py-4 px-4 text-grey-900"
@@ -141,14 +133,25 @@
                 <EyeOff v-else class="w-5" />
               </button>
             </div>
+             <div class="relative">
             <Input
               id="repeat-password"
-              type="text"
+              v-bind:type="[showPasswordRptr ? 'text' : 'password']"
               label-text="Repeat Password"
               v-model="email"
               :on-change="handleInput"
               autocomplete="password"
             />
+            <button
+                type="button"
+                class="absolute top-5 right-0 py-4 px-4 text-grey-900"
+                @click="showPasswordRptr = !showPasswordRptr"
+              >
+                <Eye v-if="!showPasswordRptr" class="w-5" />
+                <EyeOff v-else class="w-5" />
+              </button>
+           
+          </div>
 
             <div
               class="flex flex-wrap gap-2 items-center justify-center xs:justify-between"
@@ -187,4 +190,5 @@ import Button from "./layout/Button.vue";
 import Input from "./layout/Input.vue";
 
 const showPassword = ref(false);
+const showPasswordRptr = ref(false);
 </script>
