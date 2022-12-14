@@ -1,6 +1,7 @@
 <template>
   <label :class="labelClasses ? labelClasses : 'block text-sm font-normal text-grey-900 text-start'" :for="id">{{ labelText }}</label>
   <input
+    :type="type"
     :value="modelValue"
     @change="onChange"
     :id="id"
@@ -13,6 +14,10 @@ const props = defineProps({
   id: String,
   labelText: String,
   modelValue: String,
+  type: {
+    type: String,
+    required: true
+  },
   // Input event
   onChange: {
     type: Function,

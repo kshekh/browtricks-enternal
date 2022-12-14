@@ -104,7 +104,7 @@
                 </button> -->
                 <!-- Reusable button component -->
                 <Button :on-click="consoleClick">Login</Button>
-                <!-- <CustomInput id="email" labelText="Email" v-model="email" :on-change="handleInput"/> -->
+                <CustomInput id="email" type="color" labelText="Email" v-model="email" :on-change="handleInput"/>
               </div>
 
               <div class="text-sm text-grey-900 font-normal">
