@@ -139,7 +139,7 @@ import FacebookIcon from "@/assets/icons/Facebook.vue";
 import Button from './layout/Button.vue';
 import CustomInput from './layout/CustomInput.vue';
 
-// Test btn click
+
 function consoleClick() {
   console.log('Button clicked')
 }
