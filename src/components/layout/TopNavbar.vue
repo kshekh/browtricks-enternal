@@ -3,9 +3,9 @@
     <!--Top Navbar -->
     <Disclosure as="nav" class="flex-shrink-0 bg-white py-1.5 shadow relative z-30" v-slot="{ open }">
       <div class="mx-auto w-full max-w-8xl px-2 sm:px-4 lg:px-5 lg:pr-14">
-        <div class="relative px-2 sm:px-0 flex h-16 items-center justify-between">
+        <div class="relative px-2 sm:px-0 flex h-16 items-center justify-end md:justify-between">
           <!-- Logo section -->
-          <div class="flex items-center relative gap-3">
+          <div class="md:flex items-center relative gap-3 hidden">
             
             <router-link to="/home" class="flex-shrink-0 home-logo pl-8 md:pl-0">
               <img class="h-8 w-auto pl-10 md:pl-0" :src="logo" alt="BrowTricks" />

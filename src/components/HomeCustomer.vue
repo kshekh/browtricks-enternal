@@ -1,20 +1,20 @@
 <template>
   <div class="relative flex flex-col min-h-screen w-full">
     <!-- Setup Guide -->
-    <div class="flex-1 p-3 md:p-5 xl:px-14 xl:py-12">
+    <div class="flex-1 py-3 md:p-5 xl:px-14 xl:py-12">
       <div
-        class="coverflow-hidden rounded-xl bg-white shadow-3 border border-grey-300 divide-y divide-grey-300"
+        class="coverflow-hidden md:rounded-xl bg-white shadow-3 border-y md:border border-grey-300 divide-y divide-grey-300"
       >
-        <div class="border-b border-grey-200 p-7">
+        <div class="border-b border-grey-200 px-4 pt-10 pb-6 md:px-7">
           <div class="flex flex-col text-left">
             <h1
-              class="flex-1 text-2.5xl font-semibold leading-none text-black pb-3"
+              class="flex-1 text-lg md:text-2.5xl font-semibold leading-none text-black pb-3"
             >
               Setup guide
             </h1>
             <div class="flex items-center gap-5">
               <span
-                class="whitespace-nowrap text-base font-normal text-grey-700"
+                class="whitespace-nowrap text-sm md:text-base font-normal text-grey-700"
                 >1 of 6 tasks complete</span
               >
               <div
@@ -31,9 +31,9 @@
             </div>
           </div>
         </div>
-        <div class="xl:flex p-7">
+        <div class="xl:flex px-4 py-10 md:px-7">   
           <div class="flex-1">
-            <ul role="list" class="pr-5 max-w-md overflow-hidden step-list">
+            <ul role="list" class="md:pr-5 max-w-md overflow-hidden step-list">
               <!-- customers steps -->
               <li
                 v-for="(step, index) in customerSteps"
