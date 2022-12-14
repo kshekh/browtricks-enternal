@@ -62,11 +62,7 @@
             </button>
             </div>
             <Input id="repeat-password" type="text" label-text="Repeat Password" v-model="email" :on-change="handleInput" autocomplete="password"/>
-
-          
-   
-
-            <div
+     <div
               class="flex flex-wrap gap-2 items-center justify-center xs:justify-between"
             >
               <div class="flex items-center w-full xs:w-auto">
