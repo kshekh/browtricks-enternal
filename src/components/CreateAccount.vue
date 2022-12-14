@@ -19,16 +19,21 @@
         >
           Signup WITH
         </h2>
-        <div class="flex flex-col xs:grid xs:grid-cols-3 gap-2 w-full max-w-64 xs:max-w-none">
+        <div
+          class="flex flex-col xs:grid xs:grid-cols-3 gap-2 w-full max-w-64 xs:max-w-none"
+        >
+          <Button type="button" :on-click="consoleClick" class="flex-row"
+            ><AppleIcon class="w-5" /><span>Apple</span></Button
+          >
 
-<Button type="button" :on-click="consoleClick"  class="flex-row" ><AppleIcon class="w-5" /><span>Apple</span></Button>      
+          <Button type="button" :on-click="consoleClick" class="flex-row">
+            <GoogleIcon class="w-5" /><span>Google</span></Button
+          >
 
-<Button type="button" :on-click="consoleClick" class="flex-row" > <GoogleIcon class="w-5" /><span>Google</span></Button>
-
-<Button type="button" :on-click="consoleClick" class="flex-row" > <FacebookIcon class="w-5" /><span>Facebook</span></Button> 
-
-
-</div>
+          <Button type="button" :on-click="consoleClick" class="flex-row">
+            <FacebookIcon class="w-5" /><span>Facebook</span></Button
+          >
+        </div>
         <div class="relative w-full">
           <div class="absolute inset-0 flex items-center">
             <div class="w-full h-px bg-gray-300"></div>
@@ -46,32 +51,112 @@
             Create an Account
           </h2>
           <form class="space-y-6" action="#" method="POST">
+            <Input
+              id="first-name"
+              type="text"
+              label-text="First Name"
+              v-model="firstName"
+              :on-change="handleInput"
+              autocomplete="First Name"
+            />
+            <Input
+              id="last-name"
+              type="text"
+              label-text="Last Name"
+              v-model="lastName"
+              :on-change="handleInput"
+              autocomplete="Last Name"
+            />
+            <Input
+              id="phone-number"
+              type="tel"
+              label-text="Phone Number"
+              v-model="phone"
+              :on-change="handleInput"
+              autocomplete="Phone"
+            />
 
-
-            <Input id="first-name" type="text" label-text="First Name" v-model="firstName" :on-change="handleInput" autocomplete="First Name"/>
-            <Input id="last-name" type="text" label-text="Last Name" v-model="lastName" :on-change="handleInput" autocomplete="Last Name"/>
-            <Input id="phone-number" type="tel" label-text="Phone Number" v-model="phone" :on-change="handleInput" autocomplete="Phone"/>
-            <Input id="email-address" type="email" label-text="Email address" v-model="email" :on-change="handleInput" autocomplete="Email"/>
-            <Input id="username" type="text" label-text="Username" v-model="username" :on-change="handleInput" autocomplete="Username"/>
-            <div class="relative">
-             <Input id="password" value="sfjsd" v-bind:type="[showPassword ? 'text' : 'password']"  label-text="Password" v-model="password" :on-change="handleInput" autocomplete="Password" />
-           
-            <button type="button" class="absolute top-5 right-0 py-4 px-4 " @click="showPassword = !showPassword">
-            <Eye v-if="!showPassword" class="w-5" />
-            <EyeOff v-else class="w-5 " />
-            </button>
+            <div class="space-y-1">
+              <label class="lblock text-sm font-normal text-grey-900 text-start"
+                >Phone Number</label
+              >
+              <div class="relative mt-1 rounded-md shadow-sm">
+                <div class="absolute inset-y-0 left-0 flex items-center">
+                  <label for="country" class="sr-only">Country</label>
+                  <select
+                    id="country"
+                    name="country"
+                    autocomplete="country"
+                    class="h-full rounded-md border-transparent bg-transparent py-0 pl-3 pr-7 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach text-sm invalid:bg-red/5 invalid:border-red"
+                  >
+                    <option>US</option>
+                    <option>CA</option>
+                    <option>EU</option>
+                  </select>
+                </div>
+                <input
+                  type="tel"
+                  autocomplete="Phone"
+                  class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach text-sm invalid:bg-red/5 invalid:border-red peer"
+                />
+                <p class="text-red text-xs peer-invalid:block hidden pt-0.5">
+                  <b>Error:</b> Invalid or incorrect Username Invalid or
+                  incorrect password
+                </p>
+              </div>
             </div>
-            <Input id="repeat-password" type="text" label-text="Repeat Password" v-model="email" :on-change="handleInput" autocomplete="password"/>
 
-          
-   
+            <Input
+              id="email-address"
+              type="email"
+              label-text="Email address"
+              v-model="email"
+              :on-change="handleInput"
+              autocomplete="Email"
+            />
+            <Input
+              id="username"
+              type="text"
+              label-text="Username"
+              v-model="username"
+              :on-change="handleInput"
+              autocomplete="Username"
+            />
+            <div class="relative">
+              <Input
+                id="password"
+                v-bind:type="[showPassword ? 'text' : 'password']"
+                label-text="Password"
+                v-model="password"
+                :on-change="handleInput"
+                autocomplete="Password"
+              />
+
+              <button
+                type="button"
+                class="absolute top-5 right-0 py-4 px-4 text-grey-900"
+                @click="showPassword = !showPassword"
+              >
+                <Eye v-if="!showPassword" class="w-5" />
+                <EyeOff v-else class="w-5" />
+              </button>
+            </div>
+            <Input
+              id="repeat-password"
+              type="text"
+              label-text="Repeat Password"
+              v-model="email"
+              :on-change="handleInput"
+              autocomplete="password"
+            />
 
             <div
               class="flex flex-wrap gap-2 items-center justify-center xs:justify-between"
             >
               <div class="flex items-center w-full xs:w-auto">
-                
-                <Button type="submit" :on-click="consoleClick"> Let's get started</Button>
+                <Button type="submit" :on-click="consoleClick">
+                  Let's get started</Button
+                >
               </div>
 
               <div class="text-sm text-grey-900 font-normal">
@@ -96,12 +181,10 @@ import logo from "../assets/logo-browtricks.png";
 import AppleIcon from "@/assets/icons/Apple.vue";
 import GoogleIcon from "@/assets/icons/Google.vue";
 import FacebookIcon from "@/assets/icons/Facebook.vue";
-import Eye from '@/assets/icons/Eye.vue';
-import EyeOff from '@/assets/icons/EyeOff.vue';
-import Button from './layout/Button.vue';
-import Input from './layout/Input.vue';
+import Eye from "@/assets/icons/Eye.vue";
+import EyeOff from "@/assets/icons/EyeOff.vue";
+import Button from "./layout/Button.vue";
+import Input from "./layout/Input.vue";
 
 const showPassword = ref(false);
-
- 
 </script>
