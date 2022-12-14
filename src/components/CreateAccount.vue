@@ -90,7 +90,7 @@
                 <input
                   type="tel"
                   autocomplete="Phone"
-                  class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach text-sm invalid:bg-red/5 invalid:border-red peer"
+                  class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 pl-14 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach text-sm invalid:bg-red/5 invalid:border-red peer"
                 />
                 <p class="text-red text-xs peer-invalid:block hidden pt-0.5">
                   <b>Error:</b> Invalid or incorrect Username Invalid or
