@@ -136,7 +136,6 @@ import AppleIcon from "@/assets/icons/Apple.vue";
 import GoogleIcon from "@/assets/icons/Google.vue";
 import FacebookIcon from "@/assets/icons/Facebook.vue";
 
-import logo from '../assets/logo-browtricks.png';
 import Button from '../components/layout/Button.vue';
 
 function consoleClick() {

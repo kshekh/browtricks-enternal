@@ -90,9 +90,9 @@ module.exports = {
 
 
             boxShadow: {
-                '1': '0px 9px 44px rgba(0, 0, 0, 0.06)',
-                '2': '0px 20px 41px rgba(0, 0, 0, 0.25)',
-                '3': '0px 1px 6px rgba(0, 0, 0, 0.1)',
+                '1': '0px 0.563rem 2.75rem rgba(0, 0, 0, 0.06)',
+                '2': '0px 1.25rem  1.25rem rgba(0, 0, 0, 0.25)',
+                '3': '0px 1.25rem  0.375rem rgba(0, 0, 0, 0.1)',  
             },
             
 
@@ -110,14 +110,14 @@ module.exports = {
 
 
             borderWidth:{
-              3:'3px',
-              5:'5px',
-              6:'6px',
+              3:'0.188rem',
+              5:'0.313rem',
+              6:'0.375',
             },
             ringWidth: {
-              3:'3px',
-              5:'5px',
-              6:'6px'
+             3:'0.188rem',
+             5:'0.313rem',
+             6:'0.375',
             },
         },
 
