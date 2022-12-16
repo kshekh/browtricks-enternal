@@ -19,15 +19,20 @@
         >
           LOGIN WITH
         </h2>
-        <div class="flex flex-col xs:grid xs:grid-cols-3 gap-2 w-full max-w-64 xs:max-w-none">
+        <div
+          class="flex flex-col xs:grid xs:grid-cols-3 gap-2 w-full max-w-64 xs:max-w-none"
+        >
+          <Button type="button" :on-click="consoleClick" class="flex-row"
+            ><AppleIcon class="w-5" /><span>Apple</span></Button
+          >
 
-          <Button type="button" :on-click="consoleClick"  class="flex-row" ><AppleIcon class="w-5" /><span>Apple</span></Button>      
+          <Button type="button" :on-click="consoleClick" class="flex-row">
+            <GoogleIcon class="w-5" /><span>Google</span></Button
+          >
 
-          <Button type="button" :on-click="consoleClick" class="flex-row" > <GoogleIcon class="w-5" /><span>Google</span></Button>
-
-          <Button type="button" :on-click="consoleClick" class="flex-row" > <FacebookIcon class="w-5" /><span>Facebook</span></Button> 
-
- 
+          <Button type="button" :on-click="consoleClick" class="flex-row">
+            <FacebookIcon class="w-5" /><span>Facebook</span></Button
+          >
         </div>
         <div class="relative w-full">
           <div class="absolute inset-0 flex items-center">
@@ -38,31 +43,29 @@
           </div>
         </div>
         <div
-          class="bg-white p-5 xs:rounded-lg sm:p-8  border-y xs:border border-grey-500 shadow-3 w-full"
+          class="bg-white p-5 xs:rounded-lg sm:p-8 border-y xs:border border-grey-500 shadow-3 w-full"
         >
           <form class="space-y-6" action="#" method="POST">
-        
-               
-           
-
-                <Input id="email" type="email" label-text="Username" v-model="email" :on-change="handleInput" autocomplete="username"/>
-                <Input id="password" type="password" label-text="Password" v-model="password" :on-change="handleInput" autocomplete="Password"/>
-
-
-
-                 
-              
-          
-            
-
-           
+            <Input
+              id="email"
+              type="email"
+              label-text="Username"
+              v-model="email"
+              :on-change="handleInput"
+              autocomplete="username"
+            />
+            <Input
+              id="password"
+              type="password"
+              label-text="Password"
+              v-model="password"
+              :on-change="handleInput"
+              autocomplete="Password"
+            />
 
             <div class="flex flex-wrap gap-2 items-center justify-between">
               <div class="flex items-center w-full xs:w-auto">
-              
-            
                 <Button type="submit" :on-click="consoleClick">Login</Button>
-               
               </div>
 
               <div class="text-sm text-grey-900 font-normal">
@@ -76,6 +79,10 @@
             </div>
           </form>
         </div>
+        <Button type="submit" @emitclick="consoleClick"
+          >Event emitt btn</Button
+        >
+
         <div class="text-center w-full">
           <router-link
             to="/forgot-password"
@@ -89,24 +96,22 @@
 </template>
 
 <script setup>
-import {ref} from 'vue';
+import { ref } from "vue";
 import logo from "../assets/logo-browtricks.png";
 import AppleIcon from "@/assets/icons/Apple.vue";
 import GoogleIcon from "@/assets/icons/Google.vue";
 import FacebookIcon from "@/assets/icons/Facebook.vue";
-import Button from './layout/Button.vue';
-import Input from './layout/Input.vue';
-
- 
+import Button from "./layout/Button.vue";
+import Input from "./layout/Input.vue";
 
 function consoleClick() {
-  console.log('Button clicked')
+  console.log("Button clicked");
 }
 
 // Test input change
 const email = ref("");
 function handleInput(e) {
-  e.preventDefault()
+  e.preventDefault();
   console.log("input value:", e.target.value);
 }
 </script>
