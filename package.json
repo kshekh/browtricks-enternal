@@ -1,6 +1,6 @@
 {
   "name": "browtricks",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -11,11 +11,9 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "pinia": "^2.0.26",
-    "postcss-cli": "^10.1.0",
-    "postcss-nested": "^6.0.0",
-    "postcss-nesting": "^10.2.0",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.7.5",
@@ -27,6 +25,9 @@
     "autoprefixer": "^10.4.13",
     "jsdom": "^20.0.3",
     "postcss": "^8.4.19",
+    "postcss-cli": "^10.1.0",
+    "postcss-nested": "^6.0.0",
+    "postcss-nesting": "^10.2.0",
     "tailwindcss": "^3.2.4",
     "vite": "^3.2.5",
     "vitest": "^0.25.3"
