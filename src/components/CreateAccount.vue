@@ -67,7 +67,6 @@
               :on-change="handleInput"
               autocomplete="Last Name"
             />
-           
 
             <div class="space-y-1">
               <label class="lblock text-sm font-normal text-grey-900 text-start"
@@ -133,16 +132,16 @@
                 <EyeOff v-else class="w-5" />
               </button>
             </div>
-             <div class="relative">
-            <Input
-              id="repeat-password"
-              v-bind:type="[showPasswordRptr ? 'text' : 'password']"
-              label-text="Repeat Password"
-              v-model="email"
-              :on-change="handleInput"
-              autocomplete="password"
-            />
-            <button
+            <div class="relative">
+              <Input
+                id="repeat-password"
+                v-bind:type="[showPasswordRptr ? 'text' : 'password']"
+                label-text="Repeat Password"
+                v-model="email"
+                :on-change="handleInput"
+                autocomplete="password"
+              />
+              <button
                 type="button"
                 class="absolute top-5 right-0 py-4 px-4 text-grey-900"
                 @click="showPasswordRptr = !showPasswordRptr"
@@ -150,14 +149,14 @@
                 <Eye v-if="!showPasswordRptr" class="w-5" />
                 <EyeOff v-else class="w-5" />
               </button>
-           
-          </div>
+            </div>
 
             <div
               class="flex flex-wrap gap-2 items-center justify-center xs:justify-between"
             >
               <div class="flex items-center w-full xs:w-auto">
-                <Button type="submit" :on-click="consoleClick">
+                <!-- This is for emit method -->
+                <Button type="submit" @emitclick="consoleClick">
                   Let's get started</Button
                 >
               </div>
@@ -179,15 +178,15 @@
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
-import logo from "../assets/logo-browtricks.png";
-import AppleIcon from "@/assets/icons/Apple.vue";
-import GoogleIcon from "@/assets/icons/Google.vue";
-import FacebookIcon from "@/assets/icons/Facebook.vue";
-import Eye from "@/assets/icons/Eye.vue";
-import EyeOff from "@/assets/icons/EyeOff.vue";
-import Button from "./layout/Button.vue";
-import Input from "./layout/Input.vue";
+import { ref } from 'vue';
+import logo from '../assets/logo-browtricks.png';
+import AppleIcon from '@/assets/icons/Apple.vue';
+import GoogleIcon from '@/assets/icons/Google.vue';
+import FacebookIcon from '@/assets/icons/Facebook.vue';
+import Eye from '@/assets/icons/Eye.vue';
+import EyeOff from '@/assets/icons/EyeOff.vue';
+import Button from './layout/Button.vue';
+import Input from './layout/Input.vue';
 
 const showPassword = ref(false);
 const showPasswordRptr = ref(false);
