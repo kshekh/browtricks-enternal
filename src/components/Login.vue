@@ -65,7 +65,8 @@
 
             <div class="flex flex-wrap gap-2 items-center justify-between">
               <div class="flex items-center w-full xs:w-auto">
-                <Button type="submit" :on-click="consoleClick">Login</Button>
+                <!-- This is for emit method -->
+                <Button type="submit" @emitclick="consoleClick">Login</Button>
               </div>
 
               <div class="text-sm text-grey-900 font-normal">
@@ -79,10 +80,6 @@
             </div>
           </form>
         </div>
-        <Button type="submit" @emitclick="consoleClick"
-          >Event emitt btn</Button
-        >
-
         <div class="text-center w-full">
           <router-link
             to="/forgot-password"
@@ -96,22 +93,22 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import logo from "../assets/logo-browtricks.png";
-import AppleIcon from "@/assets/icons/Apple.vue";
-import GoogleIcon from "@/assets/icons/Google.vue";
-import FacebookIcon from "@/assets/icons/Facebook.vue";
-import Button from "./layout/Button.vue";
-import Input from "./layout/Input.vue";
+import { ref } from 'vue';
+import logo from '../assets/logo-browtricks.png';
+import AppleIcon from '@/assets/icons/Apple.vue';
+import GoogleIcon from '@/assets/icons/Google.vue';
+import FacebookIcon from '@/assets/icons/Facebook.vue';
+import Button from './layout/Button.vue';
+import Input from './layout/Input.vue';
 
 function consoleClick() {
-  console.log("Button clicked");
+  console.log('Button clicked');
 }
 
 // Test input change
-const email = ref("");
+const email = ref('');
 function handleInput(e) {
   e.preventDefault();
-  console.log("input value:", e.target.value);
+  console.log('input value:', e.target.value);
 }
 </script>
