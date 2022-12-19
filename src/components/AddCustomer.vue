@@ -129,97 +129,11 @@
               <form action="#" method="POST">
                 <div class="shadow sm:overflow-hidden sm:rounded-md">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
-                    <div class="mb-0">
-                      <label
-                        for="first-name"
-                        class="block text-sm font-medium text-grey-800"
-                        >First name</label
-                      >
+                    <div>
+                      <label for="comment" class="block text-sm font-medium text-gray-700">Note</label>
                       <div class="mt-1">
-                        <input
-                          type="text"
-                          name="first-name"
-                          id="first-name"
-                          class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-800 shadow-sm font-medium focus:border-peach focus:outline-none focus:ring-peach sm:text-sm peer"
-                          placeholder="first name"
-                          required
-                        />
+                        <textarea rows="4" name="comment" id="comment" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                       </div>
-                      <p
-                        class="hidden mt-2 text-xs text-red peer-required:block"
-                        id="first-description"
-                      >
-                        Please choose your team name
-                      </p>
-                    </div>
-                    <div class="mb-0">
-                      <label
-                        for="last-name"
-                        class="block text-sm font-medium text-grey-800"
-                        >Last name</label
-                      >
-                      <div class="mt-1">
-                        <input
-                          type="text"
-                          name="last-name"
-                          id="last-name"
-                          class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-800 shadow-sm font-medium focus:border-peach focus:outline-none focus:ring-peach sm:text-sm peer"
-                          placeholder="Last name"
-                          required
-                        />
-                      </div>
-                      <p
-                        class="hidden mt-2 text-xs text-red peer-required:block"
-                        id="last-description"
-                      >
-                        Please choose your team name
-                      </p>
-                    </div>
-                    <div class="mb-0">
-                      <label
-                        for="phone"
-                        class="block text-sm font-medium text-grey-800"
-                        >Phone</label
-                      >
-                      <div class="mt-1">
-                        <input
-                          type="tel"
-                          name="phone"
-                          id="phone"
-                          class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-800 shadow-sm font-medium focus:border-peach focus:outline-none focus:ring-peach sm:text-sm peer"
-                          placeholder="9727823"
-                          required
-                        />
-                      </div>
-                      <p
-                        class="hidden mt-2 text-xs text-red peer-required:block"
-                        id="team-description"
-                      >
-                        Please choose your team name
-                      </p>
-                    </div>
-                    <div class="mb-0">
-                      <label
-                        for="email"
-                        class="block text-sm font-medium text-grey-800"
-                        >Email</label
-                      >
-                      <div class="mt-1">
-                        <input
-                          type="text"
-                          name="email"
-                          id="email"
-                          class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-800 shadow-sm font-medium focus:border-peach focus:outline-none focus:ring-peach sm:text-sm peer"
-                          placeholder="first@email.com"
-                          required
-                        />
-                      </div>
-                      <p
-                        class="hidden mt-2 text-xs text-red peer-required:block"
-                        id="team-description"
-                      >
-                        Please choose your team name
-                      </p>
                     </div>
                   </div>
                 </div>
