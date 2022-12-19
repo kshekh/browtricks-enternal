@@ -20,98 +20,34 @@
               <form action="#" method="POST">
                 <div class="shadow sm:overflow-hidden sm:rounded-md">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
-                    <div class="mb-0">
-                      <label
-                        for="first-name"
-                        class="block text-sm font-medium text-grey-800"
-                        >First name</label
-                      >
-                      <div class="mt-1">
-                        <input
-                          type="text"
-                          name="first-name"
-                          id="first-name"
-                          class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-800 shadow-sm font-medium focus:border-peach focus:outline-none focus:ring-peach sm:text-sm peer"
-                          placeholder="first name"
-                          required
-                        />
-                      </div>
-                      <p
-                        class="hidden mt-2 text-xs text-red peer-required:block"
-                        id="first-description"
-                      >
-                        Please choose your team name
-                      </p>
-                    </div>
-                    <div class="mb-0">
-                      <label
-                        for="last-name"
-                        class="block text-sm font-medium text-grey-800"
-                        >Last name</label
-                      >
-                      <div class="mt-1">
-                        <input
-                          type="text"
-                          name="last-name"
-                          id="last-name"
-                          class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-800 shadow-sm font-medium focus:border-peach focus:outline-none focus:ring-peach sm:text-sm peer"
-                          placeholder="Last name"
-                          required
-                        />
-                      </div>
-                      <p
-                        class="hidden mt-2 text-xs text-red peer-required:block"
-                        id="last-description"
-                      >
-                        Please choose your team name
-                      </p>
-                    </div>
-                    <div class="mb-0">
-                      <label
-                        for="phone"
-                        class="block text-sm font-medium text-grey-800"
-                        >Phone</label
-                      >
-                      <div class="mt-1">
-                        <input
-                          type="tel"
-                          name="phone"
-                          id="phone"
-                          class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-800 shadow-sm font-medium focus:border-peach focus:outline-none focus:ring-peach sm:text-sm peer"
-                          placeholder="9727823"
-                          required
-                        />
-                      </div>
-                      <p
-                        class="hidden mt-2 text-xs text-red peer-required:block"
-                        id="team-description"
-                      >
-                        Please choose your team name
-                      </p>
-                    </div>
-                    <div class="mb-0">
-                      <label
-                        for="email"
-                        class="block text-sm font-medium text-grey-800"
-                        >Email</label
-                      >
-                      <div class="mt-1">
-                        <input
-                          type="text"
-                          name="email"
-                          id="email"
-                          class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-800 shadow-sm font-medium focus:border-peach focus:outline-none focus:ring-peach sm:text-sm peer"
-                          placeholder="first@email.com"
-                          required
-                        />
-                      </div>
-                      <p
-                        class="hidden mt-2 text-xs text-red peer-required:block"
-                        id="team-description"
-                      >
-                        Please choose your team name
-                      </p>
-                    </div>
+                    <Input
+                      id="firstName"
+                      type="text"
+                      label-text="First Name"
+                      :on-change="handleInput"
+                      autocomplete="firstName"
+                    />
+                    <Input
+                      id="lastName"
+                      type="text"
+                      label-text="Last Name"
+                      :on-change="handleInput"
+                      autocomplete="lastName"
+                    />
+                    <Input
+                      id="phone"
+                      type="text"
+                      label-text="Phone"
+                      :on-change="handleInput"
+                      autocomplete="phone"
+                    />
+                    <Input
+                      id="email"
+                      type="email"
+                      label-text="Email"
+                      :on-change="handleInput"
+                      autocomplete="email"
+                    />
                   </div>
                 </div>
               </form>
@@ -129,27 +65,27 @@
               <form action="#" method="POST">
                 <div class="shadow sm:overflow-hidden sm:rounded-md">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
-                    <div>
-                      <label for="comment" class="block text-sm font-medium text-gray-700">Note</label>
-                      <div class="mt-1">
-                        <textarea rows="4" name="comment" id="comment" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
-                      </div>
-                    </div>
+                    <Textarea name="text-note" rows="4" id="textNote" label-text="Note" />
                   </div>
                 </div>
               </form>
             </div>
           </div>
           <div class="pt-7 flex items-center mt-3">
-            <button
-              type="submit"
-              class="me-auto flex justify-center rounded-md border border-transparent bg-peach py-2 px-4 text-base font-semibold text-black shadow-sm hover:bg-peach-2 focus:outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300"
-            >
-            Add customer
-            </button>
+            <Button @emitclick="consoleClick">Add customer</Button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+import Input from '../components/layout/Input.vue';
+import Button from '../components/layout/Button.vue';
+import Textarea from '../components/layout/Textarea.vue';
+
+function consoleClick() {
+  console.log('Button clicked');
+}
+</script>
