@@ -1,7 +1,8 @@
 <template>
   <div class="customers-view-wrapper relative flex flex-col min-h-screen w-full">
     <div v-if="showAddCustomer">
-      <AddCustomer />
+      <EditCustomer />
+      <!-- <AddCustomer /> -->
       <!-- <CustomersList /> -->
     </div>
     <div  v-else class="bg-gray-100 lg:min-w-0 flex-1 py-3 md:p-5 xl:px-14 xl:py-12">
@@ -26,6 +27,8 @@
 
 <script setup>
 import { ref } from 'vue';
+
+import EditCustomer from '@/components/EditCustomer.vue';
 import AddCustomer from '@/components/AddCustomer.vue';
 import CustomersList from '@/components/CustomersList.vue';
 
