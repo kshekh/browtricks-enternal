@@ -9,6 +9,7 @@
     <input
       :type="type"
       :value="modelValue"
+      :placeholder="placeholder"
       :id="id"
       :class="`
         block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach text-sm invalid:bg-red/5 invalid:border-red peer ${inputClasses}`"
@@ -41,6 +42,10 @@ defineProps({
   },
   // Label classes
   labelClasses: {
+    type: String,
+    required: true,
+  },
+  placeholder: {
     type: String,
     required: true,
   },

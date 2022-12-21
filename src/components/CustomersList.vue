@@ -3,7 +3,7 @@
     <div class="flex-1 py-3 md:p-5 xl:px-14 xl:py-12">
       <div class="sm:flex sm:items-center mb-7">
         <div class="sm:flex-auto">
-          <h2 class="text-xl font-semibold text-gray-900">Customers</h2>
+          <h2 class="text-2xl font-bold text-grey-800 leading-none">Add a customer</h2>
         </div>
         <div class="sm:mt-4 md:mt-0 sm:ml-16 sm:flex-none">
           <button @click="this.$router.push({ name: 'add-customer' })" class="btn bg-orange-300 text-gray-900 w-40 mx-auto rounded-md p-3 inline-block">Add customer</button>
