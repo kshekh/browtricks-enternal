@@ -70,14 +70,17 @@
                           <div class="relative flex items-start space-x-3">
                             <div>
                               <div class="relative px-1">
-                                <div class="flex h-4 w-4 items-center justify-center rounded-full bg-peach ring-8 ring-white">
+                                <div
+                                  class="flex h-4 w-4 items-center justify-center rounded-full bg-peach ring-8 ring-white">
                                 </div>
                               </div>
                             </div>
                             <div class="min-w-0 flex-1 py-0">
                               <div class="text-sm text-gray-500">
-                                <p>{{activityItem.date}}</p>
-                                <span class="font-medium text-gray-900">{{activityItem.store_name ? activityItem.store_name : activityItem.cust_name}}</span>
+                                <p>{{ activityItem.date }}</p>
+                                <span class="font-medium text-gray-900">{{ activityItem.store_name ?
+                                    activityItem.store_name : activityItem.cust_name
+                                }}</span>
                                 {{ ' ' }}
                                 <template v-if="activityItem.store_name !== ''">
                                   sent
@@ -86,7 +89,7 @@
                                   signed
                                 </template>
                                 {{ ' ' }}
-                                <span class="font-medium text-gray-900">{{activityItem.form_name}}</span>
+                                <span class="font-medium text-gray-900">{{ activityItem.form_name }}</span>
                               </div>
                             </div>
                           </div>
@@ -96,10 +99,12 @@
                   </div>
                 </div>
               </div>
-              <button type="button"
-                class="mt-6 inline-flex items-center justify-center rounded-md border border-red bg-white px-4 w-36 text-center py-2 text-base font-medium text-red shadow-sm hover:bg-red hover:text-white focus:outline-none focus:ring-2 focus:ring-red focus:ring-offset-2 ease-in-out duration-300">
-                Delete Team
-              </button>
+              <div class="flex">
+                <button @click="deleteCustomerDailog = true"
+                  class="mt-6 inline-flex items-center justify-center rounded-md border border-red bg-white px-4 w-auto text-center py-2 text-base font-medium text-red shadow-sm hover:bg-red hover:text-white focus:outline-none focus:ring-2 focus:ring-red focus:ring-offset-2 ease-in-out duration-300">
+                  Delete Customer
+                </button>
+              </div>
             </div>
 
             <!-- Right column -->
@@ -138,7 +143,7 @@
                     </p>
                   </div>
                   <div class="mt-7">
-                    <Button @emitclick="consoleClick" btn-classes="w-auto">Add Notes</Button>
+                    <Button @click="addNoteDailog = true" btn-classes="w-auto">Add Notes</Button>
                   </div>
                 </div>
               </div>
@@ -148,16 +153,102 @@
       </div>
     </div>
   </div>
+
+  <!-- Dialog -->
+  <!-- Add Note dailog -->
+  <DialogPopup :open-dialog="addNoteDailog" @closeModal="addNoteDailog = false">
+    <div class="space-y-6 relative">
+      <DialogTitle as="h3" class="flex-1 text-2.5xl font-bold leading-none text-grey-800">
+        Add note
+      </DialogTitle>
+      <div class="space-y-6">
+        <form action="#" method="POST">
+          <div class="space-y-1">
+            <label for="textNote" class="block text-sm font-normal text-grey-900 text-start undefined">Note</label>
+            <textarea rows="4" name="text-note"
+              class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm undefined"
+              spellcheck="false" placeholder="write here..."></textarea>
+            <p class="text-red text-xs peer-invalid:block hidden pt-0.5">
+              <b>Error:</b> Invalid or incorrect Username Invalid or
+              incorrect password
+            </p>
+          </div>
+        </form>
+        <div class="flex justify-start gap-x-3">
+          <Button @click="addNoteDailog = false" class="w-auto">Save</Button>
+          <Button @click="addNoteDailog = false" class="w-auto">Cancel</Button>
+        </div>
+      </div>
+    </div>
+  </DialogPopup>
+
+  <!-- Edit Note dailog -->
+  <DialogPopup :open-dialog="editNoteDailog" @closeModal="editNoteDailog = false">
+    <div class="space-y-6 relative">
+      <div class="flex">All notes</div>
+      <DialogTitle as="h3" class="flex-1 text-2.5xl font-bold leading-none text-grey-800">
+        Edit note
+      </DialogTitle>
+      <div class="space-y-6">
+        <form action="#" method="POST">
+          <div class="space-y-1">
+            <label for="textNote" class="block text-sm font-normal text-grey-900 text-start undefined">Note</label>
+            <textarea rows="4" name="text-note"
+              class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm undefined"
+              spellcheck="false" placeholder="write here..."></textarea>
+            <p class="text-red text-xs peer-invalid:block hidden pt-0.5">
+              <b>Error:</b> Invalid or incorrect Username Invalid or
+              incorrect password
+            </p>
+          </div>
+        </form>
+        <div class="flex justify-start gap-x-3">
+          <Button @click="editNoteDailog = false" class="w-auto">Save</Button>
+          <Button @click="editNoteDailog = false" class="w-auto">Cancel</Button>
+        </div>
+      </div>
+    </div>
+  </DialogPopup>
+
+  <!-- Delete customer -->
+  <DialogPopup :open-dialog="deleteCustomerDailog" @closeModal="deleteCustomerDailog = false">
+    <div class="space-y-6 relative">
+      <div class="mx-auto text-center">
+        <component :is="RemoveProfile" class="block h-16 w-16 text-grey-900 mx-auto" aria-hidden="true" />
+      </div>
+      <DialogTitle as="h3" class="flex-1 text-2.5xl font-bold leading-none text-grey-800 text-center">
+        Delete Customer
+      </DialogTitle>
+      <div class="space-y-6 text-center">
+        <div class="customer-details">
+          <p>Are you sure you want to delete</p>
+          <p class="font-bold">Customer Name?</p>
+        </div>
+        <div class="flex justify-center gap-x-3">
+          <Button @click="deleteCustomerDailog = false" class="w-auto">Cancel</Button>
+          <Button @click="deleteCustomerDailog = false" class="w-auto">Yes, delete</Button>
+        </div>
+      </div>
+    </div>
+  </DialogPopup>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
 import MagnifyingGlassIcon from '@/assets/icons/MagnifyingGlassIcon.vue';
 
 import Input from '../components/layout/Input.vue';
 import Button from '../components/layout/Button.vue';
 import Textarea from '../components/layout/Textarea.vue';
 
-const btnclasses = ['mt-6 inline-flex items-center justify-center rounded-md border border-red bg-white px-4 w-36 text-center', 'py-2', 'text-base', 'font-medium', 'text-red', 'shadow-sm', 'hover:bg-red', 'hover:text-white', 'focus:outline-none', 'focus:ring-2', 'focus:ring-red', 'focus:ring-offset-2', 'ease-in-out', 'duration-300']
+import DialogPopup from '../components/layout/DialogPopup.vue';
+import RemoveProfile from '@/assets/icons/RemoveProfile.vue';
+import { DialogTitle } from '@headlessui/vue';
+
+const addNoteDailog = ref(false);
+const editNoteDailog = ref(false);
+const deleteCustomerDailog = ref(false);
 
 const activity = [
   {
