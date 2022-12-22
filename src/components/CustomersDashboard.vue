@@ -6,7 +6,7 @@
       <!-- <CustomersList /> -->
     </div>
     <div  v-else class="bg-gray-100 lg:min-w-0 flex-1 px-4 py-3 md:p-5 xl:px-14 xl:py-12"> 
-      <h1 class="flex-1 text-2.5xl font-bold leading-none text-grey-800 mb-5">
+      <h1 class="flex-1 text-2.5xl font-bold leading-none text-grey-800 mb-5">               
         Customers
         </h1>
       <div class="card-wrapper overflow-hidden rounded-lg bg-white shadow">

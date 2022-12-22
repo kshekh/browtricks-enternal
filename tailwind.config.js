@@ -87,6 +87,7 @@ module.exports = {
         ...theme('spacing'),
       }),
 
+
       boxShadow: {
         1: '0px 0.563rem 2.75rem rgba(0, 0, 0, 0.06)',
         2: '0px 1.25rem  1.25rem rgba(0, 0, 0, 0.25)',
