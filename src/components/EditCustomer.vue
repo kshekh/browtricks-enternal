@@ -21,7 +21,7 @@
                     </p>
                   </div>
                   <div class="mt-7">
-                    <Button @emitclick="consoleClick" btn-classes="w-auto">Add Media</Button>
+                    <Button @emitclick="consoleClick" :btn-peach="true">Add Media</Button>
                   </div>
                 </div>
               </div>
@@ -31,7 +31,7 @@
                     <p class="text-xl font-semibold text-gray-900">
                       PMU Forms
                     </p>
-                    <span class="text-blue ml-auto">Add custom form</span>
+                    <span class="text-blue ml-auto cursor-pointer">Add custom form</span>
                   </div>
                   <div class="flex gap-2 md:gap-5">
                     <div class="w-full flex-1">
@@ -47,10 +47,7 @@
                     </div>
 
                     <div class="sm:flex-none flex">
-                      <button type="button"
-                        class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-grey-800 shadow-sm hover:bg-peach focus:outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300 hover:border-peach">
-                        Browse
-                      </button>
+                      <Button :btn-bordered-gray="true" :btn-peach="false">Browse</Button>
                     </div>
                   </div>
                 </div>
@@ -100,10 +97,7 @@
                 </div>
               </div>
               <div class="flex">
-                <button @click="deleteCustomerDailog = true"
-                  class="mt-6 inline-flex items-center justify-center rounded-md border border-red bg-white px-4 w-auto text-center py-2 text-base font-medium text-red shadow-sm hover:bg-red hover:text-white focus:outline-none focus:ring-2 focus:ring-red focus:ring-offset-2 ease-in-out duration-300">
-                  Delete Customer
-                </button>
+                <Button @click="deleteCustomerDailog = true" :btn-bordered="true" :btn-peach="false">Delete Customer</Button>
               </div>
             </div>
 
@@ -116,7 +110,7 @@
                       <p class="text-xl font-semibold text-gray-900">
                         Customer
                       </p>
-                      <span class="text-blue ml-auto">Edit</span>
+                      <span class="text-blue ml-auto cursor-pointer" @click="editCustomerDailog = true">Edit</span>
                     </div>
                     <div class="mt-3 customer-details">
                       <p class="text-base text-gray-500 lg:w-50">
@@ -143,7 +137,7 @@
                     </p>
                   </div>
                   <div class="mt-7">
-                    <Button @click="addNoteDailog = true" btn-classes="w-auto">Add Notes</Button>
+                    <Button @click="addNoteDailog = true" :btn-peach="true">Add Notes</Button>
                   </div>
                 </div>
               </div>
@@ -175,8 +169,8 @@
           </div>
         </form>
         <div class="flex justify-start gap-x-3">
-          <Button @click="addNoteDailog = false" class="w-auto">Save</Button>
-          <Button @click="addNoteDailog = false" class="w-auto">Cancel</Button>
+          <Button @click="addNoteDailog = false" :btn-peach="true">Save</Button>
+          <Button @click="addNoteDailog = false" :btn-bordered-gray="true" :btn-peach="false">Cancel</Button>
         </div>
       </div>
     </div>
@@ -203,8 +197,37 @@
           </div>
         </form>
         <div class="flex justify-start gap-x-3">
-          <Button @click="editNoteDailog = false" class="w-auto">Save</Button>
-          <Button @click="editNoteDailog = false" class="w-auto">Cancel</Button>
+          <Button @click="editNoteDailog = false" :btn-peach="true">Save</Button>
+          <Button @click="editNoteDailog = false" :btn-bordered-gray="true" :btn-peach="false">Cancel</Button>
+        </div>
+      </div>
+    </div>
+  </DialogPopup>
+
+  <!-- Edit customer -->
+  <DialogPopup :open-dialog="editCustomerDailog" @closeModal="editCustomerDailog = false">
+    <div class="space-y-6 relative">
+      <DialogTitle as="h3" class="flex-1 text-2.5xl font-bold leading-none text-grey-800">
+        Edit Customer
+      </DialogTitle>
+      <div class="space-y-6">
+        <div class="customer-details">
+          <form action="#" method="POST">
+            <div class="sm:overflow-hidden sm:rounded-md">
+              <Input class="mb-3" id="firstName" type="text" label-text="First Name" :on-change="handleInput"
+                autocomplete="firstName" placeholder="Julia" />
+              <Input class="mb-3" id="lastName" type="text" label-text="Last Name" :on-change="handleInput" autocomplete="lastName"
+                placeholder="Barneby" />
+              <Input class="mb-3" id="phone" type="text" label-text="Phone" :on-change="handleInput" autocomplete="phone"
+                placeholder="(888) 376-7160" />
+              <Input class="mb-3" id="email" type="email" label-text="Email" :on-change="handleInput" autocomplete="email"
+                placeholder="juliabarneby@gmail.com" />
+            </div>
+          </form>
+        </div>
+        <div class="flex justify-start gap-x-3">
+          <Button @click="editCustomerDailog = false" :btn-peach="true">Save</Button>
+          <Button @click="editCustomerDailog = false" :btn-bordered-gray="true" :btn-peach="false">Cancel</Button>
         </div>
       </div>
     </div>
@@ -226,7 +249,7 @@
         </div>
         <div class="flex justify-center gap-x-3">
           <Button @click="deleteCustomerDailog = false" class="w-auto">Cancel</Button>
-          <Button @click="deleteCustomerDailog = false" class="w-auto">Yes, delete</Button>
+          <Button @click="deleteCustomerDailog = false" class="w-auto" :btn-peach="false" :btn-bordered="true">Yes, delete</Button>
         </div>
       </div>
     </div>
@@ -234,7 +257,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
 
 import MagnifyingGlassIcon from '@/assets/icons/MagnifyingGlassIcon.vue';
 
@@ -248,6 +271,7 @@ import { DialogTitle } from '@headlessui/vue';
 
 const addNoteDailog = ref(false);
 const editNoteDailog = ref(false);
+const editCustomerDailog = ref(false);
 const deleteCustomerDailog = ref(false);
 
 const activity = [
