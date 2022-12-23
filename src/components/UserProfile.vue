@@ -161,7 +161,7 @@
 </template>
 
 <script setup>
-import FileSelect from './FileSelect.vue';
+import FileSelect from '@/components/FileSelect.vue';
 import MagnifyingGlassIcon from '@/assets/icons/MagnifyingGlassIcon.vue';
 import LinkChain from '@/assets/icons/LinkChain.vue';
 import ShortIcon from '@/assets/icons/ShortIcon.vue';
