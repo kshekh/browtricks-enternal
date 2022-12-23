@@ -8,7 +8,9 @@ import CreateAccount from '@/components/CreateAccount.vue';
 import ForgotPassword from '@/components/ForgotPassword.vue';
 import AddCustomer from '@/components/AddCustomer.vue';
 import TopNavbar from '@/components/layout/TopNavbar.vue';
-import SidebarNavigation from '@/components/layout/SidebarNavigation.vue';
+import SidebarNavigation from '@/components/layout/SidebarNavigation.vue'; 
+import PMU from '@/views/PmuView.vue';
+import Media from '@/views/MediaView.vue';
 
 const routes = [{
         path: '',
@@ -75,6 +77,18 @@ const routes = [{
         name: 'Settings',
         component: Settings,
         meta: { title: 'BrowTricks | Settings' },
+    },
+    {
+        path: '/pmu',
+        name: 'PMU',
+        component: PMU,
+        meta: { title: 'BrowTricks | PMU' },
+    },
+    {
+        path: '/media',
+        name: 'Media',
+        component: Media,
+        meta: { title: 'BrowTricks | Media' },
     },
 ];
 
