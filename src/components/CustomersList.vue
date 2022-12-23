@@ -1,13 +1,13 @@
 <template>
   <div class="relative flex flex-col min-h-screen w-full">
-    <div class="flex-1 py-3 md:p-5 xl:px-14 xl:py-12">
-      <div class="sm:flex sm:items-center mb-7">
+    <div class="flex-1 p-3 md:p-5 xl:px-14 xl:py-12">
+      <div class="flex flex-wrap items-center justify-between mb-7">
         <div class="sm:flex-auto">
           <h2 class="text-2xl font-bold text-grey-800 leading-none">
             Customers List
           </h2>
         </div>
-        <div class="sm:mt-4 md:mt-0 sm:ml-16 sm:flex-none">
+        <div class="sm:mt-4 md:mt-0  sm:flex-none">
           <Button
             @click="this.$router.push({ name: 'add-customer' })"
             class="sm:w-38 sm:mr-auto"
