@@ -25,13 +25,10 @@
                       any content yet.
                     </p>
                   </div>
-                  <div class="block">
-                    <Button
-                      @emitclick="consoleClick"
-                      btn-classes="w-auto"
-                      class="w-38 py-1.5"
-                      >Add Media</Button
-                    >
+
+                  <div class="mt-7">
+                    <Button @emitclick="consoleClick" :btn-peach="true">Add Media</Button>
+
                   </div>
                 </div>
               </div>
@@ -44,6 +41,7 @@
                       class="text-lg font-semibold text-gray-900 leading-none"
                     >
                       PMU Forms
+
                     </h4>
                     <Button
                       @emitclick="consoleClick"
@@ -51,6 +49,7 @@
                       class="absolute right-0 text-blue ml-auto text-base w-auto bg-transparent shadow-none"
                       >Add custom form</Button
                     >
+
                   </div>
                   <div class="flex gap-2 md:gap-5">
                     <div class="w-full flex-1">
@@ -75,12 +74,9 @@
                       </div>
                     </div>
                     <div class="sm:flex-none flex">
-                      <ButtonInline
-                        @emitclick="consoleClick"
-                        btn-classes="w-auto mt-1"
-                        type="submit"
-                        >Browse</ButtonInline
-                      >
+
+                      <Button :btn-bordered-gray="true" :btn-peach="false">Browse</Button>
+
                     </div>
                   </div>
                 </div>
@@ -92,55 +88,45 @@
                       PMU Form Timeline
                     </p>
                   </div>
-                  <div class="flow-root">
-                    <ul
-                      role="list"
-                      class="space-y-10 relative after:absolute after:z-0 after:top-0 after:left-2 after:h-[calc(100%-20px)] after:border-dashed after:border-peach after:border-l"
-                    >
-                      <li
-                        v-for="activityItem in activity"
-                        :key="activityItem.id"
-                        class="flex gap-x-3 relative"
-                      >
-                        <div
-                          class="flex h-4 w-4 items-center justify-center rounded-full bg-peach ring-8 ring-white"
-                        ></div>
-                        <div class="text-sm text-gray-500 leading-none">
-                          <span
-                            class="text-xs block font-medium pb-1.5 text-grey-700 leading-none"
-                            >{{ activityItem.date }}</span
-                          >
-                          <span class="font-medium text-gray-900">{{
-                            activityItem.store_name
-                              ? activityItem.store_name
-                              : activityItem.cust_name
-                          }}</span>
-                          {{ ' ' }}
-                          <template v-if="activityItem.store_name !== ''">
-                            sent
-                          </template>
-                          <template v-else> signed </template>
-                          {{ ' ' }}
-                          <span class="font-medium text-gray-900">{{
-                            activityItem.form_name
-                          }}</span>
+
+                   <div class="flow-root">
+                    <ul role="list" class="space-y-10 relative after:absolute after:z-0 after:top-0 after:left-2 after:h-[calc(100%-20px)] after:border-dashed after:border-peach after:border-l">
+                      <li v-for="(activityItem) in activity" :key="activityItem.id" class="flex gap-x-3 relative">
+                          <div class="flex h-4 w-4 items-center justify-center rounded-full bg-peach ring-8 ring-white"> </div>
+                              <div class="text-sm text-gray-500 leading-none">
+                                <span class="text-xs block font-medium pb-1.5 text-grey-700 leading-none">{{activityItem.date}}</span>
+                                <span class="font-medium text-gray-900">{{activityItem.store_name ? activityItem.store_name : activityItem.cust_name}}</span>
+                                {{ ' ' }}
+                                <template v-if="activityItem.store_name !== ''">
+                                  sent
+                                </template>
+                                <template v-else>
+                                  signed
+                                </template>
+                                {{ ' ' }}
+                                <span class="font-medium text-gray-900">{{ activityItem.form_name }}</span>
+                              </div>
+                            </div>
+                          </div>
+
                         </div>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-              <button
-                type="button" @click="openModalDelete"
-                class="absolute bottom-0 sm:relative mt-4 inline-flex items-center justify-center rounded-md border-2 border-red bg-transparent px-4 w-44 text-center py-2 text-base font-semibold text-red shadow-sm hover:bg-red hover:text-white focus:outline-none focus:ring-2 focus:ring-red focus:ring-offset-2 ease-in-out duration-300"
-              >
-                Delete Customer
-              </button>
+
+              <div class="flex">
+                <Button @click="deleteCustomerDailog = true" :btn-bordered="true" :btn-peach="false">Delete Customer</Button>
+              </div>
             </div>
+
+
             <!-- Right column -->
             <div class="grid grid-cols-1 gap-6 pb-12 sm:pb-0">
               <div class="overflow-hidden rounded-lg bg-white shadow">
                 <div class="p-4 sm:p-8 space-y-4">
+
                   <div class="flex items-center space-y-2.5 relative">
                     <h4
                       class="text-lg font-semibold text-gray-900 leading-none"
@@ -148,7 +134,7 @@
                       Customer
                     </h4>
                     <Button
-                      @emitclick="consoleClick"
+                      @click="editCustomerDailog = true"
                       btn-classes="w-auto"
                       class="absolute right-0 text-blue ml-auto text-base w-auto bg-transparent shadow-none"
                       >Edit</Button
@@ -161,6 +147,7 @@
                       juliabarneby@gmail.com
                     </p>
                   </div>
+
                 </div>
               </div>
               <div class="overflow-hidden rounded-lg bg-white shadow">
@@ -175,13 +162,10 @@
                       No notes about this customer
                     </p>
                   </div>
-                  <div class="block">
-                    <Button
-                      @emitclick="consoleClick"
-                      btn-classes="w-auto"
-                      class="w-38 py-1.5"
-                      >Add Notes</Button
-                    >
+
+                  <div class="mt-7">
+                    <Button @click="addNoteDailog = true" :btn-peach="true">Add Notes</Button>
+
                   </div>
                 </div>
               </div>
@@ -192,60 +176,121 @@
     </div>
   </div>
 
-<!-- Dialog -->
  
- 
-  <TransitionRoot appear :show="openModalDeleteisOpen" as="template">
-    <Dialog as="div" @close="closeModalDelete" class="relative z-10">
-      <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0" enter-to="opacity-100" leave="duration-200 ease-in" leave-from="opacity-100" leave-to="opacity-0" >
-      <div class="fixed inset-0 bg-black bg-opacity-80"/>
-      </TransitionChild>
-      <div class="fixed inset-0 overflow-y-auto">
-        <div class="flex min-h-full items-center justify-center p-4 text-center" >
-          <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0 scale-95" enter-to="opacity-100 scale-100" leave="duration-200 ease-in" leave-from="opacity-100 scale-100" leave-to="opacity-0 scale-95" >
-            <DialogPanel class="max-w-full w-96 transform overflow-hidden  bg-white p-8 text-left align-middle transition-all shadow rounded-lg relative" >
-
-              <button class="absolute top-3 right-3 text-grey-700" @click="closeModalDelete"  >
-                <CrossIcon class="w-4 h-4" />
-              </button>
-
-
-              <div class="space-y-6 relative text-center flex flex-col justify-center items-center">
-              <div class="relative text-peach">
-                 <DeleteCustomer class="w-16 h-16" />
-              </div>
-              <DialogTitle as="h3" class="flex-1 text-lg font-normal leading-tight text-grey-800">
-                Are you sure you want to delete <strong class="font-bold block">Customer Name?</strong>
-              </DialogTitle> 
-              <div class="flex  gap-x-3">  
-                <button type="button" class="inline-flex items-center rounded-md border-2 border-gray-300 bg-white px-6 py-2 text-base font-semibold text-grey-800 shadow-sm hover:bg-peach focus:outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300 hover:border-peach" @click="closeModalDelete" >
-                  Cancel    
-                </button>
-                <button type="button" class="inline-flex items-center justify-center rounded-md border-2 border-red bg-transparent px-4 text-center py-2 text-base font-semibold text-red shadow-sm hover:bg-red hover:text-white focus:outline-none focus:ring-2 focus:ring-red focus:ring-offset-2 ease-in-out duration-300" @click="closeModalDelete" >
-                  Yes, delete
-                </button>
-              </div>
-              </div>
-
-
-
-
-
-            </DialogPanel>
-          </TransitionChild>
+  <!-- Dialog -->
+  <!-- Add Note dailog -->
+  <DialogPopup :open-dialog="addNoteDailog" @closeModal="addNoteDailog = false">
+    <div class="space-y-6 relative">
+      <DialogTitle as="h3" class="flex-1 text-2.5xl font-bold leading-none text-grey-800">
+        Add note
+      </DialogTitle>
+      <div class="space-y-6">
+        <form action="#" method="POST">
+          <div class="space-y-1">
+            <label for="textNote" class="block text-sm font-normal text-grey-900 text-start undefined">Note</label>
+            <textarea rows="4" name="text-note"
+              class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm undefined"
+              spellcheck="false" placeholder="write here..."></textarea>
+            <p class="text-red text-xs peer-invalid:block hidden pt-0.5">
+              <b>Error:</b> Invalid or incorrect Username Invalid or
+              incorrect password
+            </p>
+          </div>
+        </form>
+        <div class="flex justify-start gap-x-3">
+          <Button @click="addNoteDailog = false" :btn-peach="true">Save</Button>
+          <Button @click="addNoteDailog = false" :btn-bordered-gray="true" :btn-peach="false">Cancel</Button>
         </div>
       </div>
-    </Dialog>
-  </TransitionRoot>
+    </div>
+  </DialogPopup>
 
+  <!-- Edit Note dailog -->
+  <DialogPopup :open-dialog="editNoteDailog" @closeModal="editNoteDailog = false">
+    <div class="space-y-6 relative">
+      <div class="flex">All notes</div>
+      <DialogTitle as="h3" class="flex-1 text-2.5xl font-bold leading-none text-grey-800">
+        Edit note
+      </DialogTitle>
+      <div class="space-y-6">
+        <form action="#" method="POST">
+          <div class="space-y-1">
+            <label for="textNote" class="block text-sm font-normal text-grey-900 text-start undefined">Note</label>
+            <textarea rows="4" name="text-note"
+              class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm undefined"
+              spellcheck="false" placeholder="write here..."></textarea>
+            <p class="text-red text-xs peer-invalid:block hidden pt-0.5">
+              <b>Error:</b> Invalid or incorrect Username Invalid or
+              incorrect password
+            </p>
+          </div>
+        </form>
+        <div class="flex justify-start gap-x-3">
+          <Button @click="editNoteDailog = false" :btn-peach="true">Save</Button>
+          <Button @click="editNoteDailog = false" :btn-bordered-gray="true" :btn-peach="false">Cancel</Button>
+        </div>
+      </div>
+    </div>
+  </DialogPopup>
 
+  <!-- Edit customer -->
+  <DialogPopup :open-dialog="editCustomerDailog" @closeModal="editCustomerDailog = false">
+    <div class="space-y-6 relative">
+      <DialogTitle as="h3" class="flex-1 text-2.5xl font-bold leading-none text-grey-800">
+        Edit Customer
+      </DialogTitle>
+      <div class="space-y-6">
+        <div class="customer-details">
+          <form action="#" method="POST">
+            <div class="sm:overflow-hidden sm:rounded-md">
+              <Input class="mb-3" id="firstName" type="text" label-text="First Name" :on-change="handleInput"
+                autocomplete="firstName" placeholder="Julia" />
+              <Input class="mb-3" id="lastName" type="text" label-text="Last Name" :on-change="handleInput" autocomplete="lastName"
+                placeholder="Barneby" />
+              <Input class="mb-3" id="phone" type="text" label-text="Phone" :on-change="handleInput" autocomplete="phone"
+                placeholder="(888) 376-7160" />
+              <Input class="mb-3" id="email" type="email" label-text="Email" :on-change="handleInput" autocomplete="email"
+                placeholder="juliabarneby@gmail.com" />
+            </div>
+          </form>
+        </div>
+        <div class="flex justify-start gap-x-3">
+          <Button @click="editCustomerDailog = false" :btn-peach="true">Save</Button>
+          <Button @click="editCustomerDailog = false" :btn-bordered-gray="true" :btn-peach="false">Cancel</Button>
+        </div>
+      </div>
+    </div>
+  </DialogPopup>
 
-
-
+  <!-- Delete customer -->
+  <DialogPopup :open-dialog="deleteCustomerDailog" @closeModal="deleteCustomerDailog = false">
+   <button class="absolute top-3 right-3 text-grey-700" @click="closeModalDelete"  >
+                <CrossIcon class="w-4 h-4" />
+              </button>
+    <div class="space-y-6 relative">
+      <div class="mx-auto text-center">
+        <component :is="RemoveProfile" class="block h-16 w-16 text-grey-900 mx-auto" aria-hidden="true" />
+      </div>
+      <DialogTitle as="h3" class="flex-1 text-2.5xl font-bold leading-none text-grey-800 text-center">
+        Delete Customer
+      </DialogTitle>
+      <div class="space-y-6 text-center">
+        <div class="customer-details">
+          <p>Are you sure you want to delete</p>
+          <p class="font-bold">Customer Name?</p>
+        </div>
+        <div class="flex justify-center gap-x-3">
+          <Button @click="deleteCustomerDailog = false" class="w-auto">Cancel</Button>
+          <Button @click="deleteCustomerDailog = false" class="w-auto" :btn-peach="false" :btn-bordered="true">Yes, delete</Button>
+        </div>
+      </div>
+    </div>
+  </DialogPopup>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, reactive } from 'vue';
+
 import MagnifyingGlassIcon from '@/assets/icons/MagnifyingGlassIcon.vue';
 import DeleteCustomer from '@/assets/icons/customerDelete.vue';
 import CrossIcon from '@/assets/icons/cross.vue';
@@ -270,22 +315,16 @@ function openModalDelete() {
   openModalDeleteisOpen.value = true
 }
 
-const btnclasses = [
-  'mt-6 inline-flex items-center justify-center rounded-md border border-red bg-white px-4 w-36 text-center',
-  'py-2',
-  'text-base',
-  'font-medium',
-  'text-red',
-  'shadow-sm',
-  'hover:bg-red',
-  'hover:text-white',
-  'focus:outline-none',
-  'focus:ring-2',
-  'focus:ring-red',
-  'focus:ring-offset-2',
-  'ease-in-out',
-  'duration-300',
-];
+ 
+import DialogPopup from '../components/layout/DialogPopup.vue';
+import RemoveProfile from '@/assets/icons/RemoveProfile.vue';
+import { DialogTitle } from '@headlessui/vue';
+
+const addNoteDailog = ref(false);
+const editNoteDailog = ref(false);
+const editCustomerDailog = ref(false);
+const deleteCustomerDailog = ref(false);
+ 
 
 const activity = [
   {

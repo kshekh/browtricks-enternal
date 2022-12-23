@@ -1,9 +1,7 @@
 <template>
   <div class="relative flex flex-col min-h-screen w-full">
     <div class="flex-1 p-3 md:p-5 xl:px-14 xl:py-12">
-      <div
-        class="mb-7 pt-3 md:pt-0"
-      >
+      <div class="mb-7 pt-3 md:pt-0">
         <h2 class="flex-1 text-2.5xl font-bold leading-none text-grey-800 pb-10">
           Add Customer
         </h2>
@@ -20,10 +18,14 @@
               <form action="#" method="POST">
                 <div class="shadow sm:overflow-hidden sm:rounded-md">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
-                    <Input id="firstName" type="text" label-text="First Name" :on-change="handleInput" autocomplete="firstName" placeholder="Julia" />
-                    <Input id="lastName" type="text" label-text="Last Name" :on-change="handleInput" autocomplete="lastName" placeholder="Barneby" />
-                    <Input id="phone" type="text" label-text="Phone" :on-change="handleInput" autocomplete="phone" placeholder="(888) 376-7160" />
-                    <Input id="email" type="email" label-text="Email" :on-change="handleInput" autocomplete="email" placeholder="juliabarneby@gmail.com" />
+                    <Input id="firstName" type="text" label-text="First Name" :on-change="handleInput"
+                      autocomplete="firstName" placeholder="Julia" />
+                    <Input id="lastName" type="text" label-text="Last Name" :on-change="handleInput"
+                      autocomplete="lastName" placeholder="Barneby" />
+                    <Input id="phone" type="text" label-text="Phone" :on-change="handleInput" autocomplete="phone"
+                      placeholder="(888) 376-7160" />
+                    <Input id="email" type="email" label-text="Email" :on-change="handleInput" autocomplete="email"
+                      placeholder="juliabarneby@gmail.com" />
                   </div>
                 </div>
               </form>
@@ -55,16 +57,14 @@
     </div>
   </div>
 
-
-
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 import Input from '../components/layout/Input.vue';
 import Button from '../components/layout/Button.vue';
 import Textarea from '../components/layout/Textarea.vue';
- 
+
 function consoleClick() {
   console.log('Button clicked');
 }
