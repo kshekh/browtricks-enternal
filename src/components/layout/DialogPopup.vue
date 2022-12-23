@@ -11,13 +11,13 @@
             enter-to="opacity-100 scale-100" leave="duration-200 ease-in" leave-from="opacity-100 scale-100"
             leave-to="opacity-0 scale-95">
             <DialogPanel
-              class="w-full max-w-md transform overflow-hidden bg-white p-6 text-left align-middle transition-all shadow rounded-md">
-              <div class="z-10 absolute top-0 right-0 hidden pt-4 pr-4 sm:block">
-                <button type="button" class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" @click="$emit('closeModal')">
+              class="max-w-full transform overflow-hidden bg-white p-6 text-left align-middle transition-all shadow rounded-md">
+              <div class="z-10 absolute top-0 right-0 hidden pt-2 pr-2 sm:block">
+                <button type="button" class="rounded hover:bg-gray-200 p-2 ease-in-out duration-300" @click="$emit('closeModal')">
                   <span class="sr-only">Close</span>
                   <component
                     :is="XMarkIcon"
-                    class="block h-6 w-6 text-grey-900"
+                    class="block h-5 w-5 text-grey-900"
                     aria-hidden="true"
                   />
                 </button>
@@ -48,6 +48,10 @@ defineProps({
   openDialog: {
     type: Boolean,
     required: true
-  }
+  },
+  dialogWidth: {
+    type: String,
+    required: false,
+  },
 })
 </script>
