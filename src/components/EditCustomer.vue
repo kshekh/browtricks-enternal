@@ -7,17 +7,13 @@
         </h2>
         <div class="coverflow-hidden rounded-xl divide-y divide-grey-300">
           <!-- Main 3 column grid -->
-          <div
-            class="grid grid-cols-1 items-start gap-4 lg:grid-cols-3 lg:gap-8"
-          >
+          <div class="grid grid-cols-1 items-start gap-4 lg:grid-cols-3 lg:gap-8">
             <!-- Left column -->
             <div class="grid grid-cols-1 gap-6 lg:col-span-2">
               <div class="overflow-hidden rounded-lg bg-white shadow">
                 <div class="p-4 sm:p-8 space-y-6">
                   <div class="flex flex-col space-y-2.5">
-                    <h4
-                      class="text-lg font-semibold text-grey-800 leading-none"
-                    >
+                    <h4 class="text-lg font-semibold text-grey-800 leading-none">
                       Media
                     </h4>
                     <p class="text-sm text-grey-900 leading-tight">
@@ -32,48 +28,26 @@
                   </div>
                 </div>
               </div>
-              <div
-                class="overflow-hidden rounded-lg bg-white shadow hidden sm:block"
-              >
+              <div class="overflow-hidden rounded-lg bg-white shadow hidden sm:block">
                 <div class="p-4 sm:p-8 space-y-6">
                   <div class="flex items-center relative">
-                    <h4
-                      class="text-lg font-semibold text-gray-900 leading-none"
-                    >
+                    <h4 class="text-lg font-semibold text-gray-900 leading-none">
                       PMU Forms
-
                     </h4>
 
-                    <Button :btn-bordered-gray="true" :btn-peach="false"  >Add custom form</Button>
-
-                    <Button
-                      @emitclick="consoleClick"
-                      btn-classes="w-auto"
-                      class="absolute right-0 text-blue ml-auto text-base w-auto bg-transparent shadow-none"
-                      >Add custom form</Button
-                    >
+                    <Button @emitclick="consoleClick" :btn-no-border="true" :btn-peach="false"
+                      class="absolute right-0 text-blue ml-auto text-base w-auto bg-transparent shadow-none">Add custom
+                      form</Button>
 
                   </div>
                   <div class="flex gap-2 md:gap-5">
                     <div class="w-full flex-1">
                       <div class="relative">
-                        <div
-                          class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
-                        >
-                          <MagnifyingGlassIcon
-                            class="h-4 w-4 text-grey-900"
-                            aria-hidden="true"
-                          />
+                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                          <MagnifyingGlassIcon class="h-4 w-4 text-grey-900" aria-hidden="true" />
                         </div>
-                        <Input
-                          id="search"
-                          type="search"
-                          label-text=""
-                          name="search"
-                          v-model="password"
-                          placeholder="Search forms"
-                          inputClasses="pl-10 border-peach"
-                        />
+                        <Input id="search" type="search" label-text="" name="search" v-model="password"
+                          placeholder="Search forms" inputClasses="pl-10 border-peach" />
                       </div>
                     </div>
                     <div class="sm:flex-none flex">
@@ -92,24 +66,29 @@
                     </p>
                   </div>
 
-                   <div class="flow-root">
-                    <ul role="list" class="space-y-10 relative after:absolute after:z-0 after:top-0 after:left-2 after:h-[calc(100%-20px)] after:border-dashed after:border-peach after:border-l">
+                  <div class="flow-root">
+                    <ul role="list"
+                      class="space-y-10 relative after:absolute after:z-0 after:top-0 after:left-2 after:h-[calc(100%-20px)] after:border-dashed after:border-peach after:border-l">
                       <li v-for="(activityItem) in activity" :key="activityItem.id" class="flex gap-x-3 relative">
-                          <div class="flex h-4 w-4 items-center justify-center rounded-full bg-peach ring-8 ring-white"> </div>
-                              <div class="text-sm text-gray-500 leading-none">
-                                <span class="text-xs block font-medium pb-1.5 text-grey-700 leading-none">{{activityItem.date}}</span>
-                                <span class="font-medium text-gray-900">{{activityItem.store_name ? activityItem.store_name : activityItem.cust_name}}</span>
-                                {{ ' ' }}
-                                <template v-if="activityItem.store_name !== ''">
-                                  sent
-                                </template>
-                                <template v-else>
-                                  signed
-                                </template>
-                                {{ ' ' }}
-                                <span class="font-medium text-gray-900">{{ activityItem.form_name }}</span>
-                              </div>
-                            
+                        <div class="flex h-4 w-4 items-center justify-center rounded-full bg-peach ring-8 ring-white">
+                        </div>
+                        <div class="text-sm text-gray-500 leading-none">
+                          <span
+                            class="text-xs block font-medium pb-1.5 text-grey-700 leading-none">{{ activityItem.date }}</span>
+                          <span class="font-medium text-gray-900">{{ activityItem.store_name ? activityItem.store_name :
+                              activityItem.cust_name
+                          }}</span>
+                          {{ ' ' }}
+                          <template v-if="activityItem.store_name !== ''">
+                            sent
+                          </template>
+                          <template v-else>
+                            signed
+                          </template>
+                          {{ ' ' }}
+                          <span class="font-medium text-gray-900">{{ activityItem.form_name }}</span>
+                        </div>
+
                       </li>
                     </ul>
                   </div>
@@ -117,7 +96,7 @@
               </div>
 
               <div class="flex">
-                <Button @click="deleteCustomerDailog = true" :btn-bordered="true" :btn-peach="false">Delete Customer</Button>
+                <Button @click="deleteCustomerDailog = true" :btn-red-border="true" :btn-peach="false">Delete Customer</Button>
               </div>
             </div>
 
@@ -128,17 +107,11 @@
                 <div class="p-4 sm:p-8 space-y-4">
 
                   <div class="flex items-center space-y-2.5 relative">
-                    <h4
-                      class="text-lg font-semibold text-gray-900 leading-none"
-                    >
+                    <h4 class="text-lg font-semibold text-gray-900 leading-none">
                       Customer
                     </h4>
-                    <Button
-                      @click="editCustomerDailog = true"
-                      btn-classes="w-auto"
-                      class="absolute right-0 text-blue ml-auto text-base w-auto bg-transparent shadow-none"
-                      >Edit</Button
-                    >
+                    <Button @click="editCustomerDailog = true" :btn-no-border="true" :btn-peach="false"
+                      class="absolute right-0 text-blue ml-auto text-base w-auto bg-transparent shadow-none">Edit</Button>
                   </div>
                   <div class="customer-details">
                     <p class="text-base text-gray-500">
@@ -153,9 +126,7 @@
               <div class="overflow-hidden rounded-lg bg-white shadow">
                 <div class="p-4 sm:p-8 space-y-6">
                   <div class="flex flex-col space-y-2.5">
-                    <h4
-                      class="text-lg font-semibold text-grey-800 leading-none"
-                    >
+                    <h4 class="text-lg font-semibold text-grey-800 leading-none">
                       Notes
                     </h4>
                     <p class="text-sm text-grey-900 leading-tight">
@@ -176,7 +147,7 @@
     </div>
   </div>
 
- 
+
   <!-- Dialog -->
   <!-- Add Note dailog -->
   <DialogPopup :open-dialog="addNoteDailog" @closeModal="addNoteDailog = false">
@@ -245,12 +216,12 @@
             <div class="sm:overflow-hidden sm:rounded-md">
               <Input class="mb-3" id="firstName" type="text" label-text="First Name" :on-change="handleInput"
                 autocomplete="firstName" placeholder="Julia" />
-              <Input class="mb-3" id="lastName" type="text" label-text="Last Name" :on-change="handleInput" autocomplete="lastName"
-                placeholder="Barneby" />
-              <Input class="mb-3" id="phone" type="text" label-text="Phone" :on-change="handleInput" autocomplete="phone"
-                placeholder="(888) 376-7160" />
-              <Input class="mb-3" id="email" type="email" label-text="Email" :on-change="handleInput" autocomplete="email"
-                placeholder="juliabarneby@gmail.com" />
+              <Input class="mb-3" id="lastName" type="text" label-text="Last Name" :on-change="handleInput"
+                autocomplete="lastName" placeholder="Barneby" />
+              <Input class="mb-3" id="phone" type="text" label-text="Phone" :on-change="handleInput"
+                autocomplete="phone" placeholder="(888) 376-7160" />
+              <Input class="mb-3" id="email" type="email" label-text="Email" :on-change="handleInput"
+                autocomplete="email" placeholder="juliabarneby@gmail.com" />
             </div>
           </form>
         </div>
@@ -264,8 +235,8 @@
 
   <!-- Delete customer -->
   <DialogPopup :open-dialog="deleteCustomerDailog" @closeModal="deleteCustomerDailog = false">
-  
-    <div class="space-y-6 relative">
+
+    <div class="space-y-6 relative sss" :style="`width: 450px`">
       <div class="mx-auto text-center">
         <component :is="RemoveProfile" class="block h-16 w-16 text-grey-900 mx-auto" aria-hidden="true" />
       </div>
@@ -279,7 +250,8 @@
         </div>
         <div class="flex justify-center gap-x-3">
           <Button @click="deleteCustomerDailog = false" class="w-auto">Cancel</Button>
-          <Button @click="deleteCustomerDailog = false" class="w-auto" :btn-peach="false" :btn-bordered="true">Yes, delete</Button>
+          <Button @click="deleteCustomerDailog = false" class="w-auto" :btn-peach="false" :btn-dark-border="true">Yes,
+            delete</Button>
         </div>
       </div>
     </div>
@@ -296,29 +268,12 @@ import CrossIcon from '@/assets/icons/cross.vue';
 import Input from '../components/layout/Input.vue';
 import Button from '../components/layout/Button.vue';
 import Textarea from '../components/layout/Textarea.vue';
-import {
-  DialogTitle,
-} from '@headlessui/vue';
-
-const openModalDeleteisOpen = ref(true);
-
-function closeModalDelete() {
-  openModalDeleteisOpen.value = false
-}
-function openModalDelete() {
-  openModalDeleteisOpen.value = true
-}
-
- 
-
-
-// import { DialogTitle } from '@headlessui/vue';
+import { DialogTitle } from '@headlessui/vue';
 
 const addNoteDailog = ref(false);
 const editNoteDailog = ref(false);
 const editCustomerDailog = ref(false);
 const deleteCustomerDailog = ref(false);
- 
 
 const activity = [
   {
