@@ -135,8 +135,8 @@
                   </div>
 
                   <div class="mt-7">
-                    <Button @click="addNoteDailog = true" :btn-peach="true">Add Notes</Button>
-
+                    <Button @click="addNoteDailog = true">Add Notes</Button>
+                    <Button @click="allNoteDailog = true" class="ml-4">All Notes</Button>
                   </div>
                 </div>
               </div>
@@ -256,6 +256,36 @@
       </div>
     </div>
   </DialogPopup>
+
+  <!-- All Note dailog -->
+  <DialogPopup :open-dialog="allNoteDailog" @closeModal="allNoteDailog = false">
+    <div class="space-y-6 relative sm:w-full sm:max-w-lg" :style="`width: 616px`">
+      <DialogTitle as="h3" class="flex-1 text-2.5xl font-bold leading-none text-grey-800">
+        All notes
+      </DialogTitle>
+      <div class="space-y-6">
+        <div>
+          <div class="mt-6 flow-root">
+            <ul role="list" class="-my-5 divide-y divide-gray-200">
+              <li v-for="note in allNotes" :key="note.id" class="py-4">
+                <div class="flex items-center space-x-4">
+                  <div class="min-w-0 flex-1">
+                    <p class="truncate text-sm font-medium text-gray-900 sr-only">{{ note.name }}</p>
+                    <p class="w-90 text-sm text-gray-500">{{ note.desc }}</p>
+                  </div>
+                  <div>
+                    <Button :btn-no-border="true" :btn-peach="false" class="px-1.5">
+                      <DeleteRedIcon class="h-4 w-4 text-grey-900" aria-hidden="true" />
+                    </Button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </DialogPopup>
 </template>
 
 <script setup>
@@ -263,6 +293,7 @@ import { ref, reactive } from 'vue';
 import DialogPopup from '../components/layout/DialogPopup.vue';
 import RemoveProfile from '@/assets/icons/RemoveProfile.vue';
 import MagnifyingGlassIcon from '@/assets/icons/MagnifyingGlassIcon.vue';
+import DeleteRedIcon from '@/assets/icons/DeleteRedIcon.vue';
 import DeleteCustomer from '@/assets/icons/customerDelete.vue';
 import CrossIcon from '@/assets/icons/cross.vue';
 import Input from '../components/layout/Input.vue';
@@ -274,6 +305,7 @@ const addNoteDailog = ref(false);
 const editNoteDailog = ref(false);
 const editCustomerDailog = ref(false);
 const deleteCustomerDailog = ref(false);
+const allNoteDailog = ref(false);
 
 const activity = [
   {
@@ -295,4 +327,22 @@ const activity = [
 function consoleClick() {
   console.log('Button clicked');
 }
+
+const allNotes = [
+  {
+    id: 1,
+    name: 'Leonard Krasner',
+    desc: 'I am being treated for, or was in the past for the following conditions (Please include allergies, especially to dye, pigment, or numbing agent.)',
+  },
+  {
+    id: 2,
+    name: 'Leonard Krasner',
+    desc: 'Note text about cool new brows note text about cool new brows..',
+  },
+  {
+    id: 3,
+    name: 'Leonard Krasner',
+    desc: 'This customer was the best customer ever need to gove her discount next time..',
+  },
+]
 </script>

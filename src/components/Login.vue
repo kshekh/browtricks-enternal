@@ -54,14 +54,24 @@
               :on-change="handleInput"
               autocomplete="username"
             />
-            <Input
-              id="password"
-              type="password"
-              label-text="Password"
-              v-model="password"
-              :on-change="handleInput"
-              autocomplete="Password"
-            />
+            <div class="relative">
+              <Input
+                id="password"
+                v-bind:type="[showPassword ? 'text' : 'password']"
+                label-text="Password"
+                v-model="password"
+                :on-change="handleInput"
+                autocomplete="Password"
+              />
+              <button
+                type="button"
+                class="absolute top-5 right-0 py-4 px-4 text-grey-900"
+                @click="showPassword = !showPassword"
+              >
+                <Eye v-if="!showPassword" class="w-5" />
+                <EyeOff v-else class="w-5" />
+              </button>
+            </div>
 
             <div class="flex flex-wrap gap-2 items-center justify-between">
               <div class="flex items-center w-full xs:w-auto">
@@ -100,6 +110,10 @@ import GoogleIcon from '@/assets/icons/Google.vue';
 import FacebookIcon from '@/assets/icons/Facebook.vue';
 import Button from './layout/Button.vue';
 import Input from './layout/Input.vue';
+import Eye from '@/assets/icons/Eye.vue';
+import EyeOff from '@/assets/icons/EyeOff.vue';
+
+const showPassword = ref(false);
 
 function consoleClick() {
   console.log('Button clicked');
