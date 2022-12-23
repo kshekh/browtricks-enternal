@@ -43,6 +43,9 @@
                       PMU Forms
 
                     </h4>
+
+                    <Button :btn-bordered-gray="true" :btn-peach="false"  >Add custom form</Button>
+
                     <Button
                       @emitclick="consoleClick"
                       btn-classes="w-auto"
@@ -106,10 +109,7 @@
                                 {{ ' ' }}
                                 <span class="font-medium text-gray-900">{{ activityItem.form_name }}</span>
                               </div>
-                            </div>
-                          </div>
-
-                        </div>
+                            
                       </li>
                     </ul>
                   </div>
@@ -264,9 +264,7 @@
 
   <!-- Delete customer -->
   <DialogPopup :open-dialog="deleteCustomerDailog" @closeModal="deleteCustomerDailog = false">
-   <button class="absolute top-3 right-3 text-grey-700" @click="closeModalDelete"  >
-                <CrossIcon class="w-4 h-4" />
-              </button>
+  
     <div class="space-y-6 relative">
       <div class="mx-auto text-center">
         <component :is="RemoveProfile" class="block h-16 w-16 text-grey-900 mx-auto" aria-hidden="true" />
@@ -290,19 +288,15 @@
 
 <script setup>
 import { ref, reactive } from 'vue';
-
+import DialogPopup from '../components/layout/DialogPopup.vue';
+import RemoveProfile from '@/assets/icons/RemoveProfile.vue';
 import MagnifyingGlassIcon from '@/assets/icons/MagnifyingGlassIcon.vue';
 import DeleteCustomer from '@/assets/icons/customerDelete.vue';
 import CrossIcon from '@/assets/icons/cross.vue';
 import Input from '../components/layout/Input.vue';
-import ButtonInline from '../components/layout/ButtonInline.vue';
 import Button from '../components/layout/Button.vue';
 import Textarea from '../components/layout/Textarea.vue';
 import {
-  TransitionRoot,
-  TransitionChild,
-  Dialog,
-  DialogPanel,
   DialogTitle,
 } from '@headlessui/vue';
 
@@ -316,9 +310,9 @@ function openModalDelete() {
 }
 
  
-import DialogPopup from '../components/layout/DialogPopup.vue';
-import RemoveProfile from '@/assets/icons/RemoveProfile.vue';
-import { DialogTitle } from '@headlessui/vue';
+
+
+// import { DialogTitle } from '@headlessui/vue';
 
 const addNoteDailog = ref(false);
 const editNoteDailog = ref(false);
