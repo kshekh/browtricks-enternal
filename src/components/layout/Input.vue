@@ -12,7 +12,7 @@
       :placeholder="placeholder"
       :id="id"
       :class="`
-        block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-400 shadow-sm focus:border-peach focus:outline-none focus:ring-peach text-sm invalid:bg-red/5 invalid:border-red peer ${inputClasses}`"
+        block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-2.5 placeholder-grey-700 font-medium shadow-sm focus:border-peach focus:outline-none focus:ring-peach text-sm invalid:bg-red/5 invalid:border-red ease-in-out duration-300 outline-none peer ${inputClasses}`"
       @change="$emit('update:modelValue', $event.target.value)"
     />
     <p class="text-red text-xs peer-invalid:block hidden pt-0.5">
@@ -37,6 +37,11 @@ defineProps({
   },
   // Input box classes
   inputClasses: {
+    type: String,
+    required: true,
+  },
+  // Input box classes
+  classes: {
     type: String,
     required: true,
   },
