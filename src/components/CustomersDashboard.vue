@@ -1,11 +1,11 @@
 <template>
-  <div class="customers-view-wrapper relative flex flex-col min-h-screen w-full">
+   <div class="relative flex flex-col min-h-screen w-full">
     <div v-if="showAddCustomer">
       <EditCustomer />
-      <!-- <AddCustomer /> -->
-      <!-- <CustomersList /> -->
+      <AddCustomer />
+      <CustomersList />
     </div>
-    <div  v-else class="bg-gray-100 lg:min-w-0 flex-1 px-4 py-3 md:p-5 xl:px-14 xl:py-12"> 
+    <div v-else class="bg-gray-100 px-4 py-3 md:p-5 xl:px-14 xl:py-12"> 
       <h1 class="flex-1 text-2.5xl font-bold leading-none text-grey-800 mb-5">               
         Customers
         </h1>

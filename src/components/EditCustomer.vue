@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-1 relative flex flex-col w-full">
+  <div class="relative flex flex-col min-h-screen w-full">
     <div class="flex-1 p-4 md:p-5 xl:px-14 xl:py-12">
       <div class="space-y-6">
         <h2 class="flex-1 text-2.5xl font-bold leading-none text-grey-800">
@@ -7,46 +7,76 @@
         </h2>
         <div class="coverflow-hidden rounded-xl divide-y divide-grey-300">
           <!-- Main 3 column grid -->
-          <div class="grid grid-cols-1 items-start gap-4 lg:grid-cols-3 lg:gap-8">
+          <div
+            class="grid grid-cols-1 items-start gap-4 lg:grid-cols-3 lg:gap-8"
+          >
             <!-- Left column -->
-            <div class="grid grid-cols-1 gap-6 lg:col-span-2">  
+            <div class="grid grid-cols-1 gap-6 lg:col-span-2">
               <div class="overflow-hidden rounded-lg bg-white shadow">
                 <div class="p-4 sm:p-8 space-y-6">
                   <div class="flex flex-col space-y-2.5">
-                    <h4 class="text-lg font-semibold text-grey-800 leading-none">
+                    <h4
+                      class="text-lg font-semibold text-grey-800 leading-none"
+                    >
                       Media
                     </h4>
                     <p class="text-sm text-grey-900 leading-tight">
-                      This customer does not have<br> any content yet.
+                      This customer does not have<br />
+                      any content yet.
                     </p>
                   </div>
+
                   <div class="mt-7">
                     <Button @emitclick="consoleClick" :btn-peach="true">Add Media</Button>
+
                   </div>
                 </div>
               </div>
-              <div class="overflow-hidden rounded-lg bg-white shadow hidden sm:block">
+              <div
+                class="overflow-hidden rounded-lg bg-white shadow hidden sm:block"
+              >
                 <div class="p-4 sm:p-8 space-y-6">
                   <div class="flex items-center relative">
-                    <h4 class="text-lg font-semibold text-gray-900 leading-none">
+                    <h4
+                      class="text-lg font-semibold text-gray-900 leading-none"
+                    >
                       PMU Forms
-                    </p>
-                    <span class="text-blue ml-auto cursor-pointer">Add custom form</span>
+
+                    </h4>
+                    <Button
+                      @emitclick="consoleClick"
+                      btn-classes="w-auto"
+                      class="absolute right-0 text-blue ml-auto text-base w-auto bg-transparent shadow-none"
+                      >Add custom form</Button
+                    >
+
                   </div>
                   <div class="flex gap-2 md:gap-5">
                     <div class="w-full flex-1">
-                      <label for="search" class="sr-only">Search</label>
                       <div class="relative">
-                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                          <MagnifyingGlassIcon class="h-4 w-4 text-grey-800" aria-hidden="true" />
+                        <div
+                          class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+                        >
+                          <MagnifyingGlassIcon
+                            class="h-4 w-4 text-grey-900"
+                            aria-hidden="true"
+                          />
                         </div>
-                        <input id="search" name="search"
-                          class="block w-full placeholder-black/20 appearance-none rounded-md border-2 bg-transparent border-grey-300 px-3 py-3 placeholder-grey-800 shadow-sm font-medium focus:border-peach focus:outline-none focus:ring-peach sm:text-sm peer pl-10"
-                          placeholder="Search forms" type="search"/>   
+                        <Input
+                          id="search"
+                          type="search"
+                          label-text=""
+                          name="search"
+                          v-model="password"
+                          placeholder="Search forms"
+                          inputClasses="pl-10 border-peach"
+                        />
                       </div>
                     </div>
                     <div class="sm:flex-none flex">
+
                       <Button :btn-bordered-gray="true" :btn-peach="false">Browse</Button>
+
                     </div>
                   </div>
                 </div>
@@ -58,6 +88,7 @@
                       PMU Form Timeline
                     </p>
                   </div>
+
                    <div class="flow-root">
                     <ul role="list" class="space-y-10 relative after:absolute after:z-0 after:top-0 after:left-2 after:h-[calc(100%-20px)] after:border-dashed after:border-peach after:border-l">
                       <li v-for="(activityItem) in activity" :key="activityItem.id" class="flex gap-x-3 relative">
@@ -77,58 +108,75 @@
                               </div>
                             </div>
                           </div>
+
                         </div>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
+
               <div class="flex">
                 <Button @click="deleteCustomerDailog = true" :btn-bordered="true" :btn-peach="false">Delete Customer</Button>
               </div>
             </div>
 
+
             <!-- Right column -->
             <div class="grid grid-cols-1 gap-6 pb-12 sm:pb-0">
               <div class="overflow-hidden rounded-lg bg-white shadow">
                 <div class="p-4 sm:p-8 space-y-4">
-                    <div class="flex items-center space-y-2.5 relative">
-                      <h4 class="text-lg font-semibold text-gray-900 leading-none">
-                        Customer
-                      </p>
-                      <span class="text-blue ml-auto cursor-pointer" @click="editCustomerDailog = true">Edit</span>
-                    </div>
-                    <div class="customer-details">
-                      <p class="text-base text-gray-500 ">
-                        Julia Barneby<br>
-                        (888) 376-7160<br>
-                        juliabarneby@gmail.com
-                      </p>
-                    </div> 
+
+                  <div class="flex items-center space-y-2.5 relative">
+                    <h4
+                      class="text-lg font-semibold text-gray-900 leading-none"
+                    >
+                      Customer
+                    </h4>
+                    <Button
+                      @click="editCustomerDailog = true"
+                      btn-classes="w-auto"
+                      class="absolute right-0 text-blue ml-auto text-base w-auto bg-transparent shadow-none"
+                      >Edit</Button
+                    >
+                  </div>
+                  <div class="customer-details">
+                    <p class="text-base text-gray-500">
+                      Julia Barneby<br />
+                      (888) 376-7160<br />
+                      juliabarneby@gmail.com
+                    </p>
+                  </div>
+
                 </div>
               </div>
               <div class="overflow-hidden rounded-lg bg-white shadow">
                 <div class="p-4 sm:p-8 space-y-6">
                   <div class="flex flex-col space-y-2.5">
-                    <h4 class="text-lg font-semibold text-grey-800 leading-none">
+                    <h4
+                      class="text-lg font-semibold text-grey-800 leading-none"
+                    >
                       Notes
                     </h4>
                     <p class="text-sm text-grey-900 leading-tight">
                       No notes about this customer
                     </p>
                   </div>
+
                   <div class="mt-7">
                     <Button @click="addNoteDailog = true" :btn-peach="true">Add Notes</Button>
+
                   </div>
                 </div>
               </div>
-            </div>  
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
+ 
   <!-- Dialog -->
   <!-- Add Note dailog -->
   <DialogPopup :open-dialog="addNoteDailog" @closeModal="addNoteDailog = false">
@@ -216,6 +264,9 @@
 
   <!-- Delete customer -->
   <DialogPopup :open-dialog="deleteCustomerDailog" @closeModal="deleteCustomerDailog = false">
+   <button class="absolute top-3 right-3 text-grey-700" @click="closeModalDelete"  >
+                <CrossIcon class="w-4 h-4" />
+              </button>
     <div class="space-y-6 relative">
       <div class="mx-auto text-center">
         <component :is="RemoveProfile" class="block h-16 w-16 text-grey-900 mx-auto" aria-hidden="true" />
@@ -241,11 +292,30 @@
 import { ref, reactive } from 'vue';
 
 import MagnifyingGlassIcon from '@/assets/icons/MagnifyingGlassIcon.vue';
-
+import DeleteCustomer from '@/assets/icons/customerDelete.vue';
+import CrossIcon from '@/assets/icons/cross.vue';
 import Input from '../components/layout/Input.vue';
+import ButtonInline from '../components/layout/ButtonInline.vue';
 import Button from '../components/layout/Button.vue';
 import Textarea from '../components/layout/Textarea.vue';
+import {
+  TransitionRoot,
+  TransitionChild,
+  Dialog,
+  DialogPanel,
+  DialogTitle,
+} from '@headlessui/vue';
 
+const openModalDeleteisOpen = ref(true);
+
+function closeModalDelete() {
+  openModalDeleteisOpen.value = false
+}
+function openModalDelete() {
+  openModalDeleteisOpen.value = true
+}
+
+ 
 import DialogPopup from '../components/layout/DialogPopup.vue';
 import RemoveProfile from '@/assets/icons/RemoveProfile.vue';
 import { DialogTitle } from '@headlessui/vue';
@@ -254,6 +324,7 @@ const addNoteDailog = ref(false);
 const editNoteDailog = ref(false);
 const editCustomerDailog = ref(false);
 const deleteCustomerDailog = ref(false);
+ 
 
 const activity = [
   {
@@ -261,16 +332,16 @@ const activity = [
     date: 'October 29, 2022, 2:34 PM',
     store_name: '',
     cust_name: 'Customer name 1',
-    form_name: 'Form name'
+    form_name: 'Form name',
   },
   {
     id: 2,
     date: 'October 17, 2022, 1:34 PM',
     store_name: 'Store name 2',
     cust_name: 'Customer name 2',
-    form_name: 'Form name 2'
+    form_name: 'Form name 2',
   },
-]
+];
 
 function consoleClick() {
   console.log('Button clicked');

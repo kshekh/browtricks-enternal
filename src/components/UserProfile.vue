@@ -1,5 +1,5 @@
 <template>
-  <div class="user-profile-wrapper relative flex flex-col w-full">
+<div class="relative flex flex-col min-h-screen w-full">
     <!-- Projects List -->
     <div class="flex-1 p-3 md:p-5 xl:px-14 xl:py-12">
       <div class="mb-7 pb-10 space-y-5 border-b border-solid border-gray-300">
