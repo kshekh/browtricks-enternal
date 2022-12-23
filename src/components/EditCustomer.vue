@@ -5,18 +5,18 @@
         <h2 class="flex-1 text-2.5xl font-bold leading-none text-grey-800">
           Jane Doe Edit Page
         </h2>
-        <div class="coverflow-hidden rounded-xl divide-y divide-grey-300">
+        <div class="coverflow-hidden  divide-y divide-grey-300">
           <!-- Main 3 column grid -->
           <div class="grid grid-cols-1 items-start gap-4 lg:grid-cols-3 lg:gap-8">
             <!-- Left column -->
             <div class="grid grid-cols-1 gap-6 lg:col-span-2">
-              <div class="overflow-hidden rounded-lg bg-white shadow">
+              <div class="overflow-hidden shadow-3 rounded-lg bg-white">
                 <div class="p-4 sm:p-8 space-y-6">
                   <div class="flex flex-col space-y-2.5">
-                    <h4 class="text-lg font-semibold text-grey-800 leading-none">
+                    <h4 class="text-lg font-bold text-grey-800 leading-none">
                       Media
                     </h4>
-                    <p class="text-sm text-grey-900 leading-tight">
+                    <p class="text-sm text-grey-900 leading-tight font-medium">
                       This customer does not have<br />
                       any content yet.
                     </p>
@@ -28,15 +28,16 @@
                   </div>
                 </div>
               </div>
-              <div class="overflow-hidden rounded-lg bg-white shadow hidden sm:block">
-                <div class="p-4 sm:p-8 space-y-6">
+             
+              <div class="overflow-hidden shadow-3 rounded-lg bg-white hidden sm:block">
+                <div class="p-4 sm:p-8 space-y-3 sm:pt-6">
                   <div class="flex items-center relative">
-                    <h4 class="text-lg font-semibold text-gray-900 leading-none">
+                    <h4 class="text-lg font-bold text-gray-900 leading-none">
                       PMU Forms
                     </h4>
 
                     <Button @emitclick="consoleClick" :btn-no-border="true" :btn-peach="false"
-                      class="absolute right-0 text-blue ml-auto text-base w-auto bg-transparent shadow-none">Add custom
+                      class=" text-blue hover:text-grey-800 ml-auto md:px-3 -mr-3 text-base w-auto bg-transparent shadow-none">Add custom
                       form</Button>
 
                   </div>
@@ -52,16 +53,16 @@
                     </div>
                     <div class="sm:flex-none flex">
 
-                      <Button :btn-bordered-gray="true" :btn-peach="false">Browse</Button>
+                      <Button :btn-no-border="true" :btn-peach="false" class="mt-1 border-grey-700 hover:border-peach">Browse</Button>
 
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="overflow-hidden rounded-lg bg-white shadow">
+              <div class="overflow-hidden shadow-3 rounded-lg bg-white">
                 <div class="p-4 sm:p-8 space-y-6">
                   <div class="flex">
-                    <p class="text-lg font-semibold text-gray-900 leading-none">
+                    <p class="text-lg font-bold text-gray-900 leading-none">
                       PMU Form Timeline
                     </p>
                   </div>
@@ -96,22 +97,22 @@
               </div>
 
               <div class="flex">
-                <Button @click="deleteCustomerDailog = true" :btn-red-border="true" :btn-peach="false">Delete Customer</Button>
+                <Button @click="deleteCustomerDailog = true" :btn-red-border="true" :btn-peach="false" class="bg-transparent sm:px-6">Delete Customer</Button>
               </div>
             </div>
 
 
             <!-- Right column -->
             <div class="grid grid-cols-1 gap-6 pb-12 sm:pb-0">
-              <div class="overflow-hidden rounded-lg bg-white shadow">
-                <div class="p-4 sm:p-8 space-y-4">
+              <div class="overflow-hidden shadow-3 rounded-lg bg-white">
+                <div class="p-4 px-8 space-y-2">
 
-                  <div class="flex items-center space-y-2.5 relative">
-                    <h4 class="text-lg font-semibold text-gray-900 leading-none">
+                  <div class="flex items-center  relative">
+                    <h4 class="text-lg font-bold text-gray-900 leading-none">
                       Customer
                     </h4>
                     <Button @click="editCustomerDailog = true" :btn-no-border="true" :btn-peach="false"
-                      class="absolute right-0 text-blue ml-auto text-base w-auto bg-transparent shadow-none">Edit</Button>
+                      class="text-blue hover:text-grey-800 md:px-3 ml-auto -mr-3 text-base w-auto bg-transparent shadow-none">Edit</Button>
                   </div>
                   <div class="customer-details">
                     <p class="text-base text-gray-500">
@@ -123,10 +124,10 @@
 
                 </div>
               </div>
-              <div class="overflow-hidden rounded-lg bg-white shadow">
+              <div class="overflow-hidden shadow-3 rounded-lg bg-white">
                 <div class="p-4 sm:p-8 space-y-6">
                   <div class="flex flex-col space-y-2.5">
-                    <h4 class="text-lg font-semibold text-grey-800 leading-none">
+                    <h4 class="text-lg font-bold text-grey-800 leading-none">
                       Notes
                     </h4>
                     <p class="text-sm text-grey-900 leading-tight">
@@ -134,8 +135,9 @@
                     </p>
                   </div>
 
-                  <div class="mt-7">
+                  <div class="mt-7 flex gap-2">
                     <Button @click="addNoteDailog = true" :btn-peach="true">Add Notes</Button>
+                    <Button @click="allNotesDailog = true" :btn-no-border="true" :btn-peach="false" class="xs:px-4">All Notes</Button>
 
                   </div>
                 </div>
@@ -151,92 +153,145 @@
   <!-- Dialog -->
   <!-- Add Note dailog -->
   <DialogPopup :open-dialog="addNoteDailog" @closeModal="addNoteDailog = false">
-    <div class="space-y-6 relative">
+    <div class="space-y-6 relative" :style="`width:600px`">
       <DialogTitle as="h3" class="flex-1 text-2.5xl font-bold leading-none text-grey-800">
         Add note
       </DialogTitle>
-      <div class="space-y-6">
-        <form action="#" method="POST">
+     
+        <form action="#" method="POST"> 
+          <div class="space-y-6">
           <div class="space-y-1">
-            <label for="textNote" class="block text-sm font-normal text-grey-900 text-start undefined">Note</label>
-            <textarea rows="4" name="text-note"
-              class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm undefined"
-              spellcheck="false" placeholder="write here..."></textarea>
-            <p class="text-red text-xs peer-invalid:block hidden pt-0.5">
-              <b>Error:</b> Invalid or incorrect Username Invalid or
-              incorrect password
-            </p>
+            <Textarea name="text-note" rows="4" id="textNote" label-text="Note" placeholder="I am being treated for, or was in the past for the following conditions (Please include allergies, especially to dye, pigment, or numbing agent.)" />
+ 
           </div>
-        </form>
-        <div class="flex justify-start gap-x-3">
-          <Button @click="addNoteDailog = false" :btn-peach="true">Save</Button>
-          <Button @click="addNoteDailog = false" :btn-bordered-gray="true" :btn-peach="false">Cancel</Button>
+          <div class="flex justify-start gap-x-3">
+          <Button @click="addNoteDailog = false" type="submit" class="w-auto sm:px-6"  :btn-peach="true">Save</Button>
+          <Button @click="addNoteDailog = false" class="w-auto sm:px-6 hover:text-red hover:border-red hover:bg-transparent hover:bg-red-50" type="button" :btn-line-border="true" :btn-peach="false"  >Cancel</Button>
         </div>
       </div>
+        </form>
+       
+      
     </div>
   </DialogPopup>
 
+  <!-- All Notes dailog -->
+  <DialogPopup :open-dialog="allNotesDailog" @closeModal="allNotesDailog = false">
+    <div class="space-y-6 relative" :style="`width:600px`">
+     
+      <DialogTitle as="h3" class="flex-1 text-2.5xl font-bold leading-none text-grey-800">
+        All notes
+      </DialogTitle>
+      
+      <div class="mt-6 flow-root">
+    <ul role="list" class="-my-5 divide-y divide-gray-200">
+      <li class="py-5">
+        <div class="relative flex gap-5 justify-between">
+          <div class="max-w-sm"  @click="editNoteDailog = true">
+          <p class="text-sm text-grey-900 font-medium line-clamp-2 cursor-pointer">I am being treated for, or was in the past for the following conditions (Please include allergies, especially to dye, pigment, or numbing agent.)</p>
+          </div>
+          <div class="flex items-center">
+          <button type="button" class="text-red p-2 rounded hover:bg-red-50 ease-in-out duration-300">
+            <trashIcon class="w-5 h-5" />
+          </button>
+        </div>
+        </div>
+      </li>  
+      <li class="py-5">
+        <div class="relative flex gap-5 justify-between">
+          <div class="max-w-sm" >
+          <p class="text-sm text-grey-900 font-medium line-clamp-2">Note text about cool new brows note text about cool new browse</p>
+          </div>
+          <div class="flex items-center">
+          <button type="button" class="text-red p-2 rounded hover:bg-red-50 ease-in-out duration-300">
+            <trashIcon class="w-5 h-5" />
+          </button>
+        </div>
+        </div>
+      </li> 
+      
+      <li class="py-5">
+        <div class="relative flex gap-5 justify-between">
+          <div class="max-w-sm">
+          <p class="text-sm text-grey-900 font-medium line-clamp-2">This customer was the best customer ever need to give her discount next time</p>
+        </div>
+          <div class="flex items-center">
+          <button type="button" class="text-red p-2 rounded hover:bg-red-50 ease-in-out duration-300">
+            <trashIcon class="w-5 h-5" />
+          </button>
+        </div>
+        </div>
+      </li>
+
+       
+    </ul>
+  </div>
+         
+      
+    </div>
+  </DialogPopup> 
+  
   <!-- Edit Note dailog -->
   <DialogPopup :open-dialog="editNoteDailog" @closeModal="editNoteDailog = false">
-    <div class="space-y-6 relative">
-      <div class="flex">All notes</div>
+    <div class="space-y-6 relative" :style="`width:600px`">
+      <div class="space-y-3">
+      <button type="button"  @click="editNoteDailog = false" class="flex items-center gap-1 font-medium"><ArrowLeft class="w-4 h-4" /><span>All notes</span></button>
       <DialogTitle as="h3" class="flex-1 text-2.5xl font-bold leading-none text-grey-800">
         Edit note
       </DialogTitle>
-      <div class="space-y-6">
+    </div>
         <form action="#" method="POST">
+          <div class="space-y-6">
           <div class="space-y-1">
-            <label for="textNote" class="block text-sm font-normal text-grey-900 text-start undefined">Note</label>
-            <textarea rows="4" name="text-note"
-              class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm undefined"
-              spellcheck="false" placeholder="write here..."></textarea>
-            <p class="text-red text-xs peer-invalid:block hidden pt-0.5">
-              <b>Error:</b> Invalid or incorrect Username Invalid or
-              incorrect password
-            </p>
+            <Textarea name="text-note" rows="4" id="textNote" label-text="Note" placeholder="I am being treated for, or was in the past for the following conditions (Please include allergies, especially to dye, pigment, or numbing agent.)" />
+ 
           </div>
-        </form>
-        <div class="flex justify-start gap-x-3">
-          <Button @click="editNoteDailog = false" :btn-peach="true">Save</Button>
-          <Button @click="editNoteDailog = false" :btn-bordered-gray="true" :btn-peach="false">Cancel</Button>
-        </div>
+          <div class="flex justify-start gap-x-3">
+          <Button @click="editNoteDailog = false" type="submit" class="w-auto sm:px-8"  :btn-peach="true">Save</Button>
+          <Button @click="editNoteDailog = false" class="w-auto sm:px-8 hover:text-red hover:border-red hover:bg-transparent hover:bg-red-50" type="button" :btn-line-border="true" :btn-peach="false"  >Cancel</Button>
+       </div>
       </div>
+        </form>
+         
+      
     </div>
   </DialogPopup>
 
   <!-- Edit customer -->
   <DialogPopup :open-dialog="editCustomerDailog" @closeModal="editCustomerDailog = false">
-    <div class="space-y-6 relative">
+    <div class="space-y-6 relative" :style="`width:390px`">
       <DialogTitle as="h3" class="flex-1 text-2.5xl font-bold leading-none text-grey-800">
         Edit Customer
       </DialogTitle>
-      <div class="space-y-6">
-        <div class="customer-details">
+             
           <form action="#" method="POST">
-            <div class="sm:overflow-hidden sm:rounded-md">
-              <Input class="mb-3" id="firstName" type="text" label-text="First Name" :on-change="handleInput"
+            <div class="space-y-6">
+            <div class="sm:overflow-hidden sm:rounded-md space-y-3">
+              <Input class="" id="firstName" type="text" label-text="First Name" :on-change="handleInput"
                 autocomplete="firstName" placeholder="Julia" />
-              <Input class="mb-3" id="lastName" type="text" label-text="Last Name" :on-change="handleInput"
+              <Input class="" id="lastName" type="text" label-text="Last Name" :on-change="handleInput"
                 autocomplete="lastName" placeholder="Barneby" />
-              <Input class="mb-3" id="phone" type="text" label-text="Phone" :on-change="handleInput"
+              <Input class="" id="phone" type="text" label-text="Phone" :on-change="handleInput"
                 autocomplete="phone" placeholder="(888) 376-7160" />
-              <Input class="mb-3" id="email" type="email" label-text="Email" :on-change="handleInput"
+              <Input class="" id="email" type="email" label-text="Email" :on-change="handleInput"
                 autocomplete="email" placeholder="juliabarneby@gmail.com" />
-            </div>
-          </form>
-        </div>
+            </div>       
+     
         <div class="flex justify-start gap-x-3">
-          <Button @click="editCustomerDailog = false" :btn-peach="true">Save</Button>
-          <Button @click="editCustomerDailog = false" :btn-bordered-gray="true" :btn-peach="false">Cancel</Button>
+          <Button @click="editCustomerDailog = false" type="submit" class="w-auto sm:px-8"  :btn-peach="true">Save</Button>
+          <Button @click="editCustomerDailog = false" class="w-auto sm:px-8 hover:text-red hover:border-red hover:bg-transparent hover:bg-red-50" type="button" :btn-line-border="true" :btn-peach="false"  >Cancel</Button>
         </div>
-      </div>
-    </div>
+       </div>
+  
+   </form>
+        </div>   
+     
   </DialogPopup>
 
   <!-- Delete customer -->
   <DialogPopup :open-dialog="deleteCustomerDailog" @closeModal="deleteCustomerDailog = false">
 
-    <div class="space-y-6 relative sss" :style="`width: 450px`">
+    <div class="space-y-6 relative sss" :style="`width:390px`">
       <div class="mx-auto text-center">
         <component :is="RemoveProfile" class="block h-16 w-16 text-grey-900 mx-auto" aria-hidden="true" />
       </div>
@@ -249,8 +304,8 @@
           <p class="font-bold">Customer Name?</p>
         </div>
         <div class="flex justify-center gap-x-3">
-          <Button @click="deleteCustomerDailog = false" class="w-auto">Cancel</Button>
-          <Button @click="deleteCustomerDailog = false" class="w-auto" :btn-peach="false" :btn-dark-border="true">Yes,
+          <Button @click="deleteCustomerDailog = false" class="w-auto sm:px-8 hover:text-red hover:border-red hover:bg-transparent hover:bg-red-50" type="button" :btn-line-border="true" :btn-peach="false">Cancel</Button>
+          <Button @click="deleteCustomerDailog = false" class="w-auto sm:px-8 " type="button" :btn-red-border="true" :btn-peach="false"  >Yes,
             delete</Button>
         </div>
       </div>
@@ -260,17 +315,18 @@
 
 <script setup>
 import { ref, reactive } from 'vue';
-import DialogPopup from '../components/layout/DialogPopup.vue';
+import DialogPopup from '@/components/layout/DialogPopup.vue';
 import RemoveProfile from '@/assets/icons/RemoveProfile.vue';
 import MagnifyingGlassIcon from '@/assets/icons/MagnifyingGlassIcon.vue';
-import DeleteCustomer from '@/assets/icons/customerDelete.vue';
-import CrossIcon from '@/assets/icons/cross.vue';
-import Input from '../components/layout/Input.vue';
-import Button from '../components/layout/Button.vue';
-import Textarea from '../components/layout/Textarea.vue';
+import trashIcon from '@/assets/icons/trash.vue';
+import ArrowLeft from '@/assets/icons/ArrowLeft.vue';
+import Input from '@/components/layout/Input.vue';
+import Button from '@/components/layout/Button.vue';
+import Textarea from '@/components/layout/Textarea.vue';
 import { DialogTitle } from '@headlessui/vue';
 
 const addNoteDailog = ref(false);
+const allNotesDailog = ref(false);
 const editNoteDailog = ref(false);
 const editCustomerDailog = ref(false);
 const deleteCustomerDailog = ref(false);

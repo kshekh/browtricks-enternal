@@ -2,7 +2,7 @@
   <div class="space-y-1">
     <label
       :for="id"
-      :class="`block text-sm font-normal text-grey-900 text-start ${labelClasses}`"
+      :class="`block text-sm font-medium text-grey-900 text-start ${labelClasses}`"
     >
       {{ labelText }}
     </label>

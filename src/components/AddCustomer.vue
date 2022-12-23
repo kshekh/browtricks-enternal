@@ -5,18 +5,18 @@
         <h2 class="flex-1 text-2.5xl font-bold leading-none text-grey-800 pb-10">
           Add Customer
         </h2>
-        <div class="coverflow-hidden rounded-xl divide-y divide-grey-300">
+        <div class="coverflow-hidden divide-y divide-grey-300">
           <div class="md:grid md:grid-cols-3 md:gap-6 mb-7">
             <div class="md:col-span-1">
               <div class="px-4 sm:px-0">
-                <h3 class="text-lg font-semibold leading-6 text-grey-800">
+                <h3 class="text-lg font-bold leading-6 text-grey-800">
                   Add contact information
                 </h3>
               </div>
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
-                <div class="shadow sm:overflow-hidden sm:rounded-md">
+                <div class="overflow-hidden shadow-3 rounded-lg">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
                     <Input id="firstName" type="text" label-text="First Name" :on-change="handleInput"
                       autocomplete="firstName" placeholder="Julia" />
@@ -34,14 +34,14 @@
           <div class="md:grid md:grid-cols-3 md:gap-6 mb-7 pt-7">
             <div class="md:col-span-1">
               <div class="relative">
-                <h3 class="text-lg font-semibold leading-6 text-grey-800">
+                <h3 class="text-lg font-bold leading-6 text-grey-800">
                   Add a note
                 </h3>
               </div>
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
-                <div class="shadow sm:overflow-hidden sm:rounded-md">
+                <div class="overflow-hidden shadow-3 rounded-lg">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
                     <Textarea name="text-note" rows="4" id="textNote" label-text="Note" />
                   </div>
@@ -50,7 +50,7 @@
             </div>
           </div>
           <div class="pt-7 flex items-center mt-3">
-            <Button @emitclick="consoleClick" class="sm:w-38 sm:mr-auto">Add customer</Button>
+            <Button @emitclick="consoleClick" class="sm:min-w-40 " :btn-peach="true">Add customer</Button>
           </div>
         </div>
       </div>
@@ -61,9 +61,9 @@
 
 <script setup>
 import { ref } from 'vue';
-import Input from '../components/layout/Input.vue';
-import Button from '../components/layout/Button.vue';
-import Textarea from '../components/layout/Textarea.vue';
+import Input from '@/components/layout/Input.vue';
+import Button from '@/components/layout/Button.vue';
+import Textarea from '@/components/layout/Textarea.vue';
 
 function consoleClick() {
   console.log('Button clicked');
