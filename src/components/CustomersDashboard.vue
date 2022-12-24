@@ -1,9 +1,9 @@
 <template>
    <div class="relative flex flex-col min-h-screen w-full">
     <div v-if="showAddCustomer">
-      <EditCustomer />
+      <!-- <EditCustomer /> -->
       <AddCustomer />
-      <CustomersList />
+      <!-- <CustomersList /> -->
     </div>
     <div v-else class="bg-gray-100 px-4 py-3 md:p-5 xl:px-14 xl:py-12"> 
       <h1 class="flex-1 text-2.5xl font-bold leading-none text-grey-800 mb-5">               
@@ -19,7 +19,7 @@
               <p class="text-md text-grey-900">Get started by adding customer contact info in order to add media, manage PMU form      
                 signing, and notes.</p>
               </div>
-            <Button type="submit"  @click="showAddCustomer = true" class="w-auto sm:px-6 mx-auto">Add customer</Button>
+            <Button type="submit" :btn-primary="true"  @click="showAddCustomer = true" class="w-auto sm:px-6 mx-auto">Add customer</Button>
             </div>
            </div>
         </div>
@@ -31,10 +31,10 @@
 <script setup>
 import { ref } from 'vue';
 
-import EditCustomer from '@/components/EditCustomer.vue';
+// import EditCustomer from '@/components/EditCustomer.vue';
 import AddCustomer from '@/components/AddCustomer.vue';
 import Button from '@/components/layout/Button.vue';
-import CustomersList from '@/components/CustomersList.vue';
+// import CustomersList from '@/components/CustomersList.vue';
 
 const showAddCustomer = ref(false);
 </script>

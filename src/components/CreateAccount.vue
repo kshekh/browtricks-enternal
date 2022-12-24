@@ -156,7 +156,7 @@
             >
               <div class="flex items-center w-full xs:w-auto">
                 <!-- This is for emit method -->
-                <Button type="submit" @emitclick="consoleClick" :btn-peach="true">
+                <Button type="submit" @emitclick="consoleClick" :btn-primary="true">
                   Let's get started</Button
                 >
               </div>

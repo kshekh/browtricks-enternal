@@ -97,7 +97,7 @@
                     <div class="py-1" role="none">
                       <button
                         type="button"
-                        class="block px-4 py-2 hover:bg-peach text-sm text-grey-800 transition-all ease-in-out duration-300 w-full text-left font-bold"
+                        class="block px-4 py-2 hover:bg-peach text-sm text-grey-900 transition-all ease-in-out duration-300 w-full text-left font-semibold"
                         role="menuitem"
                         tabindex="-1"
                         id="menu-item-3"

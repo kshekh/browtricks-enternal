@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="flex items-center justify-end mt-3">                       
-                      <Button @click="editNoteDailog = false" type="submit" class="w-auto sm:px-6"  :btn-peach="true">Save</Button>
+                      <Button @click="editNoteDailog = false" type="submit" class="w-auto sm:px-6"  :btn-primary="true">Save</Button>
                     </div>
 
                      
@@ -101,7 +101,7 @@
 
 
                     <div class="flex items-center justify-end mt-3">                       
-                      <Button @click="editNoteDailog = false" type="submit" class="w-auto sm:px-6"  :btn-peach="true">Save</Button>
+                      <Button @click="editNoteDailog = false" type="submit" class="w-auto sm:px-6"  :btn-primary="true">Save</Button>
                     </div>
  
                   </div>
@@ -167,7 +167,7 @@
                     </div>
 
                     <div class="flex items-center justify-end mt-3">                       
-                      <Button @click="editNoteDailog = false" type="submit" class="w-auto sm:px-6"  :btn-peach="true">Add</Button>
+                      <Button @click="editNoteDailog = false" type="submit" class="w-auto sm:px-6"  :btn-primary="true">Add</Button>
                     </div>
                   </div>
                 </div>
@@ -226,7 +226,7 @@
                           <td class="text-right">
                            
 
-                            <Button class="w-auto sm:px-4" type="button" :btn-line-border="true" :btn-peach="false">Connect</Button>
+                            <Button class="w-auto sm:px-4" type="button" :btn-outline="true" :btn-primary="false">Connect</Button>
 
                           </td>
                         </tr>
@@ -248,7 +248,7 @@
                             </div>
                           </td>
                           <td class="text-right">
-                            <Button class="w-auto sm:px-4" type="button" :btn-line-border="true" :btn-peach="false">Connect</Button>
+                            <Button class="w-auto sm:px-4" type="button" :btn-outline="true" :btn-primary="false">Connect</Button>
 
                           </td>
                         </tr>
@@ -291,7 +291,7 @@
                             </div>
                           </td>
                           <td class="text-right">
-                            <Button class="w-auto sm:px-4" type="button" :btn-line-border="true" :btn-peach="false">Connect</Button>
+                            <Button class="w-auto sm:px-4" type="button" :btn-outline="true" :btn-primary="false">Connect</Button>
 
                           </td>
                         </tr>
@@ -311,7 +311,7 @@
                             </div>
                           </td>
                           <td class="text-right">
-                            <Button class="w-auto sm:px-4" type="button" :btn-line-border="true" :btn-peach="false">Connect</Button>
+                            <Button class="w-auto sm:px-4" type="button" :btn-outline="true" :btn-primary="false">Connect</Button>
 
                             
                           </td>
@@ -405,7 +405,7 @@
                     </div>
                     <div class="flex justify-end items-center mt-3">
                      
-                      <Button @click="editNoteDailog = false" type="submit" class="w-auto sm:px-6"  :btn-peach="true">Create</Button>
+                      <Button @click="editNoteDailog = false" type="submit" class="w-auto sm:px-6"  :btn-primary="true">Create</Button>
                     </div>
                   </div>
                 </div>
@@ -442,7 +442,7 @@
                     </div>
 
                     <div class="flex items-center mt-3 justify-start">                       
-                      <Button @click="deleteCustomerDailog = true" :btn-red-border="true" :btn-peach="false" class="bg-transparent sm:px-6"> Delete Team</Button>
+                      <Button @click="deleteCustomerDailog = true" :btn-danger="true" :btn-primary="false" class="bg-transparent sm:px-6"> Delete Team</Button>
                     </div>
                   </div>
                 </div>
