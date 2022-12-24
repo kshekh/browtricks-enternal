@@ -8,7 +8,7 @@
           </h2>
         </div>
         <div class="sm:mt-4 md:mt-0  sm:flex-none">
-          <Button
+          <Button :btn-primary="true" 
             @click="this.$router.push({ name: 'add-customer' })"
             class="sm:w-38 sm:mr-auto"
             >Add customer</Button
@@ -42,7 +42,7 @@
               <Button
                 @emitclick="consoleClick"
                 :btn-no-border="true"
-                :btn-peach="false"
+                :btn-primary="false"
                 class="mt-1 border-grey-700 hover:border-peach sm:px-4 hidden"
                 ><ShortIcon class="w-5 h-4 mr-2" /> <span>Short</span></Button
               >

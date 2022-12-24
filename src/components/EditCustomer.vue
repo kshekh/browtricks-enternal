@@ -23,7 +23,7 @@
                   </div>
 
                   <div class="mt-7">
-                    <Button @emitclick="consoleClick" :btn-peach="true">Add Media</Button>
+                    <Button @emitclick="consoleClick" :btn-primary="true">Add Media</Button>
 
                   </div>
                 </div>
@@ -36,7 +36,7 @@
                       PMU Forms
                     </h4>
 
-                    <Button @emitclick="consoleClick" :btn-no-border="true" :btn-peach="false"
+                    <Button @emitclick="consoleClick" :btn-no-border="true" :btn-primary="false"
                       class=" text-blue hover:text-grey-800 ml-auto md:px-3 -mr-3 text-base w-auto bg-transparent shadow-none">Add custom
                       form</Button>
 
@@ -53,7 +53,7 @@
                     </div>
                     <div class="sm:flex-none flex">
 
-                      <Button :btn-no-border="true" :btn-peach="false" class="mt-1 border-grey-700 hover:border-peach">Browse</Button>
+                      <Button :btn-no-border="true" :btn-primary="false" class="mt-1 border-grey-700 hover:border-peach">Browse</Button>
 
                     </div>
                   </div>
@@ -97,7 +97,7 @@
               </div>
 
               <div class="flex">
-                <Button @click="deleteCustomerDailog = true" :btn-red-border="true" :btn-peach="false" class="bg-transparent sm:px-6">Delete Customer</Button>
+                <Button @click="deleteCustomerDailog = true" :btn-danger="true" :btn-primary="false" class="bg-transparent sm:px-6">Delete Customer</Button>
               </div>
             </div>
 
@@ -111,7 +111,7 @@
                     <h4 class="text-lg font-bold text-gray-900 leading-none">
                       Customer
                     </h4>
-                    <Button @click="editCustomerDailog = true" :btn-no-border="true" :btn-peach="false"
+                    <Button @click="editCustomerDailog = true" :btn-no-border="true" :btn-primary="false"
                       class="text-blue hover:text-grey-800 md:px-3 ml-auto -mr-3 text-base w-auto bg-transparent shadow-none">Edit</Button>
                   </div>
                   <div class="customer-details">
@@ -136,8 +136,8 @@
                   </div>
 
                   <div class="mt-7 flex gap-2">
-                    <Button @click="addNoteDailog = true" :btn-peach="true">Add Notes</Button>
-                    <Button @click="allNotesDailog = true" :btn-no-border="true" :btn-peach="false" class="xs:px-4">All Notes</Button>
+                    <Button @click="addNoteDailog = true" :btn-primary="true">Add Notes</Button>
+                    <Button @click="allNotesDailog = true" :btn-no-border="true" :btn-primary="false" class="xs:px-4">All Notes</Button>
 
                   </div>
                 </div>
@@ -153,7 +153,7 @@
   <!-- Dialog -->
   <!-- Add Note dailog -->
   <DialogPopup :open-dialog="addNoteDailog" @closeModal="addNoteDailog = false">
-    <div class="space-y-6 relative" :style="`width:600px`">
+    <div class="space-y-6 relative max-w-full" :style="`width:600px`">
       <DialogTitle as="h3" class="flex-1 text-2.5xl font-bold leading-none text-grey-800">
         Add note
       </DialogTitle>
@@ -165,8 +165,8 @@
  
           </div>
           <div class="flex justify-start gap-x-3">
-          <Button @click="addNoteDailog = false" type="submit" class="w-auto sm:px-6"  :btn-peach="true">Save</Button>
-          <Button @click="addNoteDailog = false" class="w-auto sm:px-6 hover:text-red hover:border-red hover:bg-transparent hover:bg-red-50" type="button" :btn-line-border="true" :btn-peach="false"  >Cancel</Button>
+          <Button @click="addNoteDailog = false" type="submit" class="w-auto sm:px-6"  :btn-primary="true">Save</Button>
+          <Button @click="addNoteDailog = false" class="w-auto sm:px-6 hover:text-red hover:border-red hover:bg-transparent hover:bg-red-50" type="button" :btn-outline="true" :btn-primary="false"  >Cancel</Button>
         </div>
       </div>
         </form>
@@ -177,7 +177,7 @@
 
   <!-- All Notes dailog -->
   <DialogPopup :open-dialog="allNotesDailog" @closeModal="allNotesDailog = false">
-    <div class="space-y-6 relative" :style="`width:600px`">
+    <div class="space-y-6 relative max-w-full" :style="`width:600px`">
      
       <DialogTitle as="h3" class="flex-1 text-2.5xl font-bold leading-none text-grey-800">
         All notes
@@ -233,7 +233,7 @@
   
   <!-- Edit Note dailog -->
   <DialogPopup :open-dialog="editNoteDailog" @closeModal="editNoteDailog = false">
-    <div class="space-y-6 relative" :style="`width:600px`">
+    <div class="space-y-6 relative max-w-full" :style="`width:600px`">
       <div class="space-y-3">
       <button type="button"  @click="editNoteDailog = false" class="flex items-center gap-1 font-medium"><ArrowLeft class="w-4 h-4" /><span>All notes</span></button>
       <DialogTitle as="h3" class="flex-1 text-2.5xl font-bold leading-none text-grey-800">
@@ -247,8 +247,8 @@
  
           </div>
           <div class="flex justify-start gap-x-3">
-          <Button @click="editNoteDailog = false" type="submit" class="w-auto sm:px-8"  :btn-peach="true">Save</Button>
-          <Button @click="editNoteDailog = false" class="w-auto sm:px-8 hover:text-red hover:border-red hover:bg-transparent hover:bg-red-50" type="button" :btn-line-border="true" :btn-peach="false"  >Cancel</Button>
+          <Button @click="editNoteDailog = false" type="submit" class="w-auto sm:px-8"  :btn-primary="true">Save</Button>
+          <Button @click="editNoteDailog = false" class="w-auto sm:px-8 hover:text-red hover:border-red hover:bg-transparent hover:bg-red-50" type="button" :btn-outline="true" :btn-primary="false"  >Cancel</Button>
        </div>
       </div>
         </form>
@@ -259,7 +259,7 @@
 
   <!-- Edit customer -->
   <DialogPopup :open-dialog="editCustomerDailog" @closeModal="editCustomerDailog = false">
-    <div class="space-y-6 relative" :style="`width:390px`">
+    <div class="space-y-6 relative max-w-full" :style="`width:390px`">
       <DialogTitle as="h3" class="flex-1 text-2.5xl font-bold leading-none text-grey-800">
         Edit Customer
       </DialogTitle>
@@ -278,8 +278,8 @@
             </div>       
      
         <div class="flex justify-start gap-x-3">
-          <Button @click="editCustomerDailog = false" type="submit" class="w-auto sm:px-8"  :btn-peach="true">Save</Button>
-          <Button @click="editCustomerDailog = false" class="w-auto sm:px-8 hover:text-red hover:border-red hover:bg-transparent hover:bg-red-50" type="button" :btn-line-border="true" :btn-peach="false"  >Cancel</Button>
+          <Button @click="editCustomerDailog = false" type="submit" class="w-auto sm:px-8"  :btn-primary="true">Save</Button>
+          <Button @click="editCustomerDailog = false" class="w-auto sm:px-8 hover:text-red hover:border-red hover:bg-transparent hover:bg-red-50" type="button" :btn-outline="true" :btn-primary="false"  >Cancel</Button>
         </div>
        </div>
   
@@ -291,7 +291,7 @@
   <!-- Delete customer -->
   <DialogPopup :open-dialog="deleteCustomerDailog" @closeModal="deleteCustomerDailog = false">
 
-    <div class="space-y-6 relative sss" :style="`width:390px`">
+    <div class="space-y-6 relative max-w-full" :style="`width:390px`">
       <div class="mx-auto text-center">
         <component :is="RemoveProfile" class="block h-16 w-16 text-grey-900 mx-auto" aria-hidden="true" />
       </div>
@@ -304,8 +304,8 @@
           <p class="font-bold">Customer Name?</p>
         </div>
         <div class="flex justify-center gap-x-3">
-          <Button @click="deleteCustomerDailog = false" class="w-auto sm:px-8 hover:text-red hover:border-red hover:bg-transparent hover:bg-red-50" type="button" :btn-line-border="true" :btn-peach="false">Cancel</Button>
-          <Button @click="deleteCustomerDailog = false" class="w-auto sm:px-8 " type="button" :btn-red-border="true" :btn-peach="false"  >Yes,
+          <Button @click="deleteCustomerDailog = false" class="w-auto sm:px-8 hover:text-red hover:border-red hover:bg-transparent hover:bg-red-50" type="button" :btn-outline="true" :btn-primary="false">Cancel</Button>
+          <Button @click="deleteCustomerDailog = false" class="w-auto sm:px-8 " type="button" :btn-danger="true" :btn-primary="false"  >Yes,
             delete</Button>
         </div>
       </div>
