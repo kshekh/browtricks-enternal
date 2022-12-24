@@ -122,6 +122,7 @@
                 v-model="password"
                 :on-change="handleInput"
                 autocomplete="Password"
+                inputClasses="pr-10"
               />
               <button
                 type="button"
@@ -140,6 +141,7 @@
                 v-model="email"
                 :on-change="handleInput"
                 autocomplete="password"
+                inputClasses="pr-10"
               />
               <button
                 type="button"
