@@ -1,6 +1,8 @@
 import { createWebHistory, createRouter } from 'vue-router';
 import Home from '@/views/HomeView.vue';
 import Customers from '@/views/CustomersView.vue';
+import CustomersEdit from '@/views/CustomersEdit.vue';
+import CustomersList from '@/views/CustomersList.vue';
 import Login from '@/views/LoginView.vue';
 import UserProfile from '@/views/UserProfileView.vue';
 import Settings from '@/views/SettingsView.vue';
@@ -65,6 +67,18 @@ const routes = [{
         name: 'Customers',
         component: Customers,
         meta: { title: 'BrowTricks | Customers' },
+    },
+    {
+        path: '/customers-edit',
+        name: 'CustomersEdit',
+        component: CustomersEdit,
+        meta: { title: 'BrowTricks | CustomersEdit' },
+    },
+    {
+        path: '/customers-list',
+        name: 'CustomersList',
+        component: CustomersList,
+        meta: { title: 'BrowTricks | CustomersList' },
     },
     {
         path: '/user-profile',

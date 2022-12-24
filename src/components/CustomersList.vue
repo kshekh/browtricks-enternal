@@ -38,28 +38,21 @@
               />
             </div>
 
-            <div class="sm:flex-none flex relative">
-              <Button
-                @emitclick="consoleClick"
-                :btn-no-border="true"
-                :btn-primary="false"
-                class="mt-1 border-grey-700 hover:border-peach sm:px-4 hidden"
-                ><ShortIcon class="w-5 h-4 mr-2" /> <span>Short</span></Button
-              >
+            <div class="sm:flex-none flex relative">          
 
               <Menu as="div" class="relative inline-block text-left">
               
-                  <MenuButton 
-                    class="inline-flex items-center rounded-md border border-grey-700 px-4 py-2.5 text-sm font-medium text-grey-800 shadow-sm hover:bg-peach focus:outline-none outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300 hover:border-peach mt-1"
-                    :class="[
-                      active
-                        ? 'bg-peach border-peach'
-                        : 'border-grey-700 bg-white',
-                      'block px-4 py-2 text-sm text-left ease-in-out duration-300 w-full',
-                    ]"
-                  >
-                    <ShortIcon class="w-5 h-4 mr-2" /> <span>Short</span>
-                  </MenuButton>
+                <MenuButton 
+                class="inline-flex items-center rounded-md border border-grey-700  text-sm font-medium text-grey-800 shadow-sm hover:bg-peach focus:outline-none outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300 hover:border-peach mt-1"
+                :class="[
+                  active
+                    ? 'bg-peach border-peach'
+                    : 'border-grey-700 bg-white',
+                  'block px-4 py-3 text-sm text-left ease-in-out duration-300 w-full',
+                ]"
+              >
+                <ShortIcon class="w-5 h-4 mr-2" /> <span>Short</span>
+              </MenuButton>
                 
 
                 <transition
