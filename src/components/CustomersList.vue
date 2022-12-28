@@ -33,33 +33,26 @@
                 label-text=""
                 name="search"
                 v-model="password"
-                placeholder="Search forms"
-                inputClasses="pl-10 border-peach"
+                placeholder="Search for customer"
+                inputClasses="pl-10 border-peach-500"
               />
             </div>
 
-            <div class="sm:flex-none flex relative">
-              <Button
-                @emitclick="consoleClick"
-                :btn-no-border="true"
-                :btn-primary="false"
-                class="mt-1 border-grey-700 hover:border-peach sm:px-4 hidden"
-                ><ShortIcon class="w-5 h-4 mr-2" /> <span>Short</span></Button
-              >
+            <div class="sm:flex-none flex relative">          
 
               <Menu as="div" class="relative inline-block text-left">
               
-                  <MenuButton 
-                    class="inline-flex items-center rounded-md border border-grey-700 px-4 py-2.5 text-sm font-medium text-grey-800 shadow-sm hover:bg-peach focus:outline-none outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300 hover:border-peach mt-1"
-                    :class="[
-                      active
-                        ? 'bg-peach border-peach'
-                        : 'border-grey-700 bg-white',
-                      'block px-4 py-2 text-sm text-left ease-in-out duration-300 w-full',
-                    ]"
-                  >
-                    <ShortIcon class="w-5 h-4 mr-2" /> <span>Short</span>
-                  </MenuButton>
+                <MenuButton 
+                class="inline-flex items-center rounded-md border border-grey-700  text-sm font-medium text-grey-800 shadow-sm hover:bg-peach-500 focus:outline-none outline-none focus:ring-2 focus:ring-peach-500 focus:ring-offset-2 ease-in-out duration-300 hover:border-peach-500 mt-1"
+                :class="[
+                  active
+                    ? 'bg-peach-500 border-peach-500'
+                    : 'border-grey-700 bg-white',
+                  'block pl-4 pr-5 py-2.5 text-sm text-left ease-in-out duration-300 w-full',
+                ]"
+              >
+                <ShortIcon class="w-4 mr-2" /> <span>Sort</span>
+              </MenuButton>
                 
 
                 <transition
@@ -109,7 +102,7 @@
         <div class="flex-col">
           <div class="overflow-x-auto">
             <div class="inline-block min-w-full align-middle md:px-0 lg:px-0">
-              <div class="overflow-hidden">
+              <div class="overflow-hidden pt-2">
                 <table
                   class="min-w-full border-0 border-collapse divide-y divide-gray-200"
                 >
@@ -117,19 +110,19 @@
                     <tr>
                       <th
                         scope="col"
-                        class="py-3.5 w-1/3 pl-4 pr-3 text-left text-sm font-bold text-grey-800 sm:pl-6"
+                        class="py-3.5 w-1/3 pl-4 pr-3 text-left text-sm font-semibold text-grey-800 sm:pl-6"
                       >
                         Customer name
                       </th>
                       <th
                         scope="col"
-                        class="px-3 w-1/3 py-3.5 text-left text-sm font-bold text-grey-800"
+                        class="px-3 w-2/3 py-3.5 text-sm font-semibold text-grey-800 text-center"
                       >
-                        Phone
+                       <span class="w-60 max-w-full inline-flex text-left">Phone</span> 
                       </th>
                       <th
                         scope="col"
-                        class="px-3 w-1/3 py-3.5 text-left text-sm font-bold text-grey-800"
+                        class="px-3 w-1/3 py-3.5 text-left text-sm font-semibold text-grey-800"
                       >
                         Email
                       </th>
@@ -142,17 +135,19 @@
                       class="odd:bg-white even:bg-grey-100"
                     >
                       <td
-                        class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6 font-medium"
+                        class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6 font-normal text-grey-800"
                       >
                         {{ cust.name }}
                       </td>
                       <td
-                        class="whitespace-nowrap px-3 py-4 text-sm font-medium"
+                        class="whitespace-nowrap px-3 py-4 text-sm font-normal text-grey-800 text-center"
                       >
+                       <span class="w-60 max-w-full inline-flex text-left">
                         {{ cust.phone }}
+                        </span>
                       </td>
                       <td
-                        class="whitespace-nowrap px-3 py-4 text-sm font-medium"
+                        class="whitespace-nowrap px-3 py-4 text-sm font-normal text-grey-800"
                       >
                         {{ cust.email }}
                       </td>
@@ -201,8 +196,8 @@ import AngleRight from '@/assets/icons/AngleRight.vue';
 import AngleLeft from '@/assets/icons/AngleLeft.vue';
 import MagnifyingGlassIcon from '@/assets/icons/MagnifyingGlassIcon.vue';
 import ShortIcon from '@/assets/icons/ShortIcon.vue';
-import Button from '@/components/layout/Button.vue';
-import Input from '@/components/layout/Input.vue';
+import Button from '@/components/Button.vue';
+import Input from '@/components/Input.vue';
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
 const customers = [
   {

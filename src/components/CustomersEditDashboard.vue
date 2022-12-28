@@ -1,8 +1,8 @@
 <template>
    <div class="relative flex flex-col min-h-screen w-full">
     <div v-if="showAddCustomer">
-      <!-- <EditCustomer /> -->
-      <AddCustomer />
+      <EditCustomer />
+      <!-- <AddCustomer /> -->
       <!-- <CustomersList /> -->
     </div>
     <div v-else class="bg-gray-100 px-4 py-3 md:p-5 xl:px-14 xl:py-12"> 
@@ -15,11 +15,11 @@
             <div class="relative flex flex-col"><img src="../assets/customer.svg" alt="setup-thumb" class="mx-auto xl:block" /></div>
             <div class="flex flex-col space-y-10">
               <div class="space-y-4">
-              <h2 class="text-2xl font-bold text-grey-800 leading-none">Add a customer</h2>
+              <h2 class="text-2xl font-bold text-grey-800 leading-none">Edit a customer</h2>
               <p class="text-md text-grey-900">Get started by adding customer contact info in order to add media, manage PMU form      
                 signing, and notes.</p>
               </div>
-            <Button type="submit" :btn-primary="true"  @click="showAddCustomer = true" class="w-auto sm:px-6 mx-auto">Add customer</Button>
+            <Button type="submit" :btn-primary="true"  @click="showAddCustomer = true" class="w-auto sm:px-6 mx-auto">Edit customer</Button>
             </div>
            </div>
         </div>
@@ -31,8 +31,8 @@
 <script setup>
 import { ref } from 'vue';
 
-// import EditCustomer from '@/components/EditCustomer.vue';
-import AddCustomer from '@/components/AddCustomer.vue';
+import EditCustomer from '@/components/EditCustomer.vue';
+// import AddCustomer from '@/components/AddCustomer.vue';
 import Button from '@/components/Button.vue';
 // import CustomersList from '@/components/CustomersList.vue';
 

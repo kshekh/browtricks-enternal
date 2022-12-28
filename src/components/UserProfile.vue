@@ -53,7 +53,7 @@
                 <input
                   id="search"
                   name="search"
-                  class="block w-full placeholder-black/40 appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-800 shadow-sm font-medium focus:border-peach focus:outline-none focus:ring-peach sm:text-sm peer pl-10"
+                  class="block w-full placeholder-black/40 appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-800 shadow-sm font-medium focus:border-peach-500 focus:outline-none focus:ring-peach-500 sm:text-sm peer pl-10"
                   placeholder="Search"
                   type="search"
                 />
@@ -61,13 +61,63 @@
             </div>
 
             <div class="sm:flex-none flex">
-              <button
-                type="button"
-                class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-grey-800 shadow-sm hover:bg-peach focus:outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2 ease-in-out duration-300 hover:border-peach"
+              
+              <Menu as="div" class="relative inline-block text-left">
+              
+              <MenuButton 
+                class="inline-flex items-center rounded-md border border-grey-700  text-sm font-medium text-grey-800 shadow-sm hover:bg-peach-500 focus:outline-none outline-none focus:ring-2 focus:ring-peach-500 focus:ring-offset-2 ease-in-out duration-300 hover:border-peach-500 "
+                :class="[
+                  active
+                    ? 'bg-peach-500 border-peach-500'
+                    : 'border-grey-700 bg-white',
+                  'block px-4 py-3 text-sm text-left ease-in-out duration-300 w-full',
+                ]"
               >
-                <ShortIcon class="w-5" />
-                Sort
-              </button>
+                <ShortIcon class="w-5 h-4 mr-2" /> <span>Short</span>
+              </MenuButton>
+            
+
+            <transition
+              enter-active-class="transition duration-100 ease-out"
+              enter-from-class="transform scale-95 opacity-0"
+              enter-to-class="transform scale-100 opacity-100"
+              leave-active-class="transition duration-75 ease-in"
+              leave-from-class="transform scale-100 opacity-100"
+              leave-to-class="transform scale-95 opacity-0"
+            >
+              <MenuItems
+                class="absolute right-0 z-10 mt-2 w-32 origin-top-right rounded-md bg-white shadow-3 ring-1 ring-black ring-opacity-5 focus:outline-none"
+              >
+                <div class="py-1">
+                  <MenuItem v-slot="{ active }">
+                    <button
+                      :class="[
+                        active
+                          ? 'bg-gray-100 text-gray-900'
+                          : 'text-gray-700',
+                        'block px-4 py-2 text-sm text-left ease-in-out duration-300 w-full',
+                      ]"
+                    >
+                      A-Z
+                    </button>
+                  </MenuItem>
+                  <MenuItem v-slot="{ active }">
+                    <button
+                      :class="[
+                        active
+                          ? 'bg-gray-100 text-gray-900'
+                          : 'text-gray-700',
+                        'block px-4 py-2 text-sm text-left ease-in-out duration-300 w-full',
+                      ]"
+                    >
+                      Z-A
+                    </button>
+                  </MenuItem>
+                </div>
+              </MenuItems>
+            </transition>
+          </Menu>
+
             </div>
           </div>
 
@@ -165,7 +215,8 @@ import FileSelect from '@/components/FileSelect.vue';
 import MagnifyingGlassIcon from '@/assets/icons/MagnifyingGlassIcon.vue';
 import LinkChain from '@/assets/icons/LinkChain.vue';
 import ShortIcon from '@/assets/icons/ShortIcon.vue';
-
+import Button from '@/components/Button.vue';
+import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
 let file = null;
 
 const customers = [

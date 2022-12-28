@@ -42,7 +42,7 @@
                 class="text-left relative pb-10"
               >
                 <div
-                  class="absolute top-4 left-4 -ml-px mt-0.5 h-full w-0.5 bg-peach-2 v-line"
+                  class="absolute top-4 left-4 -ml-px mt-0.5 h-full w-0.5 bg-peach-100 v-line"
                   aria-hidden="true"
                 ></div>
 
@@ -52,8 +52,8 @@
                       class="relative left-1 z-10 flex h-6 w-6 items-center justify-center rounded-full ring-4 ring-white"
                       :class="
                         step.isExpanded
-                          ? 'bg-peach'
-                          : 'bg-white border-2 border-dashed  border-peach '
+                          ? 'bg-peach-500'
+                          : 'bg-white border-2 border-dashed  border-peach-500 '
                       "
                     >
                       <CheckIcon
@@ -75,7 +75,7 @@
                       class="space-y-5"
                     >
                       <p class="text-md text-grey-800">{{ step.answer }}</p>
-                      <Button @emitclick="consoleClick" class="sm:min-w-40 mt-4" :btn-primary="true">Add customer</Button>
+                      <Button @click="consoleClick" class="sm:min-w-40 mt-4" :btn-primary="true">Add customer</Button>
 
                     </div>
                   </div>
@@ -100,7 +100,7 @@
 <script setup>
 import { reactive } from 'vue';
 import CheckIcon from '@/assets/icons/CheckIcon.vue';
-import Button from '@/components/layout/Button.vue';
+import Button from '@/components/Button.vue';
 // Setup Guide data
 const customerSteps = reactive([
   {

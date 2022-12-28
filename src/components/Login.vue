@@ -22,15 +22,15 @@
         <div
           class="flex flex-col xs:grid xs:grid-cols-3 gap-2 w-full max-w-64 xs:max-w-none"
         >
-          <Button type="button" :on-click="consoleClick" :btn-primary="true" class="flex-row"
+          <Button type="button" @click="consoleClick" :btn-primary="true" class="flex-row"
             ><AppleIcon class="w-5" /><span>Apple</span></Button
           >
 
-          <Button type="button" :on-click="consoleClick" :btn-primary="true" class="flex-row">
+          <Button type="button" @click="consoleClick" :btn-primary="true" class="flex-row">
             <GoogleIcon class="w-5" /><span>Google</span></Button
           >
 
-          <Button type="button" :on-click="consoleClick" :btn-primary="true" class="flex-row">
+          <Button type="button" @click="consoleClick" :btn-primary="true" class="flex-row">
             <FacebookIcon class="w-5" /><span>Facebook</span></Button
           >
         </div>
@@ -53,27 +53,40 @@
               v-model="email"
               :on-change="handleInput"
               autocomplete="username"
-            />
-            <Input
-              id="password"
-              type="password"
-              label-text="Password"
-              v-model="password"
-              :on-change="handleInput"
-              autocomplete="Password"
-            />
+            />            
+
+            <div class="relative">
+              <Input
+                id="password"
+                v-bind:type="[showPassword ? 'text' : 'password']"
+                label-text="Password"
+                v-model="password"
+                :on-change="handleInput"
+                autocomplete="Password"
+                inputClasses="pr-10"
+              />
+              <button
+                type="button"
+                class="absolute top-5 right-0 py-4 px-4 text-grey-900"
+                @click="showPassword = !showPassword"
+              >
+                <Eye v-if="!showPassword" class="w-5" />
+                <EyeOff v-else class="w-5" />
+              </button>
+            </div>
+
 
             <div class="flex flex-wrap gap-2 items-center justify-between">
               <div class="flex items-center w-full xs:w-auto">
                 <!-- This is for emit method -->
-                  <Button @emitclick="consoleClick" :btn-primary="true" class="">Login</Button>
+                  <Button @click="consoleClick" :btn-primary="true" class="">Login</Button>
               </div>
 
               <div class="text-sm text-grey-900 font-normal">
                 <span>Don’t have an account?</span>
                 <router-link
                   to="/signup"
-                  class="text-base inline-flex font-medium text-blue hover:text-peach-4 transition-all ease-in-out duration-300 ml-2"
+                  class="text-base inline-flex font-medium text-blue hover:text-peach-300 transition-all ease-in-out duration-300 ml-2"
                   >Sign Up</router-link
                 >
               </div>
@@ -83,7 +96,7 @@
         <div class="text-center w-full">
           <router-link
             to="/forgot-password"
-            class="text-base inline-flex font-medium text-blue hover:text-peach-4 transition-all ease-in-out duration-300"
+            class="text-base inline-flex font-medium text-blue hover:text-peach-300 transition-all ease-in-out duration-300"
             >Forgot password?</router-link
           >
         </div>
@@ -98,8 +111,10 @@ import logo from '@/assets/logo-browtricks.png';
 import AppleIcon from '@/assets/icons/Apple.vue';
 import GoogleIcon from '@/assets/icons/Google.vue';
 import FacebookIcon from '@/assets/icons/Facebook.vue';
-import Button from '@/components/layout/Button.vue';
-import Input from '@/components/layout/Input.vue';
+import Button from '@/components/Button.vue';
+import Input from '@/components/Input.vue';
+import Eye from '@/assets/icons/Eye.vue';
+import EyeOff from '@/assets/icons/EyeOff.vue';
 
 function consoleClick() {
   console.log('Button clicked');
@@ -111,4 +126,7 @@ function handleInput(e) {
   e.preventDefault();
   console.log('input value:', e.target.value);
 }
+
+const showPassword = ref(false); 
+
 </script>

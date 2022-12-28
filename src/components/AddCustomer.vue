@@ -50,7 +50,7 @@
             </div>
           </div>
           <div class="pt-7 flex items-center mt-3">
-            <Button @emitclick="consoleClick" class="sm:min-w-40 " :btn-primary="true">Add customer</Button>
+            <Button @click="consoleClick" class="sm:min-w-40 " :btn-primary="true">Add customer</Button>
           </div>
         </div>
       </div>
@@ -61,9 +61,9 @@
 
 <script setup>
 import { ref } from 'vue';
-import Input from '@/components/layout/Input.vue';
-import Button from '@/components/layout/Button.vue';
-import Textarea from '@/components/layout/Textarea.vue';
+import Input from '@/components/Input.vue';
+import Button from '@/components/Button.vue';
+import Textarea from '@/components/Textarea.vue';
 
 function consoleClick() {
   console.log('Button clicked');
