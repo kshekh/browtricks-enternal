@@ -1,7 +1,7 @@
 <template>
   <!-- Left sidebar Account profile {{joo}} -->
 
-  <div class="z-40 left-5 -top-14 absolute flex items-center md:hidden">
+  <div class="z-0 left-5 -top-14 absolute flex items-center md:hidden">
     <!-- Open menu button-->
     <button
       type="button"
