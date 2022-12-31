@@ -3,7 +3,7 @@
     <!--Top Navbar -->
     <Disclosure
       as="nav"
-      class="flex-shrink-0 bg-white py-1.5 shadow relative z-30"
+      class="flex-shrink-0 bg-white py-1.5 shadow relative"
       v-slot="{ open }"
     >
       <div class="mx-auto w-full max-w-8xl px-2 sm:px-4 lg:px-5 lg:pr-14">
