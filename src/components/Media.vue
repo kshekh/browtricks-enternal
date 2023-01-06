@@ -3,26 +3,26 @@
     <div class="flex-1 py-3 md:p-5 xl:px-14 xl:py-12">
       <div class="space-y-6 pt-3 md:pt-0 md:pb-7 border-0 border-solid border-gray-300">
         <div class="flex items-center px-3 md:px-0">
-        <h2 class="flex-1 text-2.5xl font-bold leading-none text-grey-800 mr-auto">Media</h2>
-            <Button @click="isUploadMedia = true">Upload Media</Button>
-            <template v-if="isMoreMedia">
+        <h2 class="flex-1 text-5xl font-bold leading-none text-grey-800 mr-auto">Media</h2>
+            <Button @click="isUploadMedia = true">Add Media</Button>
+            <!-- <template v-if="isMoreMedia">
               <Button type="submit" :btn-primary="true" class="w-auto sm:px-6 ml-2 hidden sm:block" @click="isMoreMedia = false">Add Media</Button>
-            </template>
+            </template> -->
         </div>
-        <div v-if="!isMoreMedia" class="overflow-hidden rounded-lg shadow-3 bg-white">
+        <div v-if="!isMoreMedia" class="overflow-hidden md:rounded-lg shadow-3 bg-white">
           <div class="setup-guide-area py-20 px-4 lg:p-40">
+
             <div class="flex flex-col justify-center text-center space-y-10 max-w-xs mx-auto">
-<<<<<<< HEAD
+
               <div class="relative flex flex-col"><img src="../assets/media-dashboard.svg" alt="setup-thumb" class="mx-auto xl:block" /></div>
               <div class="flex flex-col space-y-10">
-=======
-              <div class="relative flex flex-col"><img src="../assets/media.svg" alt="setup-thumb" class="mx-auto xl:block" /></div>
+
               <div class="flex flex-col space-y-5">
->>>>>>> 5d4f1c4d7283e2b197a6c7553e6b2c66db59d919
+
                 <div class="space-y-4">
                   <h2 class="text-2xl font-bold text-grey-800 leading-none">Add Media</h2>
-                  <p class="text-md text-grey-900">Featuring customer content is a great way to build a community around your products and your brand. You can import directly from social media posts or add your own manually.
-                    <a href="#" class="text-peach-500 transition duration-300 ease-in-out hover:underline">Learn more</a></p>
+                  <p class="text-xl text-grey-900">Featuring customer content is a great way to build a community around your products and your brand. You can import directly from social media posts or add your own manually.
+                    <a href="#" class="text-peach-500 hover:text-grey-800 duration-300 ease-in-out hover:underline">Learn more</a></p>
                 </div>
                 <div class="flex flex-wrap gap-3 w-full justify-center">  
                   <Button type="submit" :btn-outline="true" :btn-primary="false" class="w-auto sm:px-6">Connect social accounts</Button>
@@ -43,21 +43,20 @@
                   aria-hidden="true"
                 />
               </div>
-              <Input id="search" type="search" label-text="" name="search" v-model="password" placeholder="Search for customer" 
+              <Input id="search" type="search" label-text="" name="search" v-model="password" placeholder="Search for media" 
                inputClasses="pl-10 border-peach-500" />
             </div>
 
             <div class="sm:flex-none flex relative">          
 
-              <Menu as="div" class="relative inline-block text-left">
-              
+              <Menu as="div" class="relative inline-block text-left">                            
                 <MenuButton 
-                class="inline-flex items-center rounded-md border border-grey-700  text-sm font-medium text-grey-800 shadow-sm hover:bg-peach- 500 focus:outline-none outline-none focus:ring-2 focus:ring-peach-500 focus:ring-offset-2 ease-in-out duration-300 hover:border-peach-500 mt-1"
+                class="inline-flex items-center rounded-md border border-grey-700  text-lg font-medium text-grey-800 shadow-sm hover:bg-peach-500 focus:outline-none outline-none focus:ring-2 focus:ring-peach-500 focus:ring-offset-2 ease-in-out duration-300 hover:border-peach-500 mt-1"
                 :class="[
                   active
                     ? 'bg-peach-500 border-peach-500'
                     : 'border-grey-700 bg-white',
-                  'block pl-4 pr-5 py-2.5 text-sm text-left ease-in-out duration-300 w-full',
+                  'block pl-4 pr-5 py-2.5 text-lg text-left ease-in-out duration-300 w-full',
                 ]"
               >
                 <ShortIcon class="w-4 mr-2" /> <span>Sort</span>
@@ -80,7 +79,7 @@
                             active
                               ? 'bg-gray-100 text-gray-900'
                               : 'text-gray-700',
-                            'block px-4 py-2 text-sm text-left ease-in-out duration-300 w-full',
+                            'block px-4 py-2 text-lg text-left ease-in-out duration-300 w-full',
                           ]"
                         >
                           A-Z
@@ -92,7 +91,7 @@
                             active
                               ? 'bg-gray-100 text-gray-900'
                               : 'text-gray-700',
-                            'block px-4 py-2 text-sm text-left ease-in-out duration-300 w-full',
+                            'block px-4 py-2 text-lg text-left ease-in-out duration-300 w-full',
                           ]"
                         >
                           Z-A
@@ -107,57 +106,58 @@
         </div> 
           <div class="flex-col">
             <div class="overflow-x-auto">
-              <div class="inline-block min-w-full py-2 align-middle md:px-0 lg:px-0" >
+              <div class="inline-block min-w-full pt-2 align-middle md:px-0 lg:px-0" >
                 <div class="overflow-hidden">
                   <div class="inline-block min-w-full align-middle md:px-0 lg:px-0">
                     <div class="overflow-hidden pt-2">
                       <table class="min-w-full border-0 border-collapse divide-y divide-gray-200">
-                        <thead class="">
+                        <thead class="hidden sm:table-header-group">
                           <tr>
-                            <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-grey-800 sm:pl-6" >
+                            <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-lg font-semibold text-grey-800 sm:pl-6" >
                               Media
                             </th>
-                            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-grey-800" >
+                            <th scope="col" class="px-3 py-3.5 text-left text-lg font-semibold text-grey-800" >
                               Customer
                             </th>
-                            <th scope="col" class="px-3 py-3.5 text-center text-sm font-semibold text-grey-800" >
+                            <th scope="col" class="px-3 py-3.5 text-center text-lg font-semibold text-grey-800" >
                               Link
                             </th>
-                            <th scope="col" class="px-3 py-3.5 pr-8 text-right text-sm font-semibold text-grey-800" >
+                            <th scope="col" class="px-3 py-3.5 pr-8 text-right text-lg font-semibold text-grey-800" >
                               Date added
                             </th>
                           </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200 bg-white">
-                          <tr v-for="cust in customers" :key="cust.email" class="odd:bg-white even:bg-grey-100">
-                            <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6" >
+                          <tr v-for="cust in customers" :key="cust.email" @click="isUploadMedia = true" class="odd:bg-white even:bg-grey-100">
+                            <td class="whitespace-nowrap p-3 pl-4 text-lg sm:pl-6" >
                               <div class="flex items-center">
-                                <div class="h-10 w-10 flex-shrink-0">
-                                  <img class="h-10 w-10 rounded-md object-cover" :src="cust.image" alt="" />
+                                <div class="h-14 w-14 flex justify-center items-center flex-shrink-0 overflow-hidden rounded">
+                                  <img class="aspect-square object-cover" :src="cust.image" alt="" />
                                 </div>
                                 <div class="ml-4">
                                   <div class="font-medium text-grey-800">
                                     {{ cust.name }}
                                   </div>
-                                  <div class="text-grey-300">{{ cust.type }}</div>
+                                  <div class="text-grey-700 flex gap-2 items-center"><span>{{ cust.type }}</span><span class="w-1 h-1 sm:hidden rounded-full bg-grey-700 block"></span><span class="sm:hidden">{{ cust.date_added }}</span></div>
+                                  <p class="sm:hidden"><a href="javascript:void(0)" class="hover:text-grey-900 text-blue hover:underline">{{ cust.name }}</a></p>
                                 </div>
                               </div>
                             </td>
                             <td
-                              class="whitespace-nowrap px-3 py-4 text-sm text-blue"
+                              class="whitespace-nowrap px-3 py-4 text-lg text-blue hidden sm:table-cell"
                             >
-                              {{ cust.name }}
+                              <a href="javascript:void(0)" class="hover:text-grey-900 text-blue hover:underline">{{ cust.name }}</a>
                             </td>
                             <td class="text-center">
                               <a
                                 href="javascript:void(0)"
-                                class="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white text-sm font-medium text-blue shadow-sm hover:bg-blue hover:border-blue hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 ease-in-out duration-300 w-12 h-12"
+                                class="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white text-lg font-medium text-blue shadow-sm hover:bg-blue hover:border-blue hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 ease-in-out duration-300 w-9 h-9"
                               >
-                                <LinkChain class="w- h-5" />
+                                <LinkChain class="w-4 h-4" />
                               </a>
                             </td>
                             <td
-                              class="whitespace-nowrap px-3 py-4 pr-8 text-right text-sm text-gray-500"
+                              class="whitespace-nowrap px-3 py-4 pr-8 text-right text-lg text-gray-500 hidden sm:table-cell"
                             >
                               {{ cust.date_added }}
                             </td>
@@ -176,11 +176,11 @@
             <div class="flex flex-1 justify-start items-center gap-2">
               <a
                 href="#"
-                class="relative inline-flex items-center rounded-l border border-grey-500 bg-white px-2.5 py-2 text-sm font-medium text-grey-800 hover:bg-grey-500 ease-in-out duration-300"
+                class="relative inline-flex items-center rounded-l border border-grey-500 bg-white px-2.5 py-2 text-lg font-medium text-grey-800 hover:bg-grey-500 ease-in-out duration-300"
               >
                 <AngleLeft class="w-1.5" />
               </a>
-              <p class="text-sm text-grey-800 font-medium">
+              <p class="text-lg text-grey-800 font-medium">
                 <!-- space -->
                 <span class="">10</span>
                 <!-- space -->
@@ -191,7 +191,7 @@
               </p>
               <a
                 href="#"
-                class="relative inline-flex items-center rounded-r border border-grey-500 bg-white px-2.5 py-2 text-sm font-medium text-grey-800 hover:bg-grey-500 ease-in-out duration-300"
+                class="relative inline-flex items-center rounded-r border border-grey-500 bg-white px-2.5 py-2 text-lg font-medium text-grey-800 hover:bg-grey-500 ease-in-out duration-300"
                 ><AngleRight class="w-1.5"
               /></a>
             </div>
@@ -277,7 +277,7 @@
 </template>
 
 <script setup>
-<<<<<<< HEAD
+
   import {ref} from 'vue';
   import Button from '@/components/Button.vue';
   import SlideOvers from '@/components/SlideOvers.vue';
@@ -290,21 +290,7 @@
   import LinkChain from '@/assets/icons/LinkChain.vue';
   import ShortIcon from '@/assets/icons/ShortIcon.vue';
   import trashIcon from '@/assets/icons/trash.vue';
-=======
-  import AngleRight from '@/assets/icons/AngleRight.vue';
-  import AngleLeft from '@/assets/icons/AngleLeft.vue';
-  import {ref} from 'vue';   
-  import Button from '@/components/Button.vue';
-  import SlideOvers from '@/components/layout/SlideOvers.vue';
-  import FileSelect from '@/components/FileSelect.vue';
 
-  import MagnifyingGlassIcon from '@/assets/icons/MagnifyingGlassIcon.vue';
-  import LinkChain from '@/assets/icons/LinkChain.vue';
-  import ShortIcon from '@/assets/icons/ShortIcon.vue'; 
- 
-  import Input from '@/components/Input.vue';
-  import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
->>>>>>> 5d4f1c4d7283e2b197a6c7553e6b2c66db59d919
 
   const isMoreMedia = ref(false);
   const isUploadMedia = ref(false);
