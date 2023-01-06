@@ -11,9 +11,14 @@
         </div>
         <div v-if="!isMoreMedia" class="overflow-hidden md:rounded-lg shadow-3 bg-white">
           <div class="setup-guide-area py-20 px-4 lg:p-40">
-            <div class="flex flex-col justify-center text-center space-y-10 max-w-md sm:px-7 mx-auto">
-              <div class="relative flex flex-col"><img src="@/assets/media.svg" alt="setup-thumb" class="mx-auto xl:block" /></div>
+
+            <div class="flex flex-col justify-center text-center space-y-10 max-w-xs mx-auto">
+
+              <div class="relative flex flex-col"><img src="../assets/media-dashboard.svg" alt="setup-thumb" class="mx-auto xl:block" /></div>
+              <div class="flex flex-col space-y-10">
+
               <div class="flex flex-col space-y-5">
+
                 <div class="space-y-4">
                   <h2 class="text-2xl font-bold text-grey-800 leading-none">Add Media</h2>
                   <p class="text-xl text-grey-900">Featuring customer content is a great way to build a community around your products and your brand. You can import directly from social media posts or add your own manually.
@@ -196,28 +201,101 @@
       </div>
     </div>
     <SlideOvers :open-dialog="isUploadMedia" @closeModal="isUploadMedia = false">
-      <FileSelect />
+      <div class="slide-wrapper" style="width:456px">
+        <div class="mt-4">
+          <h4 class="mb-1 font-bold">Upload Media</h4>
+          <div v-if="!isMediaUploaded">
+            <FileSelect class="h-20 block" />
+          </div>
+          <div v-else>
+            <img src="../assets/images/media-profile.jpg" alt="image"/>
+
+            <div class="flex items-center mt-4">
+              <div class="mr-auto">
+                <p>cutie_brows</p>
+                <p class="flex items-center text-gray-300 text-sm">
+                  <span>JPG</span>
+                  <span class="mx-4 bg-gray-300 rounded-full h-1 w-1"></span>
+                  <span>Jun 4, 2022</span>
+                </p>
+              </div>
+              <a
+                href="javascript:void(0)"
+                class="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white text-sm font-medium text-blue shadow-sm hover:bg-blue hover:border-blue hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 ease-in-out duration-300 w-8 h-8"
+              >
+                <LinkChain class="w-4 h-4" />
+              </a>
+            </div>
+            <Button @click="isMediaUploaded = false" class="mt-4">Hide uploaded media</Button>
+          </div>
+          <Button v-if="!isMediaUploaded" @click="isMediaUploaded = true" class="mt-4">Show uploaded media</Button>
+        </div>
+        <div class="mt-4">
+          <Textarea label-text="Description"/>
+        </div>
+        <div class="mt-4">
+          <Input label-text="Link" />
+        </div>
+        <div class="mt-4">
+          <h4 class="mb-1 font-bold">Visibility</h4>
+          <div class="flex">
+            <a href="#" class="text-blue font-light mr-auto">Carla Septimus</a>
+            <a href="#" class="text-blue font-light">Assign to another client</a>
+          </div>
+        </div>
+        <div class="mt-4">
+          <h4 class="mb-4 font-bold">Visibility</h4>
+          <Input class="mb-4 flex flex-row-reverse items-center mr-auto"
+            input-classes="h-4 w-4 rounded-full px-2.5 mr-2"
+            type="radio"
+            label-text="Visible"
+            label-classes="mr-auto pt-1"
+          />
+          <Input
+            class="flex flex-row-reverse items-center mr-auto"
+            input-classes="h-4 w-4 rounded-full px-2.5 mr-2"
+            type="radio"
+            label-text="Hidden"
+            label-classes="mr-auto pt-1"
+          />
+        </div>
+        <div class="mt-4">
+          <SelectList :placeholders="`Start typing customer name`"/>
+        </div>
+        <div class="mt-10 flex">
+          <div class="flex mr-auto">
+            <Button>Upload</Button>
+            <Button class="ml-2" :btn-primary="false" :btn-outline="true">Cancel</Button>
+          </div>
+          <Button class="ml-2 text-red px-0 hover:px-3" :btn-primary="false" :btn-no-border="true">
+            <trashIcon class="w-5 h-5 mr-2" />
+            Delete media</Button>
+        </div>
+      </div>
     </SlideOvers>
   </div>
 </template>
 
 <script setup>
-  import AngleRight from '@/assets/icons/AngleRight.vue';
-  import AngleLeft from '@/assets/icons/AngleLeft.vue';
-  import {ref} from 'vue';   
+
+  import {ref} from 'vue';
   import Button from '@/components/Button.vue';
   import SlideOvers from '@/components/SlideOvers.vue';
   import FileSelect from '@/components/FileSelect.vue';
+  import Textarea from '@/components/Textarea.vue';
+  import Input from '@/components/Input.vue';
+  import SelectList from '@/components/SelectList.vue';
 
   import MagnifyingGlassIcon from '@/assets/icons/MagnifyingGlassIcon.vue';
   import LinkChain from '@/assets/icons/LinkChain.vue';
-  import ShortIcon from '@/assets/icons/ShortIcon.vue'; 
- 
-  import Input from '@/components/Input.vue';
-  import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
+  import ShortIcon from '@/assets/icons/ShortIcon.vue';
+  import trashIcon from '@/assets/icons/trash.vue';
+
 
   const isMoreMedia = ref(false);
   const isUploadMedia = ref(false);
+  const isMediaUploaded = ref(false);
+
   const customers = [
   {
     name: 'Lindsay Walton',
