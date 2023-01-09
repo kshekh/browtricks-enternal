@@ -281,7 +281,7 @@
                           >Save</Button
                         >
                         <Button
-                          class="w-auto"
+                          class="w-auto" @click="$emit('closeModal')"
                           type="button"
                           :btn-outline="true"
                           :btn-primary="false"
