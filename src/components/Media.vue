@@ -202,15 +202,10 @@
       </div>
     </div>
 
-   
-
-
     <SlideOvers :open-dialog="isUploadMedia" @closeModal="isUploadMedia = false">
       <FileSelect />
     </SlideOvers>
 
-
-    
   </div>
 
 
@@ -265,7 +260,7 @@
  
   import Input from '@/components/Input.vue';
   import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
-import Success from '../assets/icons/success.vue';
+  import Success from '../assets/icons/success.vue';
 
   const isMoreMedia = ref(false);
   const isUploadMedia = ref(false);

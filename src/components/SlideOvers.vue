@@ -16,9 +16,7 @@
       </TransitionChild>
       <div class="fixed inset-0 overflow-hidden">
         <div class="absolute inset-0 overflow-hidden">
-          <div
-            class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-5"
-          >
+          <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-5" >
             <TransitionChild
               as="template"
               enter="transform transition ease-in-out duration-500 sm:duration-700"
@@ -29,9 +27,7 @@
               leave-to="translate-x-full"
             >
               <DialogPanel class="pointer-events-auto w-screen max-w-md pl-10">
-                <div
-                  class="flex h-full flex-col py-4 px-3 bg-white shadow-xl relative"
-                >
+                <div class="flex h-full flex-col py-4 px-3 bg-white shadow-xl relative" >
                   <button
                     type="button"
                     class="hover:text-gray-500 focus:outline-none outline-none cursor-pointer absolute top-2.5 -left-12 hover:bg-red text-white p-2 rounded ease-in-out duration-300"
@@ -44,17 +40,13 @@
                       aria-hidden="true"
                     />
                   </button>
-                  <div
-                    class="relative flex-1 w-full space-y-5 px-2 py-2 max-h-full overflow-y-auto overflow-x-hidden on-hover-scroll"
-                  >
+                  <div class="relative flex-1 w-full space-y-5 px-2 py-2 max-h-full overflow-y-auto overflow-x-hidden on-hover-scroll" >
                     <div class="space-y-5">
                       <DialogTitle class="text-lg font-semibold text-gray-800"
                         >Upload Media</DialogTitle
                       >
                       <!-- Replace with your content -->
-                      <div
-                        class="flex items-center justify-center gap-5 border border-dashed border-grey-300 p-5 py-32 rounded-xl"
-                      >
+                      <div class="flex items-center justify-center gap-5 border border-dashed border-grey-300 p-5 py-32 rounded-xl" >
                         <div class="flex flex-col gap-2">
                           <div class="flex justify-center items-center">
                             <file-select v-model="file"></file-select>
