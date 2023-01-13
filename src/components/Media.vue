@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex flex-col min-h-screen w-full">
+  <div class="relative flex flex-col  w-full">  
     <div class="flex-1 py-3 md:p-5 xl:px-14 xl:py-12">
       <div class="space-y-6 pt-3 md:pt-0 md:pb-7 border-0 border-solid border-gray-300">
         <div class="flex items-center px-3 md:px-0">
