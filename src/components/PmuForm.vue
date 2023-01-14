@@ -45,7 +45,7 @@
             <PmuFormCreate />
           </template> -->
         </div>
-        <div v-if="isCreateForm" class="overflow-hidden md:rounded-lg bg-transparent">
+        <div v-if="isCreateForm" class="relative md:rounded-lg bg-transparent">
           <PmuFormCreate />
         </div>
       </div>
