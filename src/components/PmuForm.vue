@@ -1,7 +1,7 @@
 <template>
   <div class="relative flex flex-col w-full"> 
-    <div class="flex-1 py-3 md:p-5 xl:px-14 xl:py-12">
-      <div class="space-y-4 sm:space-y-6 pt-3 md:pt-0 md:pb-7 border-0 border-solid border-gray-300">
+    <div class="flex-1 py-3 md:p-5 xl:px-14 xl:py-12 flex flex-col ">
+      <div class="space-y-6 sm:space-y-6 pt-3 md:pt-0 border-0 border-solid border-gray-300 flex flex-col flex-1">
         <div class="flex items-center px-3 md:px-0">
           <template v-if="!isMoreForm && !isCreateForm">
             <h2 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-grey-800 mr-auto">PMU Forms</h2>
@@ -16,8 +16,8 @@
           </template>
         </div>
 
-        <div v-if="!isMoreForm && !isCreateForm" class="overflow-hidden md:rounded-lg shadow-3 bg-white">
-          <div class="setup-guide-area py-20 px-4 lg:p-40">
+        <div v-if="!isMoreForm && !isCreateForm" class="overflow-hidden md:rounded-lg shadow-3 bg-white flex-1 flex justify-center items-center">
+          <div class="setup-guide-area p-10 px-4 ">
             <div class="flex flex-col justify-center text-center space-y-10 max-w-md sm:px-7 mx-auto">
               <div class="relative flex flex-col">
                 <img src="../assets/pmuform-sample.svg" alt="setup-thumb" class="mx-auto xl:block" />
