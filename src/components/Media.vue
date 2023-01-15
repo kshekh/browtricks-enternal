@@ -1,7 +1,7 @@
 <template>
   <div class="relative flex flex-col w-full">  
     <div class="flex-1 py-3 md:p-5 xl:px-14 xl:py-12 flex flex-col ">
-      <div class="space-y-6 pt-3 md:pt-0 border-0 border-solid border-gray-300 flex flex-col flex-1">
+      <div class="space-y-6 pt-3 md:pt-0 flex flex-col flex-1">
         <div class="flex items-center px-3 md:px-0">
         <h2 class="flex-1 text-5xl font-bold leading-none text-grey-800 mr-auto">Media</h2>
            <div class="flex gap-2">
@@ -15,7 +15,7 @@
             <Button @click="isUploadMedia = true">Add Media</Button>
           </div>
         </div>
-        <div v-if="!isMoreMedia" class="overflow-hidden md:rounded-lg shadow-3 bg-white flex-1 flex justify-center items-center">
+        <div v-if="!isMoreMedia" class="overflow-hidden md:rounded-lg shadow-3 bg-white border border-grey-300 flex-1 flex justify-center items-center">
           <div class="setup-guide-area p-10 px-4 ">
             <div class="flex flex-col justify-center text-center space-y-10 max-w-md sm:px-7 mx-auto">
               <div class="relative flex flex-col"><img src="@/assets/media.svg" alt="setup-thumb" class="mx-auto xl:block" /></div>

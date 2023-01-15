@@ -9,7 +9,7 @@
       <h1 class="text-5xl font-bold leading-none text-grey-800 mb-5">               
         Customers
         </h1>
-      <div class="overflow-hidden rounded-lg shadow-3 bg-white flex-1">
+      <div class="overflow-hidden rounded-lg shadow-3 bg-white flex-1 border border-grey-300">
         <div class="setup-guide-area p-10 px-4 ">
           <div class="flex flex-col justify-center text-center space-y-10 max-w-xs mx-auto">
             <div class="relative flex flex-col"><img src="../assets/customer.svg" alt="setup-thumb" class="mx-auto xl:block" /></div>

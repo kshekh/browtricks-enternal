@@ -10,7 +10,7 @@
           <div class="grid grid-cols-1 items-start gap-4 lg:grid-cols-3 lg:gap-8">
             <!-- Left column -->
             <div class="grid grid-cols-1 gap-6 lg:col-span-2">
-              <div class="overflow-hidden shadow-3 rounded-lg bg-white">
+              <div class="overflow-hidden shadow-3 rounded-lg bg-white border border-grey-300">
                 <div class="p-4 sm:p-8 space-y-6">
                   <div class="flex flex-col space-y-2.5">
                     <h4 class="text-lg font-bold text-grey-800 leading-none">

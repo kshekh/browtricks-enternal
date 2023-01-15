@@ -21,7 +21,7 @@
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
-                <div class="shadow-3 rounded-lg overflow-hidden ">
+                <div class="shadow-3 rounded-lg overflow-hidden border border-grey-300 bg-white">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
                     <div class="space-y-3">
                       <h6
@@ -74,7 +74,7 @@
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
-                <div class="overflow-hidden shadow-3 rounded-lg">
+                <div class="overflow-hidden shadow-3 rounded-lg border border-grey-300 bg-white">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
                     <div class="relative">
                       <Input id="Address" type="text" label-text="Address" name="Address" 
@@ -127,7 +127,7 @@
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
-                <div class="overflow-hidden shadow-3 rounded-lg">
+                <div class="overflow-hidden shadow-3 rounded-lg border border-grey-300 bg-white">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
                     <div class="relative">
                       <Input id="email" type="email" label-text="Email" name="email" 
@@ -192,7 +192,7 @@
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
-                <div class="overflow-hidden shadow-3 rounded-lg">
+                <div class="overflow-hidden shadow-3 rounded-lg border border-grey-300 bg-white">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
                     <div class="space-y-2">
                       <h3 class="text-lg font-bold text-grey-800">
@@ -342,7 +342,7 @@
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
-                <div class="overflow-hidden shadow-3 rounded-lg">
+                <div class="overflow-hidden shadow-3 rounded-lg border border-grey-300 bg-white">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
                     <div class="relative">
                       <Input id="number" type="text" label-text="Name" name="search" 
@@ -430,7 +430,7 @@
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
-                <div class="overflow-hidden shadow-3 rounded-lg">
+                <div class="overflow-hidden shadow-3 rounded-lg border border-grey-300 bg-white">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
                     <div class="space-y-2">
                       <p class="text-xl text-grey-900">
