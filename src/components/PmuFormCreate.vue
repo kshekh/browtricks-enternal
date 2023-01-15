@@ -1,9 +1,11 @@
 <template>
   <div class="relative flex flex-col w-full"> 
     <div class="flex-1 py-0 md:p-0 xl:px-0 xl:py-0">
-      <div class="space-y-6 pt-0 md:pt-0 md:pb-7 border-0 border-solid border-gray-300 pr-10">
-        <div class="relative rounded-lg shadow-3 bg-white">
-          <div class="setup-guide-area p-4 lg:p-10">
+
+      <div class="space-y-6 pt-0 md:pt-0 border-0 border-solid border-gray-300">
+        <div class="overflow-hidden rounded-lg shadow-3 bg-white">
+          <div class="setup-guide-area p-4 lg:py-6 lg:px-8">
+
             <div class="flex flex-col">
               <div class="space-y-4">
                 <div class="relative">
