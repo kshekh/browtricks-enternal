@@ -1,8 +1,8 @@
 <template>
   <div class="relative flex flex-col w-full"> 
-    <div class="flex-1 py-3 md:p-5 xl:px-14 xl:py-12 flex flex-col ">
+    <div class="flex-1 p-3 md:p-5 xl:px-14 xl:py-12 flex flex-col ">
       <div class="space-y-6 sm:space-y-6 pt-3 md:pt-0 flex flex-col flex-1">
-        <div class="flex items-center px-3 md:px-0">
+        <div class="flex items-center ">
           <template v-if="!isMoreForm && !isCreateForm">
             <h2 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-grey-800 mr-auto">PMU Forms</h2>
           </template>
