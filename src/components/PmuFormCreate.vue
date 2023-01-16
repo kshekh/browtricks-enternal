@@ -1,7 +1,7 @@
 <template>
     <div class="relative flex flex-col w-full flex-1">
   
-        <div class="flex-1 space-y-6 xs:pr-16">
+        <div class="flex-1 space-y-6 xs:pr-16 pt-5 xs:pt-0">
         <div class="overflow-hidden rounded-lg shadow-3 bg-white border border-grey-300 p-4 lg:py-6 lg:px-8">
           <div class="space-y-4">
             <div class="relative">
@@ -15,14 +15,14 @@
           </div>
   
         </div>
-        <div class="relative space-y-3 xs:space-y-0">
+        <div class="xs:relative space-y-3 xs:space-y-0">
        
          <!-- Before Form Upload -->
          <div class="relative rounded-lg shadow-3 bg-white border border-grey-300 p-4 lg:py-6 lg:px-8">   
             <div class="space-y-4">
                 <div class="space-y-1">
                 <h3 class="flex-1 text-base font-bold leading-snug text-grey-800">Use your own document</h3>
-                <p class="text-base font-normal text-grey-700 leading-snug md:leading-none">Upload your own pre-built PDF or
+                <p class="text-sm font-normal text-grey-700 leading-snug md:leading-none">Upload your own pre-built PDF or
                     DOC form</p>
                 </div>
                 <div @click="isUploadDocument = true"
@@ -37,8 +37,8 @@
                     <p class="text-md text-grey-900">Accepts .pdf., doc.</p>
                 </div>
                 </div>
-                <div class="flex justify-end ">
-                <Button class="text-red hover:bg-red/10 xs:px-4 gap-x-1.5 inline-flex items-center ml-auto justify-end"
+                <div class="flex justify-start sm:justify-end ">
+                <Button class="text-red hover:bg-red/10 px-2 gap-x-1.5 inline-flex items-center justify-end"
                     type="button" :btn-no-border="true" :btn-primary="false">
                     <TrashIcon class="w-4" />
                     Delete
@@ -72,7 +72,7 @@
         </div>
 
          <!-- Right Floated action buttons -->         
-         <div class="xs:absolute xs:top-0 rounded-lg shadow-3 bg-white border border-grey-300 xs:-right-16 inline-flex">      
+         <div class="absolute right-0 -top-16 -translate-y-2 xs:translate-y-0 xs:top-0 rounded-lg shadow-3 bg-white border border-grey-300 xs:-right-16 inline-flex">      
               <div class="p-1.5 flex xs:flex-col gap-2 ">
                 <Button @click="isMoreQuestions = true" class="text-grey-700 hover:bg-red/10 px-2 flex items-center justify-end" :btn-no-border="true" :btn-primary="false">
                   <PlusCircle class="w-5"/>
@@ -90,15 +90,20 @@
         <!-- Start Question area -->
         <div v-if="isMoreQuestions" class="relative rounded-lg shadow-3 border border-grey-300 bg-white">
           <div class="setup-guide-area p-4 lg:py-6 lg:px-8">
-            <div class="md:grid md:grid-cols-12 md:gap-6">
+            <div class="md:grid md:grid-cols-12 gap-5 flex flex-col">
+<div class="md:hidden">
+  <SelectItem />
+</div>
+
+
               <div class="md:col-span-9">
                 <div class="relative space-y-4">
                   <div class="space-y-3">
-                    <div class="relative pr-12">
-                        <div class="absolute top-6 rounded-lg shadow-0 bg-white right-0" >                                       
-                        <Button class="hover:bg-red/10 mv:px-3 shadow-none flex items-center ml-auto justify-end" :btn-no-border="true" :btn-primary="false">
+                    <div class="relative md:pr-12">
+                        <div class="absolute top-1 md:top-7 rounded-lg shadow-0 bg-white right-0" >                                       
+                        <button class="hover:bg-red/10 mv:px-3 shadow-none flex items-center ml-auto justify-end " >
                           <PictureIcon class="w-4 text-grey-700"/>
-                        </Button>
+                        </button>
                       </div>
 
                       <Textarea name="question" rows="4" id="question" label-text="Question" />
@@ -114,10 +119,10 @@
                           :placeholder="`Option #${index}`" :on-change="handleInput" autocomplete="formName" />
                       </div>
                       <div class="pt-5 flex pl-3 gap-0.5">
-                        <Button class=" hover:bg-red/10 mv:px-3 gap-x-1.5 inline-flex items-center ml-auto justify-end" :btn-no-border="true" :btn-primary="false">
+                        <Button class=" hover:bg-red/10 px-3 gap-x-1.5 inline-flex items-center ml-auto justify-end" :btn-no-border="true" :btn-primary="false">
                           <PictureIcon class="w-4 text-grey-700"/>
                         </Button>
-                        <Button @click="addOptions--" class="text-red hover:bg-red/10 mv:px-3 gap-x-1.5 inline-flex items-center ml-auto justify-end" :btn-no-border="true" :btn-primary="false">
+                        <Button @click="addOptions--" class="text-red hover:bg-red/10 px-3 gap-x-1.5 inline-flex items-center ml-auto justify-end" :btn-no-border="true" :btn-primary="false">
                           <TrashIcon class="w-4"/>
                         </Button>
                       </div>
@@ -132,10 +137,10 @@
               </div>
               <div class="md:col-span-3">
                 <div class="flex flex-col h-full">
-                  <SelectItem />
-                  <div class="mt-auto text-right">
+                  <div class="md:block hidden"> <SelectItem /></div>
+                  <div class="mt-auto flex justify-start sm:justify-end">
                     <Button
-                      class="text-red hover:bg-red/10 px-0 xs:px-3 gap-x-1.5 inline-flex items-center ml-auto justify-end"
+                      class="text-red hover:bg-red/10 px-2 gap-x-1.5 inline-flex items-center justify-end"
                       :btn-no-border="true" :btn-primary="false">
                       <TrashIcon class="w-4" /> Delete
                     </Button>

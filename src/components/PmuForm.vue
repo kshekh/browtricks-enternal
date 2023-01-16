@@ -1,6 +1,6 @@
 <template>
   <div class="relative flex flex-col w-full"> 
-    <div class="flex-1 py-3 md:p-5 xl:px-14 xl:py-12 flex flex-col">
+    <div class="flex-1 p-3 md:p-5 xl:px-14 xl:py-12 flex flex-col">
       <div class="space-y-6 sm:space-y-6 pt-3 md:pt-0 flex flex-col flex-1">
         <div class="flex items-center ">
           <template v-if="!isMoreForm && !isCreateForm">
@@ -10,10 +10,12 @@
             <h2 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-grey-800 mr-auto">Form templates</h2>
             <Button type="submit" :btn-primary="true" class="w-auto sm:px-6 ml-2  sm:block" @click="isMoreForm = false; isCreateForm = true;">Add Form</Button>
           </template>
+          <div class="relative mt-3 xs:mt-0">
           <template v-if="isCreateForm">
-            <h2 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-grey-800 mr-auto">Create Your Own Form</h2>
+            <h2 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-grey-800 mr-auto pr-24 xs:pr-0">Create Your Own Form</h2>
             <!-- <Button type="submit" :btn-primary="true" class="w-auto sm:px-6 ml-2 hidden sm:block" @click="isMoreForm = false">Add Form</Button> -->
           </template>
+        </div>
         </div>
 
         <div v-if="!isMoreForm && !isCreateForm" class="overflow-hidden md:rounded-lg border border-grey-300 shadow-3 bg-white flex-1 flex justify-center items-center">
@@ -66,19 +68,19 @@
       title: 'Pre and Post Care Agreement 1',
       date: 'Nov 10, 2020 - 4:39 AM',
       templateUrl:
-        'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+        '/src/assets/Pre_and_Post_Care_Agreement.png',
     },
     {
       title: 'Pre and Post Care Agreement 2',
       date: 'Nov 10, 2020 - 4:39 AM',
       templateUrl:
-        'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+        '/src/assets/Pre_and_Post_Care_Agreement.png',
     },
     {
       title: 'Pre and Post Care Agreement 3',
       date: 'Nov 10, 2020 - 4:39 AM',
       templateUrl:
-        'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+        '/src/assets/Pre_and_Post_Care_Agreement.png',
     },
   ]
 </script>
