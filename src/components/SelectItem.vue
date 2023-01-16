@@ -13,7 +13,7 @@
       </ListboxButton>
 
       <transition leave-active-class="transition ease-in duration-100" leave-from-class="opacity-100" leave-to-class="opacity-0">
-        <ListboxOptions class="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white shadow-lg ring-1 ring-grey-300 focus:outline-none text-sm ease-in-out duration-300 py-3">
+        <ListboxOptions class="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white shadow-lg ring-1 ring-grey-300 focus:outline-none text-sm ease-in-out duration-300 py-3 outline-none">
           <ListboxOption as="template" v-for="option in checklistOptions" :key="option.id" :value="option" v-slot="{ active, selected }">
             <li :class="[active ? 'text-grey-800 bg-gray-100' : 'text-grey-800', selected ? 'text-grey-800 bg-gray-100' : 'text-grey-800']" class="relative cursor-default select-none py-2 pl-3 pr-9">
               <div class="flex items-center">
