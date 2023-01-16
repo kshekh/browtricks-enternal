@@ -65,8 +65,7 @@
   </TransitionRoot>
 </template>
 <script setup>
-import LinkChain from '@/assets/icons/LinkChain.vue';
-import FileSelect from '@/components/FileSelect.vue';
+
 import { ref, computed } from 'vue';
 import {
   Dialog,
@@ -74,18 +73,12 @@ import {
   DialogTitle,
   TransitionChild,
   TransitionRoot,
-  Combobox,
-  ComboboxInput,
-  ComboboxButton,
-  ComboboxOptions,
-  ComboboxOption,
+ 
 } from '@headlessui/vue';
 import XMarkIcon from '@/assets/icons/XMarkIcon.vue';
-import TrashIcon from '@/assets/icons/trash.vue';
-import Input from '@/components/Input.vue';
+
 import Button from '@/components/Button.vue';
-import Textarea from '@/components/Textarea.vue';
-import CheckboxRadio from '@/components/CheckboxRadio.vue';
+ 
 
 const open = ref(true);
 defineProps({

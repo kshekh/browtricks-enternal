@@ -312,9 +312,9 @@
           Visibility
         </p>
 
-        <CheckboxRadio id="visible" type="radio" checked="checked" name="visibility" label-text="Visible"
+        <CheckboxRadio id="visible" inputClasses="rounded-full" type="radio" checked="checked" name="visibility" label-text="Visible"
           v-model="visibility" />
-        <CheckboxRadio id="hidden" type="radio" name="visibility" label-text="Hidden" v-model="visibility" />
+        <CheckboxRadio id="hidden" inputClasses="rounded-full" type="radio" name="visibility" label-text="Hidden" v-model="visibility" />
       </div>
       <!-- Call to action with upload button -->
       <div class="hidden gap-x-2 pt-5">
