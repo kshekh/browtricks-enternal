@@ -2,9 +2,9 @@
   <div class="relative flex flex-col min-h-screen w-full divide-y space-y-10">
     <div class="sm:grid grid-cols-12 gap-5 space-y-4 sm:space-y-0">
       <div v-for="formTemp in formTemplates" :key="formTemp.title" @click="$router.push('/pmu-details')"
-        class="overflow-hidden md:rounded-lg shadow-3 bg-white md:col-span-6 sl:col-span-4 divide-y">
-        <div class="relative py-6 px-4">
-          <img class="h-auto w-full object-cover" :src="formTemp.templateUrl" alt="" />
+        class="overflow-hidden md:rounded-lg shadow-3 bg-white md:col-span-6 sl:col-span-4 divide-y cursor-pointer ease-in-out duration-300 hover:-translate-y-2 hover:shadow-lg">
+        <div class="relative py-6 px-4 flex justify-center items-center">
+            <img class="h-auto max-h-60 object-cover"  :src="formTemp.templateUrl" alt="" />
         </div>
         <div class="space-y-2 px-4 sl:px-8 py-6">
           <h4 class="flex-1 text-base font-bold leading-none text-grey-800">{{ formTemp.title }}</h4>
@@ -19,9 +19,9 @@
         created</h2>
       <div class="sm:grid grid-cols-12 gap-5 space-y-4 sm:space-y-0">
         <div v-for="formTemp in formTemplates" :key="formTemp.title" @click="$router.push('/pmu-details')"
-          class="overflow-hidden md:rounded-lg shadow-3 bg-white md:col-span-6 sl:col-span-4 divide-y">
-          <div class="relative py-6 px-4">
-            <img class="h-auto w-full object-cover" :src="formTemp.templateUrl" alt="" />
+          class="overflow-hidden md:rounded-lg shadow-3 bg-white md:col-span-6 sl:col-span-4 divide-y cursor-pointer ease-in-out duration-300 hover:-translate-y-2 hover:shadow-lg">
+          <div class="relative py-6 px-4 flex justify-center items-center">
+            <img class="h-auto max-h-60 object-cover"  :src="formTemp.templateUrl" alt="" />
           </div>
           <div class="space-y-2 px-4 sl:px-8 py-6">
             <h4 class="flex-1 text-base font-bold leading-none text-grey-800">{{ formTemp.title }}</h4>
