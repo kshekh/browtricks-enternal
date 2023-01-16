@@ -104,7 +104,7 @@
                       <Textarea name="question" rows="4" id="question" label-text="Question" />
   
                     </div>
-                    <CheckboxRadio id="visible" type="checkbox" checked="checked" name="visibility"
+                    <CheckboxRadio id="visible" inputClasses="rounded" type="checkbox" checked="checked" name="visibility"
                       label-text="This question is required" />
                   </div>
                   <template v-for="(option, index) in addOptions" :key="index">

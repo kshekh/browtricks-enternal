@@ -135,36 +135,21 @@
                       
                     </div>
                     <h3 class="text-grey-800 font-bold pt-4">Role</h3>
-                    <div class="relative flex gap-3 items-start">
-                      <input
-                        type="radio"
-                        name="role"
-                        id="administrator"
-                        class="relative top-1 text-grey-800 shadow-md border-grey-800 focus:ring-grey-800"
-                      />
-                      <label
-                        for="administrator"
-                        class="block text-lg text-grey-800"
-                      >
-                        <b class="block font-semibold">Administrator</b>
-                        <span>Administrator users can perform any action.</span>
-                      </label>
+                    
+
+                    <div class="space-y-0.5">
+                      <CheckboxRadio id="administrator" inputClasses="rounded-full" labelClasses="font-semibold" type="radio" name="role"
+                      label-text="Administrator" />
+                      <p class="block text-sm text-grey-800 pl-8">Administrator users can perform any action.</p>
                     </div>
-                    <div class="relative flex gap-3 items-start">
-                      <input
-                        type="radio"
-                        name="role"
-                        id="editor"
-                        class="relative top-1 text-grey-800 shadow-md border-grey-800 focus:ring-grey-800"
-                      />
-                      <label for="editor" class="block text-lg text-grey-800">
-                        <b class="block font-semibold">Editor</b>
-                        <span
-                          >Editor users have the ability to read, create, and
-                          update.</span
-                        >
-                      </label>
+                    
+                    <div class="space-y-0.5">
+                      <CheckboxRadio id="editor" inputClasses="rounded-full" labelClasses="font-semibold" type="radio" name="role"
+                      label-text="Editor" />
+                      <p class="block text-sm text-grey-800 pl-8">Editor users have the ability to read, create, and
+                          update.</p>
                     </div>
+                      
 
                     <div class="flex items-center justify-end mt-3">                       
                       <Button @click="editNoteDailog = false" type="submit" class="w-auto sm:px-6"  :btn-primary="true">Add</Button>
@@ -350,58 +335,21 @@
                        
                     </div>
                     <div class="space-y-4">
-                      <div class="relative flex gap-3 items-start">
-                        <input
-                          type="checkbox"
-                          id="create"
-                          class="relative top-1 text-peach-500 rounded shadow-md border-pearch focus:ring-peach-500"
-                        />
-                        <label
-                          for="create"
-                          class="block text-lg text-grey-800 flex-1"
-                        >
-                          Create
-                        </label>
-                      </div>
-                      <div class="relative flex gap-3 items-start">
-                        <input
-                          type="checkbox"
-                          id="read"
-                          class="relative top-1 text-peach-500 rounded shadow-md border-pearch focus:ring-peach-500"
-                        />
-                        <label
-                          for="read"
-                          class="block text-lg text-grey-800 flex-1"
-                        >
-                          Read
-                        </label>
-                      </div>
-                      <div class="relative flex gap-3 items-start">
-                        <input
-                          type="checkbox"
-                          id="delete"
-                          class="relative top-1 text-peach-500 rounded shadow-md border-pearch focus:ring-peach-500"
-                        />
-                        <label
-                          for="delete"
-                          class="block text-lg text-grey-800 flex-1"
-                        >
-                          Delete
-                        </label>
-                      </div>
-                      <div class="relative flex gap-3 items-start">
-                        <input
-                          type="checkbox"
-                          id="update"
-                          class="relative top-1 text-peach-500 rounded shadow-md border-pearch focus:ring-peach-500"
-                        />
-                        <label
-                          for="update"
-                          class="block text-lg text-grey-800 flex-1"
-                        >
-                          Update
-                        </label>
-                      </div>
+                     
+
+                      <CheckboxRadio id="create" inputClasses="rounded" type="checkbox" name="create"
+                      label-text="Create" />
+
+                      <CheckboxRadio id="read" inputClasses="rounded" type="checkbox" name="read"
+                      label-text="Read" />
+
+                      <CheckboxRadio id="delete" inputClasses="rounded" type="checkbox" name="delete"
+                      label-text="Delete" />
+
+                      <CheckboxRadio id="update" inputClasses="rounded" type="checkbox" name="update"
+                      label-text="Update" />
+
+ 
                     </div>
                     <div class="flex justify-end items-center mt-3">
                      
@@ -463,6 +411,7 @@ import InstagramLogo from '@/assets/icons/InstagramLogo.vue';
 import TiktokLogo from '@/assets/icons/TiktokLogo.vue';
 import Button from '@/components/Button.vue';
 import Input from '@/components/Input.vue';
+import CheckboxRadio from '@/components/CheckboxRadio.vue';
 const roles = [
   {
     id: '1',
