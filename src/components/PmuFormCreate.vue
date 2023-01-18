@@ -90,25 +90,14 @@
         <!-- Start Question area -->
         <div v-if="isMoreQuestions" class="relative rounded-lg shadow-3 border border-grey-300 bg-white">
           <div class="setup-guide-area p-4 lg:py-6 lg:px-8">
-            <div class="md:grid md:grid-cols-12 gap-5 flex flex-col">
-<div class="md:hidden">
-  <SelectItem />
-</div>
-
-
+            <div class="md:grid md:grid-cols-12 gap-5 xl:gap-10 2xl:gap-20 flex flex-col">
+                <div class="md:hidden">
+                  <SelectItem />
+                </div>
               <div class="md:col-span-9">
                 <div class="relative space-y-4">
                   <div class="space-y-3">
-                    <div class="relative md:pr-12">
-                        <div class="absolute top-1 md:top-7 rounded-lg shadow-0 bg-white right-0" >                                       
-                        <button class="hover:bg-red/10 mv:px-3 shadow-none flex items-center ml-auto justify-end " >
-                          <PictureIcon class="w-4 text-grey-700"/>
-                        </button>
-                      </div>
-
-                      <Textarea name="question" rows="4" id="question" label-text="Question" />
-  
-                    </div>
+                    <Textarea name="question" rows="4" id="question" label-text="Question" /> 
                     <CheckboxRadio id="visible" inputClasses="rounded" type="checkbox" checked="checked" name="visibility"
                       label-text="This question is required" />
                   </div>
@@ -118,20 +107,18 @@
                         <Input id="formName" type="text" :label-text="`Option #${index}`"
                           :placeholder="`Option #${index}`" :on-change="handleInput" autocomplete="formName" />
                       </div>
-                      <div class="pt-5 flex pl-3 gap-0.5">
-                        <Button class=" hover:bg-red/10 px-3 gap-x-1.5 inline-flex items-center ml-auto justify-end" :btn-no-border="true" :btn-primary="false">
-                          <PictureIcon class="w-4 text-grey-700"/>
+                      <div class="pt-6 flex pl-2">
+                        <Button @click="addOptions--" class="text-red hover:bg-red/10 px-2 gap-x-1.5 inline-flex items-center ml-auto justify-end" :btn-no-border="true" :btn-primary="false">
+                          <XMarkIcon class="block h-5 w-5 " />
                         </Button>
-                        <Button @click="addOptions--" class="text-red hover:bg-red/10 px-3 gap-x-1.5 inline-flex items-center ml-auto justify-end" :btn-no-border="true" :btn-primary="false">
-                          <TrashIcon class="w-4"/>
-                        </Button>
+                      
                       </div>
                     </div>
                   </template>
                   <!-- Repeat options -->
                   <div class="flex items-center cursor-pointer" @click="addOptions++">
                     <PlusCircle class="w-4 mr-2 text-grey-700" />
-                    Add Option or <span class="text-blue ml-2">Add “Other”</span>
+                    Add Option 
                   </div>
                 </div>
               </div>
@@ -224,7 +211,7 @@
     import Button from '@/components/Button.vue';
     import CheckboxRadio from '@/components/CheckboxRadio.vue';
     import SelectItem from '@/components/SelectItem.vue';
-  
+    import XMarkIcon from '@/assets/icons/XMarkIcon.vue';
     import TrashIcon from '@/assets/icons/trash.vue';
     import PlusCircle from '@/assets/icons/PlusCircle.vue';
     import PictureIcon from '@/assets/icons/PictureIcon.vue';

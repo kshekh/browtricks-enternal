@@ -238,7 +238,6 @@ import document from '@/assets/icons/document.vue';
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
 import MoreHorizontal from '@/assets/icons/MoreHorizontal.vue';
 import DialogPopup from '@/components/DialogPopup.vue';
-
 import TopNavbar from '@/components/layout/TopNavbar.vue';
 import SidebarNavigation from '@/components/layout/SidebarNavigation.vue';
 
