@@ -218,7 +218,7 @@
             <p class="text-xl">Send <span class="font-bold">Pre and Post Care Agreement</span> to  <span class="font-bold">Phil Lucus?</span></p>
           </div>
           <div class="flex justify-center gap-x-3">
-            <Button @click="sendPMUform = false" class="w-auto sm:px-6 " type="button" :btn-outline="true" :btn-primary="false">Yes, Send Forms</Button>
+            <Button @click="$router.push('/pmu')" class="w-auto sm:px-6 " type="button" :btn-outline="true" :btn-primary="false">Yes, Send Forms</Button>
             <Button @click="sendPMUform = false" class="w-auto sm:px-6 " type="button" :btn-danger="true" :btn-primary="false">Cancel</Button>
           </div>
         </div>
