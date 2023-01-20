@@ -72,7 +72,7 @@
         <div
           class="absolute right-0 -top-16 -translate-y-2 xs:translate-y-0 xs:top-0 rounded-lg shadow-3 bg-white border border-grey-300 xs:-right-16 inline-flex">
           <div class="p-1.5 flex xs:flex-col gap-2 ">
-            <Button @click="moreQuestions++" class="text-grey-700 hover:bg-red/10 px-2 flex items-center justify-end"
+            <Button @click.capture="moreQuestions++; isMoreQuestions = true" class="text-grey-700 hover:bg-red/10 px-2 flex items-center justify-end"
               :btn-no-border="true" :btn-primary="false">
               <PlusCircle class="w-5" />
             </Button>
@@ -88,8 +88,8 @@
       </div>
 
       <!-- Start Question area -->
-      <div v-if="!isMoreQuestions">
-        <div v-for="(quest, index) in moreQuestions" :key="index" :class="moreQuestions.length-1 ? 'gg' : 'jj'"
+      <div>
+        <div v-for="(quest, inq) in moreQuestions" :key="inq"
           class="relative rounded-lg shadow-3 border border-grey-300 bg-white mb-6">
           <div class="setup-guide-area p-4 lg:py-6 lg:px-8">
             <div class="md:grid md:grid-cols-12 gap-5 xl:gap-10 2xl:gap-20 flex flex-col">
@@ -110,7 +110,7 @@
                     Add Question
                   </div> -->
                   <div class="space-y-3">
-                    <Textarea name="question" rows="4" id="question" :label-text="`Question ${index+1}`" />
+                    <Textarea name="question" rows="4" id="question" :label-text="`Question ${inq+1}`" />
                     <CheckboxRadio id="visible" inputClasses="rounded" type="checkbox" checked="checked"
                       name="visibility" label-text="This question is required" />
                   </div>
@@ -143,7 +143,7 @@
                     <SelectItem />
                   </div>
                   <div class="mt-auto flex justify-start sm:justify-end">
-                    <Button @click="moreQuestions--"
+                    <Button @click.capture="moreQuestions--"
                       class="text-red hover:bg-red/10 px-2 gap-x-1.5 inline-flex items-center justify-end"
                       :btn-no-border="true" :btn-primary="false">
                       <TrashIcon class="w-4" /> Delete
@@ -222,7 +222,8 @@
 </template>
 
 <script setup>
-  import {ref, reactive} from 'vue';
+  import {ref} from 'vue';
+  import { reactive } from 'vue'
   import Input from '@/components/Input.vue';
   import Textarea from '@/components/Textarea.vue';
   import SlideOvers from '@/components/SlideOvers.vue';
@@ -236,9 +237,16 @@
   import PictureIcon from '@/assets/icons/PictureIcon.vue';
   import LinkChain from '@/assets/icons/LinkChain.vue';
   import uploadedPdf from '@/assets/Pre_and_Post_Care_Agreement.png';
-  const moreQuestions = ref(1);
-  const repQuestions = ref(1);
+
+  const moreQuestions = ref(0);
+  const repQuestions = ref(0);
   const addOptions = ref(1);
   const isMoreQuestions = ref(false);
   const isUploadDocument = ref(false);
+
+  const state = reactive({ count: 0 })
+
+  function increment() {
+    state.count++
+  }
 </script>
