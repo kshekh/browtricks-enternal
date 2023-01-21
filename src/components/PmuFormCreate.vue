@@ -136,8 +136,9 @@
                   </div>
 
                   <!-- If want to repeat questions -->
+                  <div class="hidden">
                   <div
-                    class="space-y-3"
+                    class="space-y-3 "
                     v-for="(repq, ind) in repQuestions"
                     :key="ind"
                   >
@@ -149,19 +150,20 @@
                     />
                   </div>
                   <!-- Repeat Question -->
-                  <div
+                  <button type="button"
                     class="flex items-center cursor-pointer"
                     @click="repQuestions++"
                   >
                     <PlusCircle class="w-4 mr-2 text-grey-700" />
-                    Add Option
-                  </div>
+                    Add more textarea
+                  </button>
+                </div>
                   <!-- Multiple Choice -->
                   <div class="space-y-3">
                     <template
                       v-for="(repq, ind) in repMultipleOptions"
                       :key="ind"
-                    >
+                    > <div class="flex gap-3 items-center">
                       <CheckboxRadio
                         :id="`mc-#${ind}`"
                         inputClasses="rounded-full"
@@ -170,18 +172,28 @@
                         name="mc"
                         :label-text="`Multiple Choice #${ind}`"
                       />
+                      <Button
+                          @click="repMultipleOptions--"
+                          class="text-red hover:bg-red/10 px-2 gap-x-1.5 inline-flex items-center justify-end"
+                          :btn-no-border="true"
+                          :btn-primary="false"
+                        >
+                          <XMarkIcon class="block h-5 w-5" />
+                        </Button>
+                    </div>
                     </template>
-                    <div
+                    <button type="button"
                       class="flex items-center cursor-pointer"
                       @click="repMultipleOptions++"
                     >
                       <PlusCircle class="w-4 mr-2 text-grey-700" />
-                      Add Option
-                    </div>
+                      Add more multiple options
+                    </button>
                   </div>
                   <!-- Check List -->
                   <div class="space-y-3">
                     <template v-for="(repq, ind) in repChecklist" :key="ind">
+                      <div class="flex gap-3 items-center">
                       <CheckboxRadio
                         :id="`checklist-#${ind}`"
                         inputClasses="rounded"
@@ -190,14 +202,26 @@
                         name="checklist"
                         :label-text="`Checklist #${ind}`"
                       />
+                      <Button
+                          @click="repChecklist--"
+                          class="text-red hover:bg-red/10 px-2 gap-x-1.5 inline-flex items-center justify-end"
+                          :btn-no-border="true"
+                          :btn-primary="false"
+                        >
+                          <XMarkIcon class="block h-5 w-5" />
+                        </Button>
+                        </div>
                     </template>
-                    <div
+                
+                    <button type="button"
                       class="flex items-center cursor-pointer"
                       @click="repChecklist++"
                     >
                       <PlusCircle class="w-4 mr-2 text-grey-700" />
-                      Add Option
-                    </div>
+                      Add more checkbox
+                    </button>
+
+                  
                   </div>
 
                   <template v-for="(option, index) in addOptions" :key="index">
@@ -225,13 +249,13 @@
                     </div>
                   </template>
                   <!-- Repeat options -->
-                  <div
+                  <button
                     class="flex items-center cursor-pointer"
                     @click="addOptions++"
                   >
                     <PlusCircle class="w-4 mr-2 text-grey-700" />
                     Add Option
-                  </div>
+                  </button>
                 </div>
               </div>
               <div class="md:col-span-3">
