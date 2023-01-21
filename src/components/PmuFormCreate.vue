@@ -103,181 +103,192 @@
       </div>
 
       <!-- Start Question area -->
-      <div>
-        <div
+      <!-- <div id="rectId" @drop.prevent="drop(event)" @dragover.prevent="allowDrop(event)"> -->
+      <div
+        class="droptarget"
+        v-on:drop="drop"
+        v-on:dragover="allowDrop"
+      >
+        <template
           v-for="(quest, inq) in moreQuestions"
-          :key="inq"
-          class="relative rounded-lg shadow-3 border border-grey-300 bg-white mb-6"
-        >
-          <div class="setup-guide-area p-4 lg:py-6 lg:px-8">
-            <div
-              class="md:grid md:grid-cols-12 gap-5 xl:gap-10 2xl:gap-20 flex flex-col"
-            >
-              <div class="md:hidden">
-                <SelectItem />
-              </div>
-              <div class="md:col-span-9">
-                <div class="relative space-y-4">
-                  <div class="space-y-3">
-                    <Textarea
-                      name="question"
-                      rows="4"
-                      id="question"
-                      :label-text="`Question ${inq + 1}`"
-                    />
-                    <CheckboxRadio
-                      id="visible"
-                      inputClasses="rounded"
-                      type="checkbox"
-                      checked="checked"
-                      name="visibility"
-                      label-text="This question is required"
-                    />
-                  </div>
-
-                  <!-- If want to repeat questions -->
-                  <div class="hidden">
-                  <div
-                    class="space-y-3 "
-                    v-for="(repq, ind) in repQuestions"
-                    :key="ind"
-                  >
-                    <Textarea
-                      name="question"
-                      rows="4"
-                      id="question"
-                      :label-text="`Question ${ind + 1}`"
-                    />
-                  </div>
-                  <!-- Repeat Question -->
-                  <button type="button"
-                    class="flex items-center cursor-pointer"
-                    @click="repQuestions++"
-                  >
-                    <PlusCircle class="w-4 mr-2 text-grey-700" />
-                    Add more textarea
-                  </button>
+          :key="inq">
+          <div
+            v-on:dragstart="dragStart"
+            v-on:drag="dragging"
+            draggable="true"
+            id="dragtarget"
+            class="relative rounded-lg shadow-3 border border-grey-300 bg-white mb-6"
+          >
+            <div class="setup-guide-area p-4 lg:py-6 lg:px-8">
+              <div
+                class="md:grid md:grid-cols-12 gap-5 xl:gap-10 2xl:gap-20 flex flex-col"
+              >
+                <div class="md:hidden">
+                  <SelectItem />
                 </div>
-                  <!-- Multiple Choice -->
-                  <div class="space-y-3">
-                    <template
-                      v-for="(repq, ind) in repMultipleOptions"
-                      :key="ind"
-                    > <div class="flex gap-3 items-center">
-                      <CheckboxRadio
-                        :id="`mc-#${ind}`"
-                        inputClasses="rounded-full"
-                        type="radio"
-                        checked="checked"
-                        name="mc"
-                        :label-text="`Multiple Choice #${ind}`"
+                <div class="md:col-span-9">
+                  <div class="relative space-y-4">
+                    <div class="space-y-3">
+                      <Textarea
+                        name="question"
+                        rows="4"
+                        id="question"
+                        :label-text="`Question ${inq + 1}`"
                       />
-                      <Button
-                          @click="repMultipleOptions--"
-                          class="text-red hover:bg-red/10 px-2 gap-x-1.5 inline-flex items-center justify-end"
-                          :btn-no-border="true"
-                          :btn-primary="false"
-                        >
-                          <XMarkIcon class="block h-5 w-5" />
-                        </Button>
-                    </div>
-                    </template>
-                    <button type="button"
-                      class="flex items-center cursor-pointer"
-                      @click="repMultipleOptions++"
-                    >
-                      <PlusCircle class="w-4 mr-2 text-grey-700" />
-                      Add more multiple options
-                    </button>
-                  </div>
-                  <!-- Check List -->
-                  <div class="space-y-3">
-                    <template v-for="(repq, ind) in repChecklist" :key="ind">
-                      <div class="flex gap-3 items-center">
                       <CheckboxRadio
-                        :id="`checklist-#${ind}`"
+                        id="visible"
                         inputClasses="rounded"
                         type="checkbox"
                         checked="checked"
-                        name="checklist"
-                        :label-text="`Checklist #${ind}`"
+                        name="visibility"
+                        label-text="This question is required"
                       />
-                      <Button
-                          @click="repChecklist--"
-                          class="text-red hover:bg-red/10 px-2 gap-x-1.5 inline-flex items-center justify-end"
-                          :btn-no-border="true"
-                          :btn-primary="false"
-                        >
-                          <XMarkIcon class="block h-5 w-5" />
-                        </Button>
-                        </div>
-                    </template>
-                
+                    </div>
+
+                    <!-- If want to repeat questions -->
+                    <div class="hidden">
+                    <div
+                      class="space-y-3 "
+                      v-for="(repq, ind) in repQuestions"
+                      :key="ind"
+                    >
+                      <Textarea
+                        name="question"
+                        rows="4"
+                        id="question"
+                        :label-text="`Question ${ind + 1}`"
+                      />
+                    </div>
+                    <!-- Repeat Question -->
                     <button type="button"
                       class="flex items-center cursor-pointer"
-                      @click="repChecklist++"
+                      @click="repQuestions++"
                     >
                       <PlusCircle class="w-4 mr-2 text-grey-700" />
-                      Add more checkbox
+                      Add more textarea
                     </button>
-
-                  
                   </div>
-
-                  <template v-for="(option, index) in addOptions" :key="index">
-                    <div class="flex items-center">
-                      <div class="relative flex-1">
-                        <Input
-                          id="formName"
-                          type="text"
-                          :label-text="`Option #${index}`"
-                          :placeholder="`Option #${index}`"
-                          :on-change="handleInput"
-                          autocomplete="formName"
+                    <!-- Multiple Choice -->
+                    <div class="space-y-3">
+                      <template
+                        v-for="(repq, ind) in repMultipleOptions"
+                        :key="ind"
+                      > <div class="flex gap-3 items-center">
+                        <CheckboxRadio
+                          :id="`mc-#${ind}`"
+                          inputClasses="rounded-full"
+                          type="radio"
+                          checked="checked"
+                          name="mc"
+                          :label-text="`Multiple Choice #${ind}`"
                         />
-                      </div>
-                      <div class="pt-6 flex pl-2">
                         <Button
-                          @click="addOptions--"
-                          class="text-red hover:bg-red/10 px-2 gap-x-1.5 inline-flex items-center ml-auto justify-end"
-                          :btn-no-border="true"
-                          :btn-primary="false"
-                        >
-                          <XMarkIcon class="block h-5 w-5" />
-                        </Button>
+                            @click="repMultipleOptions--"
+                            class="text-red hover:bg-red/10 px-2 gap-x-1.5 inline-flex items-center justify-end"
+                            :btn-no-border="true"
+                            :btn-primary="false"
+                          >
+                            <XMarkIcon class="block h-5 w-5" />
+                          </Button>
                       </div>
+                      </template>
+                      <button type="button"
+                        class="flex items-center cursor-pointer"
+                        @click="repMultipleOptions++"
+                      >
+                        <PlusCircle class="w-4 mr-2 text-grey-700" />
+                        Add more multiple options
+                      </button>
                     </div>
-                  </template>
-                  <!-- Repeat options -->
-                  <button
-                    class="flex items-center cursor-pointer"
-                    @click="addOptions++"
-                  >
-                    <PlusCircle class="w-4 mr-2 text-grey-700" />
-                    Add Option
-                  </button>
-                </div>
-              </div>
-              <div class="md:col-span-3">
-                <div class="flex flex-col h-full">
-                  <div class="md:block hidden">
-                    <SelectItem />
-                  </div>
-                  <div class="mt-auto flex justify-start sm:justify-end">
-                    <Button
-                      @click.capture="moreQuestions--"
-                      class="text-red hover:bg-red/10 px-2 gap-x-1.5 inline-flex items-center justify-end"
-                      :btn-no-border="true"
-                      :btn-primary="false"
+                    <!-- Check List -->
+                    <div class="space-y-3">
+                      <template v-for="(repq, ind) in repChecklist" :key="ind">
+                        <div class="flex gap-3 items-center">
+                        <CheckboxRadio
+                          :id="`checklist-#${ind}`"
+                          inputClasses="rounded"
+                          type="checkbox"
+                          checked="checked"
+                          name="checklist"
+                          :label-text="`Checklist #${ind}`"
+                        />
+                        <Button
+                            @click="repChecklist--"
+                            class="text-red hover:bg-red/10 px-2 gap-x-1.5 inline-flex items-center justify-end"
+                            :btn-no-border="true"
+                            :btn-primary="false"
+                          >
+                            <XMarkIcon class="block h-5 w-5" />
+                          </Button>
+                          </div>
+                      </template>
+                  
+                      <button type="button"
+                        class="flex items-center cursor-pointer"
+                        @click="repChecklist++"
+                      >
+                        <PlusCircle class="w-4 mr-2 text-grey-700" />
+                        Add more checkbox
+                      </button>
+
+                    
+                    </div>
+
+                    <template v-for="(option, index) in addOptions" :key="index">
+                      <div class="flex items-center">
+                        <div class="relative flex-1">
+                          <Input
+                            id="formName"
+                            type="text"
+                            :label-text="`Option #${index}`"
+                            :placeholder="`Option #${index}`"
+                            :on-change="handleInput"
+                            autocomplete="formName"
+                          />
+                        </div>
+                        <div class="pt-6 flex pl-2">
+                          <Button
+                            @click="addOptions--"
+                            class="text-red hover:bg-red/10 px-2 gap-x-1.5 inline-flex items-center ml-auto justify-end"
+                            :btn-no-border="true"
+                            :btn-primary="false"
+                          >
+                            <XMarkIcon class="block h-5 w-5" />
+                          </Button>
+                        </div>
+                      </div>
+                    </template>
+                    <!-- Repeat options -->
+                    <button
+                      class="flex items-center cursor-pointer"
+                      @click="addOptions++"
                     >
-                      <TrashIcon class="w-4" /> Delete
-                    </Button>
+                      <PlusCircle class="w-4 mr-2 text-grey-700" />
+                      Add Option
+                    </button>
+                  </div>
+                </div>
+                <div class="md:col-span-3">
+                  <div class="flex flex-col h-full">
+                    <div class="md:block hidden">
+                      <SelectItem />
+                    </div>
+                    <div class="mt-auto flex justify-start sm:justify-end">
+                      <Button
+                        @click.capture="moreQuestions--"
+                        class="text-red hover:bg-red/10 px-2 gap-x-1.5 inline-flex items-center justify-end"
+                        :btn-no-border="true"
+                        :btn-primary="false"
+                      >
+                        <TrashIcon class="w-4" /> Delete
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </template>
       </div>
       <!-- End Questions area -->
 
@@ -428,9 +439,18 @@ const addOptions = ref(1);
 const isMoreQuestions = ref(false);
 const isUploadDocument = ref(false);
 
-const state = reactive({ count: 0 });
-
-function increment() {
-  state.count++;
+function dragStart(event)  {
+  event.dataTransfer.setData("Text", event.target.id);
+}
+function drag(event) {
+  event.dataTransfer.setData("Text", event.target.id);
+}
+function allowDrop(event) {
+  event.preventDefault();
+}
+function drop(event) {
+  event.preventDefault();
+  var data = event.dataTransfer.getData("Text");
+  event.target.appendChild(document.getElementById(data));
 }
 </script>
