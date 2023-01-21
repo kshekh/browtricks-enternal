@@ -200,7 +200,7 @@
     <!-- End Edit customer -->
 
     <!-- Send customer -->
-    <DialogPopup :open-dialog="sendPMUform" @closeModal="sendPMUform = false">
+    <DialogPopup :open-dialog="confirmSendPMUform" @closeModal="confirmSendPMUform = false">
       <div class="space-y-6 relative max-w-full" :style="`width:300px`">
         <div class="mx-auto text-center">
           <component :is="document" class="block h-16 w-16 text-grey-700 mx-auto" aria-hidden="true" />
@@ -212,8 +212,8 @@
             <p class="text-xl">Send <span class="font-bold">Pre and Post Care Agreement</span> to  <span class="font-bold">Phil Lucus?</span></p>
           </div>
           <div class="flex justify-center gap-x-3">
-            <Button @click="sendPMUform = false" class="w-auto sm:px-6 " type="button" :btn-outline="true" :btn-primary="false">Yes, Send Forms</Button>
-            <Button @click="sendPMUform = false" class="w-auto sm:px-6 " type="button" :btn-danger="true" :btn-primary="false">Cancel</Button>
+            <Button @click="$router.push('/pmu'), confirmSendPMUform = false" class="w-auto sm:px-6 " type="button" :btn-outline="true" :btn-primary="false">Yes, Send Forms</Button>
+            <Button @click="confirmSendPMUform = false" class="w-auto sm:px-6 " type="button" :btn-danger="true" :btn-primary="false">Cancel</Button>
           </div>
         </div>
       </div>
@@ -248,7 +248,7 @@
               >Cancel</Button
             >
             <Button
-              @click="reviewPmuForm = false; sendPMUform = true "
+              @click="reviewPmuForm = false; confirmSendPMUform = true "
               type="button"
               class="w-auto sm:px-6"
               :btn-primary="true"
@@ -281,7 +281,7 @@ const isOpenCustomers = ref(false);
 const isSendToCustomer = ref(false);
 const isCreateCustomer = ref(false);
 const isEditCustomer = ref(false);
-const sendPMUform = ref(false);
+const confirmSendPMUform = ref(false);
 const reviewPmuForm = ref(false);
 const people = [
   { id: 1, name: 'Leslie Alexander', tel: '(469) 578-8248', email: 'carlasiphron@gmail.com' },

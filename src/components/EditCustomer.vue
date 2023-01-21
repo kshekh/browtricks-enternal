@@ -698,6 +698,29 @@
     </div>
   </DialogPopup>
 
+ <!-- confirm Send PMUform -->
+ <DialogPopup :open-dialog="confirmSendPMUform" @closeModal="confirmSendPMUform = false">
+      <div class="space-y-6 relative max-w-full" :style="`width:300px`">
+        <div class="mx-auto text-center">
+          <component :is="document" class="block h-16 w-16 text-grey-700 mx-auto" aria-hidden="true" />
+        </div>
+        <DialogTitle as="h3" class="flex-1 text-5xl font-bold leading-none text-grey-800 text-center">
+        </DialogTitle>
+        <div class="space-y-6 text-center">
+          <div class="customer-details max-w-60 mx-auto">
+            <p class="text-xl">Send <span class="font-bold">Pre and Post Care Agreement</span> to  <span class="font-bold">Phil Lucus?</span></p>
+          </div>
+          <div class="flex justify-center gap-x-3">
+            <Button @click="$router.push('/pmu'), confirmSendPMUform = false" class="w-auto sm:px-6 " type="button" :btn-outline="true" :btn-primary="false">Yes, Send Forms</Button>
+            <Button @click="confirmSendPMUform = false" class="w-auto sm:px-6 " type="button" :btn-danger="true" :btn-primary="false">Cancel</Button>
+          </div>
+        </div>
+      </div>
+    </DialogPopup>
+
+
+
+
 <!-- Review PMU Form -->
  <DialogPopup
     :open-dialog="reviewPmuForm"
@@ -733,7 +756,7 @@
               >Cancel</Button
             >
             <Button
-              @click="reviewPmuForm = false"
+              @click="confirmSendPMUform = true, reviewPmuForm = false"
               type="button"
               class="w-auto sm:px-6"
               :btn-primary="true"
@@ -769,6 +792,7 @@ const addNoteDailog = ref(false);
 const allNotesDailog = ref(false);
 const pmuFormList = ref(false);
 const sandPmuForm = ref(false);
+const confirmSendPMUform = ref(false);
 const reviewPmuForm = ref(false);
 const editNoteDailog = ref(false);
 const editCustomerDailog = ref(false);
