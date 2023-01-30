@@ -10,7 +10,7 @@
         <div class="space-y-6">
             <div class="overflow-hidden md:rounded-xl bg-white shadow-3">
             <div class="space-y-3 p-4 sm:px-8 sm:py-8">
-            <h1 class="flex-1 text-4xl md:text-5xl font-bold leading-none text-black">
+            <h1 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-grey-800">
             Post PMU Care Form 
             </h1>
             <p class="text-lg md:text-xl font-normal text-grey-700 leading-none">Requested by Koko Teams on Nov 10, 2020 </p>
@@ -82,15 +82,19 @@
             <div class="flex flex-col md:flex-row items-center gap-x-10 gap-y-5 w-full md:w-2/5">
                 <div class="space-y-4 w-full">
                 <div class="overflow-hidden rounded-xl bg-transparent border border-grey-300 w-full md:w-60">   
-                <div class="space-y-3 px-12 py-16 flex justify-center items-center text-center w-full">
+                <div class="space-y-3 px-12 py-16 flex flex-wrap justify-center items-center text-center w-full">
+                  <div class="flex justify-center items-center">
+              <file-select v-model="file"></file-select>
+            </div>
+            <p v-if="file">{{ file.name }}</p>
                 <Signature class="w-40 h-16 block" />
                 </div>    
                 </div>
                 </div>
                 <div class="space-y-5 w-full">
-                  <div class="flex items-center gap-3 text-lg leading-none text-black relative">
+                  <div class="flex items-center gap-3 text-lg leading-none text-black relative w-40">
                     <p class="font-normal">Signature:</p>
-                    <Signature class="w-20 h-8 md:absolute -top-3 right-5" />
+                    <Signature class="w-20 h-8 md:absolute -top-3 right-0" />
                   </div>
                   <div class="flex items-center gap-3 text-lg leading-none text-black">
                     <p class="font-normal">Signed by:</p>
@@ -126,6 +130,7 @@ import CheckboxRadio from '@/components/CheckboxRadio.vue';
 import Textarea from '@/components/Textarea.vue';
 import Signature from '@/assets/icons/Signature.vue';
 import Button from '@/components/Button.vue';
+import FileSelect from '@/components/FileSelect.vue';
 // import PmuDetails from '@/components/PmuDetails.vue';
 
 const isLogin = reactive(true); 
