@@ -22,8 +22,8 @@
               >
                 <div
                   class="bg-grey-700 h-1.5 rounded-full dark:bg-blue-500"
-                  style="
-                    width: 20%; /*width: index / ${setupCount} * 100 + '%'*/
+                  style="width: 20%;
+                    /*width: index / ${setupCount} * 100 + '%'*/
                   "
                 ></div>
                 <!-- Step count % formulla `index / ${setupCount} * 100 + '%'` -->
@@ -65,7 +65,7 @@
                   </span>
                   <div class="ml-7 flex min-w-0 flex-col space-y-3 pt-2">
                     <h3
-                      @click="step.isExpanded = !step.isExpanded"
+                      @click="activeStep(index)"
                       class="text-lg font-semibold"
                     >
                       {{ step.title }}
@@ -107,7 +107,7 @@ const customerSteps = reactive([
     title: 'Add customers',
     answer:
       'Streamline your contact book by saving before/after media and signed forms all within our single app.',
-    isExpanded: true,
+    isExpanded: false,
   },
   {
     title: 'Create forms',
@@ -134,4 +134,12 @@ const customerSteps = reactive([
     isExpanded: false,
   },
 ]);
+
+// Open clicked only step
+function activeStep(event) {
+  customerSteps.map((pr) => {
+    pr.isExpanded = false;
+  })
+  return customerSteps[event].isExpanded = true;
+}
 </script>
