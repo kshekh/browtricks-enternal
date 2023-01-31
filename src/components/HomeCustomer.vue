@@ -107,7 +107,7 @@ const customerSteps = reactive([
     title: 'Add customers',
     answer:
       'Streamline your contact book by saving before/after media and signed forms all within our single app.',
-    isExpanded: false,
+    isExpanded: true,
   },
   {
     title: 'Create forms',
