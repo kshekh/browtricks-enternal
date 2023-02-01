@@ -46,7 +46,7 @@
           class="bg-white p-5 xs:rounded-lg sm:p-8 border-y xs:border border-grey-500 shadow-3 w-full"
         >
           <h2
-            class="text-start text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 pb-5"
+            class="text-start text-3xl sm:text-5xl font-bold tracking-tight text-gray-900 pb-5"
           >
             Create an Account
           </h2>

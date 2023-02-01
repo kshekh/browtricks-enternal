@@ -4,7 +4,7 @@
     <div class="flex-1 p-3 md:p-5 xl:px-14 xl:py-12">
       <div class="mb-7 pb-10 space-y-5 border-b border-solid border-gray-300">
         <h2
-          class="flex-1 text-5xl font-semibold leading-none text-black pb-3"
+          class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-black pb-3"
         >
           Chris Luke
         </h2>
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="mb-7 space-y-7">
-        <h2 class="flex-1 text-5xl font-semibold leading-none text-black">
+        <h2 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-black">
           Your media
         </h2>
         <div

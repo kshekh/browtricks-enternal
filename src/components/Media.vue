@@ -3,7 +3,7 @@
     <div class="flex-1 py-3 md:p-5 xl:px-14 xl:py-12 flex flex-col ">
       <div class="space-y-6 pt-3 md:pt-0 flex flex-col flex-1">
         <div class="flex items-center px-3 md:px-0">
-          <h2 class="flex-1 text-5xl font-bold leading-none text-grey-800 mr-auto">Media</h2>
+          <h2 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-grey-800 mr-auto">Media</h2>
           <div class="flex gap-2">
             <!-- Start
                 Just for demo purpose to see how alert gets open -->
@@ -24,7 +24,7 @@
                   class="mx-auto xl:block" /></div>
               <div class="flex flex-col space-y-5">
                 <div class="space-y-4">
-                  <h2 class="text-2xl font-bold text-grey-800 leading-none">Add Media</h2>
+                  <h2 class="text-3xl sm:text-4xl font-bold text-grey-800 leading-none">Add Media</h2>
                   <p class="text-xl text-grey-900">Featuring customer content is a great way to build a community around
                     your products and your brand. You can import directly from social media posts or add your own
                     manually.
