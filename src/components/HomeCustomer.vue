@@ -51,74 +51,59 @@
                       class="relative left-1 z-10 flex h-6 w-6 items-center justify-center rounded-full ring-4 ring-white bg-white border-2 border-dashed  border-peach-500"
                     >
                     </span>
-                    <span v-if="isCustomerAdded && step.title === 'Add customers'"
-                      class="absolute left-1 z-10 flex h-6 w-6 items-center justify-center rounded-full ring-4 ring-white"
-                      :class="
-                      isCustomerAdded
-                          ? 'bg-peach-500'
-                          : 'bg-white border-2 border-dashed  border-peach-500 '
-                      "
+                    <span v-if="step.title === 'Add customers'"
+                      class="absolute left-1 z-10 flex h-6 w-6 items-center justify-center rounded-full ring-4 ring-white bg-white border-2 border-dashed  border-peach-500"
                     >
-                      <CheckIcon
-                        class="h-4 w-4 text-grey-800"
-                        aria-hidden="true"
-                      />
+                      <span v-if="isCustomerAdded" class="bg-peach-500 rounded-full">
+                        <CheckIcon
+                          class="h-4 w-4 text-grey-800"
+                          aria-hidden="true"
+                        />
+                      </span>
                     </span>
                     <span
                       v-if="isCreateForm && step.title === 'Create forms'"
-                      class="absolute left-1 z-10 flex h-6 w-6 items-center justify-center rounded-full ring-4 ring-white"
-                      :class="
-                      isCreateForm
-                          ? 'bg-peach-500'
-                          : 'bg-white border-2 border-dashed  border-peach-500 '
-                      "
+                      class="absolute left-1 z-10 flex h-6 w-6 items-center justify-center rounded-full ring-4 ring-white bg-white border-2 border-dashed  border-peach-500"
                     >
-                      <CheckIcon
-                        class="h-4 w-4 text-grey-800"
-                        aria-hidden="true"
-                      />
+                      <span v-if="isCreateForm" class="bg-peach-500 rounded-full">
+                        <CheckIcon
+                          class="h-4 w-4 text-grey-800"
+                          aria-hidden="true"
+                        />
+                      </span>
                     </span>
                     <span
-                      v-if="isAccountConnected && step.title === 'Connect social accounts'"
-                      class="absolute left-1 z-10 flex h-6 w-6 items-center justify-center rounded-full ring-4 ring-white"
-                      :class="
-                      isAccountConnected
-                          ? 'bg-peach-500'
-                          : 'bg-white border-2 border-dashed  border-peach-500 '
-                      "
+                      v-if="step.title === 'Connect social accounts'"
+                      class="absolute left-1 z-10 flex h-6 w-6 items-center justify-center rounded-full ring-4 ring-white bg-white border-2 border-dashed  border-peach-500"
                     >
-                      <CheckIcon
-                        class="h-4 w-4 text-grey-800"
-                        aria-hidden="true"
-                      />
+                      <span v-if="isAccountConnected" class="bg-peach-500 rounded-full">
+                        <CheckIcon
+                          class="h-4 w-4 text-grey-800"
+                          aria-hidden="true"
+                        />
+                      </span>
                     </span>
                     <span
-                      v-if="isMediaAdded && step.title === 'Add before/after media'"
-                      class="absolute left-1 z-10 flex h-6 w-6 items-center justify-center rounded-full ring-4 ring-white"
-                      :class="
-                      isMediaAdded
-                          ? 'bg-peach-500'
-                          : 'bg-white border-2 border-dashed  border-peach-500 '
-                      "
+                      v-if="step.title === 'Add before/after media'"
+                      class="absolute left-1 z-10 flex h-6 w-6 items-center justify-center rounded-full ring-4 ring-white bg-white border-2 border-dashed  border-peach-500"
                     >
-                      <CheckIcon
-                        class="h-4 w-4 text-grey-800"
-                        aria-hidden="true"
-                      />
+                      <span v-if="isMediaAdded" class="bg-peach-500 rounded-full">
+                        <CheckIcon
+                          class="h-4 w-4 text-grey-800"
+                          aria-hidden="true"
+                        />
+                      </span>
                     </span>
                     <span
-                      v-if="isEnableSMS && step.title === 'Enable SMS sending'"
-                      class="absolute left-1 z-10 flex h-6 w-6 items-center justify-center rounded-full ring-4 ring-white"
-                      :class="
-                      isEnableSMS
-                          ? 'bg-peach-500'
-                          : 'bg-white border-2 border-dashed  border-peach-500 '
-                      "
+                      v-if="step.title === 'Enable SMS sending'"
+                      class="absolute left-1 z-10 flex h-6 w-6 items-center justify-center rounded-full ring-4 ring-white bg-white border-2 border-dashed  border-peach-500"
                     >
-                      <CheckIcon
-                        class="h-4 w-4 text-grey-800"
-                        aria-hidden="true"
-                      />
+                      <span v-if="isEnableSMS" class="bg-peach-500 rounded-full">
+                        <CheckIcon
+                          class="h-4 w-4 text-grey-800"
+                          aria-hidden="true"
+                        />
+                      </span>
                     </span>
                   </span>
                   <div class="ml-7 flex min-w-0 flex-col space-y-3 pt-2">
@@ -203,20 +188,21 @@ const customerSteps = reactive([
 function activeStep(event, stp) {
   customerSteps.map((pr) => {
     pr.isExpanded = false;
+    // to get active step
     if(stp.title === 'Add customers') {
       isCustomerAdded = true;
     }
     if(stp.title === 'Create forms') {
-      isCreateForm = true;
+      // isCreateForm = true;
     }
     if(stp.title === 'Connect social accounts') {
-      isAccountConnected = true;
+      // isAccountConnected = true;
     }
     if(stp.title === 'Add before/after media') {
-      isMediaAdded = true;
+      // isMediaAdded = true;
     }
     if(stp.title === 'Enable SMS sending') {
-      isEnableSMS = true;
+      // isEnableSMS = true;
     }
   })
   return customerSteps[event].isExpanded = true;
