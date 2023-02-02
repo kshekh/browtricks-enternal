@@ -2,7 +2,7 @@
   <div class="relative flex flex-col w-full flex-1 xs:pr-16">
     <div class="flex-1 space-y-6 xs:pt-0">
       <div
-        class="overflow-hidden rounded-lg shadow-3 bg-white border border-grey-300 p-4 lg:py-6 lg:px-8"
+        class="overflow-hidden rounded-lg shadow-3 bg-white border border-gray-300 p-4 lg:py-6 lg:px-8"
       >
         <div class="space-y-4">
           <div class="relative">
@@ -30,32 +30,32 @@
       <div class="xs:relative space-y-3 xs:space-y-0">
         <!-- Before Form Upload -->
         <div
-          class="relative rounded-lg shadow-3 bg-white border border-grey-300 p-4 lg:py-6 lg:px-8"
+          class="relative rounded-lg shadow-3 bg-white border border-gray-300 p-4 lg:py-6 lg:px-8"
         >
           <div class="space-y-4">
             <div class="space-y-1">
-              <h3 class="flex-1 text-base font-bold leading-snug text-grey-800">
+              <h3 class="flex-1 text-base font-bold leading-snug text-gray-800">
                 Use your own document
               </h3>
               <p
-                class="text-sm font-normal text-grey-700 leading-snug md:leading-none"
+                class="text-sm font-normal text-gray-700 leading-snug md:leading-none"
               >
                 Upload your own pre-built PDF or DOC form
               </p>
             </div>
             <div
               @click="isUploadDocument = true"
-              class="cursor-pointer flex items-center justify-center gap-5 border border-dashed border-grey-300 p-5 py-14 rounded-xl"
+              class="cursor-pointer flex items-center justify-center gap-5 border border-dashed border-gray-300 p-5 py-14 rounded-xl"
             >
               <div class="flex flex-col">
                 <span
-                  class="inline-flex w-full justify-center items-center rounded-md border border-peach-500 bg-peach-500 py-1 px-2 h-full text-xs font-semibold text-grey-800/70 shadow-sm hover:bg-peach-100 hover:border-peach-100 ease-in-out duration-300 cursor-pointer"
+                  class="inline-flex w-full justify-center items-center rounded-md border border-peach-500 bg-peach-500 py-1 px-2 h-full text-xs font-semibold text-gray-800/70 shadow-sm hover:bg-peach-100 hover:border-peach-100 ease-in-out duration-300 cursor-pointer"
                 >
                   <span v-if="value">{{ value.name }}</span>
                   <span v-else>Upload File </span>
                 </span>
                 <!-- <FileSelect /> -->
-                <p class="text-md text-grey-900">Accepts .pdf., doc.</p>
+                <p class="text-md text-gray-900">Accepts .pdf., doc.</p>
               </div>
             </div>
             <div class="flex justify-start sm:justify-end">
@@ -74,7 +74,7 @@
 
         <!-- After Form Upload (Please remove class "hidden" when document will be uploaded and updated here)-->
         <div
-          class="relative rounded-lg shadow-3 bg-white border border-grey-300 space-y-3 p-4 lg:py-6 lg:px-8 hidden"
+          class="relative rounded-lg shadow-3 bg-white border border-gray-300 space-y-3 p-4 lg:py-6 lg:px-8 hidden"
         >
           <div class="flex items-center">
             <div class="relative flex-1">
@@ -107,7 +107,7 @@
         <div
           v-for="(quest, inq) in moreQuestions"
           :key="inq"
-          class="relative rounded-lg shadow-3 border border-grey-300 bg-white mb-6"
+          class="relative rounded-lg shadow-3 border border-gray-300 bg-white mb-6"
         >
           <div class="setup-guide-area p-4 lg:py-6 lg:px-8">
             <div
@@ -154,7 +154,7 @@
                     class="flex items-center cursor-pointer"
                     @click="repQuestions++"
                   >
-                    <PlusCircle class="w-4 mr-2 text-grey-700" />
+                    <PlusCircle class="w-4 mr-2 text-gray-700" />
                     Add more textarea
                   </button>
                 </div>
@@ -186,7 +186,7 @@
                       class="flex items-center cursor-pointer"
                       @click="repMultipleOptions++"
                     >
-                      <PlusCircle class="w-4 mr-2 text-grey-700" />
+                      <PlusCircle class="w-4 mr-2 text-gray-700" />
                       Add more multiple options
                     </button>
                   </div>
@@ -217,7 +217,7 @@
                       class="flex items-center cursor-pointer"
                       @click="repChecklist++"
                     >
-                      <PlusCircle class="w-4 mr-2 text-grey-700" />
+                      <PlusCircle class="w-4 mr-2 text-gray-700" />
                       Add more checkbox
                     </button>
 
@@ -253,7 +253,7 @@
                     class="flex items-center cursor-pointer"
                     @click="addOptions++"
                   >
-                    <PlusCircle class="w-4 mr-2 text-grey-700" />
+                    <PlusCircle class="w-4 mr-2 text-gray-700" />
                     Add Option
                   </button>
                 </div>
@@ -294,14 +294,14 @@
       <div class="space-y-5">
         <!-- Replace with your content -->
         <div
-          class="flex items-center justify-center gap-5 border border-dashed border-grey-300 p-5 py-32 rounded-xl"
+          class="flex items-center justify-center gap-5 border border-dashed border-gray-300 p-5 py-32 rounded-xl"
         >
           <div class="flex flex-col gap-2">
             <div class="flex justify-center items-center">
               <file-select v-model="file"></file-select>
             </div>
             <p v-if="file">{{ file.name }}</p>
-            <p class="text-xs text-grey-800/80">
+            <p class="text-xs text-gray-800/80">
               Accepts .jpg., png., mp4., mov.
             </p>
           </div>
@@ -318,13 +318,13 @@
           </div>
           <div class="flex items-start justify-between">
             <div class="space-y-1">
-              <h2 class="text-lg font-normal text-grey-800 leading-none">
+              <h2 class="text-lg font-normal text-gray-800 leading-none">
                 Pre & Post Brow Care.pdf
               </h2>
-              <p class="text-lg font-normal text-grey-700 flex items-center">
+              <p class="text-lg font-normal text-gray-700 flex items-center">
                 PDF
                 <span
-                  class="w-2 h-2 rounded-full bg-grey-500 block mx-3"
+                  class="w-2 h-2 rounded-full bg-gray-500 block mx-3"
                 ></span>
                 Jun 4, 2022
               </p>
@@ -374,7 +374,7 @@
 
   <!-- Right Floated action buttons -->
   <div
-    class="absolute sm:fixed right-0 -top-16 sm:top-1/2 sm:-translate-y-1/2 rounded-lg sm:rounded-none sm:rounded-l-lg shadow-3 bg-white border border-grey-300 sm:border-r-0 inline-flex"
+    class="absolute sm:fixed right-0 -top-16 sm:top-1/2 sm:-translate-y-1/2 rounded-lg sm:rounded-none sm:rounded-l-lg shadow-3 bg-white border border-gray-300 sm:border-r-0 inline-flex"
   >
     <div class="p-1.5 flex xs:flex-col gap-2">
       <Button
@@ -382,17 +382,17 @@
           moreQuestions++;
           isMoreQuestions = true;
         "
-        class="text-grey-700 hover:bg-red/10 px-2 flex items-center justify-end"
+        class="text-gray-700 hover:bg-red/10 px-2 flex items-center justify-end"
         :btn-no-border="true"
         :btn-primary="false"
       >
         <PlusCircle class="w-5" />
       </Button>
       <hr
-        class="h-full xs:h-auto xs:w-full border-grey-500 border-0 border-l xs:border-l-0 xs:border-b"
+        class="h-full xs:h-auto xs:w-full border-gray-500 border-0 border-l xs:border-l-0 xs:border-b"
       />
       <Button
-        class="text-grey-700 hover:bg-red/10 px-2 flex items-center justify-end"
+        class="text-gray-700 hover:bg-red/10 px-2 flex items-center justify-end"
         :btn-no-border="true"
         :btn-primary="false"
       >

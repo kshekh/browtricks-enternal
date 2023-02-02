@@ -10,15 +10,15 @@
         <div class="space-y-6">
             <div class="overflow-hidden md:rounded-xl bg-white shadow-3">
             <div class="space-y-3 p-4 sm:px-8 sm:py-8">
-            <h1 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-grey-800">
+            <h1 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-gray-800">
             Post PMU Care Form 
             </h1>
-            <p class="text-lg md:text-xl font-normal text-grey-700 leading-none">Requested by Koko Teams on Nov 10, 2020 </p>
+            <p class="text-lg md:text-xl font-normal text-gray-700 leading-none">Requested by Koko Teams on Nov 10, 2020 </p>
             </div>
             </div>
             <div class="overflow-hidden md:rounded-xl bg-white shadow-3">
             <div class="space-y-8 p-4 sm:px-8 sm:py-8">
-            <h2 class="text-3xl font-semibold text-grey-800 leading-tight">
+            <h2 class="text-3xl font-semibold text-gray-800 leading-tight">
             I have read, or had read to me, the above Pre and Post Care instructions and expectations. I agree to follow the above directions and understand that how I heal depends on how closely I follow said directions. I understand a touchup appointment will be needed to complete the process.
             </h2>
             <div class="space-y-4">
@@ -35,7 +35,7 @@
             </div>
             <div class="overflow-hidden md:rounded-xl bg-white shadow-3">
             <div class="space-y-8 p-4 sm:px-8 sm:py-8">
-            <h2 class="text-3xl font-semibold text-grey-800 leading-tight">
+            <h2 class="text-3xl font-semibold text-gray-800 leading-tight">
             I have read, or had read to me, the above Pre and Post Care instructions and expectations. I agree to follow the above directions and understand that how I heal depends on how closely I follow said directions. I understand a touchup appointment will be needed to complete the process.
             </h2>
             <div class="space-y-4">
@@ -52,18 +52,18 @@
             </div> 
             <div class="overflow-hidden md:rounded-xl bg-white shadow-3">
             <div class="space-y-8 p-4 sm:px-8 sm:py-8">
-            <h2 class="text-3xl font-semibold text-grey-800 leading-tight">
+            <h2 class="text-3xl font-semibold text-gray-800 leading-tight">
             I have read, or had read to me, the above Pre and Post Care instructions and expectations. I agree to follow the above directions and understand that how I heal depends on how closely I follow said directions. I understand a touchup appointment will be needed to complete the process.
             </h2>
             <div class="space-y-2 mt-4">
                 <Textarea rows="4" id="project-description"  name="project-description" label-text="Answer"
-                placeholder="" labelClasses="block xs:text-lg font-semibold text-grey-800" />
+                placeholder="" labelClasses="block xs:text-lg font-semibold text-gray-800" />
             </div>
             </div>
             </div>  
             <div class="overflow-hidden md:rounded-xl bg-white shadow-3">
             <div class="space-y-8 p-4 sm:px-8 sm:py-8">
-            <h2 class="text-3xl font-semibold text-grey-800 leading-tight">
+            <h2 class="text-3xl font-semibold text-gray-800 leading-tight">
                 Please read the folowing
             </h2>
             <div class="relative py-6 px-4 flex justify-center items-center">
@@ -78,16 +78,16 @@
         </div>
         <!-- Signature section here -->
         <div class="space-y-1 px-4 md:px-0">
-            <h5 class="block text-lg  font-semibold text-grey-800">Sign here:</h5>
+            <h5 class="block text-lg  font-semibold text-gray-800">Sign here:</h5>
             <div class="flex flex-col md:flex-row items-center gap-x-10 gap-y-5 w-full md:w-2/5">
                 <div class="space-y-4 w-full">
-                <div class="overflow-hidden rounded-xl bg-transparent border border-grey-300 w-full md:w-60">   
+                <div class="overflow-hidden rounded-xl bg-transparent border border-gray-300 w-full md:w-60">   
                 <div class="space-y-3 px-12 py-16 flex flex-wrap justify-center items-center text-center w-full">
                   <div class="flex justify-center items-center">
               <file-select v-model="file"></file-select>
             </div>
             <p v-if="file">{{ file.name }}</p>
-                <Signature class="w-40 h-16 block" />
+                <!-- <Signature class="w-40 h-16 block" /> -->
                 </div>    
                 </div>
                 </div>

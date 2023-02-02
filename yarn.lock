@@ -2024,6 +2024,11 @@ vitest@^0.25.3:
     tinyspy "^1.0.2"
     vite "^3.0.0 || ^4.0.0"
 
+vue-country-code-select@^1.6.7:
+  version "1.6.7"
+  resolved "https://registry.yarnpkg.com/vue-country-code-select/-/vue-country-code-select-1.6.7.tgz#c9ebd37ad385b2575a0b5cae01ed137493858c98"
+  integrity sha512-90GQek/OYAHhwEAtiCklalDZZlfMQyuxro//c03TX2n0JLIOZDWV31qgWjQns9BMtWQ2f4g9gW66ycFkXm0ZYg==
+
 vue-demi@*:
   version "0.13.11"
   resolved "https://registry.npmjs.org/vue-demi/-/vue-demi-0.13.11.tgz"

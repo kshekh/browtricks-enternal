@@ -4,29 +4,29 @@
       <div
         class="mb-7 pt-3 md:pt-0 md:pb-7 border-b border-solid border-gray-300"
       >
-        <h2 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-grey-800 mb-5">
+        <h2 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-gray-800 mb-5">
           Settings
         </h2>
-        <div class="coverflow-hidden rounded-xl divide-y divide-grey-300">
+        <div class="coverflow-hidden rounded-xl divide-y divide-gray-300">
           <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="md:col-span-1">
               <div class="px-4 sm:px-0">
-                <h3 class="text-lg font-semibold leading-6 text-grey-800">
+                <h3 class="text-lg font-semibold leading-6 text-gray-800">
                   Team Name
                 </h3>
-                <p class="mt-1 text-xl text-grey-900">
+                <p class="mt-1 text-xl text-gray-900">
                   The team's name and owner information.
                 </p>
               </div>
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
-                <div class="shadow-3 rounded-lg overflow-hidden border border-grey-300 bg-white">
+                <div class="shadow-3 rounded-lg overflow-hidden border border-gray-300 bg-white">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
                     <div class="space-y-3">
                       <h6
                         for="company-website"
-                        class="block text-lg text-grey-800 font-medium"
+                        class="block text-lg text-gray-800 font-medium"
                       >
                         Team Owner
                       </h6>
@@ -36,8 +36,8 @@
                           class="rounded-full"
                         />
                         <div class="ml-2">
-                          <h5 class="font-bold text-grey-800 text-lg">Koko</h5>
-                          <p class="text-lg font-medium text-grey-800">
+                          <h5 class="font-bold text-gray-800 text-lg">Koko</h5>
+                          <p class="text-lg font-medium text-gray-800">
                             design.mailboxx@gmail.com
                           </p>
                         </div>
@@ -63,21 +63,21 @@
       </div>
 
       <div class="mb-7 pb-7 border-b border-solid border-gray-300">
-        <div class="coverflow-hidden rounded-xl divide-y divide-grey-300">
+        <div class="coverflow-hidden rounded-xl divide-y divide-gray-300">
           <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="md:col-span-1">
               <div class="px-4 sm:px-0">
-                <h3 class="text-lg font-semibold leading-6 text-grey-800">
+                <h3 class="text-lg font-semibold leading-6 text-gray-800">
                   Phone Number
                 </h3>
-                <p class="mt-1 text-xl text-grey-900">
+                <p class="mt-1 text-xl text-gray-900">
                   Verify your phone number to receive PMU forms via SMS
                 </p>
               </div>
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
-                <div class="overflow-hidden shadow-3 rounded-lg border border-grey-300 bg-white">
+                <div class="overflow-hidden shadow-3 rounded-lg border border-gray-300 bg-white">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
                     <div class="relative">
                       <label for="phone-number" class="block text-sm font-medium text-gray-700">Phone Number</label>
@@ -105,19 +105,19 @@
       </div>
 
       <div class="mb-7 pb-7 border-b border-solid border-gray-300">
-        <div class="coverflow-hidden divide-y divide-grey-300">
+        <div class="coverflow-hidden divide-y divide-gray-300">
           <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="md:col-span-1">
               <div class="px-4 sm:px-0">
-                <h3 class="text-lg font-semibold leading-6 text-grey-800">
+                <h3 class="text-lg font-semibold leading-6 text-gray-800">
                   Team Address
                 </h3>
-                <p class="mt-1 text-xl text-grey-900">Add team address</p>
+                <p class="mt-1 text-xl text-gray-900">Add team address</p>
               </div>
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
-                <div class="overflow-hidden shadow-3 rounded-lg border border-grey-300 bg-white">
+                <div class="overflow-hidden shadow-3 rounded-lg border border-gray-300 bg-white">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
                     <div class="relative">
                       <Input id="Address" type="text" label-text="Address" name="Address" 
@@ -155,14 +155,14 @@
         </div>
       </div>
       <div class="mb-7 pb-7 border-b border-solid border-gray-300">
-        <div class="coverflow-hidden divide-y divide-grey-300">
+        <div class="coverflow-hidden divide-y divide-gray-300">
           <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="md:col-span-1">
               <div class="px-4 sm:px-0">
-                <h3 class="text-lg font-semibold leading-6 text-grey-800">
+                <h3 class="text-lg font-semibold leading-6 text-gray-800">
                   Add Team Member
                 </h3>
-                <p class="mt-1 text-xl text-grey-900">
+                <p class="mt-1 text-xl text-gray-900">
                   Add a new team member to your team, allowing them to
                   collaborate with you.
                 </p>
@@ -170,26 +170,26 @@
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
-                <div class="overflow-hidden shadow-3 rounded-lg border border-grey-300 bg-white">
+                <div class="overflow-hidden shadow-3 rounded-lg border border-gray-300 bg-white">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
                     <div class="relative">
                       <Input id="email" type="email" label-text="Email" name="email" 
                           placeholder="Enter email" inputClasses=" " />
                       
                     </div>
-                    <h3 class="text-grey-800 font-bold pt-4">Role</h3>
+                    <h3 class="text-gray-800 font-bold pt-4">Role</h3>
                     
 
                     <div class="space-y-0.5">
                       <CheckboxRadio id="administrator" inputClasses="rounded-full" labelClasses="font-semibold" type="radio" name="role"
                       label-text="Administrator" />
-                      <p class="block text-sm text-grey-800 pl-8">Administrator users can perform any action.</p>
+                      <p class="block text-sm text-gray-800 pl-8">Administrator users can perform any action.</p>
                     </div>
                     
                     <div class="space-y-0.5">
                       <CheckboxRadio id="editor" inputClasses="rounded-full" labelClasses="font-semibold" type="radio" name="role"
                       label-text="Editor" />
-                      <p class="block text-sm text-grey-800 pl-8">Editor users have the ability to read, create, and
+                      <p class="block text-sm text-gray-800 pl-8">Editor users have the ability to read, create, and
                           update.</p>
                     </div>
                       
@@ -206,27 +206,27 @@
       </div>
 
       <div class="mb-7 pb-7 border-b border-solid border-gray-300">
-        <div class="coverflow-hidden divide-y divide-grey-300">
+        <div class="coverflow-hidden divide-y divide-gray-300">
           <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="md:col-span-1">
               <div class="px-4 sm:px-0">
-                <h3 class="text-lg font-semibold leading-6 text-grey-800">
+                <h3 class="text-lg font-semibold leading-6 text-gray-800">
                   Connected Socials
                 </h3>
-                <p class="mt-1 text-xl text-grey-900">
+                <p class="mt-1 text-xl text-gray-900">
                   Manage and remove your connected accounts.
                 </p>
               </div>
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
-                <div class="overflow-hidden shadow-3 rounded-lg border border-grey-300 bg-white">
+                <div class="overflow-hidden shadow-3 rounded-lg border border-gray-300 bg-white">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
                     <div class="space-y-2">
-                      <h3 class="text-lg font-bold text-grey-800">
+                      <h3 class="text-lg font-bold text-gray-800">
                         Your connected accounts.
                       </h3>
-                      <p class="text-xl text-grey-900">
+                      <p class="text-xl text-gray-900">
                         You are free to connect any social accounts to your
                         profile and may remove any connected accounts at any
                         time. If you feel any of your connected accounts have
@@ -244,7 +244,7 @@
                                 <GoogleLogo class="w-5" />
                               </div>
                               <div class="space-y-1">
-                                <h3 class="font-bold text-grey-800">Google</h3>
+                                <h3 class="font-bold text-gray-800">Google</h3>
                                 <p class="text-gray-500 leadiing-none">
                                   Not connected.
                                 </p>
@@ -266,7 +266,7 @@
                                 <FacebookLogo class="w-5" />
                               </div>
                               <div class="space-y-1">
-                                <h3 class="font-bold text-grey-800">
+                                <h3 class="font-bold text-gray-800">
                                   Facebook
                                 </h3>
                                 <p class="text-gray-500 leadiing-none">
@@ -288,7 +288,7 @@
                                 <TwitterLogo class="w-5" />
                               </div>
                               <div class="space-y-1">
-                                <h3 class="font-bold text-grey-800">Twitter</h3>
+                                <h3 class="font-bold text-gray-800">Twitter</h3>
                                 <p class="text-gray-500 leadiing-none">
                                   Connected 1 day ago.
                                 </p>
@@ -309,7 +309,7 @@
                                 <InstagramLogo class="w-5" />
                               </div>
                               <div class="space-y-1">
-                                <h3 class="font-bold text-grey-800">
+                                <h3 class="font-bold text-gray-800">
                                   Instagram
                                 </h3>
                                 <p class="text-gray-500 leadiing-none">
@@ -331,7 +331,7 @@
                                 <TiktokLogo class="w-5" />
                               </div>
                               <div class="space-y-1">
-                                <h3 class="font-bold text-grey-800">Tiktok</h3>
+                                <h3 class="font-bold text-gray-800">Tiktok</h3>
                                 <p class="text-gray-500 leadiing-none">
                                   Not connected.
                                 </p>
@@ -355,14 +355,14 @@
       </div>
 
       <div class="mb-7 pb-7 border-b border-solid border-gray-300">
-        <div class="coverflow-hidden rounded-xl divide-y divide-grey-300">
+        <div class="coverflow-hidden rounded-xl divide-y divide-gray-300">
           <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="md:col-span-1">
               <div class="px-4 sm:px-0">
-                <h3 class="text-lg font-semibold leading-6 text-grey-800">
+                <h3 class="text-lg font-semibold leading-6 text-gray-800">
                   Create API Token
                 </h3>
-                <p class="mt-1 text-xl text-grey-900">
+                <p class="mt-1 text-xl text-gray-900">
                   API tokens aloow third-party services to authentificate with
                   our application on your behalf.
                 </p>
@@ -370,7 +370,7 @@
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
-                <div class="overflow-hidden shadow-3 rounded-lg border border-grey-300 bg-white">
+                <div class="overflow-hidden shadow-3 rounded-lg border border-gray-300 bg-white">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
                     <div class="relative">
                       <Input id="number" type="text" label-text="Name" name="search" 
@@ -407,24 +407,24 @@
       </div>
 
       <div class="">
-        <div class="coverflow-hidden divide-y divide-grey-300">
+        <div class="coverflow-hidden divide-y divide-gray-300">
           <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="md:col-span-1">
               <div class="px-4 sm:px-0">
-                <h3 class="text-lg font-semibold leading-6 text-grey-800">
+                <h3 class="text-lg font-semibold leading-6 text-gray-800">
                   Delete Team
                 </h3>
-                <p class="mt-1 text-xl text-grey-900">
+                <p class="mt-1 text-xl text-gray-900">
                   Permanently delete this team.
                 </p>
               </div>
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
-                <div class="overflow-hidden shadow-3 rounded-lg border border-grey-300 bg-white">
+                <div class="overflow-hidden shadow-3 rounded-lg border border-gray-300 bg-white">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
                     <div class="space-y-2">
-                      <p class="text-xl text-grey-900">
+                      <p class="text-xl text-gray-900">
                         Once a team is deleted, all of its resources and data
                         will be permanently deleted. Before deleting this team,
                         please download any data or information regarding this

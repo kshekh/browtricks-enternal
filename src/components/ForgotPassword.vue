@@ -15,7 +15,7 @@
         class="flex flex-col justify-center items-center max-w-sm mx-auto w-full xs:px-3 sm:px-4 gap-6"
       >
         <div
-          class="bg-white p-5 xs:rounded-lg sm:p-8 border-y xs:border border-grey-500 shadow-3 w-full"
+          class="bg-white p-5 xs:rounded-lg sm:p-8 border-y xs:border border-gray-500 shadow-3 w-full"
         >
           <form class="space-y-4" action="#" method="POST">
             <div class="flex flex-col space-y-3">

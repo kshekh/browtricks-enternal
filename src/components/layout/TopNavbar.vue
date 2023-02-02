@@ -32,10 +32,10 @@
                 <div>
                   <MenuButton as="button" class="flex items-center gap-3 group">
                     <span class="sm:inline-flex gap-1 hidden">
-                      <span class="text-lg text-grey-800 font-semibold">
+                      <span class="text-lg text-gray-800 font-semibold">
                         {{ user.username }}
                       </span>
-                      <caretDown class="w-3 text-grey-800/50" />
+                      <caretDown class="w-3 text-gray-800/50" />
                     </span>
                     <span
                       class="h-8 w-8 rounded-full flex justify-center items-center overflow-hidden ring-2 ring-transparent group-hover:ring-peach-500 ring-offset-2 ring-offset-white"
@@ -63,14 +63,14 @@
                       <p class="text-lg" role="none">
                         <router-link :to="user.profile_url"
                           ><span
-                            class="block md:hidden text-lg text-grey-800 font-semibold"
+                            class="block md:hidden text-lg text-gray-800 font-semibold"
                           >
                             {{ user.username }}</span
                           ></router-link
                         ><span class="hidden md:block">Email</span>
                       </p>
                       <p
-                        class="truncate text-lg font-medium text-grey-800"
+                        class="truncate text-lg font-medium text-gray-800"
                         role="none"
                       >
                         {{ user.email }}
@@ -97,7 +97,7 @@
                     <div class="py-1" role="none">
                       <button
                         type="button"
-                        class="block px-4 py-2 hover:bg-peach-500 text-lg text-grey-900 transition-all ease-in-out duration-300 w-full text-left font-semibold"
+                        class="block px-4 py-2 hover:bg-peach-500 text-lg text-gray-900 transition-all ease-in-out duration-300 w-full text-left font-semibold"
                         role="menuitem"
                         tabindex="-1"
                         id="menu-item-3"

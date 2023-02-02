@@ -2,10 +2,10 @@
   <div class="relative flex flex-col w-full flex-1">
     <div class="flex-1 p-4 md:p-5 xl:px-14 xl:py-12 flex flex-col">
       <div class="space-y-6">
-        <h2 class="text-5xl font-bold leading-none text-grey-800">
+        <h2 class="text-5xl font-bold leading-none text-gray-800">
           Jane Doe Edit Page
         </h2>
-        <div class="coverflow-hidden divide-y divide-grey-300">
+        <div class="coverflow-hidden divide-y divide-gray-300">
           <!-- Main 3 column grid -->
           <div
             class="grid grid-cols-1 items-start gap-4 lg:grid-cols-3 lg:gap-8"
@@ -13,14 +13,14 @@
             <!-- Left column -->
             <div class="grid grid-cols-1 gap-6 lg:col-span-2">
               <div
-                class="overflow-hidden shadow-3 rounded-lg bg-white border border-grey-300"
+                class="overflow-hidden shadow-3 rounded-lg bg-white border border-gray-300"
               >
                 <div class="p-4 sm:p-8 space-y-6">
                   <div class="flex flex-col space-y-2.5">
-                    <h4 class="text-lg font-bold text-grey-800 leading-none">
+                    <h4 class="text-lg font-bold text-gray-800 leading-none">
                       Media
                     </h4>
-                    <p class="text-lg text-grey-900 leading-tight font-medium">
+                    <p class="text-lg text-gray-900 leading-tight font-medium">
                       This customer does not have<br />
                       any content yet.
                     </p>
@@ -35,7 +35,7 @@
               </div>
 
               <div
-                class="overflow-hidden shadow-3 rounded-lg bg-white hidden flex-1 sm:flex justify-center items-center border border-grey-300"
+                class="overflow-hidden shadow-3 rounded-lg bg-white hidden flex-1 sm:flex justify-center items-center border border-gray-300"
               >
                 <div class="p-4 sm:p-8 space-y-3 sm:pt-6 flex-1">
                   <div class="flex items-center relative">
@@ -47,7 +47,7 @@
                       @click="consoleClick"
                       :btn-no-border="true"
                       :btn-primary="false"
-                      class="text-blue hover:text-grey-800 ml-auto md:px-3 -mr-3 text-xl w-auto bg-transparent shadow-none"
+                      class="text-blue hover:text-gray-800 ml-auto md:px-3 -mr-3 text-xl w-auto bg-transparent shadow-none"
                       >Add custom form</Button
                     >
                   </div>
@@ -58,7 +58,7 @@
                           class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
                           >
                           <MagnifyingGlassIcon
-                            class="h-4 w-4 text-grey-900"
+                            class="h-4 w-4 text-gray-900"
                             aria-hidden="true"
                           />
                         </div>
@@ -77,14 +77,14 @@
                       <Button
                         :btn-no-border="true"
                         :btn-primary="false"
-                        class="mt-1 border-grey-700 hover:border-peach-500"
+                        class="mt-1 border-gray-700 hover:border-peach-500"
                         >Browse</Button
                       >
                     </div>
                   </div>
                   <!-- PMU Form Lists -->
                   <div class="pt-3 space-y-4">
-                    <table class="divide-y divide-grey-300 border-b border-grey-300 w-full">
+                    <table class="divide-y divide-gray-300 border-b border-gray-300 w-full">
                       <tr>
                         <th
                           class="font-medium text-gray-900 text-left pb-2"
@@ -95,14 +95,14 @@
                       </tr>
                       <tr>
                         <td
-                          class="py-2 text-lg text-grey-900 leading-tight font-medium"
+                          class="py-2 text-lg text-gray-900 leading-tight font-medium"
                         >
                           Pre and Post Care Agreement Version 01
                         </td>
                         <td class="text-right py-2">
                           <button
                             type="button"
-                            class="rounded hover:bg-red-100 hover:text-red text-grey-900 p-2 ease-in-out duration-300"
+                            class="rounded hover:bg-red-100 hover:text-red text-gray-900 p-2 ease-in-out duration-300"
                              
                           >
                             <span class="sr-only">Close</span>
@@ -112,7 +112,7 @@
                       </tr>
                       <tr>
                         <td
-                          class="py-2 text-lg text-grey-900 leading-tight font-medium"
+                          class="py-2 text-lg text-gray-900 leading-tight font-medium"
                         >
                           Disclosure and Consent for Intradermal Cosmetic
                           Procedure
@@ -120,7 +120,7 @@
                         <td class="text-right py-2">
                           <button
                             type="button"
-                            class="rounded hover:bg-red-100 hover:text-red text-grey-900 p-2 ease-in-out duration-300"
+                            class="rounded hover:bg-red-100 hover:text-red text-gray-900 p-2 ease-in-out duration-300"
                             
                           >
                             <span class="sr-only">Close</span>
@@ -134,7 +134,7 @@
                 </div>
               </div>
               <div
-                class="overflow-hidden shadow-3 rounded-lg bg-white flex-1 flex justify-center items-center border border-grey-300"
+                class="overflow-hidden shadow-3 rounded-lg bg-white flex-1 flex justify-center items-center border border-gray-300"
               >
                 <div class="p-4 sm:p-8 space-y-6 flex-1">
                   <div class="flex">
@@ -158,7 +158,7 @@
                         ></div>
                         <div class="text-lg text-gray-500 leading-none">
                           <span
-                            class="text-xs block font-medium pb-1.5 text-grey-700 leading-none"
+                            class="text-xs block font-medium pb-1.5 text-gray-700 leading-none"
                             >{{ activityItem.date }}</span
                           >
                           <span class="font-medium text-gray-900">{{
@@ -205,7 +205,7 @@
                       @click="editCustomerDailog = true"
                       :btn-no-border="true"
                       :btn-primary="false"
-                      class="text-blue hover:text-grey-800 md:px-3 ml-auto -mr-3 text-xl w-auto bg-transparent shadow-none"
+                      class="text-blue hover:text-gray-800 md:px-3 ml-auto -mr-3 text-xl w-auto bg-transparent shadow-none"
                       >Edit</Button
                     >
                   </div>
@@ -221,10 +221,10 @@
               <div class="overflow-hidden shadow-3 rounded-lg bg-white">
                 <div class="p-4 sm:p-8 space-y-6">
                   <div class="flex flex-col space-y-2.5">
-                    <h4 class="text-lg font-bold text-grey-800 leading-none">
+                    <h4 class="text-lg font-bold text-gray-800 leading-none">
                       Notes
                     </h4>
-                    <p class="text-lg text-grey-900 leading-tight">
+                    <p class="text-lg text-gray-900 leading-tight">
                       No notes about this customer
                     </p>
                   </div>
@@ -256,7 +256,7 @@
     <div class="space-y-6 relative max-w-full" :style="`width:600px`">
       <DialogTitle
         as="h3"
-        class="flex-1 text-5xl font-bold leading-none text-grey-800"
+        class="flex-1 text-5xl font-bold leading-none text-gray-800"
       >
         Add note
       </DialogTitle>
@@ -302,7 +302,7 @@
     <div class="space-y-6 relative max-w-full" :style="`width:600px`">
       <DialogTitle
         as="h3"
-        class="flex-1 text-5xl font-bold leading-none text-grey-800"
+        class="flex-1 text-5xl font-bold leading-none text-gray-800"
       >
         All notes
       </DialogTitle>
@@ -313,7 +313,7 @@
             <div class="relative flex gap-5 justify-between">
               <div class="max-w-sm" @click="editNoteDailog = true">
                 <p
-                  class="text-lg text-grey-900 font-medium line-clamp-2 cursor-pointer"
+                  class="text-lg text-gray-900 font-medium line-clamp-2 cursor-pointer"
                 >
                   I am being treated for, or was in the past for the following
                   conditions (Please include allergies, especially to dye,
@@ -333,7 +333,7 @@
           <li class="py-5">
             <div class="relative flex gap-5 justify-between">
               <div class="max-w-sm">
-                <p class="text-lg text-grey-900 font-medium line-clamp-2">
+                <p class="text-lg text-gray-900 font-medium line-clamp-2">
                   Note text about cool new brows note text about cool new browse
                 </p>
               </div>
@@ -351,7 +351,7 @@
           <li class="py-5">
             <div class="relative flex gap-5 justify-between">
               <div class="max-w-sm">
-                <p class="text-lg text-grey-900 font-medium line-clamp-2">
+                <p class="text-lg text-gray-900 font-medium line-clamp-2">
                   This customer was the best customer ever need to give her
                   discount next time
                 </p>
@@ -387,7 +387,7 @@
         </button>
         <DialogTitle
           as="h3"
-          class="flex-1 text-5xl font-bold leading-none text-grey-800"
+          class="flex-1 text-5xl font-bold leading-none text-gray-800"
         >
           Edit note
         </DialogTitle>
@@ -433,7 +433,7 @@
     <div class="space-y-6 relative max-w-full" :style="`width:450px`">
       <DialogTitle
         as="h3"
-        class="flex-1 text-5xl font-bold leading-none text-grey-800"
+        class="flex-1 text-5xl font-bold leading-none text-gray-800"
       >
         Edit Customer
       </DialogTitle>
@@ -512,13 +512,13 @@
       <div class="mx-auto text-center">
         <component
           :is="RemoveProfile"
-          class="block h-16 w-16 text-grey-900 mx-auto"
+          class="block h-16 w-16 text-gray-900 mx-auto"
           aria-hidden="true"
         />
       </div>
       <DialogTitle
         as="h3"
-        class="flex-1 text-5xl font-bold leading-none text-grey-800 text-center"
+        class="flex-1 text-5xl font-bold leading-none text-gray-800 text-center"
       >
         Delete Customer
       </DialogTitle>
@@ -558,7 +558,7 @@
     <div class="space-y-6 relative max-w-full" :style="`width:600px`">
       <DialogTitle
         as="h3"
-        class="flex-1 text-5xl font-bold leading-none text-grey-800"
+        class="flex-1 text-5xl font-bold leading-none text-gray-800"
       >
       All PMU Forms
       </DialogTitle>
@@ -568,7 +568,7 @@
                           class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
                           >
                           <MagnifyingGlassIcon
-                            class="h-4 w-4 text-grey-900"
+                            class="h-4 w-4 text-gray-900"
                             aria-hidden="true"
                           />
                         </div>
@@ -584,7 +584,7 @@
                       </div>
 
       <div class="mt-6 -mx-6">
-         <ul class="divide-y divide-grey-300 border-b border-grey-300">
+         <ul class="divide-y divide-gray-300 border-b border-gray-300">
           <li class="px-6 py-3"><CheckboxRadio inputClasses="rounded" id="pmu-form-1" labelClasses="font-semibold" checked="checked" type="checkbox" name="pmu-form-1"
                       label-text="Pre and Post Care Agreement Version 01" /></li>
           <li class="px-6 py-3"><CheckboxRadio inputClasses="rounded" id="pmu-form-2" labelClasses="font-semibold" type="checkbox" name="pmu-form-2"
@@ -597,7 +597,7 @@
          </ul>
       </div>
 <div class="flex justify-between items-center flex-wrap gap-2">
-  <p class="text-sm text-grey-700">2 PMU Forms selected</p>
+  <p class="text-sm text-gray-700">2 PMU Forms selected</p>
       <div class="flex justify-start gap-x-3">
         <Button
               @click="pmuFormList = false"
@@ -628,7 +628,7 @@
     <div class="space-y-6 relative max-w-full" :style="`width:700px`">
       <DialogTitle
         as="h3"
-        class="flex-1 text-5xl font-bold leading-none text-grey-800"
+        class="flex-1 text-5xl font-bold leading-none text-gray-800"
       >
       Send PMU Form
       </DialogTitle>
@@ -702,9 +702,9 @@
  <DialogPopup :open-dialog="confirmSendPMUform" @closeModal="confirmSendPMUform = false">
       <div class="space-y-6 relative max-w-full" :style="`width:300px`">
         <div class="mx-auto text-center">
-          <component :is="document" class="block h-16 w-16 text-grey-700 mx-auto" aria-hidden="true" />
+          <component :is="document" class="block h-16 w-16 text-gray-700 mx-auto" aria-hidden="true" />
         </div>
-        <DialogTitle as="h3" class="flex-1 text-5xl font-bold leading-none text-grey-800 text-center">
+        <DialogTitle as="h3" class="flex-1 text-5xl font-bold leading-none text-gray-800 text-center">
         </DialogTitle>
         <div class="space-y-6 text-center">
           <div class="customer-details max-w-60 mx-auto">
@@ -729,7 +729,7 @@
     <div class="space-y-6 relative max-w-full" :style="`width:700px`">
       <DialogTitle
         as="h3"
-        class="flex-1 text-5xl font-bold leading-none text-grey-800"
+        class="flex-1 text-5xl font-bold leading-none text-gray-800"
       >
       Send PMU Form
       </DialogTitle>
