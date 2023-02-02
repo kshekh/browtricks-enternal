@@ -6,7 +6,7 @@
     <button
       type="button"
       @click="showNavbar = !showNavbar"
-      class="inline-flex items-center justify-center rounded-md p-2 border border-grey-300 text-grey-800 hover:border-grey-800 hover:bg-grey-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+      class="inline-flex items-center justify-center rounded-md p-2 border border-gray-300 text-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
       aria-controls="mobile-menu"
       aria-expanded="false"
     >
@@ -15,13 +15,13 @@
       <component
         v-if="!showNavbar"
         :is="Bars3Icon"
-        class="block h-6 w-6 text-grey-900"
+        class="block h-6 w-6 text-gray-900"
         aria-hidden="true"
       />
       <component
         v-else
         :is="XMarkIcon"
-        class="block h-6 w-6 text-grey-900"
+        class="block h-6 w-6 text-gray-900"
         aria-hidden="true"
       />
     </button>
@@ -39,7 +39,7 @@
   >
     <aside v-if="showNavbar" class="inset-0 fixed z-50 flex flex-col">
       <div
-        class="fixed inset-0 bg-grey-800/90 pl-70"
+        class="fixed inset-0 bg-gray-800/90 pl-70"
         @click="showNavbar = !showNavbar"
       >
         <button
@@ -79,7 +79,7 @@
           class="block"
         >
           <span
-            class="group text-grey-800 flex items-center pr-2 pl-6 py-2.5 text-lg font-medium rounded-md transition-all ease-in-out duration-300 relative after:rounded-full after:w-1.5 after:bg-peach-500 after:absolute after:inset-y-0 after:left-0 before:absolute before:bg-peach-500 before:inset-0 before:rounded before:left-3 hover:before:opacity-100 hover:after:opacity-100 after:transition-all after:ease-in-out after:duration-300 before:transition-all before:ease-in-out before:duration-300"
+            class="group text-gray-800 flex items-center pr-2 pl-6 py-2.5 text-lg font-medium rounded-md transition-all ease-in-out duration-300 relative after:rounded-full after:w-1.5 after:bg-peach-500 after:absolute after:inset-y-0 after:left-0 before:absolute before:bg-peach-500 before:inset-0 before:rounded before:left-3 hover:before:opacity-100 hover:after:opacity-100 after:transition-all after:ease-in-out after:duration-300 before:transition-all before:ease-in-out before:duration-300"
             :class="[
               isActive && 'before:opacity-100 after:opacity-100 ',
               !isActive && 'before:opacity-0 after:opacity-0 ',
@@ -91,7 +91,7 @@
               <component
                 :is="item.icon"
                 :class="item.classIcon"
-                class="mr-3 text-grey-900"
+                class="mr-3 text-gray-900"
                 aria-hidden="true"
               />
               {{ item.name }}
@@ -105,7 +105,7 @@
   </Transition>
 
   <!-- Desktop Only -->
-  <div class="flex-col w-48 lg:w-70 border-r bordr-grey-500 shrink-0 hidden md:flex">
+  <div class="flex-col w-48 lg:w-70 border-r bordr-gray-500 shrink-0 hidden md:flex">
     <nav class="flex-1 space-y-2 pr-2 py-4 relative " aria-label="Sidebar">
       
         <router-link
@@ -119,7 +119,7 @@
           class="block"
         >
           <span
-            class="group text-grey-800 flex items-center pr-2 pl-6 py-2.5 text-lg font-medium rounded-md transition-all ease-in-out duration-300 relative after:rounded-full after:w-1.5 after:bg-peach-500 after:absolute after:inset-y-0 after:left-0 before:absolute before:bg-peach-500 before:inset-0 before:rounded before:left-3 hover:before:opacity-100 hover:after:opacity-100 after:transition-all after:ease-in-out after:duration-300 before:transition-all before:ease-in-out before:duration-300"
+            class="group text-gray-800 flex items-center pr-2 pl-6 py-2.5 text-lg font-medium rounded-md transition-all ease-in-out duration-300 relative after:rounded-full after:w-1.5 after:bg-peach-500 after:absolute after:inset-y-0 after:left-0 before:absolute before:bg-peach-500 before:inset-0 before:rounded before:left-3 hover:before:opacity-100 hover:after:opacity-100 after:transition-all after:ease-in-out after:duration-300 before:transition-all before:ease-in-out before:duration-300"
             :class="[
               isActive && 'before:opacity-100 after:opacity-100 ',
               !isActive && 'before:opacity-0 after:opacity-0 ',
@@ -131,7 +131,7 @@
               <component
                 :is="item.icon"
                 :class="item.classIcon"
-                class="mr-3 text-grey-900"
+                class="mr-3 text-gray-900"
                 aria-hidden="true"
               />
               {{ item.name }}

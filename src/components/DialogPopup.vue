@@ -13,7 +13,7 @@
             <DialogPanel
               class="max-w-full transform overflow-hidden bg-white p-6 text-left align-middle transition-all shadow rounded-md">
               <div class="z-10 absolute top-0 right-0 pt-2 pr-2 ">
-                <button type="button" class="rounded hover:bg-red-100 hover:text-red text-grey-900 p-2 ease-in-out duration-300" @click="$emit('closeModal')">
+                <button type="button" class="rounded hover:bg-red-100 hover:text-red text-gray-900 p-2 ease-in-out duration-300" @click="$emit('closeModal')">
                   <span class="sr-only">Close</span>
                   <component
                     :is="XMarkIcon"

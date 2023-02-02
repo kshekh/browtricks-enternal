@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-md bg-grey-800 p-0 fixed right-5 top-5 shadow-3" style="width: 294px; " v-if="openAlert">
+  <div class="rounded-md bg-gray-800 p-0 fixed right-5 top-5 shadow-3" style="width: 294px; " v-if="openAlert">
       <div class="p-4">
     <div class="flex w-full justify-between">   
         <div class="flex gap-3 items-center">
@@ -11,7 +11,7 @@
         <div class="flex items-center">
           <button
             type="button"
-            class="mr-2 hover:text-light focus:outline-none outline-none cursor-pointer  hover:bg-peach-500 hover:text-grey-800 text-white p-1 rounded ease-in-out duration-300"
+            class="mr-2 hover:text-light focus:outline-none outline-none cursor-pointer  hover:bg-peach-500 hover:text-gray-800 text-white p-1 rounded ease-in-out duration-300"
             @click="showDetails = !showDetails"
             v-if="showDetailsBtn"
           >

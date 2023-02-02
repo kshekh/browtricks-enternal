@@ -15,6 +15,7 @@ import PMU from '@/views/PmuView.vue';
 import PMUDetails from '@/views/PmuDetailedView.vue';
 import PMUPreview from '@/views/UserViewPmuForm.vue';
 import Media from '@/views/MediaView.vue';
+import SettingsIndex from '@/views/settingsIndex.vue';
 
 const routes = [{
         path: '',
@@ -118,6 +119,13 @@ const routes = [{
         component: Media,
         meta: { title: 'BrowTricks | Media' },
     },
+    ,
+    {
+        path: '/settings-index',
+        name: 'SettingsIndex',
+        component: SettingsIndex,
+        meta: { title: 'BrowTricks | Settings Index ' },
+    }
 ];
 
 const router = createRouter({

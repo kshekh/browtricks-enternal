@@ -13,7 +13,8 @@ module.exports = {
       },
 
       colors: {
-        grey: {
+     
+        gray: {
           100: '#FAF9F9',
           200: '#F7F6F6',
           300: '#E8DEDE',
@@ -35,6 +36,7 @@ module.exports = {
         blue: {
           DEFAULT: '#1062BF',
         },
+    
       },
       spacing: {
         15: '3.75rem',

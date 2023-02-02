@@ -34,7 +34,7 @@ html{
     @apply bg-black/20;
 }
  
-.step-list  li:last-child    .v-line{  @apply hidden  }
+.step-list  li:last-child .v-line{  @apply hidden  }
     
 input[type=search]::-webkit-search-cancel-button{
     @apply appearance-none bg-no-repeat bg-center-center w-4 h-4 mr-0;
