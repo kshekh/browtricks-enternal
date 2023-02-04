@@ -36,14 +36,14 @@
         </div>
         <div class="relative w-full">
           <div class="absolute inset-0 flex items-center">
-            <div class="w-full h-px bg-gray-300"></div>
+            <div class="w-full h-px bg-grey-300"></div>
           </div>
           <div class="relative flex justify-center text-lg">
-            <span class="bg-gray-200 px-4 text-gray-900 font-bold">OR</span>
+            <span class="bg-grey-200 px-4 text-grey-900 font-bold">OR</span>
           </div>
         </div>
         <div
-          class="bg-white p-5 xs:rounded-lg sm:p-8 border-y xs:border border-gray-500 shadow-3 w-full"
+          class="bg-white p-5 xs:rounded-lg sm:p-8 border-y xs:border border-grey-500 shadow-3 w-full"
         >
           <form class="space-y-6" action="#" method="POST">
             <Input
@@ -67,7 +67,7 @@
               />
               <button
                 type="button"
-                class="absolute top-5 right-0 py-4 px-4 text-gray-900"
+                class="absolute top-5 right-0 py-4 px-4 text-grey-900"
                 @click="showPassword = !showPassword"
               >
                 <Eye v-if="!showPassword" class="w-5" />
@@ -82,7 +82,7 @@
                   <Button @click="consoleClick" :btn-primary="true" class="">Login</Button>
               </div>
 
-              <div class="text-lg text-gray-900 font-normal">
+              <div class="text-lg text-grey-900 font-normal">
                 <span>Don’t have an account?</span>
                 <router-link
                   to="/signup"

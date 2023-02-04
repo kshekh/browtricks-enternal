@@ -1,5 +1,5 @@
 <template>
-  <canvas @mousedown="mousedown" @mousemove="mousemove" @mouseup="sign = false" @mouseout="sign = false" />
+  <canvas @mousedown="mousedown" @mousemove="mousemove" @mouseup="sign = false" @mouseout="sign = false" class="w-full h-60 border-0 bg-white rounded-xl" />
 </template>
 
 <script>
@@ -59,11 +59,4 @@ export  default {
     }
 }
 </script>
-
-<style scoped>
-canvas {
-    border: 1px solid black;
-    background-color: white;
-    cursor: crosshair;
-}
-</style>
+ 

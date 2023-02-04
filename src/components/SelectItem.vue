@@ -4,19 +4,19 @@
     @update:model-value="$emit('update:model-value', $event)"
     :model-value="modelValue"
   >
-    <ListboxLabel class="block text-sm font-semibold text-gray-800">
+    <ListboxLabel class="block text-sm font-semibold text-grey-800">
       {{ label }}
     </ListboxLabel>
     <div class="relative mt-1">
       <ListboxButton
-        class="relative w-full cursor-default rounded-md border border-gray-300 bg-white p-3 pr-10 font-semibold text-gray-800 text-left shadow-sm focus:border-peach-500 focus:outline-none focus:ring-1 focus:ring-peach-500 text-sm ease-in-out duration-300 outline-none"
+        class="relative w-full cursor-default rounded-md border border-grey-300 bg-white p-3 pr-10 font-semibold text-grey-800 text-left shadow-sm focus:border-peach-500 focus:outline-none focus:ring-1 focus:ring-peach-500 text-sm ease-in-out duration-300 outline-none"
       >
         <span class="flex items-center">
           <span class="block truncate">{{ modelValue.name }}</span>
         </span>
         <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
           <Chevrondown
-            class="h-5 w-5 text-gray-800"
+            class="h-5 w-5 text-grey-800"
             aria-hidden="true"
           />
         </span>
@@ -28,7 +28,7 @@
         leave-to-class="opacity-0"
       >
         <ListboxOptions
-          class="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white shadow-lg ring-1 ring-gray-300 focus:outline-none text-sm ease-in-out duration-300 py-3 outline-none"
+          class="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white shadow-lg ring-1 ring-grey-300 focus:outline-none text-sm ease-in-out duration-300 py-3 outline-none"
         >
           <ListboxOption
             as="template"
@@ -39,8 +39,8 @@
           >
             <li
               :class="[
-                active ? 'text-gray-800 bg-gray-100' : 'text-gray-800',
-                selected ? 'text-gray-800 bg-gray-100' : 'text-gray-800',
+                active ? 'text-grey-800 bg-grey-100' : 'text-grey-800',
+                selected ? 'text-grey-800 bg-grey-100' : 'text-grey-800',
               ]"
               class="relative cursor-default select-none py-2 pl-3 pr-9"
             >
@@ -58,7 +58,7 @@
               <span
                 v-if="selected"
                 :class="[
-                  active ? 'text-gray-800' : 'text-gray-800',
+                  active ? 'text-grey-800' : 'text-grey-800',
                   'absolute inset-y-0 right-0 flex items-center mr-4',
                 ]"
               >

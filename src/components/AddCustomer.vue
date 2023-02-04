@@ -2,21 +2,21 @@
   <div class="relative flex flex-col min-h-screen w-full">
     <div class="flex-1 p-3 md:p-5 xl:px-14 xl:py-12">
       <div class="mb-7 pt-3 md:pt-0">
-        <h2 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-gray-800 mb-5">
+        <h2 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-grey-800 mb-5">
           Add Customer
         </h2>
-        <div class="coverflow-hidden divide-y divide-gray-300">
+        <div class="coverflow-hidden divide-y divide-grey-300">
           <div class="md:grid md:grid-cols-3 md:gap-6 mb-7">
             <div class="md:col-span-1">
               <div class="px-4 sm:px-0 relative">
-                <h3 class="text-lg font-bold leading-6 text-gray-800">
+                <h3 class="text-lg font-bold leading-6 text-grey-800">
                   Add contact information
                 </h3>
               </div>
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
-                <div class="overflow-hidden shadow-3 rounded-lg border border-gray-300">
+                <div class="overflow-hidden shadow-3 rounded-lg border border-grey-300">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
                     <Input id="firstName" type="text" label-text="First Name" :on-change="handleInput"
                       autocomplete="firstName" placeholder="Julia" />
@@ -34,14 +34,14 @@
           <div class="md:grid md:grid-cols-3 md:gap-6 mb-7 pt-7">
             <div class="md:col-span-1">
               <div class="relative px-4 sm:px-0">
-                <h3 class="text-lg font-bold leading-6 text-gray-800">
+                <h3 class="text-lg font-bold leading-6 text-grey-800">
                   Add a note
                 </h3>
               </div>
             </div>
             <div class="mt-5 md:col-span-2 md:mt-0">
               <form action="#" method="POST">
-                <div class="overflow-hidden shadow-3 rounded-lg border border-gray-300">
+                <div class="overflow-hidden shadow-3 rounded-lg border border-grey-300">
                   <div class="space-y-6 bg-white px-4 py-5 sm:p-10">
                     <Textarea name="text-note" rows="4" id="textNote" label-text="Note" />
                   </div>

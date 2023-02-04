@@ -15,17 +15,17 @@
         class="flex flex-col justify-center items-center max-w-sm mx-auto w-full xs:px-3 sm:px-4 gap-6"
       >
         <div
-          class="bg-white p-5 xs:rounded-lg sm:p-8 border-y xs:border border-gray-500 shadow-3 w-full"
+          class="bg-white p-5 xs:rounded-lg sm:p-8 border-y xs:border border-grey-500 shadow-3 w-full"
         >
           <form class="space-y-4" action="#" method="POST">
             <div class="flex flex-col space-y-3">
               <h2
-                class="text-start text-3xl sm:text-5xl font-bold tracking-tight text-gray-900 leading-none"
+                class="text-start text-3xl sm:text-5xl font-bold tracking-tight text-grey-900 leading-none"
               >
                 Forgot Password
               </h2>
               <p
-                class="text-start text-xl font-normal text-gray-500 leading-snug"
+                class="text-start text-xl font-normal text-grey-500 leading-snug"
               >
                 Enter your registered email address to receive password reset
                 instructions.

@@ -3,7 +3,7 @@
     <div class="flex-1 py-3 md:p-5 xl:px-14 xl:py-12 flex flex-col ">
       <div class="space-y-6 pt-3 md:pt-0 flex flex-col flex-1">
         <div class="flex items-center px-3 md:px-0">
-          <h2 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-gray-800 mr-auto">Media</h2>
+          <h2 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-grey-800 mr-auto">Media</h2>
           <div class="flex gap-2">
             <!-- Start
                 Just for demo purpose to see how alert gets open -->
@@ -17,19 +17,19 @@
           </div>
         </div>
         <div v-if="!isMoreMedia"
-          class="overflow-hidden md:rounded-lg shadow-3 bg-white border border-gray-300 flex-1 flex justify-center items-center">
+          class="overflow-hidden md:rounded-lg shadow-3 bg-white border border-grey-300 flex-1 flex justify-center items-center">
           <div class="setup-guide-area p-10 px-4 ">
             <div class="flex flex-col justify-center text-center space-y-10 max-w-md sm:px-7 mx-auto">
               <div class="relative flex flex-col"><img src="@/assets/media.svg" alt="setup-thumb"
                   class="mx-auto xl:block" /></div>
               <div class="flex flex-col space-y-5">
                 <div class="space-y-4">
-                  <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 leading-none">Add Media</h2>
-                  <p class="text-xl text-gray-900">Featuring customer content is a great way to build a community around
+                  <h2 class="text-3xl sm:text-4xl font-bold text-grey-800 leading-none">Add Media</h2>
+                  <p class="text-xl text-grey-900">Featuring customer content is a great way to build a community around
                     your products and your brand. You can import directly from social media posts or add your own
                     manually.
                     <a href="#"
-                      class="text-peach-500 hover:text-gray-800 duration-300 ease-in-out hover:underline">Learn more</a>
+                      class="text-peach-500 hover:text-grey-800 duration-300 ease-in-out hover:underline">Learn more</a>
                   </p>
                 </div>
                 <div class="flex flex-wrap gap-3 w-full justify-center">
@@ -43,12 +43,12 @@
           </div>
         </div>
         <!-- add media section table -->
-        <div v-if="isMoreMedia" class="overflow-hidden md:rounded-lg bg-white border border-gray-300 shadow-3">
+        <div v-if="isMoreMedia" class="overflow-hidden md:rounded-lg bg-white border border-grey-300 shadow-3">
           <div class="p-4 pb-0 gap-2 md:gap-5 flex">
             <div class="flex flex-1 gap-2 md:gap-5">
               <div class="relative flex-1">
                 <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                  <MagnifyingGlassIcon class="h-4 w-4 text-gray-900 mt-1" aria-hidden="true" />
+                  <MagnifyingGlassIcon class="h-4 w-4 text-grey-900 mt-1" aria-hidden="true" />
                 </div>
                 <Input id="search" type="search" label-text="" name="search" v-model="password"
                   placeholder="Search for media" inputClasses="pl-10 border-peach-500" />
@@ -58,11 +58,11 @@
 
                 <Menu as="div" class="relative inline-block text-left">
                   <MenuButton
-                    class="inline-flex items-center rounded-md border border-gray-700  text-lg font-medium text-gray-800 shadow-sm hover:bg-peach-500 focus:outline-none outline-none focus:ring-2 focus:ring-peach-500 focus:ring-offset-2 ease-in-out duration-300 hover:border-peach-500 mt-1"
+                    class="inline-flex items-center rounded-md border border-grey-700  text-lg font-medium text-grey-800 shadow-sm hover:bg-peach-500 focus:outline-none outline-none focus:ring-2 focus:ring-peach-500 focus:ring-offset-2 ease-in-out duration-300 hover:border-peach-500 mt-1"
                     :class="[
                       active
                         ? 'bg-peach-500 border-peach-500'
-                        : 'border-gray-700 bg-white',
+                        : 'border-grey-700 bg-white',
                       'block pl-4 pr-5 py-2.5 text-lg text-left ease-in-out duration-300 w-full',
                     ]">
                     <ShortIcon class="w-4 mr-2" /> <span>Sort</span>
@@ -79,8 +79,8 @@
                         <MenuItem v-slot="{ active }">
                         <button :class="[
                           active
-                            ? 'bg-gray-100 text-gray-900'
-                            : 'text-gray-700',
+                            ? 'bg-grey-100 text-grey-900'
+                            : 'text-grey-700',
                           'block px-4 py-2 text-lg text-left ease-in-out duration-300 w-full',
                         ]">
                           A-Z
@@ -89,8 +89,8 @@
                         <MenuItem v-slot="{ active }">
                         <button :class="[
                           active
-                            ? 'bg-gray-100 text-gray-900'
-                            : 'text-gray-700',
+                            ? 'bg-grey-100 text-grey-900'
+                            : 'text-grey-700',
                           'block px-4 py-2 text-lg text-left ease-in-out duration-300 w-full',
                         ]">
                           Z-A
@@ -109,27 +109,27 @@
                 <div class="overflow-hidden">
                   <div class="inline-block min-w-full align-middle md:px-0 lg:px-0">
                     <div class="overflow-hidden pt-2">
-                      <table class="min-w-full border-0 border-collapse divide-y divide-gray-200">
+                      <table class="min-w-full border-0 border-collapse divide-y divide-grey-200">
                         <thead class="hidden sm:table-header-group">
                           <tr>
                             <th scope="col"
-                              class="py-3.5 pl-4 pr-3 text-left text-lg font-semibold text-gray-800 sm:pl-6">
+                              class="py-3.5 pl-4 pr-3 text-left text-lg font-semibold text-grey-800 sm:pl-6">
                               Media
                             </th>
-                            <th scope="col" class="px-3 py-3.5 text-left text-lg font-semibold text-gray-800">
+                            <th scope="col" class="px-3 py-3.5 text-left text-lg font-semibold text-grey-800">
                               Customer
                             </th>
-                            <th scope="col" class="px-3 py-3.5 text-center text-lg font-semibold text-gray-800">
+                            <th scope="col" class="px-3 py-3.5 text-center text-lg font-semibold text-grey-800">
                               Link
                             </th>
-                            <th scope="col" class="px-3 py-3.5 pr-8 text-right text-lg font-semibold text-gray-800">
+                            <th scope="col" class="px-3 py-3.5 pr-8 text-right text-lg font-semibold text-grey-800">
                               Date added
                             </th>
                           </tr>
                         </thead>
-                        <tbody class="divide-y divide-gray-200 bg-white">
+                        <tbody class="divide-y divide-grey-200 bg-white">
                           <tr v-for="cust in customers" :key="cust.email" @click="isUploadMedia = true"
-                            class="odd:bg-white even:bg-gray-100">
+                            class="odd:bg-white even:bg-grey-100">
                             <td class="whitespace-nowrap p-3 pl-4 text-lg sm:pl-6">
                               <div class="flex items-center">
                                 <div
@@ -137,30 +137,30 @@
                                   <img class="aspect-square object-cover" :src="cust.image" alt="" />
                                 </div>
                                 <div class="ml-4">
-                                  <div class="font-medium text-gray-800">
+                                  <div class="font-medium text-grey-800">
                                     {{ cust.name }}
                                   </div>
-                                  <div class="text-gray-700 flex gap-2 items-center"><span>{{ cust.type }}</span><span
-                                      class="w-1 h-1 sm:hidden rounded-full bg-gray-700 block"></span><span
+                                  <div class="text-grey-700 flex gap-2 items-center"><span>{{ cust.type }}</span><span
+                                      class="w-1 h-1 sm:hidden rounded-full bg-grey-700 block"></span><span
                                       class="sm:hidden">{{ cust.date_added }}</span></div>
                                   <p class="sm:hidden"><a href="javascript:void(0)"
-                                      class="hover:text-gray-900 text-blue hover:underline">{{ cust.name }}</a></p>
+                                      class="hover:text-grey-900 text-blue hover:underline">{{ cust.name }}</a></p>
                                 </div>
                               </div>
                             </td>
                             <td class="whitespace-nowrap px-3 py-4 text-lg text-blue hidden sm:table-cell">
-                              <a href="javascript:void(0)" class="hover:text-gray-900 text-blue hover:underline">{{
+                              <a href="javascript:void(0)" class="hover:text-grey-900 text-blue hover:underline">{{
                                 cust.name
                               }}</a>
                             </td>
                             <td class="text-center">
                               <a href="javascript:void(0)"
-                                class="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white text-lg font-medium text-blue shadow-sm hover:bg-blue hover:border-blue hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 ease-in-out duration-300 w-9 h-9">
+                                class="inline-flex items-center justify-center rounded-md border border-grey-300 bg-white text-lg font-medium text-blue shadow-sm hover:bg-blue hover:border-blue hover:text-white focus:outline-none focus:ring-2 focus:ring-grey-300 focus:ring-offset-2 ease-in-out duration-300 w-9 h-9">
                                 <LinkChain class="w-4 h-4" />
                               </a>
                             </td>
                             <td
-                              class="whitespace-nowrap px-3 py-4 pr-8 text-right text-lg text-gray-500 hidden sm:table-cell">
+                              class="whitespace-nowrap px-3 py-4 pr-8 text-right text-lg text-grey-500 hidden sm:table-cell">
                               {{ cust.date_added }}
                             </td>
                           </tr>
@@ -171,14 +171,14 @@
                 </div>
               </div>
             </div>
-            <nav class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6"
+            <nav class="flex items-center justify-between border-t border-grey-200 bg-white px-4 py-3 sm:px-6"
               aria-label="Pagination">
               <div class="flex flex-1 justify-start items-center gap-2">
                 <a href="#"
-                  class="relative inline-flex items-center rounded-l border border-gray-500 bg-white px-2.5 py-2 text-lg font-medium text-gray-800 hover:bg-gray-500 ease-in-out duration-300">
+                  class="relative inline-flex items-center rounded-l border border-grey-500 bg-white px-2.5 py-2 text-lg font-medium text-grey-800 hover:bg-grey-500 ease-in-out duration-300">
                   <AngleLeft class="w-1.5" />
                 </a>
-                <p class="text-lg text-gray-800 font-medium">
+                <p class="text-lg text-grey-800 font-medium">
                   <!-- space -->
                   <span class="">10</span>
                   <!-- space -->
@@ -188,7 +188,7 @@
                   results
                 </p>
                 <a href="#"
-                  class="relative inline-flex items-center rounded-r border border-gray-500 bg-white px-2.5 py-2 text-lg font-medium text-gray-800 hover:bg-gray-500 ease-in-out duration-300">
+                  class="relative inline-flex items-center rounded-r border border-grey-500 bg-white px-2.5 py-2 text-lg font-medium text-grey-800 hover:bg-grey-500 ease-in-out duration-300">
                   <AngleRight class="w-1.5" />
                 </a>
               </div>
@@ -204,13 +204,13 @@
     <SlideOvers :open-dialog="isUploadMedia" dialog-title="Upload Media" @closeModal="isUploadMedia = false">
       <div class="space-y-5">
         <!-- Replace with your content -->
-        <div class="flex items-center justify-center gap-5 border border-dashed border-gray-300 p-5 py-32 rounded-xl">
+        <div class="flex items-center justify-center gap-5 border border-dashed border-grey-300 p-5 py-32 rounded-xl">
           <div class="flex flex-col gap-2">
             <div class="flex justify-center items-center">
               <file-select v-model="file"></file-select>
             </div>
             <p v-if="file">{{ file.name }}</p>
-            <p class="text-xs text-gray-800/80">
+            <p class="text-xs text-grey-800/80">
               Accepts .jpg., png., mp4., mov.
             </p>
           </div>
@@ -223,17 +223,17 @@
           </div>
           <div class="flex items-start justify-between">
             <div class="space-y-1">
-              <h2 class="text-lg font-normal text-gray-800 leading-none">
+              <h2 class="text-lg font-normal text-grey-800 leading-none">
                 cutie_brows
               </h2>
-              <p class="text-lg font-normal text-gray-700 flex items-center">
+              <p class="text-lg font-normal text-grey-700 flex items-center">
                 JPG
-                <span class="w-2 h-2 rounded-full bg-gray-500 block mx-3"></span>
+                <span class="w-2 h-2 rounded-full bg-grey-500 block mx-3"></span>
                 Jun 4, 2022
               </p>
             </div>
             <a href="javascript:void(0)"
-              class="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white text-lg font-medium text-blue shadow-sm hover:bg-blue hover:border-blue hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 ease-in-out duration-300 w-9 h-9">
+              class="inline-flex items-center justify-center rounded-md border border-grey-300 bg-white text-lg font-medium text-blue shadow-sm hover:bg-blue hover:border-blue hover:text-white focus:outline-none focus:ring-2 focus:ring-grey-300 focus:ring-offset-2 ease-in-out duration-300 w-9 h-9">
               <LinkChain class="w-4 h-4" />
             </a>
           </div>
@@ -242,15 +242,15 @@
       </div>
       <div class="space-y-2 mt-4">
         <Textarea rows="4" id="project-description" name="project-description" label-text="Description"
-          placeholder="great eyebrows" labelClasses="block xs:text-lg font-semibold text-gray-800" />
+          placeholder="great eyebrows" labelClasses="block xs:text-lg font-semibold text-grey-800" />
       </div>
       <div class="space-y-2 mt-4">
         <Input id="link" type="text" label-text="Link" name="link" v-model="password" placeholder="www.google.com"
-          labelClasses="block xs:text-lg font-semibold text-gray-800" inputClasses="border-peach-500" />
+          labelClasses="block xs:text-lg font-semibold text-grey-800" inputClasses="border-peach-500" />
       </div>
       <!-- Customer -->
       <div class="space-y-2 mt-4">
-        <label for="project-description" class="block text-lg font-semibold text-gray-800">Customer</label>
+        <label for="project-description" class="block text-lg font-semibold text-grey-800">Customer</label>
         <div class="flex justify-between">
           <a href="#" class="text-lg font-normal text-blue leading-none inline-flex cursor-pointer">Carla Septimus</a>
           <a href="#" class="text-lg font-normal text-blue leading-none inline-flex cursor-pointer">Assign to another
@@ -259,16 +259,16 @@
       </div>
       <!-- Assign to client -->
       <div class="space-y-2 my-4">
-        <label for="project-description" class="block text-lg font-semibold text-gray-800">Assign to customer</label>
+        <label for="project-description" class="block text-lg font-semibold text-grey-800">Assign to customer</label>
         <Combobox v-model="selected">
           <div class="relative">
             <div class="relative w-full z-20">
               <ComboboxInput type="search"
-                class="block w-full appearance-none rounded-md border bg-transparent border-gray-300 px-3 py-2.5 placeholder-gray-700 font-medium shadow-sm focus:border-peach-500 focus:outline-none focus:ring-peach-500 text-lg invalid:bg-red/5 invalid:border-red ease-in-out duration-300 outline-none"
+                class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-2.5 placeholder-grey-700 font-medium shadow-sm focus:border-peach-500 focus:outline-none focus:ring-peach-500 text-lg invalid:bg-red/5 invalid:border-red ease-in-out duration-300 outline-none"
                 :displayValue="(person) => person.name" placeholder="Start typing customer name"
                 @change="query = $event.target.value" />
               <ComboboxButton class="absolute inset-y-0 right-0 flex items-center pr-2">
-                <ChevronUpDownIcon class="h-5 w-5 text-gray-400" aria-hidden="			true" />
+                <ChevronUpDownIcon class="h-5 w-5 text-grey-400" aria-hidden="			true" />
               </ComboboxButton>
             </div>
             <TransitionRoot leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0"
@@ -277,15 +277,15 @@
                 class="absolute z-10 mt-1 max-h-40 w-full on-hover-scroll overflow-auto rounded-md bg-white py-1 text-xl shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-lg">
                 <div v-if="
                   filteredPeople.length === 0 && query !== ''
-                " class="relative cursor-default select-none py-2 px-4 text-gray-700">
+                " class="relative cursor-default select-none py-2 px-4 text-grey-700">
                   Nothing found.
                 </div>
 
                 <ComboboxOption v-for="person in filteredPeople" as="template" :key="person.id" :value="person"
                   v-slot="{ selected, active }">
                   <li class="relative cursor-default select-none py-2 pl-10 pr-4" :class="{
-                    'bg-gray-200 text-gray-800': active,
-                    'text-gray-900': !active,
+                    'bg-grey-200 text-grey-800': active,
+                    'text-grey-900': !active,
                   }">
                     <span class="block truncate" :class="{
                       'font-medium': selected,
@@ -308,7 +308,7 @@
       </div>
       <!-- Visibility -->
       <div class="space-y-2 my-4">
-        <p class="block text-lg font-semibold text-gray-800">
+        <p class="block text-lg font-semibold text-grey-800">
           Visibility
         </p>
 
@@ -345,7 +345,7 @@
     <template #title>File uploaded</template>
     <!-- Here description -->
     <template #description>
-      <div class="pl-7 text-md text-gray-700">description</div>
+      <div class="pl-7 text-md text-grey-700">description</div>
     </template>
 
     <template #details>
@@ -357,7 +357,7 @@
               alt="">
           </div>
 
-          <p class="font-medium text-gray-700 text-lg">Screenshot...102531.png</p>
+          <p class="font-medium text-grey-700 text-lg">Screenshot...102531.png</p>
           <ExclamationIcon class="w-5 ml-auto text-red" />
         </div>
         <p class="text-red font-medium pl-11">File Format is not supported</p>

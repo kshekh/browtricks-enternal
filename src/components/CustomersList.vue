@@ -3,7 +3,7 @@
     <div class="flex-1 sm:px-3 py-3 md:p-5 xl:px-14 xl:py-12">
       <div class="flex flex-wrap items-center justify-between mb-7 px-3 sm:px-0">
         <div class="sm:flex-auto">
-          <h2 class="text-2xl font-bold text-gray-800 leading-none">
+          <h2 class="text-2xl font-bold text-grey-800 leading-none">
             Customers List
           </h2>
         </div>
@@ -15,7 +15,7 @@
           >
         </div>
       </div>
-      <div class="overflow-hidden sm:rounded-lg bg-white border-y sm:border-x border-gray-300 shadow-3">
+      <div class="overflow-hidden sm:rounded-lg bg-white border-y sm:border-x border-grey-300 shadow-3">
         <div class="p-4 pb-0 gap-2 md:gap-5 flex">
           <div class="flex flex-1 gap-2 md:gap-5">
             <div class="relative flex-1">
@@ -23,7 +23,7 @@
                 class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
                 >
                 <MagnifyingGlassIcon
-                  class="h-4 w-4 text-gray-900 mt-1"
+                  class="h-4 w-4 text-grey-900 mt-1"
                   aria-hidden="true"
                 />
               </div>
@@ -43,11 +43,11 @@
               <Menu as="div" class="relative inline-block text-left">
               
                 <MenuButton 
-                class="inline-flex items-center rounded-md border border-gray-700  text-lg font-medium text-gray-800 shadow-sm hover:bg-peach-500 focus:outline-none outline-none focus:ring-2 focus:ring-peach-500 focus:ring-offset-2 ease-in-out duration-300 hover:border-peach-500 mt-1"
+                class="inline-flex items-center rounded-md border border-grey-700  text-lg font-medium text-grey-800 shadow-sm hover:bg-peach-500 focus:outline-none outline-none focus:ring-2 focus:ring-peach-500 focus:ring-offset-2 ease-in-out duration-300 hover:border-peach-500 mt-1"
                 :class="[
                   active
                     ? 'bg-peach-500 border-peach-500'
-                    : 'border-gray-700 bg-white',
+                    : 'border-grey-700 bg-white',
                   'block pl-4 pr-5 py-2.5 text-lg text-left ease-in-out duration-300 w-full',
                 ]"
               >
@@ -71,8 +71,8 @@
                         <button
                           :class="[
                             active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
+                              ? 'bg-grey-100 text-grey-900'
+                              : 'text-grey-700',
                             'block px-4 py-2 text-lg text-left ease-in-out duration-300 w-full',
                           ]"
                         >
@@ -83,8 +83,8 @@
                         <button
                           :class="[
                             active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
+                              ? 'bg-grey-100 text-grey-900'
+                              : 'text-grey-700',
                             'block px-4 py-2 text-lg text-left ease-in-out duration-300 w-full',
                           ]"
                         >
@@ -104,50 +104,50 @@
             <div class="inline-block min-w-full align-middle ">
               <div class="overflow-hidden pt-2">
                 <table
-                  class="min-w-full border-0 border-collapse divide-y divide-gray-200"
+                  class="min-w-full border-0 border-collapse divide-y divide-grey-200"
                 >
                   <thead class="hidden sm:table-header-group">
                     <tr>
                       <th
                         scope="col"
-                        class="py-3.5 w-1/3 pl-4 pr-3 text-left text-lg font-semibold text-gray-800 sm:pl-6"
+                        class="py-3.5 w-1/3 pl-4 pr-3 text-left text-lg font-semibold text-grey-800 sm:pl-6"
                       >
                         Customer name
                       </th>
                       <th
                         scope="col"
-                        class="px-3 w-2/3 py-3.5 text-lg font-semibold text-gray-800 text-center"
+                        class="px-3 w-2/3 py-3.5 text-lg font-semibold text-grey-800 text-center"
                       >
                        <span class="w-60 max-w-full inline-flex text-left">Phone</span> 
                       </th>
                       <th
                         scope="col"
-                        class="px-3 w-1/3 py-3.5 text-left text-lg font-semibold text-gray-800"
+                        class="px-3 w-1/3 py-3.5 text-left text-lg font-semibold text-grey-800"
                       >
                         Email
                       </th>
                     </tr>
                   </thead>
-                  <tbody class="divide-y divide-gray-200 bg-white">
+                  <tbody class="divide-y divide-grey-200 bg-white">
                     <tr
                       v-for="cust in customers"
                       :key="cust.email"
-                      class="odd:bg-white even:bg-gray-100 py-2 sm:py-0 block sm:table-row"
+                      class="odd:bg-white even:bg-grey-100 py-2 sm:py-0 block sm:table-row"
                     >
                       <td
-                        class="whitespace-nowrap py-0.5 sm:py-4 px-3 text-lg sm:pl-6 font-normal text-gray-800 block sm:table-cell"
+                        class="whitespace-nowrap py-0.5 sm:py-4 px-3 text-lg sm:pl-6 font-normal text-grey-800 block sm:table-cell"
                       >
                         {{ cust.name }}
                       </td>
                       <td
-                        class="whitespace-nowrap px-3 py-0.5 sm:py-4 text-lg font-normal text-gray-800 sm:text-center block sm:table-cell"
+                        class="whitespace-nowrap px-3 py-0.5 sm:py-4 text-lg font-normal text-grey-800 sm:text-center block sm:table-cell"
                       >
                        <span class="w-60 max-w-full inline-flex text-left">
                         {{ cust.phone }}
                         </span>
                       </td>
                       <td
-                        class="whitespace-nowrap px-3 py-0.5 sm:py-4 text-lg font-normal text-gray-800 block sm:table-cell"
+                        class="whitespace-nowrap px-3 py-0.5 sm:py-4 text-lg font-normal text-grey-800 block sm:table-cell"
                       >
                         {{ cust.email }}
                       </td>
@@ -159,17 +159,17 @@
           </div>
 
           <nav
-            class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6"
+            class="flex items-center justify-between border-t border-grey-200 bg-white px-4 py-3 sm:px-6"
             aria-label="Pagination"
           >
             <div class="flex flex-1 justify-start items-center gap-2">
               <a
                 href="#"
-                class="relative inline-flex items-center rounded-l border border-gray-500 bg-white px-2.5 py-2 text-lg font-medium text-gray-800 hover:bg-gray-500 ease-in-out duration-300"
+                class="relative inline-flex items-center rounded-l border border-grey-500 bg-white px-2.5 py-2 text-lg font-medium text-grey-800 hover:bg-grey-500 ease-in-out duration-300"
               >
                 <AngleLeft class="w-1.5" />
               </a>
-              <p class="text-lg text-gray-800 font-medium">
+              <p class="text-lg text-grey-800 font-medium">
                 <!-- space -->
                 <span class="">10</span>
                 <!-- space -->
@@ -180,7 +180,7 @@
               </p>
               <a
                 href="#"
-                class="relative inline-flex items-center rounded-r border border-gray-500 bg-white px-2.5 py-2 text-lg font-medium text-gray-800 hover:bg-gray-500 ease-in-out duration-300"
+                class="relative inline-flex items-center rounded-r border border-grey-500 bg-white px-2.5 py-2 text-lg font-medium text-grey-800 hover:bg-grey-500 ease-in-out duration-300"
                 ><AngleRight class="w-1.5"
               /></a>
             </div>

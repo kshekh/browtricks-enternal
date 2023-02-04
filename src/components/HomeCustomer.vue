@@ -3,7 +3,7 @@
     <!-- Setup Guide -->
     <div class="flex-1 py-3 md:p-5 xl:px-14 xl:py-12 flex flex-col">
       <div
-        class="coverflow-hidden md:rounded-xl bg-white shadow-3 border-y md:border border-gray-300 divide-y divide-gray-300 flex-1"
+        class="coverflow-hidden md:rounded-xl bg-white shadow-3 border-y md:border border-grey-300 divide-y divide-grey-300 flex-1"
         >
         <div class="px-4 pt-10 pb-6 md:px-7">
           <div class="flex flex-col text-left">
@@ -14,14 +14,14 @@
             </h1>
             <div class="flex items-center gap-5">
               <span
-                class="whitespace-nowrap text-lg md:text-xl font-normal text-gray-700"
+                class="whitespace-nowrap text-lg md:text-xl font-normal text-grey-700"
                 >1 of 6 tasks complete</span
               >
               <div
-                class="w-full bg-gray-300 rounded-full h-1.5 dark:bg-gray-700"
+                class="w-full bg-grey-300 rounded-full h-1.5 dark:bg-grey-700"
               >
                 <div
-                  class="bg-gray-700 h-1.5 rounded-full dark:bg-blue-500"
+                  class="bg-grey-700 h-1.5 rounded-full dark:bg-blue-500"
                   style="width: 20%;
                     /*width: index / ${setupCount} * 100 + '%'*/
                   "
@@ -60,7 +60,7 @@
                       "
                     >
                       <CheckIcon
-                        class="h-4 w-4 text-gray-800"
+                        class="h-4 w-4 text-grey-800"
                         aria-hidden="true"
                       />
                     </span>
@@ -74,7 +74,7 @@
                       "
                     >
                       <CheckIcon
-                        class="h-4 w-4 text-gray-800"
+                        class="h-4 w-4 text-grey-800"
                         aria-hidden="true"
                       />
                     </span>
@@ -88,7 +88,7 @@
                       "
                     >
                       <CheckIcon
-                        class="h-4 w-4 text-gray-800"
+                        class="h-4 w-4 text-grey-800"
                         aria-hidden="true"
                       />
                     </span>
@@ -102,7 +102,7 @@
                       "
                     >
                       <CheckIcon
-                        class="h-4 w-4 text-gray-800"
+                        class="h-4 w-4 text-grey-800"
                         aria-hidden="true"
                       />
                     </span>
@@ -116,7 +116,7 @@
                       "
                     >
                       <CheckIcon
-                        class="h-4 w-4 text-gray-800"
+                        class="h-4 w-4 text-grey-800"
                         aria-hidden="true"
                       />
                     </span>
@@ -132,7 +132,7 @@
                       :class="step.isExpanded ? 'block' : 'hidden'"
                       class="space-y-5"
                     >
-                      <p class="text-xl text-gray-800">{{ step.answer }}</p>
+                      <p class="text-xl text-grey-800">{{ step.answer }}</p>
                       <Button @click="consoleClick" class="sm:min-w-40 mt-4" :btn-primary="true">Add customer</Button>
 
                     </div>
