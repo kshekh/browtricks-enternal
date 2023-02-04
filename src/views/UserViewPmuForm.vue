@@ -146,7 +146,7 @@
                     <!-- End of Signature pad -->
 
                   </div>
-                  <p v-if="file">{{ file.name }}</p>
+                  
                 
                 </div>
               </div>
