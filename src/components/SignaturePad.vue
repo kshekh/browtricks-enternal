@@ -1,62 +1,59 @@
 <template>
-  <canvas @mousedown="mousedown" @mousemove="mousemove" @mouseup="sign = false" @mouseout="sign = false" class="w-full h-60 border-0 bg-white rounded-xl" />
+  <div class="container">
+    <div class="container">
+      <VueSignaturePad
+        id="signature"
+        width="200px"
+        height="148px"
+        ref="signaturePad"
+        :options="options"
+      />
+    </div>
+    <div class="buttons">
+      <button @click="undo">Undo</button>
+      <button @click="save">Save</button>
+      <button @click="change">Change Color</button>
+      <button @click="resume">Resume Color</button>
+    </div>
+  </div>
 </template>
 
 <script>
-export  default {
-    emits : ['update:modelValue'],
-    props : {
-        modelValue : {
-            type :  null,
-            required :  true
-        }
+export default {
+  data: () => ({
+    options: {
+      penColor: "#c0f",
     },
-    data() {
-        return {
-            ctx :  null,
-            sign :  false,
-            prevX :  0,
-            prevY :  0,
-        }
+  }),
+  methods: {
+    undo() {
+      this.$refs.signaturePad.undoSignature();
     },
-    methods : {
-        mousedown($event) {
-            this.sign  =  true
-            this.prevX  = $event.offsetX
-            this.prevY  = $event.offsetY
-        },
-        mousemove($event) {
-            if(this.sign) {
-                const  currX  = $event.offsetX
-                const  currY  = $event.offsetY
-                this.draw(this.prevX, this.prevY, currX, currY)
-                this.prevX  =  currX
-                this.prevY  =  currY
-            }
-        },
-        draw(depX, depY, destX, destY) {
-            this.ctx.beginPath()
-            this.ctx.moveTo(depX, depY)
-            this.ctx.lineTo(destX, destY)
-            this.ctx.closePath()
-            this.ctx.stroke()
+    save() {
+      const { isEmpty, data } = this.$refs.signaturePad.saveSignature();
 
-            const img = this.$el.toDataURL('image/png').replace('image/png', 'image/octet-stream')
-            this.$emit('update:modelValue', img)
-        },
+      alert("Open DevTools see the save data.");
+      console.log(isEmpty);
+      console.log(data);
     },
-    watch : {
-        modelValue(model) {
-            if(!model) {
-            this.ctx.clearRect(0, 0, this.$el.width, this.$el.height)
-            }
-        }
+    change() {
+      this.options = {
+        penColor: "#00f",
+      };
     },
-    mounted() {
-        this.ctx  = this.$el.getContext('2d')
-        this.ctx.strokeStyle  =  'black'
-        this.ctx.lineWidth  =  2
-    }
-}
+    resume() {
+      this.options = {
+        penColor: "#c0f",
+      };
+    },
+  },
+};
 </script>
- 
+
+<style scoped>
+canvas {
+    border: 1px solid black;
+    background-color: white;
+    cursor: crosshair;
+}
+</style>
