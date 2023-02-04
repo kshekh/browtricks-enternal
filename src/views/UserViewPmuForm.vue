@@ -94,11 +94,12 @@
                     <!-- <file-select v-model="file"></file-select> -->
                     <!-- Start Signature pad -->
                     <div class="sign-wrapper relative">
-                      <VueSignaturePad
+                      <!-- <VueSignaturePad
                         width="242px"
                         height="183px"
                         :options="{ onBegin, onEnd }"
-                        ref="signaturePad" />
+                        ref="signaturePad" /> -->
+                        <SignaturePad v-model="canvas" />
                     </div>
                     <!-- End of Signature pad -->
 
@@ -124,9 +125,9 @@
             </div>
           </div>
           <div class="flex gap-3 pt-6 md:pt-3.5">
-            <Button type="submit" :btn-outline="true" :btn-primary="false" @click="saveSign"
+            <Button type="submit" :btn-outline="true" :btn-primary="false" @click="canvas = null"
               class="w-auto sm:px-6">Undo</Button>
-            <Button type="submit" :btn-outline="true" :btn-primary="false" @click="undoSign"
+            <Button type="submit" :btn-outline="true" :btn-primary="false" @click="saveSign"
               class="w-auto sm:px-6">Save signature</Button>
           </div>
         </div>
@@ -140,7 +141,7 @@
 </template>
 
 <script setup>
-import { VueSignaturePad } from 'vue-signature-pad';
+// import { VueSignaturePad } from 'vue-signature-pad';
 import { reactive, ref } from 'vue';
 import TopNavbar from '@/components/layout/TopNavbar.vue';
 import SidebarNavigation from '@/components/layout/SidebarNavigation.vue';
@@ -150,22 +151,9 @@ import Signature from '@/assets/icons/Signature.vue';
 import Button from '@/components/Button.vue';
 import FileSelect from '@/components/FileSelect.vue';
 // import PmuDetails from '@/components/PmuDetails.vue';
+import SignaturePad from '@/components/SignaturePad.vue';
 
 const isLogin = reactive(true);
-
-function undoSign() {
-  this.$refs.signaturePad.undoSignature();
-}
-function saveSign() {
-  const { isEmpty, data } = this.$refs.signaturePad.saveSignature();
-  console.log(isEmpty);
-  console.log(data);
-}
-function onBegin() {
-  console.log('=== Begin ===');
-}
-function onEnd() {
-  console.log('=== End ===');
-}
+let canvas = ref(null);
 
 </script>
