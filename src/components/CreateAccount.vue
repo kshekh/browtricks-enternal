@@ -36,17 +36,17 @@
         </div>
         <div class="relative w-full">
           <div class="absolute inset-0 flex items-center">
-            <div class="w-full h-px bg-gray-300"></div>
+            <div class="w-full h-px bg-grey-300"></div>
           </div>
           <div class="relative flex justify-center text-lg">
-            <span class="bg-gray-200 px-4 text-gray-900 font-bold">OR</span>
+            <span class="bg-grey-200 px-4 text-grey-900 font-bold">OR</span>
           </div>
         </div>
         <div
-          class="bg-white p-5 xs:rounded-lg sm:p-8 border-y xs:border border-gray-500 shadow-3 w-full"
+          class="bg-white p-5 xs:rounded-lg sm:p-8 border-y xs:border border-grey-500 shadow-3 w-full"
         >
           <h2
-            class="text-start text-3xl sm:text-5xl font-bold tracking-tight text-gray-900 pb-5"
+            class="text-start text-3xl sm:text-5xl font-bold tracking-tight text-grey-900 pb-5"
           >
             Create an Account
           </h2>
@@ -69,7 +69,7 @@
             />
 
             <div class="space-y-1">
-              <label class="lblock text-lg font-normal text-gray-900 text-start"
+              <label class="lblock text-lg font-normal text-grey-900 text-start"
                 >Phone Number</label
               >
               <div class="relative mt-1 rounded-md shadow-sm">
@@ -79,7 +79,7 @@
                     id="country"
                     name="country"
                     autocomplete="country"
-                    class="h-full rounded-md border-transparent bg-transparent py-0 pl-3 pr-7 placeholder-gray-400 shadow-sm focus:border-peach-500 focus:outline-none focus:ring-peach-500 text-lg invalid:bg-red/5 invalid:border-red"
+                    class="h-full rounded-md border-transparent bg-transparent py-0 pl-3 pr-7 placeholder-grey-400 shadow-sm focus:border-peach-500 focus:outline-none focus:ring-peach-500 text-lg invalid:bg-red/5 invalid:border-red"
                   >
                     <option>US</option>
                     <option>CA</option>
@@ -89,7 +89,7 @@
                 <input
                   type="tel"
                   autocomplete="Phone"
-                  class="block w-full appearance-none rounded-md border bg-transparent border-gray-300 px-3 py-3 pl-14 placeholder-gray-400 shadow-sm focus:border-peach-500 focus:outline-none focus:ring-peach-500 text-lg invalid:bg-red/5 invalid:border-red peer"
+                  class="block w-full appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 pl-14 placeholder-grey-400 shadow-sm focus:border-peach-500 focus:outline-none focus:ring-peach-500 text-lg invalid:bg-red/5 invalid:border-red peer"
                 />
                 <p class="text-red text-xs peer-invalid:block hidden pt-0.5">
                   <b>Error:</b> Invalid or incorrect Username Invalid or
@@ -126,7 +126,7 @@
               />
               <button
                 type="button"
-                class="absolute top-5 right-0 py-4 px-4 text-gray-900"
+                class="absolute top-5 right-0 py-4 px-4 text-grey-900"
                 @click="showPassword = !showPassword"
               >
                 <Eye v-if="!showPassword" class="w-5" />
@@ -145,7 +145,7 @@
               />
               <button
                 type="button"
-                class="absolute top-5 right-0 py-4 px-4 text-gray-900"
+                class="absolute top-5 right-0 py-4 px-4 text-grey-900"
                 @click="showPasswordRptr = !showPasswordRptr"
               >
                 <Eye v-if="!showPasswordRptr" class="w-5" />
@@ -163,7 +163,7 @@
                 >
               </div>
 
-              <div class="text-lg text-gray-900 font-normal">
+              <div class="text-lg text-grey-900 font-normal">
                 <span>Already have an account?</span>
                 <router-link
                   to="/login"

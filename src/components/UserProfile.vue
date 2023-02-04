@@ -2,14 +2,14 @@
 <div class="relative flex flex-col min-h-screen w-full">
     <!-- Projects List -->
     <div class="flex-1 p-3 md:p-5 xl:px-14 xl:py-12">
-      <div class="mb-7 pb-10 space-y-5 border-b border-solid border-gray-300">
+      <div class="mb-7 pb-10 space-y-5 border-b border-solid border-grey-300">
         <h2
           class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-black pb-3"
         >
           Chris Luke
         </h2>
         <div
-          class="coverflow-hidden rounded-xl bg-white shadow-3 border border-gray-300 divide-y divide-gray-300"
+          class="coverflow-hidden rounded-xl bg-white shadow-3 border border-grey-300 divide-y divide-grey-300"
         >
           <div class="p-7">
             <div class="flex flex-col text-left">
@@ -22,7 +22,7 @@
                     <file-select v-model="file"></file-select>
                   </div>
                   <p v-if="file">{{ file.name }}</p>
-                  <p class="text-xs text-gray-800/80">
+                  <p class="text-xs text-grey-800/80">
                     Accepts .jpg., png., mp4., mov.
                   </p>
                 </div>
@@ -36,7 +36,7 @@
           Your media
         </h2>
         <div
-          class="coverflow-hidden rounded-xl bg-white pb-3 border border-gray-300 divide-y divide-gray-300"
+          class="coverflow-hidden rounded-xl bg-white pb-3 border border-grey-300 divide-y divide-grey-300"
         >
           <div class="p-4 gap-2 md:gap-5 flex">
             <div class="w-full flex-1">
@@ -46,14 +46,14 @@
                   class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
                 >
                   <MagnifyingGlassIcon
-                    class="h-4 w-4 text-gray-800"
+                    class="h-4 w-4 text-grey-800"
                     aria-hidden="true"
                   />
                 </div>
                 <input
                   id="search"
                   name="search"
-                  class="block w-full placeholder-black/40 appearance-none rounded-md border bg-transparent border-gray-300 px-3 py-3 placeholder-gray-800 shadow-sm font-medium focus:border-peach-500 focus:outline-none focus:ring-peach-500 sm:text-lg peer pl-10"
+                  class="block w-full placeholder-black/40 appearance-none rounded-md border bg-transparent border-grey-300 px-3 py-3 placeholder-grey-800 shadow-sm font-medium focus:border-peach-500 focus:outline-none focus:ring-peach-500 sm:text-lg peer pl-10"
                   placeholder="Search"
                   type="search"
                 />
@@ -65,11 +65,11 @@
               <Menu as="div" class="relative inline-block text-left">
               
               <MenuButton 
-                class="inline-flex items-center rounded-md border border-gray-700  text-lg font-medium text-gray-800 shadow-sm hover:bg-peach-500 focus:outline-none outline-none focus:ring-2 focus:ring-peach-500 focus:ring-offset-2 ease-in-out duration-300 hover:border-peach-500 "
+                class="inline-flex items-center rounded-md border border-grey-700  text-lg font-medium text-grey-800 shadow-sm hover:bg-peach-500 focus:outline-none outline-none focus:ring-2 focus:ring-peach-500 focus:ring-offset-2 ease-in-out duration-300 hover:border-peach-500 "
                 :class="[
                   active
                     ? 'bg-peach-500 border-peach-500'
-                    : 'border-gray-700 bg-white',
+                    : 'border-grey-700 bg-white',
                   'block px-4 py-3 text-lg text-left ease-in-out duration-300 w-full',
                 ]"
               >
@@ -93,8 +93,8 @@
                     <button
                       :class="[
                         active
-                          ? 'bg-gray-100 text-gray-900'
-                          : 'text-gray-700',
+                          ? 'bg-grey-100 text-grey-900'
+                          : 'text-grey-700',
                         'block px-4 py-2 text-lg text-left ease-in-out duration-300 w-full',
                       ]"
                     >
@@ -105,8 +105,8 @@
                     <button
                       :class="[
                         active
-                          ? 'bg-gray-100 text-gray-900'
-                          : 'text-gray-700',
+                          ? 'bg-grey-100 text-grey-900'
+                          : 'text-grey-700',
                         'block px-4 py-2 text-lg text-left ease-in-out duration-300 w-full',
                       ]"
                     >
@@ -128,37 +128,37 @@
               >
                 <div class="overflow-hidden">
                   <table
-                    class="min-w-full border-0 border-collapse divide-y divide-gray-200"
+                    class="min-w-full border-0 border-collapse divide-y divide-grey-200"
                   >
                     <thead class="">
                       <tr>
                         <th
                           scope="col"
-                          class="py-3.5 pl-4 pr-3 text-left text-lg font-semibold text-gray-800 sm:pl-6"
+                          class="py-3.5 pl-4 pr-3 text-left text-lg font-semibold text-grey-800 sm:pl-6"
                         >
                           Media
                         </th>
                         <th
                           scope="col"
-                          class="px-3 py-3.5 text-left text-lg font-semibold text-gray-800"
+                          class="px-3 py-3.5 text-left text-lg font-semibold text-grey-800"
                         >
                           Customer
                         </th>
                         <th
                           scope="col"
-                          class="px-3 py-3.5 text-center text-lg font-semibold text-gray-800"
+                          class="px-3 py-3.5 text-center text-lg font-semibold text-grey-800"
                         >
                           Link
                         </th>
                         <th
                           scope="col"
-                          class="px-3 py-3.5 pr-8 text-right text-lg font-semibold text-gray-800"
+                          class="px-3 py-3.5 pr-8 text-right text-lg font-semibold text-grey-800"
                         >
                           Date added
                         </th>
                       </tr>
                     </thead>
-                    <tbody class="divide-y divide-gray-200 bg-white">
+                    <tbody class="divide-y divide-grey-200 bg-white">
                       <tr v-for="cust in customers" :key="cust.email">
                         <td
                           class="whitespace-nowrap py-4 pl-4 pr-3 text-lg sm:pl-6"
@@ -172,10 +172,10 @@
                               />
                             </div>
                             <div class="ml-4">
-                              <div class="font-medium text-gray-800">
+                              <div class="font-medium text-grey-800">
                                 {{ cust.name }}
                               </div>
-                              <div class="text-gray-500">{{ cust.type }}</div>
+                              <div class="text-grey-500">{{ cust.type }}</div>
                             </div>
                           </div>
                         </td>
@@ -187,13 +187,13 @@
                         <td class="text-center">
                           <a
                             href="javascript:void(0)"
-                            class="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white text-lg font-medium text-blue shadow-sm hover:bg-blue hover:border-blue hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 ease-in-out duration-300 w-12 h-12"
+                            class="inline-flex items-center justify-center rounded-md border border-grey-300 bg-white text-lg font-medium text-blue shadow-sm hover:bg-blue hover:border-blue hover:text-white focus:outline-none focus:ring-2 focus:ring-grey-300 focus:ring-offset-2 ease-in-out duration-300 w-12 h-12"
                           >
                             <LinkChain class="w- h-5" />
                           </a>
                         </td>
                         <td
-                          class="whitespace-nowrap px-3 py-4 pr-8 text-right text-lg text-gray-500"
+                          class="whitespace-nowrap px-3 py-4 pr-8 text-right text-lg text-grey-500"
                         >
                           {{ cust.date_added }}
                         </td>

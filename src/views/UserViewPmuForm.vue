@@ -10,94 +10,135 @@
         <div class="space-y-6">
           <div class="overflow-hidden md:rounded-xl bg-white shadow-3">
             <div class="space-y-3 p-4 sm:px-8 sm:py-8">
-              <h1 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-gray-800">
-                Post PMU Care Form
-              </h1>
-              <p class="text-lg md:text-xl font-normal text-gray-700 leading-none">Requested by Koko Teams on Nov 10,
-                2020 </p>
+              <h1 class="flex-1 text-3xl sm:text-5xl font-bold leading-none text-grey-800">Post PMU Care Form</h1>
+              <p class="text-lg md:text-xl font-normal text-grey-700 leading-none">
+                Requested by Koko Teams on Nov 10, 2020
+              </p>
             </div>
           </div>
           <div class="overflow-hidden md:rounded-xl bg-white shadow-3">
             <div class="space-y-8 p-4 sm:px-8 sm:py-8">
-              <h2 class="text-3xl font-semibold text-gray-800 leading-tight">
+              <h2 class="text-3xl font-semibold text-grey-800 leading-tight">
                 I have read, or had read to me, the above Pre and Post Care instructions and expectations. I agree to
                 follow the above directions and understand that how I heal depends on how closely I follow said
                 directions. I understand a touchup appointment will be needed to complete the process.
               </h2>
               <div class="space-y-4">
-                <CheckboxRadio id="check1" inputClasses="rounded" type="checkbox" name="check1"
-                  label-text="I am currently taking blood thinners" />
+                <CheckboxRadio
+                  id="check1"
+                  inputClasses="rounded"
+                  type="checkbox"
+                  name="check1"
+                  label-text="I am currently taking blood thinners"
+                />
 
-                <CheckboxRadio id="check2" inputClasses="rounded" type="checkbox" name="check2"
-                  label-text="I am pregnant or breastfeeding" />
+                <CheckboxRadio
+                  id="check2"
+                  inputClasses="rounded"
+                  type="checkbox"
+                  name="check2"
+                  label-text="I am pregnant or breastfeeding"
+                />
 
-                <CheckboxRadio id="check3" inputClasses="rounded" type="checkbox" name="check3"
-                  label-text="I have skin diseases such as psoriasis or eczema" />
+                <CheckboxRadio
+                  id="check3"
+                  inputClasses="rounded"
+                  type="checkbox"
+                  name="check3"
+                  label-text="I have skin diseases such as psoriasis or eczema"
+                />
               </div>
             </div>
           </div>
           <div class="overflow-hidden md:rounded-xl bg-white shadow-3">
             <div class="space-y-8 p-4 sm:px-8 sm:py-8">
-              <h2 class="text-3xl font-semibold text-gray-800 leading-tight">
+              <h2 class="text-3xl font-semibold text-grey-800 leading-tight">
                 I have read, or had read to me, the above Pre and Post Care instructions and expectations. I agree to
                 follow the above directions and understand that how I heal depends on how closely I follow said
                 directions. I understand a touchup appointment will be needed to complete the process.
               </h2>
               <div class="space-y-4">
-                <CheckboxRadio id="check4" inputClasses="rounded-full" type="checkbox" name="check4"
-                  label-text="I am currently taking blood thinners" />
+                <CheckboxRadio
+                  id="check4"
+                  inputClasses="rounded-full"
+                  type="checkbox"
+                  name="check4"
+                  label-text="I am currently taking blood thinners"
+                />
 
-                <CheckboxRadio id="check5" inputClasses="rounded-full" type="checkbox" name="check5"
-                  label-text="I am pregnant or breastfeeding" />
+                <CheckboxRadio
+                  id="check5"
+                  inputClasses="rounded-full"
+                  type="checkbox"
+                  name="check5"
+                  label-text="I am pregnant or breastfeeding"
+                />
 
-                <CheckboxRadio id="check6" inputClasses="rounded-full" type="checkbox" name="check6"
-                  label-text="I have skin diseases such as psoriasis or eczema" />
+                <CheckboxRadio
+                  id="check6"
+                  inputClasses="rounded-full"
+                  type="checkbox"
+                  name="check6"
+                  label-text="I have skin diseases such as psoriasis or eczema"
+                />
               </div>
             </div>
           </div>
           <div class="overflow-hidden md:rounded-xl bg-white shadow-3">
             <div class="space-y-8 p-4 sm:px-8 sm:py-8">
-              <h2 class="text-3xl font-semibold text-gray-800 leading-tight">
+              <h2 class="text-3xl font-semibold text-grey-800 leading-tight">
                 I have read, or had read to me, the above Pre and Post Care instructions and expectations. I agree to
                 follow the above directions and understand that how I heal depends on how closely I follow said
                 directions. I understand a touchup appointment will be needed to complete the process.
               </h2>
               <div class="space-y-2 mt-4">
-                <Textarea rows="4" id="project-description" name="project-description" label-text="Answer"
-                  placeholder="" labelClasses="block xs:text-lg font-semibold text-gray-800" />
+                <Textarea
+                  rows="4"
+                  id="project-description"
+                  name="project-description"
+                  label-text="Answer"
+                  placeholder=""
+                  labelClasses="block xs:text-lg font-semibold text-grey-800"
+                />
               </div>
             </div>
           </div>
           <div class="overflow-hidden md:rounded-xl bg-white shadow-3">
             <div class="space-y-8 p-4 sm:px-8 sm:py-8">
-              <h2 class="text-3xl font-semibold text-gray-800 leading-tight">
-                Please read the folowing
-              </h2>
+              <h2 class="text-3xl font-semibold text-grey-800 leading-tight">Please read the folowing</h2>
               <div class="relative py-6 px-4 flex justify-center items-center">
-                <img class="h-auto object-cover" src="/src/assets/Pre_and_Post_Care_Agreement.png" alt="">
+                <img
+                  class="h-auto object-cover"
+                  src="/src/assets/Pre_and_Post_Care_Agreement.png"
+                  alt=""
+                />
               </div>
             </div>
           </div>
           <div class="flex flex-col px-4 md:px-0">
-            <CheckboxRadio id="agree" inputClasses="rounded" type="checkbox" name="agree"
-              label-text="Agree with terms" />
+            <CheckboxRadio
+              id="agree"
+              inputClasses="rounded"
+              type="checkbox"
+              name="agree"
+              label-text="Agree with terms"
+            />
           </div>
         </div>
         <!-- Signature section here -->
         <div class="space-y-1 px-4 md:px-0">
-          <h5 class="block text-lg  font-semibold text-gray-800">Sign here:</h5>
+          <h5 class="block text-lg font-semibold text-grey-800">Sign here:</h5>
           <div class="flex flex-col md:flex-row items-center gap-x-10 gap-y-5 w-full md:w-2/5">
             <div class="space-y-4 w-full">
-              <div class="overflow-hidden rounded-xl bg-transparent border border-gray-300 w-full md:w-60">
-                <div class="space-y-3 px-12 py-16 flex flex-wrap justify-center items-center text-center w-full">
+              <div class="overflow-hidden rounded-xl bg-transparent border border-grey-300 w-full">
+                <div class="space-y-3  flex flex-wrap justify-center items-center text-center w-full">
                   <div class="flex justify-center items-center">
                     <!-- Start Signature pad -->
-                    <div class="sign-wrapper relative">
+                    <div class="sign-wrapper relative bg-white">
                       <!-- <SignaturePad /> -->
                       <VueSignaturePad
-                        id="signature"
-                        width="200px"
-                        height="148px"
+                        id="signature" class="w-full h-72"
+                         
                         ref="signaturePad"
                         :options="options"
                       />
@@ -105,8 +146,8 @@
                     <!-- End of Signature pad -->
 
                   </div>
-                  <p v-if="file">{{ file.name }}</p>
-                  <!-- <Signature class="w-40 h-16 block" /> -->
+                  
+                
                 </div>
               </div>
             </div>
@@ -133,42 +174,19 @@
           </div>
         </div>
         <div class="flex flex-col px-4 md:px-0">
-          <Button type="submit" :btn-primary="true" @click="isSave = true"
-            class="md:w-24 max-w-full sm:px-6">Submit</Button>
+          <Button
+            type="submit"
+            :btn-primary="true"
+            @click="isSave = true"
+            class="md:w-24 max-w-full sm:px-6"
+            >Submit</Button
+          >
         </div>
       </div>
     </div>
   </div>
 </template>
-
-<!-- <script setup>
-import { reactive, ref } from 'vue';
-import TopNavbar from '@/components/layout/TopNavbar.vue';
-import SidebarNavigation from '@/components/layout/SidebarNavigation.vue';
-import CheckboxRadio from '@/components/CheckboxRadio.vue';
-import Textarea from '@/components/Textarea.vue';
-import Signature from '@/assets/icons/Signature.vue';
-import Button from '@/components/Button.vue';
-// import PmuDetails from '@/components/PmuDetails.vue';
-import SignaturePad from '@/components/SignaturePad.vue';
-
-const isLogin = reactive(true);
-
-const options = {
-  penColor: "#c0f",
-}
-
-function undo() {
-  this.$refs.signaturePad.undoSignature();
-}
-function save() {
-  const { isEmpty, data } = this.$refs.signaturePad.saveSignature();
-
-  alert("Open DevTools see the save data.");
-  console.log(isEmpty);
-  console.log(data);
-}
-</script> -->
+ 
 
 <script>
 import TopNavbar from '@/components/layout/TopNavbar.vue';
@@ -189,7 +207,7 @@ export default {
   },
   data: () => ({
     options: {
-      penColor: "#c0f",
+      penColor: "#000",
     },
   }),
   methods: {
@@ -207,13 +225,4 @@ export default {
 };
 </script>
 
-<style scoped>
-#signature {
-  border: double 3px transparent;
-  border-radius: 5px;
-  background-image: linear-gradient(white, white),
-    radial-gradient(circle at top left, #4bc5e8, #9f6274);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-}
-</style>
+ 
