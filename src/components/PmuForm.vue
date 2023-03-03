@@ -30,6 +30,7 @@
                   <p class="text-xl text-grey-900 sm:px-5"> Customers can sign your PMU forms before arriving for treatment. Select from our prebuilt PMU form templates, or create your own. </p>
                 </div>
                 <div class="flex flex-wrap gap-3 w-full justify-center">
+                  <Button @click="copyURL(textToCopy)">Copy to Clipborad</Button>
                   <Button type="submit" :btn-outline="true" :btn-primary="false" @click="isMoreForm = true" class="w-auto sm:px-6">Use template</Button>
                   <Button type="submit" :btn-primary="true" @click="isCreateForm = true" class="w-auto sm:px-6 ">Create my own</Button>
                 </div>
@@ -63,6 +64,8 @@
   const isMoreForm = ref(false);
   const isCreateForm = ref(false);
 
+  const textToCopy = ref('Hello, this is copied text');
+
   const formTemplates = [
     {
       title: 'Pre and Post Care Agreement 1',
@@ -83,4 +86,13 @@
         '/src/assets/Pre_and_Post_Care_Agreement.png',
     },
   ]
+
+  async function copyURL(mytext) {
+    try {
+      await navigator.clipboard.writeText(mytext);
+      alert('Copied');
+    } catch($e) {
+      alert('Cannot copy');
+    }
+  }
 </script>
